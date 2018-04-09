@@ -5,4 +5,9 @@ Control-k: menu-complete-backward
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
 set completion-map-case on
+# vi settings
 set editing-mode vi
+$if mode=vi
+    set keymap vi-insert
+    "jk": vi-movement-mode # remap escape
+$endif

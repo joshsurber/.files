@@ -68,6 +68,9 @@ packadd! matchit
 
 let mapleader = "\<Space>""
 let maplocalleader = "\\"
+map <leader>w :w<cr>
+map <leader>q :q<cr>
+map <leader>z ZZ
 
 " }}}
 " Color scheme {{{
