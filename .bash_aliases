@@ -4,20 +4,14 @@
 #fi
 
 # ALIASES {{{
-alias server="python -m SimpleHTTPServer"
 alias cls="clear;ls"
 alias ducks='du -cks *|sort -rn|head -11'
 alias more='less' # less is more
-alias phpinfo='php -i'
 alias up='cd ..'
-alias vi='vim'
-alias screen="screen -xRR"
 alias genpw="tr -dc 'A-Za-z0-9!@#$%^&*' < /dev/urandom | fold -w 12 | head -n 1"
 alias apt="sudo apt-get update && sudo apt-get upgrade"
 alias get="sudo apt-get install"
-alias upget="sudo apt-get update && sudo apt-get install"
 alias del="sudo apt-get remove"
-alias vnc=x11vnc
 alias fucking=sudo
 alias fuck='sudo $(history -p \!\!)'
 # }}}
