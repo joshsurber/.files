@@ -1,0 +1,12 @@
+[user]
+	name = Josh Surber
+	email = josh@surber.us
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+[push]
+	default = simple
