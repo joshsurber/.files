@@ -185,3 +185,6 @@ noremap j gj
 noremap k gk
 
 " }}}
+execute pathogen#infect()
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
