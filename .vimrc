@@ -1,7 +1,7 @@
 " Basic setup 
 set encoding=utf-8
 set cindent
-set showcmd
+"set showcmd
 set hidden
 set visualbell
 set title
@@ -20,13 +20,12 @@ set shiftround
 set autoread
 set dictionary=/usr/share/dict/words
 
-" Wildmenu completion 
+" Menus in the console
 source $VIMRUNTIME/menu.vim
 set wildmenu
-set wildmode=list:longest
+set cpo-=<
 set wcm=<C-Z>
-map <F4> :emenu <C-Z>
-map <leader>- :emenu <C-Z>
+map ;; :emenu <C-Z>
 
 set wildignore+=..git                          " Version control
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " binary images
@@ -60,10 +59,8 @@ set background=dark
 colorscheme solarized
 
 " Searching and movement 
-" Use sane regexes.
 nnoremap / /\v
 vnoremap / /\v
-
 set ignorecase
 set smartcase
 set incsearch
@@ -72,7 +69,6 @@ set hlsearch
 set gdefault " Sub command defaults to whole lines
 
 set virtualedit+=block " Rect selections can encompass blank chars
-
 
 map <tab> %
 
@@ -91,23 +87,21 @@ noremap <C-h>  <C-w>h
 noremap <C-j>  <C-w>j
 noremap <C-k>  <C-w>k
 noremap <C-l>  <C-w>l
+
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
-
-" Fuck you, help key.
-noremap  <F1> <nop>
-inoremap <F1> <nop>
 
 " K opens vimhelp not manpage
 set kp= 
 
-inoremap jk <esc> " Faster Esc
+" Faster Esc
+inoremap jk <esc>
 
 " Better Completion
 set completeopt=longest,menuone,preview 
 
-cmap w!! w !sudo tee % >/dev/null 
 " Sudo to write
+cmap w!! w !sudo tee % >/dev/null 
 
 " Move to end of pasted text; easily select same
 vnoremap <silent> y y`]
