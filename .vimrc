@@ -58,6 +58,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set wrap
+set breakindent
 set textwidth=80
 set formatoptions=qrn1 " Autoformat code comments
 filetype plugin indent on
