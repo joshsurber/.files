@@ -120,3 +120,7 @@ noremap j gj
 noremap k gk
 
 execute pathogen#infect()
+" CtrlP via http://snow-dev.com/the-power-of-vim-plugins-ctrlp/
+let g:ctrlp_map = '<C-p>' 
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ar'
