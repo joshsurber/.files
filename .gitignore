@@ -1,1 +1,14 @@
 *
+!.*
+!.**/*
+.*~
+.*swp
+.bash_history
+.crosh_history
+.vim/.netrwhist
+.viminfo
+.cache/
+.gem/
+.pki/
+.ssh/
+

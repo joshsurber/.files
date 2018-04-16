@@ -8,8 +8,6 @@ set title
 set ttyfast
 set ruler
 set backspace=indent,eol,start
-set number
-set relativenumber
 set undofile
 set lazyredraw
 set showbreak=↪
@@ -19,6 +17,14 @@ set autowrite
 set shiftround
 set autoread
 set dictionary=/usr/share/dict/words
+
+" Sane line numbers
+set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 " Menus in the console
 source $VIMRUNTIME/menu.vim
