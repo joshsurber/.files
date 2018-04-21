@@ -120,7 +120,25 @@ noremap j gj
 noremap k gk
 
 execute pathogen#infect()
+
+" Plugin config below
 " CtrlP via http://snow-dev.com/the-power-of-vim-plugins-ctrlp/
 let g:ctrlp_map = '<C-p>' 
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ar'
+let g:ctrlp_use_caching = 0
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+  let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+    \ }
+endif
+
+" Expand region plugin
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
