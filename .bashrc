@@ -1,4 +1,5 @@
 # ALIASES 
+alias vi=vim
 alias cls="clear;ls"
 alias ducks='du -cks *|sort -rn|head -11' # Best named command ever
 alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
@@ -7,10 +8,10 @@ alias more='less' # less is more
 alias up='cd ..'
 alias l='ls -CF' # Some ls aliases{{{
 alias la='ls -A'
-alias ll='ls -alF'#}}}
+alias ll='ls -alF'
 alias apt="sudo apt-get update && sudo apt-get upgrade" # Some apt aliases{{{
 alias get="sudo apt-get install"
-alias del="sudo apt-get remove"#}}}
+alias del="sudo apt-get remove"
 
 # ENVIROMENT 
 export PATH=$PATH

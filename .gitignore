@@ -6,6 +6,7 @@
 .bash_history
 .crosh_history
 .vim/.netrwhist
+.vim/doc
 .viminfo
 .cache/
 .gem/

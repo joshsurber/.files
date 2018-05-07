@@ -57,7 +57,8 @@ map <leader>z ZZ
 " Folding 
 nnoremap <leader><leader> za
 vnoremap <leader><leader> za
-noremap <leader>. :noh<cr> 
+noremap <leader>/ :noh<cr> 
+noremap <leader>l :redraw!<cr> 
 
 " Color scheme 
 syntax on
