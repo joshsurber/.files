@@ -12,4 +12,4 @@
 .gem/
 .pki/
 .ssh/
-
+.wget-hsts

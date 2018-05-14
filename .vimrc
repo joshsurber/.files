@@ -64,6 +64,9 @@ noremap <leader>l :redraw!<cr>
 syntax on
 set background=dark
 colorscheme solarized
+if !has('gui_running')
+    set t_Co=256
+endif
 
 " Searching and movement 
 nnoremap / /\v
@@ -128,9 +131,9 @@ let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ar'
 let g:ctrlp_use_caching = 0
+let g:ctrlp_custom_ignore = 'node_modules\|^.git$\|_site'
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
-
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 else
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
@@ -143,3 +146,5 @@ endif
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
+" Always show gitgutter
+set signcolumn=yes
