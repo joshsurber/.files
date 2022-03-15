@@ -101,6 +101,12 @@ noremap <C-l>  <C-w>l
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
+" Disable arrow movement, resize splits instead.
+nnoremap <Up>    :resize +2<CR>
+nnoremap <Down>  :resize -2<CR>
+nnoremap <Left>  :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+
 " K opens vimhelp not manpage
 set kp= 
 
@@ -122,6 +128,14 @@ noremap gV `[v`]
 " Lines wrap. Deal with it.
 noremap j gj
 noremap k gk
+
+" make netrw work like nerdtree
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+nmap <silent> <C-e> :Lexplore<CR>
 
 execute pathogen#infect()
 

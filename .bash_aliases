@@ -9,9 +9,6 @@ alias up='cd ..'
 alias l='ls -CF' # Some ls aliases{{{
 alias la='ls -A'
 alias ll='ls -alF'
-alias apt="sudo apt-get update && sudo apt-get upgrade" # Some apt aliases{{{
-alias get="sudo apt-get install"
-alias del="sudo apt-get remove"
 
 # ENVIROMENT 
 export PATH=$PATH
@@ -90,7 +87,7 @@ cb() { # A shortcut function that simplifies usage of xclip. #{{{
 }
 # Shortcut to copy SSH public key to clipboard.
 alias cb_ssh="cb ~/.ssh/id_rsa.pub" #}}}
-extract () { # EXPAND ALL THE FILETYPES! eatallthethings.jpg #{{{
+x () { # EXPAND ALL THE FILETYPES! eatallthethings.jpg #{{{
     if [ -f $1 ] ; then
         case $1 in
             *.tar.bz2)   tar xjf $1     ;;

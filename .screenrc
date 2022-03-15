@@ -1,0 +1,22 @@
+vbell on                    # Quiet, you!
+vbell_msg "Oh, fark. %s"    # Oh, fark
+autodetach on               # So I can leave and come back
+startup_message off         # Pointless after the first time your run it
+nethack on                  # Good for a laugh sometimes
+caption always %w           # Remind me where I am
+defscrollback 1000          # Bigger better buffer
+bind ; source ~/.screenrc   # Reload this file
+
+# Resize regions
+bind = resize =
+bind + resize +1
+bind - resize -1
+bind _ resize max
+
+# # Move between regions
+bind j focus down
+bind k focus up
+bind ^J focus down
+bind ^K focus up
+
+# #screen

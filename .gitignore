@@ -1,5 +1,5 @@
-*
 !.*
+*
 !.**/*
 .*~
 .*swp
@@ -13,3 +13,20 @@
 .pki/
 .ssh/
 .wget-hsts
+.Private
+.Xauthority
+.bashrc
+.bashrc2
+.cinnamon/
+.config/
+.ecryptfs
+.face
+.gnome/
+.gtkrc-2.0
+.gtkrc-xfce
+.linuxmint/
+.local/
+.mozilla/
+.sudo_as_admin_successful
+.xinputrc
+.xsession-errors

@@ -25,6 +25,3 @@
 [submodule "/home/chronos/user/.vim/bundle/lightline.vim"]
 	path = /home/chronos/user/.vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
-[submodule ".vim/bundle/vim-gitgutter"]
-	path = .vim/bundle/vim-gitgutter
-	url = git://github.com/airblade/vim-gitgutter.git
