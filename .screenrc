@@ -5,6 +5,7 @@ startup_message off         # Pointless after the first time your run it
 nethack on                  # Good for a laugh sometimes
 caption always %w           # Remind me where I am
 defscrollback 1000          # Bigger better buffer
+term screen-256color
 bind ; source ~/.screenrc   # Reload this file
 
 # Resize regions
