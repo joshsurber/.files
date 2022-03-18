@@ -178,7 +178,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'terryma/vim-expand-region'
 " Plug 'docunext/closetag.vim'
 " Plug 'vim-scripts/ScrollColors'
-" Plug 'flazz/vim-colorschemes' 
+Plug 'flazz/vim-colorschemes' 
 call plug#end()
 packadd! matchit
 " }}}
@@ -214,7 +214,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " Color scheme {{{
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme solarized8_dark
 if !has('gui_running')
     set t_Co=256
 endif
@@ -229,6 +229,7 @@ endif
 let g:airline_symbols.space = "\ua0"
 "}}}
 " GitGutter{{{
-set signcolumn=yes
+" set signcolumn=yes
+set updatetime=500  " update twice a second
 "}}}
 " }}}
