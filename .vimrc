@@ -1,7 +1,7 @@
 " Basic setup 
 set encoding=utf-8
 set cindent
-"set showcmd
+set showcmd
 set hidden
 set visualbell
 set title
@@ -21,14 +21,15 @@ set dictionary=/usr/share/dict/words
 " Sane line numbers
 set number relativenumber
 augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
 " Menus in the console
 source $VIMRUNTIME/menu.vim
 set wildmenu
+set wildmode=list:longest,full
 set cpo-=<
 set wcm=<C-Z>
 map ;; :emenu <C-Z>
@@ -54,19 +55,13 @@ let mapleader = "\<Space>""
 map <leader>w :w<cr>
 map <leader>q :q<cr>
 map <leader>z ZZ
+
 " Folding 
 nnoremap <leader><leader> za
 vnoremap <leader><leader> za
 noremap <leader>/ :noh<cr> 
 noremap <leader>l :redraw!<cr> 
 
-" Color scheme 
-syntax on
-set background=dark
-colorscheme solarized
-if !has('gui_running')
-    set t_Co=256
-endif
 
 " Searching and movement 
 nnoremap / /\v
@@ -104,8 +99,7 @@ au VimResized * exe "normal! \<c-w>="
 " Disable arrow movement, resize splits instead.
 nnoremap <Up>    :resize +2<CR>
 nnoremap <Down>  :resize -2<CR>
-nnoremap <Left>  :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
+nnoremap <Left>  :vertical resize +2<CR> nnoremap <Right> :vertical resize -2<CR>
 
 " K opens vimhelp not manpage
 set kp= 
@@ -137,10 +131,33 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 25
 nmap <silent> <C-e> :Lexplore<CR>
 
-execute pathogen#infect()
+packadd! matchit
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin()
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"Plug 'honza/vim-snippets'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-liquid'
+Plug 'altercation/vim-colors-solarized'
+Plug 'NLKNguyen/papercolor-theme'       " colorscheme
+"Plug 'ervandew/supertab'                " more powerful Tab
+"Plug 'tpope/vim-unimpaired'             " pairs of helpful shortcuts
+"Plug 'tpope/vim-vinegar'                " - to open netrw
+"Plug 'vim-scripts/Gundo'                " visualize the undo tree
+Plug 'kien/ctrlp.vim'
+Plug 'terryma/vim-expand-region'
+"Plug 'docunext/closetag.vim'
+call plug#end()
 
-" Plugin config below
-" CtrlP via http://snow-dev.com/the-power-of-vim-plugins-ctrlp/
 let g:ctrlp_map = '<C-p>' 
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ar'
@@ -150,15 +167,31 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 else
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-  let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-    \ }
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+    let g:ctrlp_prompt_mappings = {
+                \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+                \ }
 endif
 
 " Expand region plugin
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
+" Color scheme 
+syntax on
+set background=dark
+colorscheme solarized
+if !has('gui_running')
+    set t_Co=256
+endif
+
+" let g:airline_theme='solarized'
+" let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
 " Always show gitgutter
-"set signcolumn=yes
+set signcolumn=yes
