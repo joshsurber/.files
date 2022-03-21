@@ -25,6 +25,10 @@ set cursorline  " Highlight current line
 set spell       " Spellcheck by default
 set dictionary=/usr/share/dict/words
 
+set noswapfile  " How often does Vim crash anyway?
+set nobackup
+set nowb
+
 " }}}
 " Tabs, spaces, wrapping {{{
 set tabstop=4       " Number of spaces a tab counts for
@@ -38,6 +42,11 @@ set textwidth=80    " Stay within 80 columns wide. Obsolete? You be the judge!
 set formatoptions=qrn1 " Autoformat code comments
 set shiftround      " Round indent to multiple of shiftwidth
 filetype plugin indent on   " indenting is adding spaces after all
+
+" highlight trailing whitespace
+match ErrorMsg '\s\+$'
+" " remove trailing whitespaces automatically
+autocmd BufWritePre * :%s/\s\+$//e
 
 " }}}
 " Sane line numbers{{{
@@ -128,6 +137,10 @@ nnoremap Vat vatV
 nnoremap Vab vabV
 nnoremap VaB vaBV
 
+" Move visual selection
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+"
 "}}}
 " Inserting, editing, and saving {{{
 " Move to end of pasted text; easily select same
@@ -136,7 +149,13 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 noremap gV `[v`]
 
-cmap w!! w !sudo tee % >/dev/null " No write permission? Fuck you, do it anyway!
+" System clipboard commands
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
 
 "}}}
 " Filetype specific{{{
@@ -158,7 +177,7 @@ cmap w!! w !sudo tee % >/dev/null " No write permission? Fuck you, do it anyway!
 if empty(glob(
     \ '$HOME/' . (has('win32') ? 'vimfiles' : '.vim') . '/autoload/plug.vim'))
   execute '!curl -fLo ' .
-    \ (has('win32') ? '\%USERPROFILE\%/vimfiles' : '$HOME/.vim') . 
+    \ (has('win32') ? '\%USERPROFILE\%/vimfiles' : '$HOME/.vim') .
     \ '/autoload/plug.vim --create-dirs ' .
     \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
