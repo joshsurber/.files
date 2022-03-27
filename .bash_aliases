@@ -1,4 +1,4 @@
-# ALIASES 
+# ALIASES
 alias vi=vim
 alias cls="clear;ls"
 alias ducks='du -cks *|sort -rn|head -11' # Best named command ever
@@ -10,7 +10,7 @@ alias l='ls -CF' # Some ls aliases{{{
 alias la='ls -A'
 alias ll='ls -alF'
 
-# ENVIROMENT 
+# ENVIROMENT
 export PATH=$PATH
 export CDPATH=.:~
 export EDITOR=vim
@@ -24,7 +24,7 @@ shopt -s histappend
 shopt -s extglob
 PROMPT_COMMAND='history -a'
 
-# FUNCTIONS 
+# FUNCTIONS
 cdls() { cd $1; clear; ls;} # Change and list directory after clearing screen
 grepdir() { exec "grep -R \"$@\" *"; }
 calc(){ awk "BEGIN{ print $* }" ;}
@@ -33,7 +33,7 @@ lt() { ls -ltrsa "$@" | tail; }
 psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 fname() { find . -iname "*$@*"; }
 
-# Copy and paste files 
+# Copy and paste files
 ccopy() { for i in $*; do cp -a $i /tmp/ccopy.$i; done }
 alias cpaste="ls -d /tmp/ccopy* | sed 's|[^\.]*.\.||' | xargs -I % mv /tmp/ccopy.% ./%"
 
@@ -86,7 +86,7 @@ cb() { # A shortcut function that simplifies usage of xclip. #{{{
     fi
 }
 # Shortcut to copy SSH public key to clipboard.
-alias cb_ssh="cb ~/.ssh/id_rsa.pub" #}}}
+alias cb_ssh="cb ~/.ssh/id*.pub" #}}}
 x () { # EXPAND ALL THE FILETYPES! eatallthethings.jpg #{{{
     if [ -f $1 ] ; then
         case $1 in
