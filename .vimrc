@@ -157,8 +157,8 @@ nnoremap Vab vabV
 nnoremap VaB vaBV
 
 " Move visual selection
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+vnoremap <c-j> :m '>+1<CR>gv=gv
+vnoremap <c-k> :m '<-2<CR>gv=gv
 "
 "}}}
 " Inserting, editing, and saving {{{
