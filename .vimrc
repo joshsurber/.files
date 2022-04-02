@@ -249,9 +249,10 @@ call plug#begin()
 Plug 'AndrewRadev/tagalong.vim'         " Modify HTML tags in pairs
 Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 Plug 'airblade/vim-gitgutter'           " Keep track of changes in git
-Plug 'junegunn/vim-plug'
 Plug 'flazz/vim-colorschemes'
 Plug 'frazrepo/vim-rainbow'
+Plug 'jiangmiao/auto-pairs'             " Automatically close braces
+Plug 'junegunn/vim-plug'                " Obviously installed already, but this provides docs
 Plug 'kien/ctrlp.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-expand-region'
