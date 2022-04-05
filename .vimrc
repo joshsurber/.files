@@ -237,24 +237,22 @@ packadd! matchit    " Install matchit
 let g:ale_completion_enabled = 1
 call plug#begin()
 
-" Plug 'NLKNguyen/papercolor-theme'       " colorscheme
-" Plug 'altercation/vim-colors-solarized'
 " Plug 'dense-analysis/ale'
-" Plug 'docunext/closetag.vim'
-" Plug 'ervandew/supertab'                " more powerful Tab
 " Plug 'honza/vim-snippets'
+" Plug 'kien/ctrlp.vim'                   " Fuzzy finder, trying fzf for now
 " Plug 'mattn/emmet-vim'                  " Expand CSS selector to HTML with CtrlY, avail in coc
-" Plug 'tpope/vim-unimpaired'             " pairs of helpful shortcuts
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
-" Plug 'vim-scripts/ScrollColors'
+" Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
 Plug 'AndrewRadev/tagalong.vim'         " Modify HTML tags in pairs
 Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 Plug 'airblade/vim-gitgutter'           " Keep track of changes in git
 Plug 'flazz/vim-colorschemes'
 Plug 'frazrepo/vim-rainbow'
 Plug 'jiangmiao/auto-pairs'             " Automatically close braces
-Plug 'junegunn/vim-plug'                " Obviously installed already, but this provides docs
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy file finder
+Plug 'junegunn/fzf.vim'                 " Integrate above with vim
+Plug 'junegunn/vim-peekaboo'            " Show registers when summoned
+Plug 'junegunn/vim-plug'                " Installs docs with vimplug
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-commentary'
@@ -320,6 +318,9 @@ let g:airline_symbols.space = "\ua0"
 "}}}
 " Vim rainbow{{{
 let g:rainbow_active = 1
+"}}}
+" fzf {{{
+nnoremap <C-p> :<C-u>FZF<CR>
 "}}}
 "" Ale {{{
 "let g:ale_completion_enabled = 1
