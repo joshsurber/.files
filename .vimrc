@@ -169,12 +169,13 @@ nnoremap <silent> p p`]
 noremap gV `[v`]
 
 " System clipboard commands
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+set clipboard=unnamed       " Use system clipboard to yank and put
+" vmap <Leader>y "+y        " None of the rest matters because of the above
+" vmap <Leader>d "+d        " Will delete if no issues arrive from using system cb
+" nmap <Leader>p "+p
+" nmap <Leader>P "+P
+" vmap <Leader>p "+p
+" vmap <Leader>P "+P
 
 "}}}
 " Filetype specific{{{
@@ -303,7 +304,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " Color scheme {{{
 syntax on
 set background=dark
-colorscheme solarized8_dark
+colorscheme gruvbox "solarized8_dark
 if !has('gui_running')
     set t_Co=256
 endif
