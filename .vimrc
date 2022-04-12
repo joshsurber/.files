@@ -14,7 +14,7 @@ set title       " Automatically set term title to filename
 set ttyfast     " Update screen faster
 set ruler       " Display location in file
 set backspace=indent,eol,start " Make BS key normal
-set undofile    " Save undos
+set noundofile  " Save undos
 set lazyredraw  " Don't redraw screen while executing macros
 set showbreak=↪ " Indicator at the start of wrapped lines
 set splitbelow  " New split will be under current one
@@ -121,6 +121,11 @@ noremap <C-l>  <C-w>l
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
+" Open help window on right
+augroup vimrc_help
+    autocmd!
+    autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
+augroup END
 "}}}
 " Text navigaion{{{
 " Searching and movement
@@ -237,17 +242,18 @@ packadd! matchit    " Install matchit
 let g:ale_completion_enabled = 1
 call plug#begin()
 
+" Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 " Plug 'dense-analysis/ale'
 " Plug 'honza/vim-snippets'
 " Plug 'kien/ctrlp.vim'                   " Fuzzy finder, trying fzf for now
 " Plug 'mattn/emmet-vim'                  " Expand CSS selector to HTML with CtrlY, avail in coc
+" Plug 'tpope/vim-liquid'
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
 Plug 'AndrewRadev/tagalong.vim'         " Modify HTML tags in pairs
-Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 Plug 'airblade/vim-gitgutter'           " Keep track of changes in git
 Plug 'flazz/vim-colorschemes'
-Plug 'frazrepo/vim-rainbow'
+" Plug 'frazrepo/vim-rainbow' " conflicts with syntax highlighting
 Plug 'jiangmiao/auto-pairs'             " Automatically close braces
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy file finder
 Plug 'junegunn/fzf.vim'                 " Integrate above with vim
@@ -257,7 +263,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-liquid'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'          " Updated statusline
@@ -315,6 +320,27 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+" let g:airline_mode_map = {
+"             \ '__'     : '-',
+"             \ 'c'      : 'C',
+"             \ 'i'      : 'I',
+"             \ 'ic'     : 'I',
+"             \ 'ix'     : 'I',
+"             \ 'n'      : 'N',
+"             \ 'multi'  : 'M',
+"             \ 'ni'     : 'N',
+"             \ 'no'     : 'N',
+"             \ 'R'      : 'R',
+"             \ 'Rv'     : 'R',
+"             \ 's'      : 'S',
+"             \ 'S'      : 'S',
+"             \ ''     : 'S',
+"             \ 't'      : 'T',
+"             \ 'v'      : 'V',
+"             \ 'V'      : 'V',
+"             \ ''     : 'V',
+"             \ }
 "}}}
 " Vim rainbow{{{
 let g:rainbow_active = 1

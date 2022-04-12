@@ -4,6 +4,7 @@ alias cls="clear;ls"
 alias ducks='du -cks *|sort -rn|head -11' # Best named command ever
 alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
 alias fucking=sudo # Make me a sandwich. * No * Fucking make me a sandwich * OK
+alias getit='sudo apt install $(history -p \!\!)' # Command not found? Find it!
 alias more='less' # less is more
 alias up='cd ..'
 alias l='ls -CF' # Some ls aliases{{{
@@ -23,6 +24,10 @@ shopt -s cdspell
 shopt -s histappend
 shopt -s extglob
 PROMPT_COMMAND='history -a'
+
+# Use fzf
+source /usr/share/doc/fzf/examples/key-bindings.bash
+source /usr/share/doc/fzf/examples/completion.bash
 
 # FUNCTIONS
 cdls() { cd $1; clear; ls;} # Change and list directory after clearing screen
