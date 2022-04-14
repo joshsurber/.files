@@ -265,6 +265,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'BourgeoisBear/clrzr'
 Plug 'vim-airline/vim-airline'          " Updated statusline
 Plug 'vim-airline/vim-airline-themes'   " Just like it sounds
 
