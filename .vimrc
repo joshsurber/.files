@@ -90,7 +90,8 @@ let mapleader = "\<Space>""
 " Simple write and quit
 noremap <leader>w :w<cr>
 noremap <leader>qq :q<cr>
-" noremap <leader>z ZZ
+noremap QQ :q<cr>
+noremap <leader>z ZZ
 
 " recover borked terminal
 noremap <leader>l :redraw!<cr>
@@ -244,6 +245,7 @@ call plug#begin()
 
 " Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 " Plug 'dense-analysis/ale'
+" Plug 'frazrepo/vim-rainbow' " conflicts with syntax highlighting
 " Plug 'honza/vim-snippets'
 " Plug 'kien/ctrlp.vim'                   " Fuzzy finder, trying fzf for now
 " Plug 'mattn/emmet-vim'                  " Expand CSS selector to HTML with CtrlY, avail in coc
@@ -252,11 +254,11 @@ call plug#begin()
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
 Plug 'AndrewRadev/tagalong.vim'         " Modify HTML tags in pairs
 Plug 'airblade/vim-gitgutter'           " Keep track of changes in git
+Plug 'airblade/vim-rooter'              " Change working directory to project base
 Plug 'flazz/vim-colorschemes'
-" Plug 'frazrepo/vim-rainbow' " conflicts with syntax highlighting
 Plug 'jiangmiao/auto-pairs'             " Automatically close braces
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy file finder
-Plug 'junegunn/fzf.vim'                 " Integrate above with vim
+Plug 'junegunn/fzf'                     " Fuzzy file finder
+Plug 'junegunn/fzf.vim'                 " Integrate fzf with vim
 Plug 'junegunn/vim-peekaboo'            " Show registers when summoned
 Plug 'junegunn/vim-plug'                " Installs docs with vimplug
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -265,7 +267,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'BourgeoisBear/clrzr'
 Plug 'vim-airline/vim-airline'          " Updated statusline
 Plug 'vim-airline/vim-airline-themes'   " Just like it sounds
 
@@ -349,10 +350,6 @@ let g:rainbow_active = 1
 " fzf {{{
 nnoremap <C-p> :<C-u>FZF<CR>
 "}}}
-"" Ale {{{
-"let g:ale_completion_enabled = 1
-"set omnifunc=ale#completion#OmniFunc
-""}}}
 " Tagalong {{{
 let g:tagalong_verbose = 1
 "}}}
@@ -369,7 +366,7 @@ let g:indentLine_fileTypeExclude = ['help']
 " CoC{{{
 
 " Install my preferred subset of extensions
-abbr CocInstallall CocInstall coc-css coc-emmet coc-eslint coc-highlight coc-html coc-marketplace coc-prettier coc-sh coc-sql coc-tslint coc-tsserver;
+abbr CocInstallall coc-css coc-emmet coc-eslint coc-highlight coc-html coc-htmlhint coc-json coc-markdown-preview-enhanced coc-marketplace coc-pairs coc-prettier coc-sh coc-spell-checker coc-sql coc-tslint coc-tsserver
 
 " Use prettier to format a file, possibly superfluous to Format
 " command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
