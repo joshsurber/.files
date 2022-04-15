@@ -90,7 +90,7 @@ let mapleader = "\<Space>""
 " Simple write and quit
 noremap <leader>w :w<cr>
 noremap <leader>qq :q<cr>
-noremap <leader>z ZZ
+" noremap <leader>z ZZ
 
 " recover borked terminal
 noremap <leader>l :redraw!<cr>
