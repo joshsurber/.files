@@ -175,13 +175,13 @@ nnoremap <silent> p p`]
 noremap gV `[v`]
 
 " System clipboard commands
-set clipboard=unnamed       " Use system clipboard to yank and put
-" vmap <Leader>y "+y        " None of the rest matters because of the above
-" vmap <Leader>d "+d        " Will delete if no issues arrive from using system cb
-" nmap <Leader>p "+p
-" nmap <Leader>P "+P
-" vmap <Leader>p "+p
-" vmap <Leader>P "+P
+" set clipboard=unnamed       " Use system clipboard to yank and put
+vmap <Leader>y "+y        " None of the rest matters because of the above
+vmap <Leader>d "+d        " Will delete if no issues arrive from using system cb
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
 
 "}}}
 " Filetype specific{{{
@@ -213,7 +213,7 @@ set kp= " K opens vimhelp not manpage
 
 inoremap jk <esc> " Faster Esc
 
-set completeopt=longest,menuone,preview " Better Completion
+" set completeopt=longest,menuone,preview " Better Completion
 
 cmap w!! w !sudo tee % >/dev/null " No write permission? Fuck you, do it anyway!
 
@@ -248,7 +248,6 @@ call plug#begin()
 " Plug 'frazrepo/vim-rainbow' " conflicts with syntax highlighting
 " Plug 'honza/vim-snippets'
 " Plug 'kien/ctrlp.vim'                   " Fuzzy finder, trying fzf for now
-" Plug 'mattn/emmet-vim'                  " Expand CSS selector to HTML with CtrlY, avail in coc
 " Plug 'tpope/vim-liquid'
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
@@ -261,6 +260,7 @@ Plug 'junegunn/fzf'                     " Fuzzy file finder
 Plug 'junegunn/fzf.vim'                 " Integrate fzf with vim
 Plug 'junegunn/vim-peekaboo'            " Show registers when summoned
 Plug 'junegunn/vim-plug'                " Installs docs with vimplug
+Plug 'mattn/emmet-vim'                  " Expand CSS selector to HTML with CtrlY, avail in coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-commentary'
@@ -269,6 +269,22 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'          " Updated statusline
 Plug 'vim-airline/vim-airline-themes'   " Just like it sounds
+
+Plug 'fannheyward/coc-marketplace', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-sql', {'do': 'yarn install --frozen-lockfile'}
+Plug 'iamcco/coc-spell-checker', {'do': 'yarn install --frozen-lockfile'}
+Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-emmet', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'weirongxu/coc-markdown-preview-enhanced', {'do': 'yarn install --frozen-lockfile'}
+Plug 'yaegassy/coc-html-css-support', {'do': 'yarn install --frozen-lockfile'}
+Plug 'yaegassy/coc-htmlhint', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
 
@@ -353,24 +369,20 @@ nnoremap <C-p> :<C-u>FZF<CR>
 " Tagalong {{{
 let g:tagalong_verbose = 1
 "}}}
-"" Emmet {{{
-""enable all function in all mode.
-"let g:user_emmet_mode='a'
-"" enable just for html/css
-"let g:user_emmet_install_global = 0
-"autocmd filetype html,css
-""}}}
+" Emmet {{{
+"enable all function in all mode.
+let g:user_emmet_mode='a'
+" enable just for html/css
+let g:user_emmet_install_global = 0
+autocmd filetype html EmmetInstall
+let g:emmet_html5 = 1
+" imap   <C-y><C-y>   <plug>(emmet-expand-abbr)
+let g:user_emmet_expandabbr_key = '<C-y><C-y>'
+"}}}
 " Indent line {{{
 let g:indentLine_fileTypeExclude = ['help']
 "}}}
 " CoC{{{
-
-" Install my preferred subset of extensions
-abbr CocInstallall coc-css coc-emmet coc-eslint coc-highlight coc-html coc-htmlhint coc-json coc-markdown-preview-enhanced coc-marketplace coc-pairs coc-prettier coc-sh coc-spell-checker coc-sql coc-tslint coc-tsserver
-
-" Use prettier to format a file, possibly superfluous to Format
-" command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
-
 " EVERYTHING BELOW IS COPIED DIRECTLY FROM THE COC README FILE
 
 " Don't pass messages to |ins-completion-menu|.
