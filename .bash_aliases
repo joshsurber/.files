@@ -112,3 +112,5 @@ x () { # EXPAND ALL THE FILETYPES! eatallthethings.jpg #{{{
         echo "'$1' is not a valid file"
     fi
 } # }}}
+# Command line alias to start the browser-sync server
+alias serve="browser-sync start --server --files ."
