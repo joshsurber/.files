@@ -4,6 +4,7 @@
 "
 " Leader is spacebar
 "
+let s:coc = 1
 " Basic setup {{{
 set encoding=utf-8
 set cindent
@@ -37,6 +38,8 @@ set noswapfile  " How often does Vim crash anyway?
 set nobackup
 set nowritebackup
 set nowb
+
+set path+=** " Allows for fuzzy-like :find-ing
 
 " }}}
 " Tabs, spaces, wrapping {{{
@@ -175,13 +178,13 @@ nnoremap <silent> p p`]
 noremap gV `[v`]
 
 " System clipboard commands
-" set clipboard=unnamed       " Use system clipboard to yank and put
-vmap <Leader>y "+y        " None of the rest matters because of the above
-vmap <Leader>d "+d        " Will delete if no issues arrive from using system cb
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+set clipboard=unnamed       " Use system clipboard to yank and put
+" vmap <Leader>y "+y        " None of the rest matters because of the above
+" vmap <Leader>d "+d        " Will delete if no issues arrive from using system cb
+" nmap <Leader>p "+p
+" nmap <Leader>P "+P
+" vmap <Leader>p "+p
+" vmap <Leader>P "+P
 
 "}}}
 " Filetype specific{{{
@@ -239,18 +242,26 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 "}}}
 
+" Much tidier way of installing Coc extensions
+command! -nargs=1 -bar PlugCoc if s:coc| Plug <args>, {'do': 'yarn install --frozen-lockfile'}| endif
+
 packadd! matchit    " Install matchit
-let g:ale_completion_enabled = 1
 call plug#begin()
 
 " Plug 'Yggdroot/indentLine'              " Make indents easier to follow
-" Plug 'dense-analysis/ale'
 " Plug 'frazrepo/vim-rainbow' " conflicts with syntax highlighting
 " Plug 'honza/vim-snippets'
-" Plug 'kien/ctrlp.vim'                   " Fuzzy finder, trying fzf for now
-" Plug 'tpope/vim-liquid'
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
+" PlugCoc 'fannheyward/coc-marketplace'
+" PlugCoc 'fannheyward/coc-sql'
+" PlugCoc 'iamcco/coc-spell-checker'
+" PlugCoc 'josa42/coc-sh'
+" PlugCoc 'neoclide/coc-emmet'
+" PlugCoc 'neoclide/coc-pairs'
+" PlugCoc 'weirongxu/coc-markdown-preview-enhanced'
+" PlugCoc 'yaegassy/coc-html-css-support'
+" PlugCoc 'yaegassy/coc-htmlhint'
 Plug 'AndrewRadev/tagalong.vim'         " Modify HTML tags in pairs
 Plug 'airblade/vim-gitgutter'           " Keep track of changes in git
 Plug 'airblade/vim-rooter'              " Change working directory to project base
@@ -269,22 +280,13 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'          " Updated statusline
 Plug 'vim-airline/vim-airline-themes'   " Just like it sounds
-
-Plug 'fannheyward/coc-marketplace', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-sql', {'do': 'yarn install --frozen-lockfile'}
-Plug 'iamcco/coc-spell-checker', {'do': 'yarn install --frozen-lockfile'}
-Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-emmet', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'weirongxu/coc-markdown-preview-enhanced', {'do': 'yarn install --frozen-lockfile'}
-Plug 'yaegassy/coc-html-css-support', {'do': 'yarn install --frozen-lockfile'}
-Plug 'yaegassy/coc-htmlhint', {'do': 'yarn install --frozen-lockfile'}
+PlugCoc 'neoclide/coc-css'
+PlugCoc 'neoclide/coc-eslint'
+PlugCoc 'neoclide/coc-html'
+PlugCoc 'neoclide/coc-json'
+PlugCoc 'neoclide/coc-prettier'
+PlugCoc 'neoclide/coc-tsserver'
+if s:coc|Plug 'neoclide/coc.nvim', {'branch': 'release'}|endif
 
 call plug#end()
 
@@ -360,11 +362,8 @@ let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 "             \ ''     : 'V',
 "             \ }
 "}}}
-" Vim rainbow{{{
-let g:rainbow_active = 1
-"}}}
 " fzf {{{
-nnoremap <C-p> :<C-u>FZF<CR>
+nnoremap <leader>p :<C-u>FZF<CR>
 "}}}
 " Tagalong {{{
 let g:tagalong_verbose = 1
@@ -382,7 +381,7 @@ let g:user_emmet_expandabbr_key = '<C-y><C-y>'
 " Indent line {{{
 let g:indentLine_fileTypeExclude = ['help']
 "}}}
-" CoC{{{
+if s:coc " CoC{{{
 " EVERYTHING BELOW IS COPIED DIRECTLY FROM THE COC README FILE
 
 " Don't pass messages to |ins-completion-menu|.
@@ -535,5 +534,5 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 " nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+endif " }}}
 "}}}
-" }}}
