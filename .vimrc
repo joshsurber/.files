@@ -256,7 +256,6 @@ Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 " PlugCoc 'fannheyward/coc-sql'
 " PlugCoc 'iamcco/coc-spell-checker'
 " PlugCoc 'josa42/coc-sh'
-" PlugCoc 'neoclide/coc-emmet'
 " PlugCoc 'neoclide/coc-pairs'
 " PlugCoc 'weirongxu/coc-markdown-preview-enhanced'
 " PlugCoc 'yaegassy/coc-html-css-support'
@@ -280,6 +279,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'          " Updated statusline
 Plug 'vim-airline/vim-airline-themes'   " Just like it sounds
 PlugCoc 'neoclide/coc-css'
+PlugCoc 'neoclide/coc-emmet'
 PlugCoc 'neoclide/coc-eslint'
 PlugCoc 'neoclide/coc-html'
 PlugCoc 'neoclide/coc-json'
@@ -359,7 +359,9 @@ let g:user_emmet_install_global = 0
 autocmd filetype html EmmetInstall
 let g:emmet_html5 = 1
 " imap   <C-y><C-y>   <plug>(emmet-expand-abbr)
-let g:user_emmet_expandabbr_key = '<C-y><C-y>'
+" let g:user_emmet_expandabbr_key = '<C-y><C-y>'
+
+let g:user_emmet_leader_key = ','
 "}}}
 " Indent line {{{
 let g:indentLine_fileTypeExclude = ['help']
