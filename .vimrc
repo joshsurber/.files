@@ -248,8 +248,7 @@ command! -nargs=1 -bar PlugCoc if s:coc| Plug <args>, {'do': 'yarn install --fro
 packadd! matchit    " Install matchit
 call plug#begin()
 
-" Plug 'Yggdroot/indentLine'              " Make indents easier to follow
-" Plug 'frazrepo/vim-rainbow' " conflicts with syntax highlighting
+Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 " Plug 'honza/vim-snippets'
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
@@ -304,22 +303,6 @@ nmap <silent> <C-e> :Lexplore<CR>
 "   autocmd VimEnter * :Vexplore
 " augroup END
 " }}}
-" CtrlP{{{
-let g:ctrlp_map = '<C-p>'
-let g:ctrlp_cmd = 'CtrlP'
-" let g:ctrlp_working_path_mode = 'ar'
-let g:ctrlp_use_caching = 0
-let g:ctrlp_custom_ignore = 'node_modules\|^.git$\|_site'
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-    let g:ctrlp_prompt_mappings = {
-                \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-                \ }
-endif
-"}}}
 " Expand region{{{
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
@@ -380,6 +363,9 @@ let g:user_emmet_expandabbr_key = '<C-y><C-y>'
 "}}}
 " Indent line {{{
 let g:indentLine_fileTypeExclude = ['help']
+let g:indentLine_char = '┊'
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_fileType = ['html','css','js']
 "}}}
 if s:coc " CoC{{{
 " EVERYTHING BELOW IS COPIED DIRECTLY FROM THE COC README FILE
