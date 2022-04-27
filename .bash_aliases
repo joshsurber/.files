@@ -7,7 +7,7 @@ alias fucking=sudo # Make me a sandwich. * No * Fucking make me a sandwich * OK
 alias shit='sudo apt install $(history -p \!\!);$(history -p \!\!)' # Command not found? Find it!
 alias more='less' # less is more
 alias up='cd ..'
-alias l='ls -CF' # Some ls aliases{{{
+alias l='ls -CF' # Some ls aliases
 alias la='ls -A'
 alias ll='ls -alF'
 
