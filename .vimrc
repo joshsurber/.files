@@ -248,8 +248,8 @@ command! -nargs=1 -bar PlugCoc if s:coc| Plug <args>, {'do': 'yarn install --fro
 packadd! matchit    " Install matchit
 call plug#begin()
 
-Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 " Plug 'honza/vim-snippets'
+" Plug 'preservim/nerdtree'
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
 " PlugCoc 'fannheyward/coc-marketplace'
@@ -257,10 +257,10 @@ Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 " PlugCoc 'iamcco/coc-spell-checker'
 " PlugCoc 'josa42/coc-sh'
 " PlugCoc 'neoclide/coc-pairs'
-" PlugCoc 'weirongxu/coc-markdown-preview-enhanced'
 " PlugCoc 'yaegassy/coc-html-css-support'
 " PlugCoc 'yaegassy/coc-htmlhint'
 Plug 'AndrewRadev/tagalong.vim'         " Modify HTML tags in pairs
+Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 Plug 'airblade/vim-gitgutter'           " Keep track of changes in git
 Plug 'airblade/vim-rooter'              " Change working directory to project base
 Plug 'flazz/vim-colorschemes'
