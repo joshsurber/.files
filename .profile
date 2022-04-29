@@ -26,7 +26,7 @@ export LC_CTYPE="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
 
 # Utilize SSH agent
-eval `ssh-agent`
-ssh-add
+# eval `ssh-agent`
+# ssh-add
 
 screen -xRR && exit
