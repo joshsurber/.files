@@ -249,6 +249,8 @@ packadd! matchit    " Install matchit
 call plug#begin()
 
 " Plug 'honza/vim-snippets'
+Plug 'ap/vim-css-color'
+Plug 'vim-scripts/CSSMinister'
 " Plug 'preservim/nerdtree'
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
@@ -367,7 +369,7 @@ let g:user_emmet_leader_key = ','
 let g:indentLine_fileTypeExclude = ['help']
 let g:indentLine_char = '┊'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_fileType = ['html','css','js']
+let g:indentLine_fileType = ['html','css','javascript']
 "}}}
 if s:coc " CoC{{{
 " EVERYTHING BELOW IS COPIED DIRECTLY FROM THE COC README FILE
