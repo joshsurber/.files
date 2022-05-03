@@ -249,8 +249,6 @@ packadd! matchit    " Install matchit
 call plug#begin()
 
 " Plug 'honza/vim-snippets'
-Plug 'ap/vim-css-color'
-Plug 'vim-scripts/CSSMinister'
 " Plug 'preservim/nerdtree'
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
@@ -265,6 +263,7 @@ Plug 'AndrewRadev/tagalong.vim'         " Modify HTML tags in pairs
 Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 Plug 'airblade/vim-gitgutter'           " Keep track of changes in git
 Plug 'airblade/vim-rooter'              " Change working directory to project base
+Plug 'ap/vim-css-color'
 Plug 'flazz/vim-colorschemes'
 Plug 'jiangmiao/auto-pairs'             " Automatically close braces
 Plug 'junegunn/fzf'                     " Fuzzy file finder
@@ -280,6 +279,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'          " Updated statusline
 Plug 'vim-airline/vim-airline-themes'   " Just like it sounds
+Plug 'vim-scripts/CSSMinister'
 PlugCoc 'neoclide/coc-css'
 PlugCoc 'neoclide/coc-emmet'
 PlugCoc 'neoclide/coc-eslint'
