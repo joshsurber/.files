@@ -204,6 +204,9 @@ autocmd FileType help nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json setf javascript
 
+autocmd FileType css set fdm=marker fmr={,}
+autocmd FileType scss set fdm=marker fmr={,}
+
 " magic markers: enable using `H/S/J/C to jump back to
 " last HTML, stylesheet, JS or Ruby code buffer
 au BufLeave *.{erb,html}      exe "normal! mH"
