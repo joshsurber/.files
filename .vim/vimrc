@@ -251,30 +251,27 @@ command! -nargs=1 -bar PlugCoc if s:coc| Plug <args>, {'do': 'yarn install --fro
 packadd! matchit    " Install matchit
 call plug#begin()
 
+" Plug 'ap/vim-css-color'
 " Plug 'honza/vim-snippets'
+" Plug 'jiangmiao/auto-pairs'             " Automatically close braces
+" Plug 'junegunn/vim-peekaboo'            " Show registers when summoned
 " Plug 'preservim/nerdtree'
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
 " PlugCoc 'fannheyward/coc-marketplace'
 " PlugCoc 'fannheyward/coc-sql'
 " PlugCoc 'iamcco/coc-spell-checker'
-" PlugCoc 'josa42/coc-sh'
-" PlugCoc 'neoclide/coc-pairs'
 " PlugCoc 'yaegassy/coc-html-css-support'
 " PlugCoc 'yaegassy/coc-htmlhint'
 Plug 'AndrewRadev/tagalong.vim'         " Modify HTML tags in pairs
 Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 Plug 'airblade/vim-gitgutter'           " Keep track of changes in git
 Plug 'airblade/vim-rooter'              " Change working directory to project base
-Plug 'ap/vim-css-color'
 Plug 'flazz/vim-colorschemes'
-Plug 'jiangmiao/auto-pairs'             " Automatically close braces
 Plug 'junegunn/fzf'                     " Fuzzy file finder
 Plug 'junegunn/fzf.vim'                 " Integrate fzf with vim
-Plug 'junegunn/vim-peekaboo'            " Show registers when summoned
 Plug 'junegunn/vim-plug'                " Installs docs with vimplug
-Plug 'mattn/emmet-vim'                  " Expand CSS selector to HTML with CtrlY, avail in coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mattn/emmet-vim'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -282,12 +279,14 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'          " Updated statusline
 Plug 'vim-airline/vim-airline-themes'   " Just like it sounds
-Plug 'vim-scripts/CSSMinister'
+Plug 'vim-scripts/CSSMinister'          " Convert color formats
+PlugCoc 'josa42/coc-sh'
 PlugCoc 'neoclide/coc-css'
 PlugCoc 'neoclide/coc-emmet'
 PlugCoc 'neoclide/coc-eslint'
 PlugCoc 'neoclide/coc-html'
 PlugCoc 'neoclide/coc-json'
+PlugCoc 'neoclide/coc-pairs'
 PlugCoc 'neoclide/coc-prettier'
 PlugCoc 'neoclide/coc-tsserver'
 if s:coc|Plug 'neoclide/coc.nvim', {'branch': 'release'}|endif
