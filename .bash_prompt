@@ -1,0 +1,45 @@
+#! /bin/bash
+function _git_status() {
+    STATUS=$(git status 2>/dev/null |
+    awk '
+    /^On branch / {printf($3)}
+    /^You are currently rebasing/ {printf("rebasing %s", $6)}
+    /^Initial commit/ {printf(" (init)")}
+    /^Untracked files/ {printf("|+")}
+    /^Changes not staged / {printf("|?")}
+    /^Changes to be committed/ {printf("|*")}
+    /^Your branch is ahead of/ {printf("|^")}
+    ')
+    if [ -n "$STATUS" ]; then
+        echo -ne "[$STATUS]"
+    fi
+}
+function color_my_prompt {
+    local last_cmd=$?
+    local txtreset='$(tput sgr0)'
+    local txtbold='$(tput bold)'
+    local txtblack='$(tput setaf 0)'
+    local txtred='$(tput setaf 1)'
+    local txtgreen='$(tput setaf 2)'
+    local txtyellow='$(tput setaf 3)'
+    local txtblue='$(tput setaf 4)'
+    local txtpurple='$(tput setaf 5)'
+    local txtcyan='$(tput setaf 6)'
+    local txtwhite='$(tput setaf 7)'
+    # unicode "✗"
+    local fancyx='\342\234\227'
+    # unicode "✓"
+    local checkmark='\342\234\223'
+    # local __user_and_host="\[\033[01;32m\]\u@\h"
+    local __cheatsheet="Untracked files + | Unstaged ? | Uncommitted * | Unpushed ^"
+    local __user_and_host="\[$txtreset$txtgreen\]\u@\h"
+    local __cur_location="\[$txtblue\]\w"
+    local __cur_location="\[$txtblue\]\W"
+    local __git_branch_color="\[$txtyellow\]"
+    local __git_status=`_git_status`
+    local __prompt_tail="\[$txtbold$txtred\]\\$"
+    local __last_color="\[$txtreset\]"
+    export PS1="$__cheatsheet
+$__user_and_host $__cur_location $__git_branch_color$__git_status$__prompt_tail$__last_color "
+}
+PROMPT_COMMAND="color_my_prompt"
