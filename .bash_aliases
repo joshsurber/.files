@@ -114,14 +114,4 @@ x () { # EXPAND ALL THE FILETYPES! eatallthethings.jpg #{{{
 } # }}}
 # Command line alias to start the browser-sync server
 alias serve="browser-sync start --server --files . > /dev/null &"
-<<<<<<< HEAD
-# alias jekl="jekyll serve > /dev/null &"
-
-jekl () {
-    jekyll serve & #--drafts &
-    sleep 2
-    browser-sync start  --proxy "localhost:4000"  --files "_site/*" --reloadDelay "1000" &
-}
-=======
-alias jekl="jekyll serve --livereload --detach " # > /dev/null &"
->>>>>>> 629a075dc828a214332e243869bc3f7744e0cd80
+alias jekl="jekyll serve --livereload > /dev/null &"
