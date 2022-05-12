@@ -1,3 +1,4 @@
 .vim/*
 !.vim/coc-settings.json
 !.vim/vimrc
+!.vim/snippets.json

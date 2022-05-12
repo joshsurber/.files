@@ -272,6 +272,7 @@ Plug 'junegunn/fzf'                     " Fuzzy file finder
 Plug 'junegunn/fzf.vim'                 " Integrate fzf with vim
 Plug 'junegunn/vim-plug'                " Installs docs with vimplug
 Plug 'mattn/emmet-vim'
+Plug 'mattn/webapi-vim'                 " Used with Emmet
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -366,6 +367,24 @@ let g:emmet_html5 = 1
 " let g:user_emmet_expandabbr_key = '<C-y><C-y>'
 
 let g:user_emmet_leader_key = ','
+let g:user_emmet_settings = {
+\  'html': {
+\    'snippets': {
+\      'html:5': "<!DOCTYPE html>\n"
+\              ."<html lang=\"${lang}\">\n"
+\              ."<head>\n"
+\              ."\t<meta charset=\"${charset}\">\n"
+\              ."\t<title>|</title>\n"
+\              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+\              ."\t<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n"
+\              ."</head>\n"
+\              ."<body>\n\t${child}|\n</body>\n"
+\              ."</html>",
+\    },
+\  },
+\}
+
+" let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/snippets.json')), "\n"))
 "}}}
 " Indent line {{{
 let g:indentLine_fileTypeExclude = ['help']
