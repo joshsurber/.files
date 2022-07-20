@@ -1,38 +1,39 @@
+" vim: fdm=marker fmr={{{,}}}
 " Personal vimrc from Josh Surber http://github.com/joshsurber
 "
 " Plugins managed by vim-plug, :PlugInstall/:PlugUpdate
 "
 " Leader is spacebar
 "
-let s:coc = 1
+let s:coc = 0
 " Basic setup {{{
-set encoding=utf-8
+"sensible set encoding=utf-8
 set cindent
 set showcmd     " Show last :cmd in statusline
 set hidden      " Allow unsaved buffers in background
 set visualbell  " Flash instead of beep
 set title       " Automatically set term title to filename
 set ttyfast     " Update screen faster
-set ruler       " Display location in file
-set backspace=indent,eol,start " Make BS key normal
-set noundofile  " Save undos
+"sensible set ruler       " Display location in file
+"sensible set backspace=indent,eol,start " Make BS key normal
+" set noundofile  " Save undos
 set lazyredraw  " Don't redraw screen while executing macros
 set showbreak=↪ " Indicator at the start of wrapped lines
 set splitbelow  " New split will be under current one
 set splitright  " New vsplit will be to right of current one
 set autowrite   " Write when moving buffer to background
-set autoread    " When an unedited file is modified outside Vim, reload it
+"sensible set autoread    " When an unedited file is modified outside Vim, reload it
 set cursorline  " Highlight current line
 set spell       " Spellcheck by default
-set scrolloff=5 " Keep context on screen
+"sensible set scrolloff=5 " Keep context on screen
 set updatetime=300  " update twice a second
 set dictionary=/usr/share/dict/words
 
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
 set notimeout
-set ttimeout
-set ttimeoutlen=100
+"sensible set ttimeout
+"sensible set ttimeoutlen=100
 
 set noswapfile  " How often does Vim crash anyway?
 set nobackup
@@ -41,17 +42,17 @@ set path+=** " Allows for fuzzy-like :find-ing
 
 " }}}
 " Tabs, spaces, wrapping {{{
-set tabstop=4       " Number of spaces a tab counts for
-set shiftwidth=4    " Number of spaces to expand tab to during autoindent
+"sleuth set tabstop=4       " Number of spaces a tab counts for
+"sleuth set shiftwidth=4    " Number of spaces to expand tab to during autoindent
 set softtabstop=4   " Insert spaces instead of tabs when typing
-set expandtab       " Insert spaces instead of tabs during indents
+"sleuth set expandtab       " Insert spaces instead of tabs during indents
 set wrap            " Wrap long lines
 set linebreak       " ... but not in the middle of a word
 set breakindent     " wrapped lines will maintain indent level
-set textwidth=80    " Stay within 80 columns wide. Obsolete? You be the judge!
+"sleuth set textwidth=80    " Stay within 80 columns wide. Obsolete? You be the judge!
 set formatoptions=qrn1 " Autoformat code comments
 set shiftround      " Round indent to multiple of shiftwidth
-filetype plugin indent on   " indenting is adding spaces after all
+"sensible filetype plugin indent on   " indenting is adding spaces after all
 
 " highlight trailing whitespace
 match ErrorMsg '\s\+$'
@@ -218,7 +219,7 @@ set kp= " K opens vimhelp not manpage
 
 inoremap jk <esc> " Faster Esc
 
-" set completeopt=longest,menuone,preview " Better Completion
+"sensible " set completeopt=longest,menuone,preview " Better Completion
 
 cmap w!! w !sudo tee % >/dev/null " No write permission? Fuck you, do it anyway!
 
@@ -320,7 +321,7 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 "}}}
 " Color scheme {{{
-syntax on
+" syntax on
 set background=dark
 colorscheme gruvbox "solarized8_dark
 if !has('gui_running')
