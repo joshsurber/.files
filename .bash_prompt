@@ -45,6 +45,6 @@ function color_my_prompt {
     local __cheatsheet=`_git_cheatsheet`
     local __prompt_tail="\[$txtbold$txtred\]\\$"
     local __last_color="\[$txtreset\]"
-    export PS1="$__cheatsheet$__user_and_host $__cur_location $__git_branch_color$__git_status$__prompt_tail$__last_color "
+    export PS1="$__user_and_host $__cur_location $__git_branch_color$__git_status$__prompt_tail$__last_color "
 }
 PROMPT_COMMAND="color_my_prompt"
