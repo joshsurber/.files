@@ -36,8 +36,6 @@ set ttimeoutlen=100
 
 set noswapfile  " How often does Vim crash anyway?
 set nobackup
-set nowritebackup
-set nowb
 
 set path+=** " Allows for fuzzy-like :find-ing
 
@@ -72,21 +70,21 @@ augroup numbertoggle
 augroup END
 
 " }}}
-" Menus in the console{{{
-" This will duplicate the same menus used in gVim, by pressing space,semicolon
-source $VIMRUNTIME/menu.vim
-set wildmenu        " Use menus for CLI completion
-set wildmode=list:longest,full " Expand as much as possible, then show the list
-set cpo-=<
-set wcm=<C-Z>
-map <leader>; :emenu <C-Z>
+" " Menus in the console{{{
+" " This will duplicate the same menus used in gVim, by pressing space,semicolon
+" source $VIMRUNTIME/menu.vim
+" set wildmenu        " Use menus for CLI completion
+" set wildmode=list:longest,full " Expand as much as possible, then show the list
+" set cpo-=<
+" set wcm=<C-Z>
+" map <leader>; :emenu <C-Z>
 
-set wildignore+=..git                          " Version control
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " binary images
-set wildignore+=*.pyc                          " Python byte code
-set wildignore+=*.sw?,.bak                     " Vim swap files
+" set wildignore+=..git                          " Version control
+" set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " binary images
+" set wildignore+=*.pyc                          " Python byte code
+" set wildignore+=*.sw?,.bak                     " Vim swap files
 
-" }}}
+" " }}}
 " Leader {{{
 let mapleader = "\<Space>""
 
@@ -117,10 +115,10 @@ noremap <C-l>  <C-w>l
 
 " Resize splits with arrows. They don't serve any other purpose, right?
 " Commented to see if it is why I have trouble with COC lists
-" nnoremap <Up>    :resize +2<CR>
-" nnoremap <Down>  :resize -2<CR>
-" nnoremap <Left>  :vertical resize +2<CR>
-" nnoremap <Right> :vertical resize -2<CR>
+nnoremap <Up>    :resize +2<CR>
+nnoremap <Down>  :resize -2<CR>
+nnoremap <Left>  :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
 
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
@@ -137,12 +135,13 @@ nnoremap / /\v
 vnoremap / /\v
 set ignorecase  " Case insensitive searching
 set smartcase   " ... unless search includes uppercase letters
-set incsearch   " Show matches as you type
+set infercase   " ... including during insert completion
+"sensible set incsearch   " Show matches as you type
 set showmatch   " Highlight matching brackets as you type
 set hlsearch    " highlight search results, leader\ set elsewhere to remove
 set gdefault    " Sub command defaults to whole lines
 
-noremap ,/ :noh<cr>      " remove search highlighting
+noremap <leader>\ :noh<cr>      " remove search highlighting
 
 " " Lines wrap. Deal with it...
 noremap j gj
@@ -252,13 +251,16 @@ packadd! matchit    " Install matchit
 call plug#begin()
 
 " Plug 'ap/vim-css-color'
+" Plug 'ervandew/supertab'
 " Plug 'honza/vim-snippets'
 " Plug 'jiangmiao/auto-pairs'             " Automatically close braces
 " Plug 'junegunn/vim-peekaboo'            " Show registers when summoned
+" Plug 'mattn/webapi-vim'                 " Used with Emmet
+" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Plug 'preservim/nerdtree'
+" Plug 'tomtom/tlib_vim' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'garbas/vim-snipmate'
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
-" PlugCoc 'fannheyward/coc-marketplace'
 " PlugCoc 'fannheyward/coc-sql'
 " PlugCoc 'iamcco/coc-spell-checker'
 " PlugCoc 'yaegassy/coc-html-css-support'
@@ -268,19 +270,22 @@ Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 Plug 'airblade/vim-gitgutter'           " Keep track of changes in git
 Plug 'airblade/vim-rooter'              " Change working directory to project base
 Plug 'flazz/vim-colorschemes'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf'                     " Fuzzy file finder
 Plug 'junegunn/fzf.vim'                 " Integrate fzf with vim
 Plug 'junegunn/vim-plug'                " Installs docs with vimplug
 Plug 'mattn/emmet-vim'
-Plug 'mattn/webapi-vim'                 " Used with Emmet
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'          " Updated statusline
 Plug 'vim-airline/vim-airline-themes'   " Just like it sounds
 Plug 'vim-scripts/CSSMinister'          " Convert color formats
+PlugCoc 'fannheyward/coc-marketplace'
 PlugCoc 'josa42/coc-sh'
 PlugCoc 'neoclide/coc-css'
 PlugCoc 'neoclide/coc-emmet'
@@ -289,6 +294,8 @@ PlugCoc 'neoclide/coc-html'
 PlugCoc 'neoclide/coc-json'
 PlugCoc 'neoclide/coc-pairs'
 PlugCoc 'neoclide/coc-prettier'
+PlugCoc 'neoclide/coc-snippets'
+PlugCoc 'neoclide/coc-stylelint'
 PlugCoc 'neoclide/coc-tsserver'
 if s:coc|Plug 'neoclide/coc.nvim', {'branch': 'release'}|endif
 
@@ -361,28 +368,28 @@ let g:tagalong_verbose = 1
 let g:user_emmet_mode='a'
 " enable just for html/css
 let g:user_emmet_install_global = 0
-autocmd filetype html EmmetInstall
+autocmd filetype html,markdown EmmetInstall
 let g:emmet_html5 = 1
 " imap   <C-y><C-y>   <plug>(emmet-expand-abbr)
 " let g:user_emmet_expandabbr_key = '<C-y><C-y>'
 
 let g:user_emmet_leader_key = ','
-let g:user_emmet_settings = {
-\  'html': {
-\    'snippets': {
-\      'html:5': "<!DOCTYPE html>\n"
-\              ."<html lang=\"${lang}\">\n"
-\              ."<head>\n"
-\              ."\t<meta charset=\"${charset}\">\n"
-\              ."\t<title>|</title>\n"
-\              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
-\              ."\t<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n"
-\              ."</head>\n"
-\              ."<body>\n\t${child}|\n</body>\n"
-\              ."</html>",
-\    },
-\  },
-\}
+" let g:user_emmet_settings = {
+" \  'html': {
+" \    'snippets': {
+" \      'html:5': "<!DOCTYPE html>\n"
+" \              ."<html lang=\"${lang}\">\n"
+" \              ."<head>\n"
+" \              ."\t<meta charset=\"${charset}\">\n"
+" \              ."\t<title>|</title>\n"
+" \              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+" \              ."\t<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n"
+" \              ."</head>\n"
+" \              ."<body>\n\t${child}|\n</body>\n"
+" \              ."</html>",
+" \    },
+" \  },
+" \}
 
 " let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/snippets.json')), "\n"))
 "}}}
@@ -546,4 +553,10 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 " nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 endif " }}}
-"}}}
+" }}}
+"
+" Filetype dependant key mapping
+" autocmd FileType c          nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+"
+" Load template
+" :autocmd BufNewFile *.html 0r ~/.vim/templates/html.tpl

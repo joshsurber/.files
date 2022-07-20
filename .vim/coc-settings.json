@@ -5,6 +5,7 @@
     "markdown",
     "html",
     "javascript"
-  ]
+  ],
+  "snippets.userSnippetsDirectory": "~/.vim/snippets"
   // "emmet.extensionsPath": "~/.vim/"
 }
