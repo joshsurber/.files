@@ -1,7 +1,16 @@
 {
   "html": {
-    "snippets": {},
+    "default_attributes": {
+      "meta:utf8": [{ "charset": "utf-8" }],
+      "meta:vp": [{ "content": "width=device-width, initial-scale=1.0" }]
+    },
+    "snippets": {
+      "!": "!!!+html[lang='en']>head>meta:utf8+meta:vp+title+link:css^body"
+    }
+  },
   "css": {
-    "snippets": {}
+    "snippets": {
+      "*": "font:inherit}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}[role='list']{list-style:none}picture,img{max-width:100%;display:block}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}"
+    }
   }
 }

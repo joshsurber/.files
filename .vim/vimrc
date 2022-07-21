@@ -204,7 +204,7 @@ autocmd FileType help nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json setf javascript
 
-autocmd FileType css set fdm=marker fmr={,}
+autocmd FileType css  set fdm=marker fmr={,}
 autocmd FileType scss set fdm=marker fmr={,}
 
 " magic markers: enable using `H/S/J/C to jump back to
@@ -252,11 +252,12 @@ packadd! matchit    " Install matchit
 call plug#begin()
 
 " Plug 'ap/vim-css-color'
+Plug 'prettier/vim-prettier'
 " Plug 'ervandew/supertab'
 " Plug 'honza/vim-snippets'
 " Plug 'jiangmiao/auto-pairs'             " Automatically close braces
 " Plug 'junegunn/vim-peekaboo'            " Show registers when summoned
-" Plug 'mattn/webapi-vim'                 " Used with Emmet
+Plug 'mattn/webapi-vim'                 " Used with Emmet
 " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Plug 'preservim/nerdtree'
 " Plug 'tomtom/tlib_vim' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'garbas/vim-snipmate'
@@ -369,7 +370,7 @@ let g:tagalong_verbose = 1
 let g:user_emmet_mode='a'
 " enable just for html/css
 let g:user_emmet_install_global = 0
-autocmd filetype html,markdown EmmetInstall
+autocmd filetype html,css,scss,markdown EmmetInstall
 let g:emmet_html5 = 1
 " imap   <C-y><C-y>   <plug>(emmet-expand-abbr)
 " let g:user_emmet_expandabbr_key = '<C-y><C-y>'
@@ -392,7 +393,12 @@ let g:user_emmet_leader_key = ','
 " \  },
 " \}
 
-" let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/snippets.json')), "\n"))
+let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/snippets.json')), "\n"))
+"}}}
+" Prettier {{{
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#config#use_tabs = 'false'
 "}}}
 " Indent line {{{
 let g:indentLine_fileTypeExclude = ['help']
