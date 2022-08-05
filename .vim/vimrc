@@ -6,10 +6,22 @@
 " Leader is spacebar
 "
 let s:coc = 0
+
+" Future organization:
+" Launching vim
+" Buffers, windows, and tabs
+" Creating files
+" Locating/opening files
+" Viewing files
+" Navigating files
+" Editing files
+" Inserting text
+" Writing files
+
 " Basic setup {{{
 set cindent
 " set showcmd     " Show last :cmd in statusline
-" set hidden      " Allow unsaved buffers in background
+set hidden      " Allow unsaved buffers in background
 set visualbell  " Flash instead of beep
 " set title       " Automatically set term title to filename
 " set ttyfast     " Update screen faster
@@ -20,13 +32,14 @@ set cursorline  " Highlight current line
 set spell       " Spellcheck by default
 set updatetime=500  " update twice a second
 set dictionary=/usr/share/dict/words
+set scrolloff=5 | set sidescrolloff=5
 
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
 set notimeout
 
-set noswapfile  " How often does Vim crash anyway?
-set nobackup
+set noswapfile " How often does vim crash anyway?
+set undodir=~/.vim/undo//
 
 set path+=** " Allows for fuzzy-like :find-ing
 
@@ -59,11 +72,15 @@ augroup END
 " Menus in the console{{{
 " This will duplicate the same menus used in gVim, by pressing space,semicolon
 " source $VIMRUNTIME/menu.vim
-set wildmenu | set wildmode=list:longest,full " Expand as much as possible, then show the list
+set wildmenu
+set wildmode=list:longest,full " Expand as much as possible, then show the list
+" set wildmode=longest:full,full                 "How the completion is done
 " set cpoptions-=< " disable recognizing key codes |cpo-<|
 " set wcm=<C-Z>
 " map <leader>; :emenu <C-Z>
+set wildignorecase                             "Case insensitive completion
 
+set wildignore+=*.tags,tags                    " ignore tags files
 set wildignore+=..git                          " Version control
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " binary images
 set wildignore+=*.sw?,.bak                     " Vim swap files
@@ -98,10 +115,10 @@ noremap <C-l>  <C-w>l
 
 " Resize splits with arrows. They don't serve any other purpose, right?
 " Commented to see if it is why I have trouble with COC lists
-nnoremap <Up>    :resize +2<CR>
-nnoremap <Down>  :resize -2<CR>
-nnoremap <Left>  :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
+nnoremap <C-Up>    :resize +2<CR>
+nnoremap <C-Down>  :resize -2<CR>
+nnoremap <C-Left>  :vertical resize +2<CR>
+nnoremap <C-Right> :vertical resize -2<CR>
 
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
@@ -119,6 +136,14 @@ vnoremap / /\v
 
 " Case insensitive searching, unless search includes uppercase letters, including during insert completion
 set ignorecase | set smartcase | set infercase
+" Do not use smart case in command line mode,
+if exists('##CmdLineEnter')
+ 	augroup dynamic_smartcase
+		autocmd!
+		autocmd CmdLineEnter : set nosmartcase
+		autocmd CmdLineLeave : set smartcase
+	augroup END
+endif
 
 set showmatch   " Highlight matching brackets as you type
 set hlsearch    " highlight search results, leader\ set elsewhere to remove
@@ -145,11 +170,11 @@ nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 set virtualedit+=block " Rect selections can encompass blank chars
 
 " " Fix linewise visual selection of various text objects
-" nnoremap VV V
-" nnoremap Vit vitVkoj
-" nnoremap Vat vatV
-" nnoremap Vab vabV
-" nnoremap VaB vaBV
+nnoremap VV V
+nnoremap Vit vitVkoj
+nnoremap Vat vatV
+nnoremap Vab vabV
+nnoremap VaB vaBV
 
 "}}}
 " Inserting, editing, and saving {{{
@@ -186,8 +211,8 @@ autocmd FileType help nnoremap <buffer> <BS> <C-T>
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json setf javascript
 
-autocmd FileType css  set fdm=marker fmr={,}
-autocmd FileType scss set fdm=marker fmr={,}
+autocmd FileType css  setlocal fdm=syntax
+autocmd FileType scss setlocal fdm=syntax
 
 " magic markers: enable using `H/S/J/C to jump back to
 " last HTML, stylesheet, JS or Ruby code buffer
@@ -228,32 +253,35 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin()
 
+" Plug 'Yggdroot/indentLine'              " Make indents easier to follow
+" Plug 'airblade/vim-rooter'              " Change working directory to project base
+" Plug 'flazz/vim-colorschemes'
 " Plug 'junegunn/vim-peekaboo'            " Show registers when summoned
-" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'tpope/vim-flagship'
+" Plug 'junegunn/vim-plug'                " Installs docs with vimplug
+" Plug 'lifepillar/vim-mucomplete'
+" Plug 'terryma/vim-expand-region'
+" Plug 'tpope/vim-flagship'
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
 Plug 'AndrewRadev/tagalong.vim'         " Modify HTML tags in pairs
-Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 Plug 'airblade/vim-gitgutter'           " Keep track of changes in git
-Plug 'airblade/vim-rooter'              " Change working directory to project base
 Plug 'alvan/vim-closetag'
 Plug 'ap/vim-css-color'                 " Colors in CSS
-Plug 'flazz/vim-colorschemes'
+Plug 'hail2u/vim-css3-syntax'
 Plug 'jiangmiao/auto-pairs'             " Automatically close braces
-" Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-plug'                " Installs docs with vimplug
+Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim' | Plug 'mattn/webapi-vim'
 Plug 'prettier/vim-prettier'
-Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
-" Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/CSSMinister'          " Convert color formats
 
 if s:coc|Plug 'neoclide/coc.nvim', {'branch': 'release'}|endif
@@ -264,8 +292,8 @@ call plug#end()
 " Plugin configuration{{{
 " " Netrw : emulate NERDtree {{{
 " let g:netrw_banner = 0
-" let g:netrw_liststyle = 3
-" let g:netrw_browse_split = 4
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
 " let g:netrw_altv = 1
 let g:netrw_winsize = 25
 nmap <silent> <C-e> :Lexplore<CR>
@@ -296,11 +324,8 @@ if !has('gui_running')
 endif
 "}}}
 " fzf {{{
-" nnoremap <leader>p :<C-u>FZF<CR>
-" nnoremap <C-p> :Files<CR>
-" nnoremap <C-f> :BLines<CR>
-" nnoremap <C-g> :GFiles<CR>
-nnoremap <leader>p :find *
+" nnoremap <leader>p :find *
+nnoremap <leader>p :<C-u>FZF<CR>
 "}}}
 " Tagalong {{{
 let g:tagalong_verbose = 1
@@ -309,29 +334,10 @@ let g:tagalong_verbose = 1
 "enable all function in all mode.
 let g:user_emmet_mode='a'
 " enable just for html/css
-let g:user_emmet_install_global = 0
+let g:user_emmet_install_global = 1
 autocmd filetype html,css,scss,markdown EmmetInstall
 let g:emmet_html5 = 1
-" imap   <C-y><C-y>   <plug>(emmet-expand-abbr)
-" let g:user_emmet_expandabbr_key = '<C-y><C-y>'
-
 let g:user_emmet_leader_key = ','
-" let g:user_emmet_settings = {
-" \  'html': {
-" \    'snippets': {
-" \      'html:5': "<!DOCTYPE html>\n"
-" \              ."<html lang=\"${lang}\">\n"
-" \              ."<head>\n"
-" \              ."\t<meta charset=\"${charset}\">\n"
-" \              ."\t<title>|</title>\n"
-" \              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
-" \              ."\t<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n"
-" \              ."</head>\n"
-" \              ."<body>\n\t${child}|\n</body>\n"
-" \              ."</html>",
-" \    },
-" \  },
-" \}
 
 let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/snippets.json')), "\n"))
 "}}}
@@ -518,3 +524,28 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 endif " }}}
 " }}}
+"
+" bookmarked directories {{{
+nnoremap <leader>fs  :edit ~/Sites/**/*
+nnoremap <leader>fd  :edit ~/Documents/**/*
+nnoremap <leader>fv  :edit ~/.vim/**/*
+nnoremap <leader>fh  :edit ~/**/*
+" }}} " bookmarked directories
+
+" Next Completion On / {{{ 1
+" better navigation of command history
+" allow next completion after / alternative
+" is <C-E> if <C-D> makes to long of a list
+" cnoremap <expr> / wildmenumode() ? "\<C-E>" : "/"
+" 1 }}} "Next Completion On /
+
+" Commandline Abbreviations {{{
+" if we have 3 * in a row make them into **/*
+" this is only applied on the end of a line
+cnoremap <expr> * getcmdline() =~ '.*\*\*$' ? '/*' : '*'
+" full path shortcut
+cnoreabbr <expr> %% fnameescape(expand('%:p'))
+" }}}
+
+" nnoremap ]b :silent! bnext<CR>
+" nnoremap [b :silent! bprevious<CR>
