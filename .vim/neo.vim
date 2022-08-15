@@ -3,6 +3,7 @@ filetype plugin indent on       " mandatory for modern plugins
 syntax on                       " enable syntax highlighting
 set autoindent                  " copy indent from the previous line
 set autoread                    " reload from disk
+set background=dark
 set backspace=indent,eol,start  " modern backspace behavior
 set belloff=all                 " disable the bell
 set cscopeverbose               " verbose cscope output

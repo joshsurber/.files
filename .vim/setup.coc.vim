@@ -12,7 +12,7 @@ let exts += ['coc-pairs']
 let exts += ['coc-prettier']
 let exts += ['coc-sh']
 let exts += ['coc-spell-checker']
-let exts += ['coc-sql']
+" let exts += ['coc-sql']
 let exts += ['coc-stylelint']
 let exts += ['coc-tsserver']
 

@@ -1,238 +1,18 @@
 " vim: fdm=marker fmr={{{,}}}
 " Personal vimrc from Josh Surber http://github.com/joshsurber
 "
-" Plugins managed by vim-plug, :PlugInstall/:PlugUpdate
-"
 " Leader is spacebar
-"
-if !has('nvim')|runtime neo.vim|endif
-" Future organization:
-" Launching vim
-" Buffers, windows, and tabs
-" Creating files
-" Locating/opening files
-" Viewing files
-" Navigating files
-" Editing files
-" Inserting text
-" Writing files
-
-" Basic setup {{{
-set cindent
-" set showcmd     " Show last :cmd in statusline
-set hidden      " Allow unsaved buffers in background
-set visualbell  " Flash instead of beep
-" set title       " Automatically set term title to filename
-" set ttyfast     " Update screen faster
-set lazyredraw  " Don't redraw screen while executing macros
-set showbreak=↪ " Indicator at the start of wrapped lines
-set splitbelow | set splitright  " New vsplit will be to right of current one
-set cursorline  " Highlight current line
-set spell       " Spellcheck by default
-set updatetime=500  " update twice a second
-set dictionary=/usr/share/dict/words
-set scrolloff=5 | set sidescrolloff=5
-
-" Time out on key codes but not mappings.
-" Basically this makes terminal Vim work sanely.
-set notimeout
-
-set noswapfile " How often does vim crash anyway?
-set undodir=~/.vim/undo//
-
-set path+=** " Allows for fuzzy-like :find-ing
-
-" }}}
-" Tabs, spaces, wrapping {{{
-" set softtabstop=4   " Insert spaces instead of tabs when typing
-set formatoptions=qrn1 " Autoformat code comments
-set shiftround      " Round indent to multiple of shiftwidth
-
-" Wrap long lines, but not in the middle of a word, and maintain indent level
-set wrap | set linebreak | set breakindent
-
-" highlight trailing whitespace
-match ErrorMsg '\s\+$'
-" " remove trailing whitespaces automatically
-autocmd BufWritePre * :%s/\s\+$//e
-
-" }}}
-" Sane line numbers{{{
-set number relativenumber " Current line actual line number, other relative to cursor
-
-augroup numbertoggle
-    " Use relative numbers only in the active buffer
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
-
-" }}}
-" Menus in the console{{{
-" This will duplicate the same menus used in gVim, by pressing space,semicolon
-" source $VIMRUNTIME/menu.vim
-set wildmenu
-set wildmode=list:longest,full " Expand as much as possible, then show the list
-" set wildmode=longest:full,full                 "How the completion is done
-" set cpoptions-=< " disable recognizing key codes |cpo-<|
-" set wcm=<C-Z>
-" map <leader>; :emenu <C-Z>
-set wildignorecase                             "Case insensitive completion
-
-set wildignore+=*.tags,tags                    " ignore tags files
-set wildignore+=..git                          " Version control
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " binary images
-set wildignore+=*.sw?,.bak                     " Vim swap files
-
-" }}}
-" Leader {{{
 let mapleader = "\<Space>""
-
-" Simple write and quit
-noremap <leader>w :w<cr>
-noremap <leader>qq :q<cr>
-noremap QQ :q<cr>
-
-" recover borked terminal
-noremap <leader>l :redraw!<cr>
-
-" Toggle folds easily
-nnoremap <leader><leader> za
-vnoremap <leader><leader> za
-
-" Edit and source .vimrc simply
-nnoremap <leader>ve :edit $MYVIMRC<cr>
-nnoremap <leader>vs :source $MYVIMRC<cr>
-
-" }}}
-" Windows and tabs{{{
-" Control+HJKL navigates windows
-noremap <C-h>  <C-w>h
-noremap <C-j>  <C-w>j
-noremap <C-k>  <C-w>k
-noremap <C-l>  <C-w>l
-
-" Resize splits with arrows. They don't serve any other purpose, right?
-" Commented to see if it is why I have trouble with COC lists
-nnoremap <C-Up>    :resize +2<CR>
-nnoremap <C-Down>  :resize -2<CR>
-nnoremap <C-Left>  :vertical resize +2<CR>
-nnoremap <C-Right> :vertical resize -2<CR>
-
-" Resize splits when the window is resized
-au VimResized * exe "normal! \<c-w>="
-
-" Open help window on right
-augroup vimrc_help
-    autocmd!
-    autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
-augroup END
-"}}}
-" Text navigaion{{{
-" Searching and movement
-nnoremap / /\v
-vnoremap / /\v
-
-" Case insensitive searching, unless search includes uppercase letters, including during insert completion
-set ignorecase | set smartcase | set infercase
-" Do not use smart case in command line mode,
-if exists('##CmdLineEnter')
- 	augroup dynamic_smartcase
-		autocmd!
-		autocmd CmdLineEnter : set nosmartcase
-		autocmd CmdLineLeave : set smartcase
-	augroup END
-endif
-
-set showmatch   " Highlight matching brackets as you type
-set hlsearch    " highlight search results, leader\ set elsewhere to remove
-noremap <leader>\ :noh<cr>      " remove search highlighting
-" set gdefault    " Sub command defaults to whole lines
-
-
-" Lines wrap. Deal with it...
-noremap j gj
-noremap k gk
-
-" find matching brace etc with tab
-map <tab> %
-
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-noremap <C-z> :set wrap!<CR>:set wrap?<CR>
-
-" Open a Quickfix window for the last search.
-nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
-
-"}}}
-" Selection{{{
-set virtualedit+=block " Rect selections can encompass blank chars
-
-" " Fix linewise visual selection of various text objects
-nnoremap VV V
-nnoremap Vit vitVkoj
-nnoremap Vat vatV
-nnoremap Vab vabV
-nnoremap VaB vaBV
-
-"}}}
-" Inserting, editing, and saving {{{
-" Move to end of pasted text; easily select same
-vnoremap <silent> y y`]
-vnoremap <silent> p p`]
-nnoremap <silent> p p`]
-noremap gV `[v`]
-
-" System clipboard commands
-set clipboard=unnamed       " Use system clipboard to yank and put
-" vmap <Leader>y "+y        " None of the rest matters because of the above
-" vmap <Leader>d "+d        " Will delete if no issues arrive from using system cb
-" nmap <Leader>p "+p
-" nmap <Leader>P "+P
-" vmap <Leader>p "+p
-" vmap <Leader>P "+P
-
-"}}}
-" Filetype specific{{{
-au BufRead $MYVIMRC set fdm=marker " Use folds in this file
-
-" Simplify navigaion of vim help
-autocmd FileType help nnoremap <buffer> <CR> <C-]>
-autocmd FileType help nnoremap <buffer> <BS> <C-T>
-" autocmd FileType help nnoremap <buffer> o /'\l\{2,\}'<CR>
-" autocmd FileType help nnoremap <buffer> O ?'\l\{2,\}'<CR>
-" autocmd FileType help nnoremap <buffer> s /\|\zs\S\+\ze\|<CR>
-" autocmd FileType help nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
-
-" Make sure all markdown files have the correct filetype set and setup wrapping
-" au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
-
-" Treat JSON files like JavaScript
-au BufNewFile,BufRead *.json setf javascript
-
-autocmd FileType css  setlocal fdm=syntax
-autocmd FileType scss setlocal fdm=syntax
-
-" magic markers: enable using `H/S/J/C to jump back to
-" last HTML, stylesheet, JS or Ruby code buffer
-au BufLeave *.{erb,html}      exe "normal! mH"
-au BufLeave *.{css,scss,sass} exe "normal! mS"
-au BufLeave *.{js,coffee}     exe "normal! mJ"
-au BufLeave *.{rb}            exe "normal! mC"
-"}}}
-" Misc{{{
-set keywordprg=:help " K opens vimhelp not manpage
-
-inoremap jk <esc> " Faster Esc
-vnoremap jk <esc> " Faster Esc
-
-cmap w!! w !sudo tee % >/dev/null " No write permission? Fuck you, do it anyway!
-
-" expand %% to current directory in command-line mode
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-"}}}
-" Plugin install {{{
-" Setup for Vim Plug .{{{
+"
+" Defaults set by neovim are setup in neo.vim for original recipe vim
+if !has('nvim')|runtime neo.vim|endif
+"
+" Plugins managed by vim-plug, :PlugInstall/:PlugUpdate
+" Settings for Conquerer of Completion are in setup.coc.vim, sourced only if
+" plugin is loaded
+"
+" PLUGINS {{{
+" Setup for Vim Plug {{{
 " Download and install vim-plug (cross platform)
 if empty(glob(
             \ '$HOME/' . (has('win32') ? 'vimfiles' : '.vim') . '/autoload/plug.vim'))
@@ -263,16 +43,17 @@ call plug#begin()
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
 Plug 'AndrewRadev/tagalong.vim'         " Modify HTML tags in pairs
-Plug 'airblade/vim-gitgutter'           " Keep track of changes in git
+Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
-Plug 'ap/vim-css-color'                 " Colors in CSS
+Plug 'ap/vim-css-color'                 " View colors in CSS
 Plug 'hail2u/vim-css3-syntax'
 Plug 'jiangmiao/auto-pairs'             " Automatically close braces
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim' | Plug 'mattn/webapi-vim'
-Plug 'prettier/vim-prettier'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}|runtime setup.coc.vim
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'                 " Unix utilities
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
@@ -282,97 +63,189 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/CSSMinister'          " Convert color formats
-Plug 'neoclide/coc.nvim', {'branch': 'release'}|runtime setup.coc.vim
 
 call plug#end()
+"}}}
+" SETUP AND APPEARANCE {{{
+"
+set lazyredraw  " Don't redraw screen while executing macros
+set spell       " Spellcheck by default
+set dictionary=/usr/share/dict/words
+" Time out on key codes but not mappings.
+" Basically this makes terminal Vim work sanely.
+set notimeout
+set noswapfile " How often does vim crash anyway?
 
-" }}}
-" Plugin configuration{{{
-" " Netrw : emulate NERDtree {{{
+" Easy access to edit vimrc
+nnoremap <leader>ve :edit $MYVIMRC<cr>
+nnoremap <leader>vs :source $MYVIMRC<cr>
+
+" Run colorscheme twice so we have something nice on a new install
+silent! colorscheme midnight
+silent! colorscheme gruvbox
+if !has('gui_running')| set t_Co=256| endif
+
+" Airline plugin setup{{{
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')| let g:airline_symbols = {}| endif
+let g:airline_symbols.space = "\ua0"
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+"}}}
+"
+"}}}
+" BUFFERS, WINDOWS, AND TABS {{{
+"
+set hidden      " Allow unsaved buffers in background
+set splitbelow | set splitright  " New vsplit will be to right of current one
+
+" Control+HJKL navigates windows
+noremap <C-h>  <C-w>h
+noremap <C-j>  <C-w>j
+noremap <C-k>  <C-w>k
+noremap <C-l>  <C-w>l
+nnoremap <C-Up>    :resize +2<CR>
+nnoremap <C-Down>  :resize -2<CR>
+nnoremap <C-Left>  :vertical resize +2<CR>
+nnoremap <C-Right> :vertical resize -2<CR>
+
+" Open help window on right
+augroup vimrc_help
+    autocmd!
+    autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
+augroup END
+"
+"}}}
+" CREATING/LOCATING/OPENING FILES {{{
+"
+set path+=** " Allows for fuzzy-like :find-ing
+set wildmode=list:longest,full " Expand as much as possible, then show the list
+set wildignorecase                             "Case insensitive completion
+set wildignore+=*.tags,tags                    " ignore tags files
+set wildignore+=..git                          " Version control
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " binary images
+set wildignore+=*.sw?,.bak                     " Vim swap files
+
+" expand %% to current directory in command-line mode
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+nnoremap <leader>p :<C-u>FZF<CR>
+
+" Netrw plugin options{{{
 " let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 " let g:netrw_altv = 1
 let g:netrw_winsize = 25
-nmap <silent> <C-e> :Lexplore<CR>
-" " augroup ProjectDrawer
-" "   autocmd!
-" "   autocmd VimEnter * :Vexplore
-" " augroup END
-" " }}}
-" Airline{{{
-" let g:airline_theme='solarized'
-" let g:airline_solarized_bg='dark'
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+nmap <silent> <C-e> :Lexplore<CR>"}}}
+"
 "}}}
-" Expand region{{{
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-"}}}
-" Color scheme {{{
-set background=dark
-colorscheme gruvbox "solarized8_dark
-if !has('gui_running')
-    set t_Co=256
-endif
-"}}}
-" fzf {{{
-" nnoremap <leader>p :find *
-nnoremap <leader>p :<C-u>FZF<CR>
-"}}}
-" Tagalong {{{
-let g:tagalong_verbose = 1
-"}}}
-" Emmet {{{
-"enable all function in all mode.
-let g:user_emmet_mode='a'
-" enable just for html/css
-let g:user_emmet_install_global = 1
-autocmd filetype html,css,scss,markdown EmmetInstall
-let g:emmet_html5 = 1
-let g:user_emmet_leader_key = ','
+" VIEWING FILES {{{
+"
+set scrolloff=3 | set sidescrolloff=3
+set showbreak=↪ " Indicator at the start of wrapped lines
+set cursorline  " Highlight current line
 
-let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/snippets.json')), "\n"))
+set number relativenumber " Current line actual line number, other relative to cursor
+augroup numbertoggle
+    " Use relative numbers only in the active buffer
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+" Wrapping
+" Wrap long lines, but not in the middle of a word, and maintain indent level
+set wrap | set linebreak | set breakindent
+" Lines wrap. Deal with it...
+noremap j gj
+noremap k gk
+noremap <C-z> :set wrap!<CR>:set wrap?<CR>
+
+" Folding
+nnoremap <leader><leader> za
+vnoremap <leader><leader> za
+au BufRead $MYVIMRC set fdm=marker " Use folds in this file
+"
 "}}}
-" Prettier {{{
+" NAVIGATING FILES{{{
+"
+nnoremap / /\v
+vnoremap / /\v
+
+nnoremap <tab> %
+
+" Case insensitive searching, unless search includes uppercase letters, including during insert completion
+set ignorecase | set smartcase | set infercase
+
+" Do not use smart case in command line mode,
+if exists('##CmdLineEnter')
+    augroup dynamic_smartcase
+        autocmd!
+        autocmd CmdLineEnter : set nosmartcase
+        autocmd CmdLineLeave : set smartcase
+    augroup END
+endif
+
+" Highlight matching brackets as you type
+set showmatch
+
+" remove search highlighting
+noremap <leader>\ :noh<cr>
+
+" Simplify navigaion of vim help
+autocmd FileType help nnoremap <buffer> <CR> <C-]>
+autocmd FileType help nnoremap <buffer> <BS> <C-T>
+"
+"}}}
+" EDITING FILES{{{
+"
+set cindent
+
+" highlight trailing whitespace
+match ErrorMsg '\s\+$'
+" remove trailing whitespaces automatically
+autocmd BufWritePre * :%s/\s\+$//e
+
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Move to end of pasted text; easily select same
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+noremap gV `[v`]
+
+" Fix linewise visual selection of various text objects
+nnoremap VV V
+nnoremap Vit vitVkoj
+nnoremap Vat vatV
+nnoremap Vab vabV
+nnoremap VaB vaBV
+
+inoremap jk <esc> " Faster Esc
+vnoremap jk <esc> " Faster Esc
+
+" Emmet
+let g:user_emmet_mode='a' " enable all function in all mode.
+let g:user_emmet_install_global = 1 " enable just for html/css
+let g:user_emmet_leader_key = ','
+let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/snippets.json')), "\n"))
+
+" Prettier
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 let g:prettier#config#use_tabs = 'false'
-"}}}
-" Indent line {{{
-let g:indentLine_fileTypeExclude = ['help']
-let g:indentLine_char = '┊'
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_fileType = ['html','css','javascript']
-"}}}
-" }}}
+let g:prettier#quickfix_auto_focus = 0
+
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 "
-" bookmarked directories {{{
-nnoremap <leader>fs  :edit ~/Sites/**/*
-nnoremap <leader>fd  :edit ~/Documents/**/*
-nnoremap <leader>fv  :edit ~/.vim/**/*
-nnoremap <leader>fh  :edit ~/**/*
-" }}} " bookmarked directories
-
-" Next Completion On / {{{ 1
-" better navigation of command history
-" allow next completion after / alternative
-" is <C-E> if <C-D> makes to long of a list
-" cnoremap <expr> / wildmenumode() ? "\<C-E>" : "/"
-" 1 }}} "Next Completion On /
-
-" Commandline Abbreviations {{{
-" if we have 3 * in a row make them into **/*
-" this is only applied on the end of a line
-cnoremap <expr> * getcmdline() =~ '.*\*\*$' ? '/*' : '*'
-" full path shortcut
-cnoreabbr <expr> %% fnameescape(expand('%:p'))
-" }}}
-
-" nnoremap ]b :silent! bnext<CR>
-" nnoremap [b :silent! bprevious<CR>
+"}}}
+" WRITING AND EXITING {{{
+"
+noremap <leader>w :w<cr>
+noremap <leader>qq :q<cr>
+noremap QQ :q<cr>
+cmap w!! w !sudo tee % >/dev/null " No write permission? Fuck you, do it anyway!
+"
+"}}}
