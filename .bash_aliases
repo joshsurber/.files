@@ -1,20 +1,18 @@
 # ALIASES
-alias vi=vim
+alias vi=nvim
+alias vim=nvim
 alias cls="clear;ls"
-alias ducks='du -cks *|sort -rn|head -11' # Best named command ever
-alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
-alias fucking=sudo # Make me a sandwich. * No * Fucking make me a sandwich * OK
-alias shit='sudo apt install $(history -p \!\!);$(history -p \!\!)' # Command not found? Find it!
 alias more='less' # less is more
 alias up='cd ..'
 alias l='ls -CF' # Some ls aliases
 alias la='ls -A'
 alias ll='ls -alF'
+alias serve="browser-sync start --server --files . > /dev/null "
 
 # ENVIROMENT
-export PATH=$PATH
+export PATH=$PATH:~/.local/bin
 export CDPATH=.:~
-export EDITOR=vim
+export EDITOR=nvim
 export PAGER=less
 export VISUAL=$EDITOR
 export HISTIGNORE="&:[ \t]*:ls:[bf]g:exit"
@@ -25,22 +23,7 @@ shopt -s histappend
 shopt -s extglob
 PROMPT_COMMAND='history -a'
 
-# Use fzf
-source /usr/share/doc/fzf/examples/key-bindings.bash
-source /usr/share/doc/fzf/examples/completion.bash
-
-# FUNCTIONS
-cdls() { cd $1; clear; ls;} # Change and list directory after clearing screen
-grepdir() { exec "grep -R \"$@\" *"; }
-calc(){ awk "BEGIN{ print $* }" ;}
 mkcd() { mkdir -p "$*"; cd "$*"; }
-lt() { ls -ltrsa "$@" | tail; }
-psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
-fname() { find . -iname "*$@*"; }
-
-# Copy and paste files
-ccopy() { for i in $*; do cp -a $i /tmp/ccopy.$i; done }
-alias cpaste="ls -d /tmp/ccopy* | sed 's|[^\.]*.\.||' | xargs -I % mv /tmp/ccopy.% ./%"
 
 hist() { # Quick and dirty case-insensitive filtered history command. #{{{
     # "hist" ==> "history"
@@ -54,6 +37,7 @@ hist() { # Quick and dirty case-insensitive filtered history command. #{{{
     eval "${HISTORYCMD// / | grep -i }" # "history foo bar" ==>
     #   "history | grep -i foo | grep -i bar"
 } #}}}
+
 cb() { # A shortcut function that simplifies usage of xclip. #{{{
     # - Accepts input from either stdin (pipe), or params.
     # - If the input is a filename that exists, then it
@@ -112,8 +96,18 @@ x () { # EXPAND ALL THE FILETYPES! eatallthethings.jpg #{{{
         echo "'$1' is not a valid file"
     fi
 } # }}}
-# Command line alias to start the browser-sync server
-alias serve="browser-sync start --server --files . > /dev/null "
-# alias serve="browser-sync start --server --files . > /dev/null &"
-# alias jekl="jekyll serve --livereload > /dev/null &"
+
+# Use fzf
+source /usr/share/doc/fzf/examples/key-bindings.bash
+source /usr/share/doc/fzf/examples/completion.bash
+
+# pip install thefuck
+eval $(~/.local/bin/thefuck --alias)
+# alias shit='sudo $(history -p \!\!)' # As in "shit, I forgot to sudo that command!"
+
+# Setup the prompt. Use $PS1 if  starship isn't installed
 source ~/.bash_prompt
+# install with `curl -sS https://starship.rs/install.sh | sh`
+export STARSHIP_CONFIG=~/.starship.toml
+eval "$(starship init bash)"
+
