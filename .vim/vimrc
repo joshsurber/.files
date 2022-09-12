@@ -34,24 +34,25 @@ call plug#begin()
 
 " Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 " Plug 'airblade/vim-rooter'              " Change working directory to project base
-" Plug 'flazz/vim-colorschemes'
 " Plug 'junegunn/vim-peekaboo'            " Show registers when summoned
 " Plug 'junegunn/vim-plug'                " Installs docs with vimplug
 " Plug 'lifepillar/vim-mucomplete'
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Plug 'terryma/vim-expand-region'
 " Plug 'tpope/vim-flagship'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 " Plug 'vim-scripts/Gundo'                " visualize the undo tree
 " Plug 'vim-scripts/ScrollColors'         " Browse colorschemes easily
 Plug 'AndrewRadev/tagalong.vim'         " Modify HTML tags in pairs
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'ap/vim-css-color'                 " View colors in CSS
+Plug 'flazz/vim-colorschemes'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'jiangmiao/auto-pairs'             " Automatically close braces
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim' | Plug 'mattn/webapi-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}|runtime setup.coc.vim
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'                 " Unix utilities
 Plug 'tpope/vim-fugitive'
@@ -61,7 +62,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/CSSMinister'          " Convert color formats
 
 call plug#end()
@@ -80,8 +80,8 @@ set noswapfile " How often does vim crash anyway?
 nnoremap <leader>ve :edit $MYVIMRC<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
 
-" Run colorscheme twice so we have something nice on a new install
-silent! colorscheme midnight
+" If we haven't installed gruvbox yet, use a build-in colorscheme
+silent! colorscheme evening
 silent! colorscheme gruvbox
 if !has('gui_running')| set t_Co=256| endif
 
@@ -211,6 +211,8 @@ noremap <leader>\ :noh<cr>
 " Simplify navigaion of vim help
 autocmd FileType help nnoremap <buffer> <CR> <C-]>
 autocmd FileType help nnoremap <buffer> <BS> <C-T>
+
+autocmd FileType css set foldmethod=syntax
 "
 "}}}
 " EDITING FILES{{{
