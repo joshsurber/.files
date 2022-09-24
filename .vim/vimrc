@@ -34,7 +34,7 @@ call plug#begin()
 
 " Plug 'Yggdroot/indentLine'              " Make indents easier to follow
 " Plug 'airblade/vim-rooter'              " Change working directory to project base
-" Plug 'junegunn/vim-peekaboo'            " Show registers when summoned
+Plug 'junegunn/vim-peekaboo'            " Show registers when summoned
 " Plug 'junegunn/vim-plug'                " Installs docs with vimplug
 " Plug 'lifepillar/vim-mucomplete'
 " Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -144,7 +144,7 @@ set wildignore+=*.sw?,.bak                     " Vim swap files
 " expand %% to current directory in command-line mode
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-nnoremap <leader>p :<C-u>FZF<CR>
+nnoremap <leader>p :<C-u>GFiles<CR>
 
 " Netrw plugin options{{{
 " let g:netrw_banner = 0
