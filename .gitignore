@@ -1,4 +1,9 @@
-.vim/*
-!.vim/coc-settings.json
-!.vim/vimrc
-!.vim/snippets.json
+vim/
+!vim/.vim/coc-settings.json
+!vim/.vim/vimrc
+!vim/.vim/snippets.json
+
+nvim
+!nvim/.config/nvim/init.lua
+!nvim/.config/nvim/lua/
+!nvim/.config/nvim/after/
