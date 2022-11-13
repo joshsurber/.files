@@ -1,0 +1,14 @@
+#!/bin/bash
+# ALIASES
+alias vi=nvim
+alias vim=nvim
+alias cls="clear;ls"
+alias more='less' # less is more
+alias up='cd ..'
+alias l='ls -CF' # Some ls aliases
+alias la='ls -A'
+alias ll='ls -alF'
+alias serve="browser-sync start --server --files . > /dev/null "
+
+alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
+alias moar='$(history -p \!\!) | less' # Run the last command through more

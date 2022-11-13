@@ -1,0 +1,17 @@
+#!/bin/bash
+source ~/.bash/env
+source ~/.bash/aliases
+source ~/.bash/functions
+
+# Starship prompt
+# install with `curl -sS https://starship.rs/install.sh | sh`
+export STARSHIP_CONFIG=~/.starship.toml
+eval "$(starship init bash)"
+
+# Use fzf
+source /usr/share/doc/fzf/examples/key-bindings.bash
+source /usr/share/doc/fzf/examples/completion.bash
+
+# This is not worth the extra space compared to the sudo alias
+# pip install thefuck
+# eval $(~/.local/bin/thefuck --alias)

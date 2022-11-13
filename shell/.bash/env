@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# ENVIROMENT
+export PATH=$PATH:~/.local/bin
+export CDPATH=.:~
+export EDITOR=nvim
+export PAGER=less
+export VISUAL=$EDITOR
+export HISTIGNORE="&:[ \t]*:ls:[bf]g:exit"
+set -o vi
+set -o noclobber
+shopt -s cdspell
+shopt -s histappend
+shopt -s extglob
+PROMPT_COMMAND='history -a'

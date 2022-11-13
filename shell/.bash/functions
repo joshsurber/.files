@@ -1,3 +1,4 @@
+#!/bin/bash
 # ALIASES
 alias vi=nvim
 alias vim=nvim
@@ -8,20 +9,6 @@ alias l='ls -CF' # Some ls aliases
 alias la='ls -A'
 alias ll='ls -alF'
 alias serve="browser-sync start --server --files . > /dev/null "
-
-# ENVIROMENT
-export PATH=$PATH:~/.local/bin
-export CDPATH=.:~
-export EDITOR=nvim
-export PAGER=less
-export VISUAL=$EDITOR
-export HISTIGNORE="&:[ \t]*:ls:[bf]g:exit"
-set -o vi
-set -o noclobber
-shopt -s cdspell
-shopt -s histappend
-shopt -s extglob
-PROMPT_COMMAND='history -a'
 
 mkcd() { mkdir -p "$*"; cd "$*"; }
 
@@ -106,7 +93,7 @@ source /usr/share/doc/fzf/examples/completion.bash
 alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
 
 # Setup the prompt. Use $PS1 if  starship isn't installed
-source ~/.bash_prompt
+# source ~/.bash_prompt
 # install with `curl -sS https://starship.rs/install.sh | sh`
 export STARSHIP_CONFIG=~/.starship.toml
 eval "$(starship init bash)"
