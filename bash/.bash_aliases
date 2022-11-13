@@ -102,8 +102,8 @@ source /usr/share/doc/fzf/examples/key-bindings.bash
 source /usr/share/doc/fzf/examples/completion.bash
 
 # pip install thefuck
-eval $(~/.local/bin/thefuck --alias)
-# alias shit='sudo $(history -p \!\!)' # As in "shit, I forgot to sudo that command!"
+# eval $(~/.local/bin/thefuck --alias)
+alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
 
 # Setup the prompt. Use $PS1 if  starship isn't installed
 source ~/.bash_prompt
