@@ -5,5 +5,5 @@ vim/
 
 nvim
 !nvim/.config/nvim/init.lua
-!nvim/.config/nvim/lua/
-!nvim/.config/nvim/after/
+!nvim/.config/nvim/lua/*
+!nvim/.config/nvim/after/*
