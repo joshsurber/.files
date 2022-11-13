@@ -1,18 +1,8 @@
 #!/bin/bash
-# ALIASES
-alias vi=nvim
-alias vim=nvim
-alias cls="clear;ls"
-alias more='less' # less is more
-alias up='cd ..'
-alias l='ls -CF' # Some ls aliases
-alias la='ls -A'
-alias ll='ls -alF'
-alias serve="browser-sync start --server --files . > /dev/null "
 
 mkcd() { mkdir -p "$*"; cd "$*"; }
 
-hist() { # Quick and dirty case-insensitive filtered history command. #{{{
+hist() { # Quick and dirty case-insensitive filtered history command.
     # "hist" ==> "history"
     # "hist foo" ==> "history | grep -i foo"
     # "hist foo bar" ==> "history | grep -i foo | grep -i bar"
@@ -23,9 +13,9 @@ hist() { # Quick and dirty case-insensitive filtered history command. #{{{
     HISTORYCMD="${HISTORYCMD% }"        # "history " ==> "history" (no trailing space)
     eval "${HISTORYCMD// / | grep -i }" # "history foo bar" ==>
     #   "history | grep -i foo | grep -i bar"
-} #}}}
+}
 
-cb() { # A shortcut function that simplifies usage of xclip. #{{{
+cb() { # A shortcut function that simplifies usage of xclip.
     # - Accepts input from either stdin (pipe), or params.
     # - If the input is a filename that exists, then it
     #   uses the contents of that file.
@@ -61,9 +51,11 @@ cb() { # A shortcut function that simplifies usage of xclip. #{{{
         fi
     fi
 }
+
 # Shortcut to copy SSH public key to clipboard.
 alias cb_ssh="cb ~/.ssh/id*.pub" #}}}
-x () { # EXPAND ALL THE FILETYPES! eatallthethings.jpg #{{{
+
+x () { # EXPAND ALL THE FILETYPES! eatallthethings.jpg
     if [ -f $1 ] ; then
         case $1 in
             *.tar.bz2)   tar xjf $1     ;;
@@ -82,19 +74,4 @@ x () { # EXPAND ALL THE FILETYPES! eatallthethings.jpg #{{{
     else
         echo "'$1' is not a valid file"
     fi
-} # }}}
-
-# Use fzf
-source /usr/share/doc/fzf/examples/key-bindings.bash
-source /usr/share/doc/fzf/examples/completion.bash
-
-# pip install thefuck
-# eval $(~/.local/bin/thefuck --alias)
-alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
-
-# Setup the prompt. Use $PS1 if  starship isn't installed
-# source ~/.bash_prompt
-# install with `curl -sS https://starship.rs/install.sh | sh`
-export STARSHIP_CONFIG=~/.starship.toml
-eval "$(starship init bash)"
-
+}
