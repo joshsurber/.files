@@ -1,7 +1,6 @@
 #!/bin/bash
 # ALIASES
-alias vi=nvim
-alias vim=nvim
+alias vi=$EDITOR
 alias cls="clear;ls"
 alias more='less' # less is more
 alias up='cd ..'
