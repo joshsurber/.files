@@ -3,7 +3,5 @@ vim/
 !vim/.vim/vimrc
 !vim/.vim/snippets.json
 
-nvim
-!nvim/.config/nvim/init.lua
-!nvim/.config/nvim/lua/*
-!nvim/.config/nvim/after/*
+nvim/.config/nvim/Session.vim
+nvim/.config/nvim/plugin/
