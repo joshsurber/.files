@@ -4,7 +4,8 @@
 export EDITOR=nvim
 export VISUAL=$EDITOR
 export PAGER=less
-export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin:~/.cargo/bin
+
 export CDPATH=.:~
 export HISTIGNORE="&:[ \t]*:ls:[bf]g:exit"
 
