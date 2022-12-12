@@ -4,6 +4,7 @@ alias vi=$EDITOR
 alias cls="clear;ls"
 alias more='less' # less is more
 alias up='cd ..'
+alias back='cd -'
 alias l='ls -CF' # Some ls aliases
 alias la='ls -A'
 alias ll='ls -alF'
