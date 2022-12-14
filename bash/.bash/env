@@ -1,14 +1,16 @@
 #!/bin/bash
 
-# ENVIROMENT
+# COMMON APPS
 export EDITOR=nvim
 export VISUAL=$EDITOR
 export PAGER=less
+
+# PATHS
 export PATH=~/.local/bin:~/.cargo/bin:$PATH
-
 export CDPATH=.:~
-export HISTIGNORE="&:[ \t]*:ls:[bf]g:exit"
 
+# BASH OPTIONS
+export HISTIGNORE="&:[ \t]*:ls:[bf]g:exit"
 set -o vi
 set -o noclobber
 shopt -s cdspell

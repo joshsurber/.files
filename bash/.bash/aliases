@@ -1,14 +1,23 @@
 #!/bin/bash
-# ALIASES
+
+# ACCESS APPS
 alias vi=$EDITOR
-alias cls="clear;ls"
+alias find='fdfind'
 alias more='less' # less is more
+
+# MOVE AROUND
 alias up='cd ..'
 alias back='cd -'
-alias l='ls -CF' # Some ls aliases
+
+# LS ALIASES
+alias cls="clear;ls"
+alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
+
+# WEB DEV ALIASES
 alias serve="browser-sync start --server --files . > /dev/null "
 
+# QUICKFIX COMMON MISTAKES
 alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
 alias moar='$(history -p \!\!) | less' # Run the last command through more
