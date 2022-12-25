@@ -8,6 +8,7 @@ alias more='less' # less is more
 # MOVE AROUND
 alias up='cd ..'
 alias back='cd -'
+alias cdvi='cd ~/.config/nvim/'
 
 # LS ALIASES
 alias cls="clear;ls"
