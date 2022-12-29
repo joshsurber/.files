@@ -8,6 +8,9 @@ source ~/.bash/functions
 # or `cargo install starship`
 eval "$(starship init bash)"
 
+# Autocomplete pandoc options
+eval "$(pandoc --bash-completion)"
+
 # FZF
 source /usr/share/doc/fzf/examples/key-bindings.bash
 source /usr/share/doc/fzf/examples/completion.bash
