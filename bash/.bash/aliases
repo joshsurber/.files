@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# ACCESS APPS
+# MODERN ALTERNATIVES
 alias vi=$EDITOR
 alias find='fdfind'
 alias more='less' # less is more
+alias cat='batcat'
+alias man='tldr'
 
 # MOVE AROUND
 alias up='cd ..'
@@ -21,4 +23,4 @@ alias serve="browser-sync start --server --files . > /dev/null "
 
 # QUICKFIX COMMON MISTAKES
 alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
-alias moar='$(history -p \!\!) | less' # Run the last command through more
+alias moar='$(history -p \!\!) | less' # Run the last command through more (actually less)
