@@ -6,7 +6,6 @@ source ~/.bash/functions
 # STARSHIP PROMPT
 # install with `curl -sS https://starship.rs/install.sh | sh`
 # or `cargo install starship`
-export STARSHIP_CONFIG=~/.starship.toml
 eval "$(starship init bash)"
 
 # FZF
