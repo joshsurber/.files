@@ -5,7 +5,8 @@ alias vi=$EDITOR
 alias find='fdfind'
 alias more='less' # less is more
 alias cat='batcat'
-alias man='tldr'
+alias open='xdg-open'
+# alias man='tldr' # Not quite a replacement, but close
 
 # MOVE AROUND
 alias up='cd ..'
