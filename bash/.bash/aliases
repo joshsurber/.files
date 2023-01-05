@@ -6,7 +6,11 @@ alias find='fdfind'
 alias more='less' # less is more
 alias cat='batcat'
 alias open='xdg-open'
-# alias man='tldr' # Not quite a replacement, but close
+
+# TYPING SAVERS
+alias v='vi'
+alias bv='back&&vi'
+alias o='open'
 
 # MOVE AROUND
 alias up='cd ..'
@@ -20,7 +24,7 @@ alias la='ls -A'
 alias ll='ls -alF'
 
 # WEB DEV ALIASES
-alias serve="browser-sync start --server --files . > /dev/null "
+alias serve='browser-sync start --server --files . > /dev/null '
 
 # QUICKFIX COMMON MISTAKES
 alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
