@@ -18,3 +18,5 @@ source /usr/share/fzf/key-bindings.bash # manjango
 source /usr/share/fzf/completion.bash # manjango
 
 source /usr/share/doc/pkgfile/command-not-found.bash # manjango
+
+screenfetch # -D 'arch'
