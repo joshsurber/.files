@@ -18,3 +18,5 @@ shopt -s cdspell
 shopt -s histappend
 shopt -s extglob
 PROMPT_COMMAND='history -a'
+
+setxkbmap -option caps:escape
