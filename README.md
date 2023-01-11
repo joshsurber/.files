@@ -12,14 +12,14 @@ Install the stuff you want.
 
 Short and sweet since Arch has great repos
 ``` bash
-sudo pacman -S bat chromium fd firefox fzf git locate make neovim pandoc python qterminal ripgrep starship stow tidy tldr
+sudo pacman -S bat chromium fd firefox fzf git locate make neovim pandoc python qterminal ripgrep screenfetch starship stow tidy tldr
 ```
 
 ### Debian based (Tested in Mint)
 
 Have to install starship seperately since it isn't in the repos. Also getting Neovim from the project site since the repo is outdated.
 ``` bash
-sudo apt install batcat chromium fdfind firefox fzf git neovim pandoc qterminal ripgrep starship stow tidy tldr
+sudo apt install batcat chromium fdfind firefox fzf git neovim pandoc qterminal ripgrep screenfetch starship stow tidy tldr
 curl -sS https://starship.rs/install.sh | sh
 curl -sS https://github.com/neovim/neovim/releases/download/stable/nvim.appimage > ~/nvim
 mkdir -p ~/.local/bin
