@@ -12,7 +12,13 @@ Install the stuff you want.
 
 Short and sweet since Arch has great repos
 ``` bash
-sudo pacman -S bat chromium fd firefox fzf git locate make neovim pandoc python qterminal ripgrep screenfetch starship stow tidy tldr
+sudo pacman -S bat chromium fd firefox fzf git locate make neovim pandoc python qterminal ripgrep screenfetch starship stow tidy tldr yay
+```
+
+If running base Arch or another distro without `yay` in the repos, run this to access AUR:
+
+``` bash
+pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 ```
 
 ### Debian based (Tested in Mint)
