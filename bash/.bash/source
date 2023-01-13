@@ -9,13 +9,16 @@ source ~/.bash/functions
 # or `cargo install starship`
 eval "$(starship init bash)"
 
-# Autocomplete pandoc options
-eval "$(pandoc --bash-completion)"
+# Autocomplete pandoc options when installed
+if  [ -x "$(command -v pandoc)" ]; then
+  eval "$(pandoc --bash-completion)"
+fi
 
 # FZF
-source $FZFDIR/key-bindings.bash # manjango
-source $FZFDIR/completion.bash # manjango
+source $FZFDIR/key-bindings.bash
+source $FZFDIR/completion.bash
 
-source /usr/share/doc/pkgfile/command-not-found.bash # manjango
+# Help find command to install if not available
+[[ -e /usr/share/doc/pkgfile ]] && source /usr/share/doc/pkgfile/command-not-found.bash
 
 neofetch

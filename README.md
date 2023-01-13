@@ -12,16 +12,17 @@ Install the stuff you want.
 
 Short and sweet since Arch has great repos
 ``` bash
-sudo pacman -S bat fd fzf git locate make neofetch neovim pandoc python qterminal qutebrowser ripgrep starship stow tidy tldr yay
+sudo pacman -S bat fd fzf git locate make neofetch neovim pandoc python qterminal qutebrowser ripgrep starship stow tidy tldr
 ```
 
-If running base Arch or another distro without `yay` in the repos, run this to access AUR:
+Install yay to access AUR
 
 ``` bash
-pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+sudo pacman -S yay || sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 ```
 
 For my setup of awesomewm:
+
 ``` bash
 pacman -S awesome dmenu nitrogen volumeicon picom
 ```
@@ -49,4 +50,3 @@ git clone git@github.com:joshsurber/.files.git
 cd ~/.files
 make&&make install
 ```
-You might need to change which lines are commented out based on distro. Hope this makes setting up your next machine a breeze.
