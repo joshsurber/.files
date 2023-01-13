@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# # For debian-based
+# export CAT='batcat'
+# export INSTALL='sudo apt install'
+# export FIND='fdfind'
+# export FZFDIR='/usr/share/doc/fzf/examples'
+#
+# For arch-based
+export CAT='batcat'
+export INSTALL='sudo pacman -S'
+export FIND='fd'
+export FZFDIR='/usr/share/fzf/'

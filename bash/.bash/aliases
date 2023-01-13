@@ -2,17 +2,15 @@
 
 # MODERN ALTERNATIVES
 alias vi=$EDITOR
-# alias find='fdfind' # mint
-alias find='fd' # manjango
+alias find=$FIND
 alias more='less' # less is more
-alias cat='bat'
+alias cat=$CAT
 alias open='xdg-open'
 
 # TYPING SAVERS
 alias bv='back&&vi'
-alias f='fd'
-alias i='sudo pacman -S' # manjango
-# alias i='sudo apt install' # mint
+alias f=$FIND
+alias i=$INSTALL
 alias o='open'
 alias v='vi'
 

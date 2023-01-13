@@ -1,4 +1,5 @@
 #!/bin/bash
+source ~/.bash/distro
 source ~/.bash/env
 source ~/.bash/aliases
 source ~/.bash/functions
@@ -12,10 +13,8 @@ eval "$(starship init bash)"
 eval "$(pandoc --bash-completion)"
 
 # FZF
-# source /usr/share/doc/fzf/examples/key-bindings.bash # mint
-# source /usr/share/doc/fzf/examples/completion.bash # mint
-source /usr/share/fzf/key-bindings.bash # manjango
-source /usr/share/fzf/completion.bash # manjango
+source $FZFDIR/key-bindings.bash # manjango
+source $FZFDIR/completion.bash # manjango
 
 source /usr/share/doc/pkgfile/command-not-found.bash # manjango
 
