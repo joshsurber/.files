@@ -5,7 +5,7 @@ alias vi=$EDITOR
 # alias find='fdfind' # mint
 alias find='fd' # manjango
 alias more='less' # less is more
-alias cat='batcat'
+alias cat='bat'
 alias open='xdg-open'
 
 # TYPING SAVERS
