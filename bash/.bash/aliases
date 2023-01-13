@@ -19,7 +19,7 @@ alias gg='git status'
 alias gc='git commit'
 alias gd='git diff'
 alias gp='git push'
-alias gs='git add'
+alias gs='git add' # git stage
 
 # MOVE AROUND
 alias up='cd ..'

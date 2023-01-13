@@ -9,6 +9,9 @@ export PAGER=less
 export PATH=~/.local/bin:~/.cargo/bin:$PATH
 export CDPATH=.:~
 
+export FZF_DEFAULT_COMMAND="$FIND --type f --strip-cwd-prefix"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 # BASH OPTIONS
 export HISTIGNORE="&:[ \t]*:ls:[bf]g:exit"
 set -o vi
