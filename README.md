@@ -12,7 +12,7 @@ Install the stuff you want.
 
 Short and sweet since Arch has great repos
 ``` bash
-sudo pacman -S bat fd fzf git locate make neofetch neovim pandoc python qterminal qutebrowser ripgrep starship stow tidy tldr
+sudo pacman -S bat fd fzf git locate make neofetch neovim npm pandoc python python-pip qterminal qutebrowser ripgrep starship stow tidy tldr ttf-cascadia-code unzip
 ```
 
 Install yay to access AUR
@@ -24,7 +24,7 @@ sudo pacman -S yay || sudo pacman -S --needed git base-devel && git clone https:
 For my setup of awesomewm:
 
 ``` bash
-pacman -S awesome dmenu nitrogen volumeicon picom
+sudo pacman -S awesome dmenu nitrogen volumeicon picom
 ```
 
 ### Debian based (Tested in Mint)
@@ -40,11 +40,14 @@ mv ~/nvim ~/.local/bin
 ```
 
 Next, add in your ssh directory from your keychain drive (this is specific for Josh) and run
+
 ``` bash
 chmod 0700 ~/.ssh/id_rsa
 ssh-keygen -p
 ```
+
 Finally, clone the repo.
+
 ``` bash
 git clone git@github.com:joshsurber/.files.git
 cd ~/.files
