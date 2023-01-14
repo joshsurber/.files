@@ -8,6 +8,7 @@ source ~/.bash/functions
 # install with `curl -sS https://starship.rs/install.sh | sh`
 # or `cargo install starship`
 eval "$(starship init bash)"
+eval "$(starship completions bash)"
 
 # Autocomplete pandoc options when installed
 if  [ -x "$(command -v pandoc)" ]; then
