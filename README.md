@@ -12,7 +12,10 @@ Install the stuff you want.
 
 Short and sweet since Arch has great repos
 ``` bash
-sudo pacman -S bat fd fzf git locate make neofetch neovim npm pandoc python python-pip qterminal qutebrowser ripgrep starship stow tidy tldr ttf-cascadia-code unzip
+sudo pacman -S bat fd fzf git kitty locate make man-db neofetch neovim pkgfile qutebrowser ripgrep starship stow tldr ttf-cascadia-code unzip xclip
+sudo pacman -S npm pandoc python python-pip
+sudo pip install beautysh tidy
+
 ```
 
 Install yay to access AUR
@@ -31,7 +34,7 @@ sudo pacman -S awesome dmenu nitrogen volumeicon picom
 
 Have to install starship separately since it isn't in the repos. Also getting Neovim from the project site since the repo is outdated.
 ``` bash
-sudo apt install batcat fdfind firefox fzf git neofetch neovim pandoc qterminal ripgrep starship stow tidy tldr
+sudo apt install batcat fdfind firefox fzf git kitty neofetch neovim pandoc ripgrep starship stow tidy tldr
 curl -sS https://starship.rs/install.sh | sh
 curl -sS https://github.com/neovim/neovim/releases/download/stable/nvim.appimage > ~/nvim
 mkdir -p ~/.local/bin
