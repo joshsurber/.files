@@ -11,3 +11,4 @@ run picom
 run nm-applet
 run nitrogen --restore
 run volumeicon
+run xscreensaver --no-splash
