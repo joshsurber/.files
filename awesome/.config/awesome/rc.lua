@@ -1,3 +1,5 @@
+local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
+local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
 -- Remove tmux hints
 package.loaded["awful.hotkeys_popup.keys.tmux"] = {}
 
@@ -188,6 +190,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
+        -- filter  = awful.widget.taglist.filter.noempty,
         buttons = taglist_buttons
     }
 
@@ -411,7 +414,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = { type = { "normal", "dialog" }
-    }, properties = { titlebars_enabled = true }
+    }, properties = { titlebars_enabled = false }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -493,4 +496,4 @@ client.connect_signal("unfocus", function(c)
     c.opacity = 0.7
 end)
 
--- beautiful.useless_gap = 3
+beautiful.useless_gap = 2
