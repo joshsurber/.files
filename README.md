@@ -12,9 +12,9 @@ Install the stuff you want.
 
 Short and sweet since Arch has great repos
 ``` bash
-sudo pacman -S bat fd fzf git kitty locate make man-db neofetch neovim pkgfile qutebrowser ripgrep starship stow tldr ttf-cascadia-code unzip xclip
-sudo pacman -S npm pandoc python python-pip
-sudo pip install beautysh tidy
+sudo pacman -S bash_completion bat fd fzf git kitty locate make man-db neofetch neovim pkgfile qutebrowser ripgrep starship stow tldr ttf-cascadia-code unzip xclip xscreensaver
+sudo pacman -S npm pandoc prettier python python-pip shfmt tidy
+sudo pkgfile -u # To enable command-not-found matches
 
 ```
 

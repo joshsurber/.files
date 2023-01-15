@@ -5,3 +5,5 @@ vim/
 
 nvim/.config/nvim/Session.vim
 nvim/.config/nvim/plugin/
+
+kitty/.config/kitty/kitty.conf.bak
