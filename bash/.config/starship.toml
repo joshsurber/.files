@@ -132,6 +132,9 @@ Windows = " "
 [package]
 symbol = " "
 
+[perl]
+symbol = " "
+
 [python]
 symbol = " "
 
