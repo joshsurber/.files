@@ -4,6 +4,8 @@ source ~/.bash/env
 source ~/.bash/aliases
 source ~/.bash/functions
 
+[[ -r /usr/share/bash-completion/bash_completion ]] && source /usr/share/bash-completion/bash_completion
+
 # STARSHIP PROMPT
 # install with `curl -sS https://starship.rs/install.sh | sh`
 # or `cargo install starship`
@@ -11,15 +13,17 @@ eval "$(starship init bash)"
 eval "$(starship completions bash)"
 
 # Autocomplete pandoc options when installed
-if  [ -x "$(command -v pandoc)" ]; then
-  eval "$(pandoc --bash-completion)"
+if [ -x "$(command -v pandoc)" ]; then
+	eval "$(pandoc --bash-completion)"
 fi
 
 # FZF
-source $FZFDIR/key-bindings.bash
-source $FZFDIR/completion.bash
+if [[ -d $FZFDIR ]]; then
+	source $FZFDIR/key-bindings.bash
+	source $FZFDIR/completion.bash
+fi
 
 # Help find command to install if not available
-[[ -e /usr/share/doc/pkgfile ]] && source /usr/share/doc/pkgfile/command-not-found.bash
+[[ -r /usr/share/doc/pkgfile ]] && source /usr/share/doc/pkgfile/command-not-found.bash
 
 neofetch

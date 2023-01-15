@@ -3,6 +3,7 @@
 # This is the ugliness required to keep up with different application names and paths between the different distros I use
 
 # The path for fzf's completion scripts
+export FZFDIR=false
 [[ -e /usr/share/doc/fzf/examples ]] && export FZFDIR='/usr/share/doc/fzf/examples'
 [[ -e /usr/share/fzf ]] && export FZFDIR='/usr/share/fzf/'
 

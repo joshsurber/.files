@@ -7,6 +7,8 @@ alias more='less' # less is more
 alias cat=$CAT
 alias open='xdg-open'
 
+[[ $TERM == 'xterm-kitty' ]] && alias theme='kitty +kitten themes'
+
 # TYPING SAVERS
 alias bv='back&&vi'
 alias f=$FIND
