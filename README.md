@@ -1,6 +1,6 @@
 # Josh's dotfiles
 
-Feel free to inspect these and take what you want from them, but they are designed to make my machine work exactly like I want. They are probably not what you want. Everything below is my hints to myself on setting up a new machine.
+Feel free to inspect these and take what you want from them, but they are designed to make my machine work exactly like I want. You probably do not want to use them as-is unless you happen to be me. Everything below is my hints to myself on setting up a new machine.
 
 ## Install Arch
 
@@ -15,7 +15,8 @@ or
 Short and sweet since Arch has great repos
 
 ```bash
-sudo pacman -S bash_completion bat fd fzf git kitty locate make man-db neofetch neovim pkgfile qutebrowser ripgrep starship stow tldr ttf-cascadia-code ttf-roboto unzip xclip xscreensaver
+sudo pacman -S bash_completion bat fd fzf git kitty locate make man-db neofetch neovim pkgfile qutebrowser ripgrep starship stow tldr ttf-cascadia-code unzip xclip xscreensaver
+sudo pacman -S blueman cups
 sudo pacman -S npm pandoc prettier python python-pip shfmt tidy
 sudo pkgfile -u # To enable command-not-found matches
 ```
@@ -34,7 +35,7 @@ yay google-chrome
 Not needed when installing in ChromeOS
 
 ```bash
-sudo pacman -S awesome dmenu nitrogen volumeicon picom
+sudo pacman -S awesome dmenu nitrogen volumeicon picom ttf-roboto
 ```
 
 ## Post install setup
