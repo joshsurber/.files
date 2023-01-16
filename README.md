@@ -6,9 +6,10 @@ Feel free to inspect these and take what you want from them, but they are design
 
 These instructions are for setting up a new machine (or reinstalling an old one)
 
-[Install Arch](https://wiki.archlinux.org/title/Installation_guide)
+Install Arch [on a computer](https://wiki.archlinux.org/title/Installation_guide)
 or
-[install Arch in the ChromeOS Linux subsystem](https://wiki.archlinux.org/title/Chrome_OS_devices/Crostini).
+[in ChromeOS](https://wiki.archlinux.org/title/Chrome_OS_devices/Crostini)
+(follow [these instructions](https://gist.github.com/rstacruz/aeb2273d19e5f5ffbe27a973cb82717f) for ChromeoS on ARM processors).
 
 ## Install the basic apps.
 
@@ -27,14 +28,14 @@ This is the easiest way to install Chrome
 
 ```bash
 sudo pacman -S yay || sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-yay google-chrome
 ```
 
-## Install awesomewm
+## Install Chrome and awesomewm
 
 Not needed when installing in ChromeOS
 
 ```bash
+yay google-chrome
 sudo pacman -S awesome dmenu nitrogen volumeicon picom ttf-roboto
 ```
 
