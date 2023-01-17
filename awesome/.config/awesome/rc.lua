@@ -51,9 +51,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "gtk/theme.lua")
-local chosen_theme = 'gtk'
-local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
-beautiful.init(theme_path)
+beautiful.init(gears.filesystem.get_dir('config')..'theme.lua')
 
 
 -- This is used later as the default terminal and editor to run.
@@ -112,11 +110,11 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
+-- mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock('%H.%M')
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -221,7 +219,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             spacing = 10,
-            mykeyboardlayout,
+            -- mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
@@ -492,7 +490,10 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
+
+-- Make unfocused windows transparent
 client.connect_signal("focus", function(c)
     c.border_color = beautiful.border_focus
     c.opacity = 1
