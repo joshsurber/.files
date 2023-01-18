@@ -55,7 +55,7 @@ beautiful.init(gears.filesystem.get_dir('config')..'theme.lua')
 
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = "qterminal"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -261,6 +261,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, ";", function() awful.spawn('google-chrome-stable') end, { description = "launch Chrome", group = "launcher" }),
     awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
     awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
+    awful.key({ modkey, }, "z", function() awful.spawn('xscreensaver-command -lock') end, { description = "Lock screen", group = "launcher" }),
 
     awful.key({ modkey, }, "l", function() awful.tag.incmwfact(0.05) end, { description = "increase master width factor", group = "layout" }),
     awful.key({ modkey, }, "h", function() awful.tag.incmwfact(-0.05) end, { description = "decrease master width factor", group = "layout" }),
@@ -496,11 +497,11 @@ awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 -- Make unfocused windows transparent
 client.connect_signal("focus", function(c)
     c.border_color = beautiful.border_focus
-    c.opacity = 1
+    -- c.opacity = 1
 end)
 client.connect_signal("unfocus", function(c)
     c.border_color = beautiful.border_normal
-    c.opacity = 0.7
+    -- c.opacity = 0.7
 end)
 
 beautiful.useless_gap = 2
