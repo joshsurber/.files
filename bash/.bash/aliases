@@ -1,20 +1,26 @@
 #!/bin/bash
 
-# MODERN ALTERNATIVES
-alias vi=$EDITOR
-alias find=$FIND
-alias more='less' # less is more
-alias cat=$CAT
-alias open='xdg-open'
-
-[[ $TERM == 'xterm-kitty' ]] && alias theme='kitty +kitten themes'
-
 # TYPING SAVERS
 alias bv='back&&vi'
-alias f=$FIND
-alias i=$INSTALL
+alias f='find'
 alias o='open'
 alias v='vi'
+
+alias vi=$EDITOR
+alias more='less' # less is more
+alias open='xdg-open'
+
+[[ -x "$(command -v fd)" ]] && alias find='fd'
+[[ -x "$(command -v fdfind)" ]] && alias find='fdfind'
+
+[[ -x "$(command -v bat)" ]] && alias cat='bat'
+[[ -x "$(command -v batcat)" ]] && alias cat='batcat'
+
+[[ -x "$(command -v apt)" ]] && alias i='sudo apt install'
+[[ -x "$(command -v pacman)" ]] && alias i='sudo pacman -S'
+# [[ -x "$(command -v yay)" ]] && alias i='yay -S'
+
+[[ $TERM == 'xterm-kitty' ]] && alias theme='kitty +kitten themes'
 
 # SHORT GIT ALIASES (using same mnemonics from nvim)
 alias gg='git status'
@@ -24,15 +30,28 @@ alias gp='git push'
 alias gs='git add' # git stage
 
 # MOVE AROUND
-alias up='cd ..'
+# alias up='cd ..' # Replaced with function
 alias back='cd -'
 alias cdvi='cd ~/.config/nvim/'
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# GUARD RAILS
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
 
 # LS ALIASES
+# alias l='ls -CF'
+# alias la='ls -A'
+# alias ll='ls -alF'
 alias cls="clear;ls"
-alias l='ls -CF'
-alias la='ls -A'
-alias ll='ls -alF'
+alias exa='exa --icons --color=always --group-directories-first'
+alias ls='exa -al' # my preferred listing
+alias la='exa -a' # all files and dirs
+alias ll='exa -l' # long format
+alias l.='exa -a | egrep "^\."'
 
 # WEB DEV ALIASES
 alias serve='browser-sync start --server --files . > /dev/null '
@@ -40,3 +59,19 @@ alias serve='browser-sync start --server --files . > /dev/null '
 # QUICKFIX COMMON MISTAKES
 alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
 alias moar='$(history -p \!\!) | less' # Run the last command through more (actually less)
+alias rbash='source ~/.bashrc'
+
+alias unlock='sudo rm /var/lib/pacman/db.lck' # remove pacman lock
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
+
+alias pacrm='sudo pacman -Rs' # - Remove a package and its dependencies:
+alias pacfd='pacman -Ss' # - Search the package database for a regular expression or keyword:
+alias pacq='pacman -Q' # - List installed packages and versions:
+alias pacqe='pacman -Qe' # - List only the explicitly installed packages and versions:
+alias pacorphan='pacman -Qtdq' # - List orphan packages (installed as dependencies but not actually required by any package):
+alias paccache='sudo pacman -Scc' # - Empty the entire pacman cache:
+
+alias yayrm='yay -Rns' # - Remove an installed package and both its dependencies and configuration files:
+alias yayfd='yay -Ss' # - Search the package database for a keyword from the repos and AUR:
+alias yayorphan='yay -Yc' # - Remove orphaned packages (installed as dependencies but not required by any package):
+alias yaystats='yay -Ps' # - Show statistics for installed packages and system health:

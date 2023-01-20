@@ -1,29 +1,22 @@
 #!/bin/bash
-source ~/.bash/distro
+# This file just sources all the other files I use to configure bash
+
 source ~/.bash/env
 source ~/.bash/aliases
 source ~/.bash/functions
 
-[[ -r /usr/share/bash-completion/bash_completion ]] && source /usr/share/bash-completion/bash_completion
-
-# STARSHIP PROMPT
-# install with `curl -sS https://starship.rs/install.sh | sh`
-# or `cargo install starship`
-eval "$(starship init bash)"
-eval "$(starship completions bash)"
-
-# Autocomplete pandoc options when installed
-if [ -x "$(command -v pandoc)" ]; then
-	eval "$(pandoc --bash-completion)"
-fi
-
-# FZF
-if [[ -d $FZFDIR ]]; then
-	source $FZFDIR/key-bindings.bash
-	source $FZFDIR/completion.bash
-fi
-
 # Help find command to install if not available
 [[ -r /usr/share/doc/pkgfile ]] && source /usr/share/doc/pkgfile/command-not-found.bash
+
+# FZF
+[[ -e /usr/share/doc/fzf/exampleskey-bindings.bash ]] && source /usr/share/doc/fzf/exampleskey-bindings.bash
+[[ -e /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
+[[ -e /usr/share/doc/fzf/examplescompletion.bash ]] && source /usr/share/doc/fzf/examplescompletion.bash
+[[ -e /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
+
+[ -x "$(command -v starship)" ] && eval "$(starship init bash)"
+[ -x "$(command -v starship)" ] && eval "$(starship completions bash)"
+[ -x "$(command -v pandoc)" ] && eval "$(pandoc --bash-completion)"
+[ -x "$(command -v zoxide)" ] && eval "$(zoxide init bash)"
 
 neofetch
