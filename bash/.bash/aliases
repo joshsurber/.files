@@ -41,6 +41,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
+alias mkdir='mkdir -p'
 
 # LS ALIASES
 # alias l='ls -CF'
@@ -55,6 +56,7 @@ alias l.='exa -a | egrep "^\."'
 
 # WEB DEV ALIASES
 alias serve='browser-sync start --server --files . > /dev/null '
+alias drive='rclone mount drive: ~/drive --daemon'
 
 # QUICKFIX COMMON MISTAKES
 alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
