@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # CREATE A DIRECTORY AND CD INTO IT
-mkcd() { mkdir -p "$*"; cd "$*"; }
+mkcd() {
+	mkdir -p "$*"
+	cd "$*"
+}
 
 # CASE-INSENSITIVE FILTERED HISTORY COMMAND.
 hist() {
@@ -17,28 +20,29 @@ hist() {
 	#   "history | grep -i foo | grep -i bar"
 }
 
-# SIMPLIFY XCLIP
 cb() {
 	# - Accepts input from either stdin (pipe), or params.
 	# - If the input is a filename that exists, then it
 	#   uses the contents of that file.
 	# ------------------------------------------------
-	local _scs_col="\e[0;32m"; local _wrn_col='\e[1;31m'; local _trn_col='\e[0;33m'
+	local _scs_col="\e[0;32m"
+	local _wrn_col='\e[1;31m'
+	local _trn_col='\e[0;33m'
 	# Check that xclip is installed.
-	if ! type xclip > /dev/null 2>&1; then
+	if ! type xclip >/dev/null 2>&1; then
 		echo -e "$_wrn_col""You must have the 'xclip' program installed.\e[0m"
 		# Check user is not root (root doesn't have access to user xorg server)
 	elif [[ "$USER" == "root" ]]; then
 		echo -e "$_wrn_col""Must be regular user (not root) to copy a file to the clipboard.\e[0m"
 	else
 		# If no tty, data should be available on stdin
-		if ! [[ "$( tty )" == /dev/* ]]; then
-			input="$(< /dev/stdin)"
+		if ! [[ "$(tty)" == /dev/* ]]; then
+			input="$(</dev/stdin)"
 			# Else, fetch input from params
 		else
 			input="$*"
 		fi
-		if [ -z "$input" ]; then  # If no input, print usage message.
+		if [ -z "$input" ]; then # If no input, print usage message.
 			echo "Copies a string or the contents of a file to the clipboard."
 			echo "Usage: cb <string or file>"
 			echo "       echo <string or file> | cb"
@@ -54,53 +58,49 @@ cb() {
 		fi
 	fi
 }
-
-# COPY SSH KEY TO CLIPBOARD
 alias cb_ssh="cb ~/.ssh/id*.pub"
 
-### ARCHIVE EXTRACTION
-# usage: ex <file>
-ex ()
-{
-  if [ -f "$1" ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+ex() {
+	if [ -f "$1" ]; then
+		case $1 in
+		*.tar.bz2) tar xjf $1 ;;
+		*.tar.gz) tar xzf $1 ;;
+		*.bz2) bunzip2 $1 ;;
+		*.rar) unrar x $1 ;;
+		*.gz) gunzip $1 ;;
+		*.tar) tar xf $1 ;;
+		*.tbz2) tar xjf $1 ;;
+		*.tgz) tar xzf $1 ;;
+		*.zip) unzip $1 ;;
+		*.Z) uncompress $1 ;;
+		*.7z) 7z x $1 ;;
+		*.deb) ar x $1 ;;
+		*.tar.xz) tar xf $1 ;;
+		*.tar.zst) unzstd $1 ;;
+		*) echo "'$1' cannot be extracted via ex()" ;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
 }
 
-up () {
-  local d=""
-  local limit="$1"
+up() {
+	local d=""
+	local limit="$1"
 
-  # Default to limit of 1
-  if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
-    limit=1
-  fi
+	# Default to limit of 1
+	if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
+		limit=1
+	fi
 
-  for ((i=1;i<=limit;i++)); do
-    d="../$d"
-  done
+	for ((i = 1; i <= limit; i++)); do
+		d="../$d"
+	done
 
-  # perform cd. Show error if cd fails
-  if ! cd "$d"; then
-    echo "Couldn't go up $limit dirs.";
-  fi
+	# perform cd. Show error if cd fails
+	if ! cd "$d"; then
+		echo "Couldn't go up $limit dirs."
+	fi
 }
+
 # vim: set fdm=indent

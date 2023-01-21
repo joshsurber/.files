@@ -1,11 +1,11 @@
 #!/bin/bash
+# This contains environment variables and shell options
 
 # COMMON APPS
 export EDITOR=nvim
 export VISUAL=$EDITOR
 export PAGER=less
 export MANPAGER="sh -c 'col -bx | bat -l man -p'" # "bat" as manpager
-# export MANPAGER="nvim -c 'set ft=man' -" # "nvim" as manpager
 
 # PATHS
 export PATH=~/.local/bin:~/.cargo/bin:$PATH
@@ -18,10 +18,10 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export HISTIGNORE="&:[ \t]*:ls:[bf]g:exit"
 bind "set completion-ignore-case on" # case insensitive tab completion
 set -o vi
-set -o noclobber # don't overwrite files
-shopt -s autocd # change to named dir
-shopt -s cdspell # autocorrect cd misspellings
-shopt -s dotglob # include dotfiles in globbing
+set -o noclobber    # don't overwrite files
+shopt -s autocd     # change to named dir
+shopt -s cdspell    # autocorrect cd misspellings
+shopt -s dotglob    # include dotfiles in globbing
 shopt -s histappend # don't overwrite history
 shopt -s extglob
 PROMPT_COMMAND='history -a'

@@ -9,10 +9,8 @@ source ~/.bash/functions
 [[ -r /usr/share/doc/pkgfile ]] && source /usr/share/doc/pkgfile/command-not-found.bash
 
 # FZF
-[[ -e /usr/share/doc/fzf/exampleskey-bindings.bash ]] && source /usr/share/doc/fzf/exampleskey-bindings.bash
-[[ -e /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
-[[ -e /usr/share/doc/fzf/examplescompletion.bash ]] && source /usr/share/doc/fzf/examplescompletion.bash
-[[ -e /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
+[[ -e /usr/share/doc/fzf/ ]] && source /usr/share/doc/fzf/exampleskey-bindings.bash && source /usr/share/doc/fzf/examplescompletion.bash
+[[ -e /usr/share/fzf/ ]] && source /usr/share/fzf/key-bindings.bash && source /usr/share/fzf/completion.bash
 
 [ -x "$(command -v starship)" ] && eval "$(starship init bash)"
 [ -x "$(command -v starship)" ] && eval "$(starship completions bash)"

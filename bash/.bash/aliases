@@ -50,8 +50,8 @@ alias mkdir='mkdir -p'
 alias cls="clear;ls"
 alias exa='exa --icons --color=always --group-directories-first'
 alias ls='exa -al' # my preferred listing
-alias la='exa -a' # all files and dirs
-alias ll='exa -l' # long format
+alias la='exa -a'  # all files and dirs
+alias ll='exa -l'  # long format
 alias l.='exa -a | egrep "^\."'
 
 # WEB DEV ALIASES
@@ -59,21 +59,21 @@ alias serve='browser-sync start --server --files . > /dev/null '
 alias drive='rclone mount drive: ~/drive --daemon'
 
 # QUICKFIX COMMON MISTAKES
-alias fuck='sudo $(history -p \!\!)' # As in "fuck, I forgot to sudo that command!"
+alias fuck='sudo $(history -p \!\!)'   # As in "fuck, I forgot to sudo that command!"
 alias moar='$(history -p \!\!) | less' # Run the last command through more (actually less)
 alias rbash='source ~/.bashrc'
 
-alias unlock='sudo rm /var/lib/pacman/db.lck' # remove pacman lock
+alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
 
-alias pacrm='sudo pacman -Rs' # - Remove a package and its dependencies:
-alias pacfd='pacman -Ss' # - Search the package database for a regular expression or keyword:
-alias pacq='pacman -Q' # - List installed packages and versions:
-alias pacqe='pacman -Qe' # - List only the explicitly installed packages and versions:
-alias pacorphan='pacman -Qtdq' # - List orphan packages (installed as dependencies but not actually required by any package):
+alias pacrm='sudo pacman -Rs'     # - Remove a package and its dependencies:
+alias pacfd='pacman -Ss'          # - Search the package database for a regular expression or keyword:
+alias pacq='pacman -Q'            # - List installed packages and versions:
+alias pacqe='pacman -Qe'          # - List only the explicitly installed packages and versions:
+alias pacorphan='pacman -Qtdq'    # - List orphan packages (installed as dependencies but not actually required by any package):
 alias paccache='sudo pacman -Scc' # - Empty the entire pacman cache:
 
-alias yayrm='yay -Rns' # - Remove an installed package and both its dependencies and configuration files:
-alias yayfd='yay -Ss' # - Search the package database for a keyword from the repos and AUR:
+alias yayrm='yay -Rns'    # - Remove an installed package and both its dependencies and configuration files:
+alias yayfd='yay -Ss'     # - Search the package database for a keyword from the repos and AUR:
 alias yayorphan='yay -Yc' # - Remove orphaned packages (installed as dependencies but not required by any package):
-alias yaystats='yay -Ps' # - Show statistics for installed packages and system health:
+alias yaystats='yay -Ps'  # - Show statistics for installed packages and system health:
