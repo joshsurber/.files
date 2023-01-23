@@ -52,7 +52,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'jiangmiao/auto-pairs'             " Automatically close braces
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim' | Plug 'mattn/webapi-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}|runtime setup.coc.vim
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}|runtime setup.coc.vim
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'                 " Unix utilities
 Plug 'tpope/vim-fugitive'
