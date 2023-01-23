@@ -17,4 +17,4 @@ source ~/.bash/functions
 [ -x "$(command -v pandoc)" ] && eval "$(pandoc --bash-completion)"
 [ -x "$(command -v zoxide)" ] && eval "$(zoxide init bash)"
 
-neofetch
+# neofetch
