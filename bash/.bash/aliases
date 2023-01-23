@@ -20,7 +20,9 @@ alias open='xdg-open'
 
 [[ -x "$(command -v apt)" ]] && alias i='sudo apt install'
 [[ -x "$(command -v pacman)" ]] && alias i='sudo pacman -S'
-# [[ -x "$(command -v yay)" ]] && alias i='yay -S'
+
+# Exa is different because if I alias ls to exa it gets clobbered when hot reloading rc files
+[[ -x "$(command -v exa)" ]] || alias exa='ls'
 
 [[ $TERM == 'xterm-kitty' ]] && alias theme='kitty +kitten themes'
 
@@ -46,15 +48,11 @@ alias ln='ln -i'
 alias mkdir='mkdir -p'
 
 # LS ALIASES
-# alias l='ls -CF'
-# alias la='ls -A'
-# alias ll='ls -alF'
 alias cls="clear;ls"
 alias exa='exa --icons --color=always --group-directories-first'
-alias ls='exa -al' # my preferred listing
-alias la='exa -a'  # all files and dirs
-alias ll='exa -l'  # long format
-alias l.='exa -a | egrep "^\."'
+alias ls='exa -la'
+alias ll='exa -l'
+alias la='exa -a'
 
 # WEB DEV ALIASES
 alias serve='browser-sync start --server --files . > /dev/null '
