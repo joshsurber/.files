@@ -2,61 +2,34 @@
 
 Feel free to inspect these and take what you want from them, but they are designed to make my machine work exactly like I want. You probably do not want to use them as-is unless you happen to be me. Everything below is my hints to myself on setting up a new machine.
 
-## Install the basic apps.
-
-Basic command line utils
+## Clone the repo
 
 ```bash
-sudo pacman -S bash_completion bat fd fzf git kitty locate make man-db neofetch neovim pkgfile qutebrowser ripgrep starship stow tldr ttf-cascadia-code unzip xclip && sudo pkgfile -u
+sudo pacman -S git
+git clone https://github.com/joshsurber/.files
+cd .files
 ```
 
-Awesome WM
+Validate the software list from pkgs and remove any you don't want to install at this time.
 
-```bash
-sudo pacman -S awesome dmenu nitrogen volumeicon picom ttf-roboto xscreensaver
-```
+## make
 
-Dev tools
+Run `make setup` to:
 
-```bash
-sudo pacman -S npm pandoc prettier python python-pip shfmt tidy
-```
+- Install the software in ./pkgs `make install`
+- Symlink the dotfiles `make`
+- Setup bash init files to source the custom dotfiles `make link`
+- Install yay for accessing the AUR `make yay`
 
-Hardware
-
-```bash
-sudo pacman -S blueman cups
-```
-
-## Install yay and Chrome
-
-This is the easiest way to install Chrome
-
-```bash
-sudo pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-yay google-chrome
-```
+After this you can run `yay google-chrome` or `yay brave-bin` for a browser.
 
 ## Post install setup
 
 Next, add in your ssh directory from your keychain drive and run
 
 ```bash
-gpg dotssh.tgz.gpg
-tar xzf dotssh.tgz
-mv dotssh .ssh
+mv dotssh ~/.ssh
 chmod 0700 ~/.ssh/id_rsa
 ssh-keygen -p
-```
-
-Finally, clone the dotfiles repo to carry over customizations
-
-```bash
-git clone git@github.com:joshsurber/.files.git
-cd ~/.files
-make
-make install
+git remote set-url origin git@github.com:joshsurber/.files.git
 ```
