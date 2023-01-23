@@ -16,6 +16,8 @@ alias open='xdg-open'
 [[ -x "$(command -v bat)" ]] && alias cat='bat'
 [[ -x "$(command -v batcat)" ]] && alias cat='batcat'
 
+[[ -x "$(command -v rg)" ]] && alias grep='rg'
+
 [[ -x "$(command -v apt)" ]] && alias i='sudo apt install'
 [[ -x "$(command -v pacman)" ]] && alias i='sudo pacman -S'
 # [[ -x "$(command -v yay)" ]] && alias i='yay -S'
