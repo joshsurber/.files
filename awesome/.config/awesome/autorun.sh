@@ -13,3 +13,4 @@ run blueman-applet
 run nitrogen --restore
 run volumeicon
 run xscreensaver --no-splash
+setxkbmap -option caps:escape
