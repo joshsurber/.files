@@ -51,6 +51,7 @@ alias mkdir='mkdir -p'
 alias cls="clear;ls"
 alias exa='exa --icons --color=always --group-directories-first'
 alias ls='exa -l'
+alias la='exa -la'
 alias l.='exa -la|grep "^\."'
 
 # WEB DEV ALIASES
