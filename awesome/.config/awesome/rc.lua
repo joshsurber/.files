@@ -299,7 +299,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "space", function() awful.layout.inc(-1) end,
         { description = "select previous", group = "layout" }),
 
-    awful.key({ modkey, "Control" }, "n", function() local c = awful.client.restore()
+    awful.key({ modkey, "Shift" }, "n", function() local c = awful.client.restore()
         -- Focus restored client
         if c then c:emit_signal("request::activate", "key.unminimize", { raise = true }) end
     end, { description = "restore minimized", group = "client" }),
