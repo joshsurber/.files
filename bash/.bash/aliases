@@ -50,9 +50,8 @@ alias mkdir='mkdir -p'
 # LS ALIASES
 alias cls="clear;ls"
 alias exa='exa --icons --color=always --group-directories-first'
-alias ls='exa -la'
-alias ll='exa -l'
-alias la='exa -a'
+alias ls='exa -l'
+alias l.='exa -la|grep "^\."'
 
 # WEB DEV ALIASES
 alias serve='browser-sync start --server --files . > /dev/null '
