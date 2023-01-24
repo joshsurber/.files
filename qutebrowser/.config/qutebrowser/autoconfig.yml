@@ -6,9 +6,15 @@
 
 config_version: 2
 settings:
-  colors.webpage.darkmode.enabled:
-    global: true
-  statusbar.show:
-    global: never
-  tabs.show:
-    global: never
+  editor.command:
+    global:
+    - qterminal
+    - -e
+    - nvim
+    - '{file}'
+  fileselect.folder.command:
+    global:
+    - qterminal
+    - -e
+    - vifm
+    - --choosedir={}
