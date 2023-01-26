@@ -1,14 +1,22 @@
-set completion-ignore-case on
-set completion-prefix-display-length 2
 Control-j: menu-complete
 Control-k: menu-complete-backward
+set completion-ignore-case on
+set completion-prefix-display-length 2
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
 set completion-map-case on
 # vi settings
 set editing-mode vi
 $if mode=vi
+    set show-mode-in-prompt on
+    set vi-cmd-mode-string ":"
+    set vi-ins-mode-string "|"
     set keymap vi-insert
+    Control-l: clear-screen
+    Meta-ESC: "~"       # For my odd keyboard
+    Meta-\': "`"        # For my odd keyboard
+    Control-ESC: "~"    # For my odd keyboard
+    Control-\': "`"     # For my odd keyboard
     "jk": vi-movement-mode # remap escape
 	# "--": '~'
 $endif

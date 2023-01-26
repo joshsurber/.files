@@ -6,15 +6,7 @@
 
 config_version: 2
 settings:
-  editor.command:
-    global:
-    - qterminal
-    - -e
-    - nvim
-    - '{file}'
-  fileselect.folder.command:
-    global:
-    - qterminal
-    - -e
-    - vifm
-    - --choosedir={}
+  statusbar.show:
+    global: always
+  tabs.show:
+    global: always

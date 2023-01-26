@@ -8,3 +8,4 @@ nvim/.config/nvim/plugin/
 
 kitty/.config/kitty/kitty.conf.bak
 qterminal/.config/qterminal.org/qterminal_bookmarks.xml
+qutebrowser/.config/qutebrowser/qsettings/QtProject.conf

@@ -5,6 +5,8 @@ alias bv='back&&vi'
 alias f='find'
 alias o='open'
 alias v='vi'
+alias v.='v .'
+alias f.='vifm .'
 
 alias vi=$EDITOR
 alias more='less' # less is more
