@@ -34,3 +34,8 @@ unset record
 set mailcap_path="~/.config/mutt/mailcap"
 auto_view text/html
 alternative_order text/plain text/html # prefer text over html
+
+# Use goobook for email addresses
+set query_command="goobook query %s"
+bind editor <Tab> complete-query
+macro index,pager a "<pipe-message>goobook add<return>" "add the sender address to Google contacts"
