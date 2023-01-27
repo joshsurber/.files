@@ -436,7 +436,10 @@ awful.rules.rules = {
             keys = clientkeys,
             buttons = clientbuttons,
             screen = awful.screen.preferred,
-            placement = awful.placement.no_overlap + awful.placement.no_offscreen
+            placement = awful.placement.no_overlap + awful.placement.no_offscreen,
+            -- Don't maximize new windows
+            maximized_vertical = false,
+            maximized_horizontal = false,
         }
     },
 
