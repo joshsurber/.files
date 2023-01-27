@@ -7,10 +7,12 @@ alias o='open'
 alias v='vi'
 alias v.='v .'
 alias f.='vifm .'
+alias m='mutt'
 
 alias vi=$EDITOR
 alias more='less' # less is more
 alias open='xdg-open'
+alias mutt='neomutt'
 
 [[ -x "$(command -v fd)" ]] && alias find='fd'
 [[ -x "$(command -v fdfind)" ]] && alias find='fdfind'
