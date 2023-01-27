@@ -394,6 +394,15 @@ for i = 1, 9 do
                 end
             end,
             { description = "toggle focused client on tag #" .. i, group = "tag" })
+
+        -- -- Move and resize floating windows via kbd
+        -- awful.key({ modkey }, "Next", function(c) c:relative_move(20, 20, -40, -40) end),
+        -- awful.key({ modkey }, "Prior", function(c) c:relative_move(-20, -20, 40, 40) end),
+        -- awful.key({ modkey }, "Down", function(c) c:relative_move(0, 20, 0, 0) end),
+        -- awful.key({ modkey }, "Up", function(c) c:relative_move(0, -20, 0, 0) end),
+        -- awful.key({ modkey }, "Left", function(c) c:relative_move(-20, 0, 0, 0) end),
+        -- awful.key({ modkey }, "Right", function(c) c:relative_move(20, 0, 0, 0) end),
+
     )
 end
 
