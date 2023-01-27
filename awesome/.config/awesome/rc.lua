@@ -308,7 +308,7 @@ globalkeys = gears.table.join(
 
     -- Prompt
     -- awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end, {description = "run prompt", group = "launcher"}),
-    awful.key({ modkey }, "r", function() awful.util.spawn('dmenu_run') end,
+    awful.key({ modkey }, "p", function() awful.util.spawn('dmenu_run') end,
         { description = "run dmenu", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "p", function() awful.spawn('passmenu') end,
         { description = "list passwords", group = "launcher" }),
@@ -319,7 +319,7 @@ globalkeys = gears.table.join(
         end,
         { description = "lua execute prompt", group = "awesome" }),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end, { description = "show the menubar", group = "launcher" })
+    awful.key({ modkey }, "r", function() menubar.show() end, { description = "show the menubar", group = "launcher" })
 )
 
 clientkeys = gears.table.join(
@@ -477,7 +477,7 @@ awful.rules.rules = {
 
     -- Make desktop sticky
     { rule_any = { type = { "desktop" },
-    }, properties = { sticky = true }
+    }, properties = { sticky = true, opacity = 1, border_width = 0 }
     },
 
     -- Add titlebars to normal clients and dialogs

@@ -10,7 +10,7 @@ run() {
 run picom
 run nm-applet
 run blueman-applet
-run nitrogen --restore
+# run nitrogen --restore
 run pcmanfm --desktop
 # run pcmanfm -d
 run volumeicon
