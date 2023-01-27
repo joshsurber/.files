@@ -475,6 +475,11 @@ awful.rules.rules = {
         }
     }, properties = { floating = true } },
 
+    -- Make desktop sticky
+    { rule_any = { type = { "desktop" },
+    }, properties = { sticky = true }
+    },
+
     -- Add titlebars to normal clients and dialogs
     { rule_any = { type = { "normal", "dialog" }
     }, properties = { titlebars_enabled = false }
