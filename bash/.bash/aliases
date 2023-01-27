@@ -59,7 +59,8 @@ alias la='exa -la'
 alias l.='exa -la|grep "^\."'
 
 # WEB DEV ALIASES
-alias serve='browser-sync start --server --files . > /dev/null '
+# alias serve='browser-sync start --server --files . > /dev/null '
+alias serve=live-server
 alias drive='rclone mount drive: ~/drive --daemon'
 
 # QUICKFIX COMMON MISTAKES
