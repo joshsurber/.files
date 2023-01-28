@@ -2,6 +2,7 @@ awesome
 bash-completion
 bat
 blueman
+cbatticon
 cups
 dmenu
 exa
@@ -10,10 +11,13 @@ fuse2
 fzf
 git
 gnome-backgrounds
+goobook
+google-chrome
 locate
 make
 man-db
 neofetch
+neomutt
 neovim
 nitrogen
 noto-fonts-emoji
