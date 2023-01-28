@@ -52,13 +52,13 @@ c.content.cookies.accept = 'no-unknown-3rdparty'
 # Type: Bool
 c.content.javascript.can_access_clipboard = True
 
-# Display PDF files via PDF.js in the browser without showing a download
-# prompt. Note that the files can still be downloaded by clicking the
-# download button in the pdf.js viewer. With this set to `false`, the
-# `:prompt-open-download --pdfjs` command (bound to `<Ctrl-p>` by
-# default) can be used in the download prompt.
-# Type: Bool
-c.content.pdfjs = True
+# Allow websites to show notifications.
+# Type: BoolAsk
+# Valid values:
+#   - true
+#   - false
+#   - ask
+config.set('content.notifications.enabled', True, 'https://messages.google.com')
 
 # Allow websites to register protocol handlers via
 # `navigator.registerProtocolHandler`.
@@ -129,18 +129,6 @@ c.url.searchengines = {'DEFAULT': 'https://google.com/search?q={}', 'am': 'https
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
 c.url.start_pages = 'https://wiki.archlinux.org'
-
-# Render all web contents using a dark theme. Example configurations
-# from Chromium's `chrome://flags`:  - "With simple HSL/CIELAB/RGB-based
-# inversion": Set   `colors.webpage.darkmode.algorithm` accordingly.  -
-# "With selective image inversion": Set
-# `colors.webpage.darkmode.policy.images` to `smart`.  - "With selective
-# inversion of non-image elements": Set
-# `colors.webpage.darkmode.threshold.text` to 150 and
-# `colors.webpage.darkmode.threshold.background` to 205.  - "With
-# selective inversion of everything": Combines the two variants   above.
-# Type: Bool
-c.colors.webpage.darkmode.enabled = True
 
 # Bindings for normal mode
 config.bind('xb', 'config-cycle statusbar.show always never')
