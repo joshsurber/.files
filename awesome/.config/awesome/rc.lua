@@ -240,8 +240,8 @@ root.buttons(gears.table.join(
 -- {{{ Key bindings
 globalkeys = gears.table.join(
     awful.key({ modkey, }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
-    awful.key({ modkey, }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
-    awful.key({ modkey, }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
+    -- awful.key({ modkey, }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
+    -- awful.key({ modkey, }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
     awful.key({ modkey, }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
 
     awful.key({ modkey, }, "j", function() awful.client.focus.byidx(1) end,
@@ -344,7 +344,16 @@ clientkeys = gears.table.join(
     awful.key({ modkey, "Control" }, "m", function(c) c.maximized_vertical = not c.maximized_vertical c:raise() end,
         { description = "(un)maximize vertically", group = "client" }),
     awful.key({ modkey, "Shift" }, "m", function(c) c.maximized_horizontal = not c.maximized_horizontal c:raise() end,
-        { description = "(un)maximize horizontally", group = "client" })
+        { description = "(un)maximize horizontally", group = "client" }),
+
+    -- Move and resize floating windows via kbd
+    awful.key({ modkey }, "Next", function(c) c:relative_move(20, 20, -40, -40) end),
+    awful.key({ modkey }, "Prior", function(c) c:relative_move(-20, -20, 40, 40) end),
+    awful.key({ modkey }, "Down", function(c) c:relative_move(0, 20, 0, 0) end),
+    awful.key({ modkey }, "Up", function(c) c:relative_move(0, -20, 0, 0) end),
+    awful.key({ modkey }, "Left", function(c) c:relative_move(-20, 0, 0, 0) end),
+    awful.key({ modkey }, "Right", function(c) c:relative_move(20, 0, 0, 0) end)
+
 )
 
 -- Bind all key numbers to tags.
@@ -394,14 +403,6 @@ for i = 1, 9 do
                 end
             end,
             { description = "toggle focused client on tag #" .. i, group = "tag" })
-
-        -- -- Move and resize floating windows via kbd
-        -- awful.key({ modkey }, "Next", function(c) c:relative_move(20, 20, -40, -40) end),
-        -- awful.key({ modkey }, "Prior", function(c) c:relative_move(-20, -20, 40, 40) end),
-        -- awful.key({ modkey }, "Down", function(c) c:relative_move(0, 20, 0, 0) end),
-        -- awful.key({ modkey }, "Up", function(c) c:relative_move(0, -20, 0, 0) end),
-        -- awful.key({ modkey }, "Left", function(c) c:relative_move(-20, 0, 0, 0) end),
-        -- awful.key({ modkey }, "Right", function(c) c:relative_move(20, 0, 0, 0) end),
 
     )
 end
