@@ -11,3 +11,6 @@ qterminal/.config/qterminal.org/qterminal_bookmarks.xml
 qutebrowser/.config/qutebrowser/qsettings/QtProject.conf
 mutt/.config/mutt/colors.default
 mutt/.config/mutt/dracula.muttrc
+vifm/.config/vifm/scripts/
+vifm/.config/vifm/vifm-help.txt
+vifm/.config/vifm/vifminfo.json
