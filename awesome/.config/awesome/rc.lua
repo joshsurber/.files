@@ -73,8 +73,8 @@ awful.layout.layouts = {
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.floating,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
+    -- awful.layout.suit.fair,
+    -- awful.layout.suit.fair.horizontal,
     -- awful.layout.suit.spiral,
     -- awful.layout.suit.spiral.dwindle,
     -- awful.layout.suit.max,
@@ -271,13 +271,13 @@ globalkeys = gears.table.join(
         { description = "open a terminal", group = "launcher" }),
     awful.key({ modkey, }, ";", function() awful.spawn('qutebrowser') end,
         { description = "launch qutebrowser", group = "launcher" }),
-    awful.key({ modkey, "Control" }, ";", function() awful.spawn('brave') end,
-        { description = "launch Brave", group = "launcher" }),
+    -- awful.key({ modkey, "Control" }, ";", function() awful.spawn('brave') end,
+    -- { description = "launch Brave", group = "launcher" }),
     awful.key({ modkey, "Shift" }, ";", function() awful.spawn('google-chrome-stable') end,
         { description = "launch Chrome", group = "launcher" }),
-    awful.key({ modkey, }, "y", function() awful.spawn('pcmanfm') end,
+    awful.key({ modkey, }, "'", function() awful.spawn('pcmanfm') end,
         { description = "launch pcmanfm", group = "launcher" }),
-    awful.key({ modkey, "Shift" }, "y", function() awful.spawn(terminal .. ' -e vifm') end,
+    awful.key({ modkey, "Shift" }, "'", function() awful.spawn(terminal .. ' -e vifm') end,
         { description = "launch vifm", group = "launcher" }),
     awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
     awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
@@ -296,10 +296,11 @@ globalkeys = gears.table.join(
         { description = "increase the number of columns", group = "layout" }),
     awful.key({ modkey, "Control" }, "l", function() awful.tag.incncol(-1, nil, true) end,
         { description = "decrease the number of columns", group = "layout" }),
-    awful.key({ modkey, }, "space", function() awful.layout.inc(1) end, { description = "select next", group = "layout" })
+    awful.key({ modkey, }, "space", function() awful.layout.inc(1) end,
+        { description = "select next layout", group = "layout" })
     ,
     awful.key({ modkey, "Shift" }, "space", function() awful.layout.inc(-1) end,
-        { description = "select previous", group = "layout" }),
+        { description = "select previous layout", group = "layout" }),
 
     awful.key({ modkey, "Shift" }, "n", function() local c = awful.client.restore()
         -- Focus restored client
@@ -318,7 +319,6 @@ globalkeys = gears.table.join(
                 exe_callback = awful.util.eval, history_path = awful.util.get_cache_dir() .. "/history_eval" }
         end,
         { description = "lua execute prompt", group = "awesome" }),
-    -- Menubar
     awful.key({ modkey }, "r", function() menubar.show() end, { description = "show the menubar", group = "launcher" })
 )
 
@@ -347,12 +347,16 @@ clientkeys = gears.table.join(
         { description = "(un)maximize horizontally", group = "client" }),
 
     -- Move and resize floating windows via kbd
-    awful.key({ modkey }, "Next", function(c) c:relative_move(20, 20, -40, -40) end),
-    awful.key({ modkey }, "Prior", function(c) c:relative_move(-20, -20, 40, 40) end),
-    awful.key({ modkey }, "Down", function(c) c:relative_move(0, 20, 0, 0) end),
-    awful.key({ modkey }, "Up", function(c) c:relative_move(0, -20, 0, 0) end),
-    awful.key({ modkey }, "Left", function(c) c:relative_move(-20, 0, 0, 0) end),
-    awful.key({ modkey }, "Right", function(c) c:relative_move(20, 0, 0, 0) end)
+    awful.key({ modkey }, "Next", function(c) c:relative_move(20, 20, -40, -40) end), -- bigger
+    awful.key({ modkey }, "Prior", function(c) c:relative_move(-20, -20, 40, 40) end), -- smaller
+    awful.key({ modkey }, "Up", function(c) c:relative_move(0, -20, 0, 0) end), -- move up
+    awful.key({ modkey }, "Down", function(c) c:relative_move(0, 20, 0, 0) end), -- move down
+    awful.key({ modkey }, "Left", function(c) c:relative_move(-20, 0, 0, 0) end), -- move left
+    awful.key({ modkey }, "Right", function(c) c:relative_move(20, 0, 0, 0) end), -- move right
+    awful.key({ modkey, "Shift" }, "Up", function(c) c:relative_move(0, 20, 0, -40) end), -- shorter
+    awful.key({ modkey, "Shift" }, "Down", function(c) c:relative_move(0, -20, 0, 40) end), -- taller
+    awful.key({ modkey, "Shift" }, "Left", function(c) c:relative_move(20, 0, -40, 0) end), -- narrower
+    awful.key({ modkey, "Shift" }, "Right", function(c) c:relative_move(-20, 0, 40, 0) end) -- wider
 
 )
 
