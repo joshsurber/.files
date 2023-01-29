@@ -13,10 +13,9 @@ $if mode=vi
     set vi-ins-mode-string "|"
     set keymap vi-insert
     Control-l: clear-screen
-    Meta-ESC: "~"       # For my odd keyboard
-    Meta-\': "`"        # For my odd keyboard
-    Control-ESC: "~"    # For my odd keyboard
-    Control-\': "`"     # For my odd keyboard
+    ESC: "~"       # For my odd keyboard
+    # Control-ESC: "~"    # For my odd keyboard
+    # Control-\': "`"     # For my odd keyboard
     "jk": vi-movement-mode # remap escape
 	# "--": '~'
 $endif
