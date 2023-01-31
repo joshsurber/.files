@@ -309,10 +309,20 @@ globalkeys = gears.table.join(
 
     -- Prompt
     -- awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end, {description = "run prompt", group = "launcher"}),
-    awful.key({ modkey }, "p", function() awful.util.spawn('dmenu_run') end,
+    awful.key({ modkey }, "p", function() awful.spawn('dmenu_run -fn CascadiaMono-10') end,
         { description = "run dmenu", group = "launcher" }),
-    awful.key({ modkey, "Shift" }, "p", function() awful.spawn('passmenu') end,
+    awful.key({ modkey, "Control" }, "p", function() awful.spawn('dmenu_run -z -fn CascadiaMono-10') end,
+        { description = "run dmenu fuzzy", group = "launcher" }),
+    awful.key({ modkey, "Shift" }, "p", function() awful.spawn('passmenu -fn CascadiaMono-10') end,
         { description = "list passwords", group = "launcher" }),
+    awful.key({ modkey }, "b", function() awful.spawn('dm-logout') end,
+        { description = "shutdown menu", group = "launcher" }),
+    awful.key({ modkey, "Shift" }, "o", function() awful.spawn('dm-bookman') end,
+        { description = "open webpage", group = "launcher" }),
+    awful.key({ modkey }, "c", function() awful.spawn('dm-confedit') end,
+        { description = "edit config file", group = "launcher" }),
+    awful.key({ modkey, "Shift" }, "s", function() awful.spawn('dm-websearch') end,
+        { description = "search for stuff", group = "launcher" }),
 
     awful.key({ modkey }, "x",
         function() awful.prompt.run { prompt = "Run Lua code: ", textbox = awful.screen.focused().mypromptbox.widget,
