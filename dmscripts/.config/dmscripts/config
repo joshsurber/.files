@@ -9,7 +9,7 @@
 
 # -p is needed as we use prompts, alternative programs have to handle prompts well.
 
-DMENU="dmenu -i -z -l 20 -fn CascadiaMono-10 -p"
+DMENU="dmenu -i -l 20 -fn CascadiaMono-10 -p"
 
 PDF_VIEWER="zathura"
 
@@ -20,7 +20,7 @@ DMTERM="qterminal -e"
 DMEDITOR="${DMTERM} nvim"
 
 # TODO: Rename this variable to something more traditional
-logout_locker='xscreensave-command -lock'
+logout_locker='xscreensaver-command -lock'
 # logout_locker='dm-tool lock'
 
 # This case statement lets you change what the DMENU variable is for different scripts, so if you
