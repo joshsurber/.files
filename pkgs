@@ -4,16 +4,12 @@ bat
 blueman
 cbatticon
 cups
-dmenu2
-dmscripts
 exa
 fd
 fuse2
 fzf
 git
 gnome-backgrounds
-goobook
-google-chrome
 light
 locate
 make
@@ -32,7 +28,6 @@ qterminal
 qutebrowser
 rclone
 ripgrep
-setxkbmap
 shfmt
 starship
 stow
