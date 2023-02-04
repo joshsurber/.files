@@ -6,6 +6,7 @@ export EDITOR=nvim
 export VISUAL=$EDITOR
 export PAGER=less
 export MANPAGER="sh -c 'col -bx | bat -l man -p'" # "bat" as manpager
+export BROWSER=qutebrowser
 
 # PATHS
 export PATH=~/.local/bin:~/.cargo/bin:$PATH
