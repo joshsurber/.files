@@ -1,4 +1,5 @@
 source ~/.config/mutt/colors.linux
+source ~/.config/mutt/gpg.rc
 set imap_user="josh@surber.us"
 set imap_pass="`pass show josh@surber.us`"
 set folder = "imaps://imap.gmail.com:993"
@@ -14,7 +15,7 @@ set envelope_from=yes
 set signature="~/.config/mutt/signature"
 
 set sort=threads
-set sort_aux=last-date-received
+set sort_aux=reverse-last-date-received
 
 set header_cache = ~/.cache/mutt
 set message_cachedir = "~/.cache/mutt"
@@ -39,3 +40,10 @@ alternative_order text/plain text/html # prefer text over html
 set query_command="goobook query %s"
 bind editor <Tab> complete-query
 macro index,pager a "<pipe-message>goobook add<return>" "add the sender address to Google contacts"
+
+# # Use GPGME
+# set crypt_use_gpgme = yes
+# set crypt_replysign = yes # Sign replies to signed email
+# set crypt_replyencrypt = yes # Encrypt replies to encrypted email
+# set crypt_replysignencrypted = yes # Encrypt and sign replies to encrypted and signed email
+# set crypt_verify_sig = yes # Attempt to verify email signatures automatically

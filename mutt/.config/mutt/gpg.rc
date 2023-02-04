@@ -131,3 +131,4 @@ set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
 # set pgp_decryption_okay="^\\[GNUPG:\\] DECRYPTION_OKAY"
 set pgp_check_gpg_decrypt_status_fd
 
+# vim: ft=muttrc
