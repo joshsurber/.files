@@ -192,7 +192,24 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 #   - true
 #   - false
 #   - ask
+config.set('content.notifications.enabled', True, 'https://calendar.google.com')
+
+# Allow websites to show notifications.
+# Type: BoolAsk
+# Valid values:
+#   - true
+#   - false
+#   - ask
 config.set('content.notifications.enabled', True, 'https://messages.google.com')
+
+# Allow websites to register protocol handlers via
+# `navigator.registerProtocolHandler`.
+# Type: BoolAsk
+# Valid values:
+#   - true
+#   - false
+#   - ask
+config.set('content.register_protocol_handler', True, 'https://calendar.google.com?cid=%25s')
 
 # Allow websites to register protocol handlers via
 # `navigator.registerProtocolHandler`.
@@ -265,8 +282,8 @@ c.url.searchengines = {'DEFAULT': 'https://google.com/search?q={}', 'am': 'https
 c.url.start_pages = 'https://wiki.archlinux.org'
 
 # Bindings for normal mode
-config.bind('C', 'hint links spawn google-chrome-stable {hint-url}')
-config.bind('gC', 'spawn google-chrome-stable {url}')
+config.bind('C', 'hint links spawn -d google-chrome-stable {hint-url}')
+config.bind('gC', 'spawn -d google-chrome-stable {url}')
 config.bind('xb', 'config-cycle statusbar.show always never')
 config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
