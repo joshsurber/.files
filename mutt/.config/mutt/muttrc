@@ -34,6 +34,8 @@ unset record
 # Handle HTML mail
 set mailcap_path="~/.config/mutt/mailcap"
 auto_view text/html
+auto_view text/x-vcard
+set implicit_autoview=yes
 alternative_order text/plain text/html # prefer text over html
 
 # Use goobook for email addresses
@@ -41,9 +43,8 @@ set query_command="goobook query %s"
 bind editor <Tab> complete-query
 macro index,pager a "<pipe-message>goobook add<return>" "add the sender address to Google contacts"
 
-# # Use GPGME
-# set crypt_use_gpgme = yes
-# set crypt_replysign = yes # Sign replies to signed email
-# set crypt_replyencrypt = yes # Encrypt replies to encrypted email
-# set crypt_replysignencrypted = yes # Encrypt and sign replies to encrypted and signed email
-# set crypt_verify_sig = yes # Attempt to verify email signatures automatically
+set markers=no
+set smart_wrap
+set pager_context=3
+set status_on_top
+set check_new=yes
