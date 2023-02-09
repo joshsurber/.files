@@ -13,7 +13,7 @@ link:
 	echo 'source ~/.bash/logout' >> ~/.bash_logout
 
 yay:
-	 pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+	 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 	 yay -Y --gendb
 	 yay -Syu --devel
 	 yay -Y --devel --save
