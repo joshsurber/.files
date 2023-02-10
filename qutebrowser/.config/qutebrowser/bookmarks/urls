@@ -1,1 +1,440 @@
 https://wiki.archlinux.org/title/XDG_Base_Directory XDG Base Directory - ArchWiki
+https://hynek.me/articles/my-mutt-gmail-setup/ My mutt & Gmail Setup
+https://stevelosh.com/blog/2012/10/the-homely-mutt/#s15-reading-email The Homely Mutt / Steve Losh
+https://stadia.google.com/controller/ Stadia Bluetooth mode
+https://www.businessnewsdaily.com/16240-quickbooks-alternatives.html 5 Best Alternatives to QuickBooks Accounting Software - businessnewsdaily.com
+https://www.freshbooks.com/pricing FreshBooks Pricing, Lite, Plus and Premium Packages - FreshBooks
+https://quickbooks.intuit.com/pricing/ QuickBooks® Online Pricing & Free Trial | Official Site
+https://www.xero.com/us/pricing-plans/ Pricing Plans | Xero US
+https://www.upcounsel.com/llc-taxes-in-texas LLC Taxes in Texas: Everything You Need to Know
+https://www.bluevine.com/nerdwallet-checking/?subid_1=3318e923d5b74be4add9934238497d08 Small Business Banking That Works For You | Bluevine
+https://elementor.com/blog/web-design-contract/ Web Design Contract: 6 Essential Elements You Must Include + Template
+https://elementor.com/blog/how-to-handover-website-client/ How To Successfully Hand off a Website To Your Clients | Elementor
+https://elementor.com/blog/client-onboarding/ How to Create a Successful Client Onboarding Process (Free Template)
+https://elementor.com/blog/website-proposal/ How to Write Great Web Design Proposals (Free Template) | Elementor
+https://elementor.com/blog/start-web-design-business/ How to Start a Web Design Business: The Complete Guide | Elementor
+https://offsprout.com/blog/web-design-templates/ 13 Templates To Help You Streamline Your Web Design Business
+https://www.dubsado.com/features Dubsado | Features
+https://asana.com/pricing Asana Pricing | Premium, Business, & Enterprise pricing plans • Asana
+https://www.freecodecamp.org/news/free-web-design-proposal-template/ How to Write Freelance Proposals That Will Win Over Clients + a Free Template
+https://developers.cloudflare.com/pages/migrations/migrating-from-netlify/ Migrating from Netlify to Pages · Cloudflare Pages docs
+javascript:(function(){if(window['priFri']){window.print()}else{pfstyle='nbk';pfBkVersion='1';_pnicer_script=document.createElement('SCRIPT');_pnicer_script.type='text/javascript';_pnicer_script.src='//cdn.printfriendly.com/printfriendly.js';document.getElementsByTagName('head')[0].appendChild(_pnicer_script);}})(); Print friendly
+javascript:(function(){var s,F,j,f,i; s = ""; F = document.forms; for(j=0; j<F.length; ++j) { f = F[j]; for (i=0; i<f.length; ++i) { if (f[i].type.toLowerCase() == "password") s += f[i].type='text' + "\n"; } };})(); Show passwords
+javascript:void((function(d){if(self!=top||d.getElementById('toolbar')&&d.getElementById('toolbar').getAttribute('data-resizer'))return false;d.write('<!DOCTYPE HTML><html style="opacity:0;"><head><meta charset="utf-8"/></head><body><a data-viewport="320x480" data-icon="mobile">Mobile (e.g. Apple iPhone)</a><a data-viewport="320x568" data-icon="mobile" data-version="5">Apple iPhone 5</a><a data-viewport="375%C3%97667" data-icon="mobile" data-version="7">Apple iPhone 7</a><a data-viewport="414%C3%97736" data-icon="mobile" data-version="7+">Apple iPhone 7 Plus</a><a data-viewport="600x800" data-icon="small-tablet">Small Tablet</a><a data-viewport="768x1024" data-icon="tablet">Tablet (e.g. Apple iPad 2-3rd, mini)</a><a data-viewport="1280x800" data-icon="notebook">Widescreen</a><a data-viewport="1920%C3%971080" data-icon="tv">HDTV 1080p</a><script src="https://lab.maltewassermann.com/viewport-resizer/resizer.min.js"></script></body></html>')})(document)); Responsive
+javascript:(function(){function invert(o,t){var r=o.split("("),n=r[1].split(")")[0].split(",");return n.forEach(function(o,r){r<3&&(n[r]="color"==t&&255-parseInt(o)<50?120:255-parseInt(o))}),n=n.join(%22,%22),r[0]+%22(%22+n+%22)%22}document.querySelectorAll(%22*:not([invTouch])%22).forEach(function(o){var%20t=window.getComputedStyle(o);o.style.backgroundColor=invert(t.backgroundColor,%22back%22),o.style.color=invert(t.color,%22color%22),o.setAttribute(%22invTouch%22,%22true%22)});})(); Dark mode
+javascript:{'RELOAD CSS';let e=(e,t=document)=>Array.from(t.querySelectorAll(e)),t=r=>{for(let t of e('link[rel=stylesheet][href]',r)){let e=new URL(t.href);e.searchParams.set('forceReload',Date.now()),t.href=e}for(let o of e('iframe',r))o.contentDocument&&t(o.contentDocument)};t()} Reload CSS
+https://webmaker.app/app Web Maker
+https://archlinuxblog.medium.com/installing-and-configuring-awesome-wm-b4684fd09c9 Installing And Configuring Awesome WM | Medium
+https://www.androidpolice.com/chromeos-tips-and-tricks/ 15 ChromeOS tips and tricks for your new Chromebook
+http://localhost:631/ CUPS
+https://www.smashingmagazine.com/2021/03/eleventy-static-site-generator/ A Deep Dive Into Eleventy Static Site Generator — Smashing Magazine
+https://egghead.io/courses/build-an-eleventy-11ty-site-from-scratch-bfd3 Build An Eleventy (11ty) Site From Scratch | egghead.io
+https://developers.cloudflare.com/pages/framework-guides/deploy-an-eleventy-site/ Deploy an Eleventy site · Cloudflare Pages docs
+https://www.netlifycms.org/docs/external-oauth-clients/ External OAuth Clients | Netlify CMS | Open-Source Content Management System
+https://nicolashery.com/moving-a-blog-from-jekyll-to-eleventy/ Moving a blog from Jekyll to Eleventy - Nicolas Hery
+https://www.makeuseof.com/tag/4-websites-with-lots-of-completely-free-ebooks-that-dont-suck-nb/ 4 Sites With LOTS Of Completely Free Ebooks That Don't Suck
+https://www.makeuseof.com/tag/amazon-kindle-tips/ 9 Amazon Kindle Tips to Get More Out of Your E-Reader
+https://archiveofourown.org/users/Inheildi/pseuds/Gabrielle%20Lawson/works?fandom_id=8474 Gabrielle Lawson - Works | Archive of Our Own
+http://lifehacker.com/how-to-buy-ebooks-from-anywhere-and-still-read-them-all-1553478027 How to Buy Ebooks From Anywhere and Still Read Them All in One Place
+https://ponyfoo.com/books/mastering-modular-javascript/chapters/1 Module Thinking — Mastering Modular JavaScript
+https://standardebooks.org/ Standard Ebooks: Free and liberated ebooks, carefully produced for the true book lover.
+http://io9.gizmodo.com/the-proper-reading-order-for-the-star-trek-novels-in-a-1540828541 The Proper Reading Order for the Star Trek Novels in a Handy Flowchart
+https://archive.org/details/military-manuals?tab=about US Military Manual Collection
+https://archive.org/details/military-manuals?&sort=-week&page=2 US Military Manual Collection : Free Texts : Free Download, Borrow and Streaming : Internet Archive
+https://ramblingadam.com/2018/03/30/a-guide-to-dispersed-camping-in-america-part-1-finding-a-place-to-camp-in-the-national-forests/ A Guide To Dispersed Camping in AmericaPart 1: Finding A Place To Camp in the National Forests – Rambling Adam
+https://ramblingadam.com/2018/05/27/a-guide-to-dispersed-camping-in-america-part-3-wilderness-etiquette-and-comfort/ A Guide To Dispersed Camping in AmericaPart 3: Wilderness Etiquette & Comfort – Rambling Adam
+https://www.themanual.com/outdoors/what-is-dispersed-camping/ Dispersed Camping Is Your Way to Camp for Free All Over the U.S.
+https://getpocket.com/redirect?url=https%3A%2F%2Framblingadam.com%2F2018%2F04%2F27%2Fa-guide-to-dispersed-camping-in-america-part-2-the-gear-you-need-for-weeks-in-the-wilderness%2F&h=ea99e97759f48b64d2c0d0580e854c5cf6d2f34363c51277c9bd9f142299bd9c https://getpocket.com/redirect?url=https%3A%2F%2Framblingadam.com%2F2018%2F04%2F27%2Fa-guide-to-dispersed-camping-in-america-part-2-the-gear-you-need-for-weeks-in-the-wilderness%2F&h=ea99e97759f48b64d2c0d0580e854c5cf6d2f34363c51277c9bd9f142299bd9c
+https://thedyrt.com/magazine/lifestyle/what-is-dispersed-camping/amp/ So, What is “Dispersed Camping” Exactly?
+http://leiavoia.net/pages/hammock/geminiquilt.html The GEMINI Hammock Underquilt: DIY, No-Sew, All-Season, $65
+https://www.makeuseof.com/tag/enable-google-chrome-flags/ 10 Cool Chrome Flags You Should Enable
+http://www.networkworld.com/article/2867025/opensource-subnet/3-ways-to-run-normal-linux-on-a-chromebook.html?nsdr=true 3 ways to run 'normal' Linux on a Chromebook
+https://liliputing.com/2018/11/chromefy-turns-any-pc-into-a-chromebook.html Chromefy turns any PC into a Chromebook - Liliputing
+https://www.reddit.com/r/chromeos/comments/fmtiru/custom_font_in_the_crosh_linux_terminal/ ChromeOS
+https://github.com/nathanchance/chromeos-adb-fastboot/blob/master/README.md chromeos-adb-fastboot/README.md at master · nathanchance/chromeos-adb-fastboot
+http://lifehacker.com/how-to-install-linux-on-a-chromebook-and-unlock-its-ful-509039343 How to Install Linux on a Chromebook and Unlock Its Full Potential
+http://lifehacker.com/turn-your-old-laptop-into-a-chromebook-with-cloudready-1740556796 How to Turn an Old Laptop Into a Chromebook with CloudReady
+https://www.makeuseof.com/tag/use-chrome-os-raspberry-pi/ How to Use Chrome OS on a Raspberry Pi
+https://chromeunboxed.com/news/installing-gnome-software-center-chrome-os-linux-crostini Install A Linux Software Center On Your Chromebook
+http://lifehacker.com/the-best-chrome-apps-youre-probably-not-using-494408658 The Best Chrome Apps You're (Probably) Not Using
+https://www.howtogeek.com/445542/the-best-chrome-flags-to-enable-for-better-browsing/ The Best Chrome Flags to Enable for Better Browsing
+http://www.androidcentral.com/top-10-chromebook-tips-and-tricks Top 10 Chromebook tips and tricks | Android Central
+https://www.sitepoint.com/15-little-known-unix-commands/ 15 Little-Known Unix Commands
+https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/ A quick and easy guide to tmux
+https://danielmiessler.com/study/tmux/ A tmux Primer
+https://sanctum.geek.nz/arabesque/actually-using-ed/ Actually using ed | Arabesque
+http://bash.cumulonim.biz/BashPitfalls.html BashPitfalls
+https://www.howtogeek.com/442101/how-to-move-your-linux-home-directory-to-another-hard-drive/amp/ How to Move Your Linux home Directory to Another Drive
+https://www.makeuseof.com/tag/multitask-linux-terminal-screen/ How to Multitask on the Linux Terminal With Screen
+http://www.makeuseof.com/tag/mounting-hard-disks-partitions-using-linux-command-line/ Mounting Hard Disks and Partitions Using the Linux Command Line
+https://www.ibm.com/developerworks/aix/library/au-spunixpower.html Speaking UNIX: The best-kept secrets of UNIX power users
+https://linuxacademy.com/blog/linux/ten-things-i-wish-i-knew-earlier-about-the-linux-command-line-2/ Ten things I wish I knew earlier about the Linux command line – Linux Academy Blog
+https://medium.com/@robaboukhalil/the-weird-wondrous-world-of-bash-arrays-a86e5adf2c69 The weird, wondrous world of Bash arrays – Robert Aboukhalil – Medium
+http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/ TMUX – The Terminal Multiplexer (Part 1) | Hawk Host Blog
+https://www.freecodecamp.org/news/fzf-a-command-line-fuzzy-finder-missing-demo-a7de312403ff/ Why you should be using fzf, the command line fuzzy finder
+http://lifehacker.com/drunken-pasta-makes-for-quick-delicious-weeknight-me-1749521451 “Drunken” Pasta Makes for Quick, Delicious Weeknight Meals
+http://mentalfloss.com/article/82802/10-creative-ways-spice-your-mac-cheese 10 Creative Ways to Spice Up Your Mac & Cheese | Mental Floss
+http://mentalfloss.com/article/59842/10-delicious-hot-chocolate-mix-ins 10 Delicious Hot Chocolate Mix-Ins | Mental Floss
+https://www.buzzfeed.com/mathewg5/29-ass-kicking-recipes-for-homemade-seitan-dst2#.rkNdGP1ve 24 Kick-Ass Ways To Cook Homemade Seitan
+https://www.tastingtable.com/794355/different-types-of-coffee-explained/ 35 Different Types Of Coffee Explained
+https://www.freshoffthegrid.com/vegan-camping-food/ 38 Vegan Camping Food Ideas for Plant-Based Adventurers | Fresh Off The Grid
+http://www.makeuseof.com/tag/4-diy-geeky-drink-recipes-get-buzz/ 4 DIY Geeky Drink Recipes to Get Your Buzz On
+https://amp.mindbodygreen.com/articles/beginner-friendly-bread-recipe-for-your-first-sourdough-starter A Beginner-Friendly Sourdough Bread Recipe For Your First Loaf
+https://www.gq.com/story/chili-recipe-for-anyone A Chili Recipe So Easy You Can Make It Tonight | GQ
+http://www.prettyprudent.com/2011/10/entertaining-food/a-cup-of-coffee-cake-in-under-five-minutes-2/ A Cup of Coffee Cake (in Under Five Minutes) | Pretty Prudent
+http://skillet.lifehacker.com/a-foolproof-5-ingredient-ice-cream-no-cooking-required-1709167441 A Foolproof 5-Ingredient Ice Cream, No Cooking Required
+https://www.skinnytaste.com/air-fryer-baked-potato/ Air Fryer Baked Potato - Skinnytaste
+https://thetakeout.com/apple-cider-donuts-recipe-troubleshooting-1839328249 Apple cider doughnuts will cure your fear of frying
+http://lifehacker.com/bake-the-easiest-cupcakes-ever-with-this-two-ingredient-1777518167 Bake the Easiest Cupcakes Ever with This Two-Ingredient Recipe
+https://food52.com/blog/15384-how-to-turn-leftover-beer-into-toffee-sauce Beer Toffee Sauce Recipe
+http://www.instructables.com/id/Bloody-Broken-Glass-Cupcakes-for-Halloween/ Bloody Broken Candy Glass Cupcakes for Halloween - All
+http://www.instructables.com/id/Bloody-Broken-Glass-Cupcakes-for-Halloween/?ALLSTEPS Bloody Broken Candy Glass Cupcakes for Halloween - All
+http://allrecipes.com/recipe/24272/buttery-soft-pretzels/ Buttery Soft Pretzels Recipe - Allrecipes.com
+https://www.chicaandjo.com/2011/12/03/candy-cane-cake/ Candy cane cake | Chica and Jo
+http://www.chicaandjo.com/2010/01/06/candy-cane-syrup/ Candy cane syrup | Chica and Jo
+https://amp.cnn.com/cnn/2022/08/07/health/cast-iron-skillet-meals-wellness/index.html Cast iron: The only pan every cook needs - CNN
+http://www.number-2-pencil.com/2012/03/06/chocolate-chip-cookie-in-cup/ Chocolate Chip Cookie in a Cup - No. 2 Pencil
+http://www.cookingclassy.com/2012/03/cinnamon-roll-mug-cake-made-in-3-minutes/ Cinnamon Roll Mug Cake (made in 3 minutes!) - Cooking Classy
+https://www.evermine.com/blog/citrus-salt/ Citrus Salt - Gift & Favor Ideas from Evermine
+http://www.instructables.com/id/Cook-EVERYTHING-with-your-bread-machine/ Cook EVERYTHING with your bread machine - All
+http://lifehacker.com/5906053/diy-margarita-popsicles DIY Margarita Popsicles
+https://getpocket.com/explore/item/don-t-have-a-cow-the-simple-sustainable-guide-to-making-your-own-oat-milk Don’t Have a Cow: The Simple, Sustainable Guide to Making Your Own Oat Milk
+https://coalcrackerbushcraft.com/blog/post/enchilada-campfire-soup/ Enchilada Campfire Soup
+http://www.tasteofhome.com/recipes/enchilada-casserole Enchilada Casserole Recipe | Taste of Home
+http://lifehacker.com/five-foods-you-can-do-almost-anything-with-603226511 Five Foods You Can Do Almost Anything With
+https://skillet.lifehacker.com/five-umami-bombs-you-should-always-have-stocked-in-your-1794269578?rev=1492030499250 Five Umami Bombs You Should Always Have Stocked In Your Kitchen
+http://skillet.lifehacker.com/follow-this-recipe-to-make-milk-from-any-kind-of-nut-1710712233 Follow This Recipe to Make Milk from Any Kind of Nut
+https://blog.freshdirect.com/mini-apple-pies-recipe/ FreshDirect | Mini Apple Pies Recipe
+http://www.instructables.com/id/Frozen-Watermelon/ Frozen Watermelon - All
+http://damndelicious.net/2016/04/18/grilled-cheese-roll-ups/print/ Grilled Cheese Roll Ups - Damn Delicious
+http://www.instructables.com/id/Growing-Rock-Candy-In-Only-a-Few-Hours/ Growing Rock Candy In Only a Few Hours!! - All
+http://thepioneerwoman.com/cooking/homemade-applesauce/ Homemade Applesauce | The Pioneer Woman
+https://theconscientiouseater.com/homemade-oat-milk/ Homemade Oat Milk
+http://www.americastestkitchenfeed.com/recipes/homemade-smoked-salt/ Homemade Smoked Salt | The Feed
+http://www.americastestkitchenfeed.com/recipes/homemade-vanilla-sugar/ Homemade Vanilla Sugar | The Feed
+http://www.artofmanliness.com/2014/05/01/how-to-drink-whiskey/ How to Drink Whiskey | The Art of Manliness
+https://lifehacker.com/behold-the-simple-comfort-of-a-butter-baked-onion-1842794181 How to Make a Butter-Baked Onion
+https://skillet.lifehacker.com/behold-the-simple-comfort-of-a-butter-baked-onion-1842794181 How to Make a Butter-Baked Onion
+http://mentalfloss.com/article/72921/how-make-snow-globe-cocktail How To Make A Snow Globe Cocktail | Mental Floss
+https://skillet.lifehacker.com/how-to-make-black-garlic-butter-1833065260 How to Make Black Garlic Butter
+https://food52.com/blog/6103-homemade-cadbury-creme-eggs How to Make Cadbury Creme Eggs at Home
+http://skillet.lifehacker.com/how-to-make-flavored-spirits-that-are-way-tastier-than-1723723712 How to Make Flavored Spirits That Are Way Tastier Than Store-Bought
+https://www.thekitchn.com/how-to-make-sourdough-bread-224367 How To Make Sourdough Bread | Kitchn
+https://www.thekitchn.com/how-to-make-your-own-sourdough-starter-cooking-lessons-from-the-kitchn-47337?amp=1 How To Make Sourdough Starter from Scratch | Kitchn
+http://www.instructables.com/id/How-to-make-Tapioca-Pearls-from-scratch/ How to make Tapioca Pearls from scratch. - All
+https://lifehacker.com/how-to-organize-your-mess-of-recipes-with-the-paprika-a-1794081567 How to Organize Your Mess of Recipes With the Paprika App
+http://mentalfloss.com/article/75322/how-stock-your-bar-4-different-scenarios-under-150 How to Stock Your Bar for 4 Different Scenarios—for Under $150 | Mental Floss
+http://skillet.lifehacker.com/infuse-melted-butter-with-spices-for-tastier-baked-good-1746998149 Infuse Melted Butter with Spices for Tastier Baked Goods
+http://lifehacker.com/keep-baked-goods-from-sticking-with-homemade-pan-grease-1633636994 Keep Baked Goods from Sticking with Homemade Pan Grease
+http://www.realfarmacy.com/diy-organic-butter-under-5-minutes/ Learn to Make Organic Butter In Minutes and Never Buy it Again! – REALfarmacy.com
+https://skillet.lifehacker.com/this-one-pot-no-roux-macaroni-and-cheese-is-crazy-crea-1822143146?utm_campaign=socialflow_lifehacker_twitter&utm_source=lifehacker_twitter&utm_medium=socialflow Macaroni and Cheese Is Crazy Creamy
+http://lifehacker.com/make-almost-pickles-in-just-ten-minutes-1703050607 Make "Almost" Pickles in Just Ten Minutes
+http://lifehacker.com/make-no-cook-tomato-sauce-with-a-cheese-grater-1634150377 Make No-Cook Tomato Sauce With a Cheese Grater
+http://lifehacker.com/make-set-it-and-forget-it-ketchup-with-a-slow-cooker-1782924845 Make Set-It-and-Forget-It Ketchup With a Slow Cooker
+http://www.onegoodthingbyjillee.com/2012/11/make-your-own-curiously-strong-mints-altoids.html Make Your Own "Curiously Strong Mints" {Altoids} - One Good Thing by Jillee
+http://abeautifulmess.typepad.com/my_weblog/2011/11/make-your-own-coffee-syrup-gift-idea.html Make Your Own Coffee Syrup (Gift Idea) - A Beautiful Mess
+http://skillet.lifehacker.com/make-your-own-doritos-with-this-seasoning-blend-1779002552 Make Your Own Doritos With This Seasoning Blend
+http://lifehacker.com/make-your-own-nut-milk-and-butters-with-this-visual-gui-1639622266 Make Your Own Nut Milk and Butters With This Visual Guide
+https://www.yahoo.com/amphtml/lifestyle/melted-onions-230000631.html Melted Onions
+http://www.number-2-pencil.com/2012/03/10/peanut-butter-cookie-in-cup/ Peanut Butter Cookie in a Cup - No. 2 Pencil
+http://lifehacker.com/pizza-waffles-taste-as-good-as-they-look-1753776013 Pizza Waffles Taste as Good as They Look
+http://www.alaskafromscratch.com/2012/10/09/pumpkin-spice-coffee-creamer/ Pumpkin Spice Coffee Creamer - Alaska from Scratch
+http://www.alaskafromscratch.com/2011/10/08/pumpkin-spice-latte-syrup-2/ Pumpkin Spice Latte Syrup - Alaska from Scratch
+https://www.kingarthurbaking.com/blog/2015/05/01/putting-sourdough-starter-hold Putting your sourdough starter on hold | King Arthur Baking
+http://www.curiouscook.com/site/2008/08/recipe-ice-cream-in-a-bag.html Recipe: Ice Cream in a Bag - Curious Cook
+http://www.sprinklebakes.com/2010/12/snowball-cookies-icicle-candy.html Snowball Cookies & Icicle Candy | Sprinkle Bakes
+http://lifehacker.com/soak-lime-rinds-in-sugar-first-for-more-flavorful-limea-1779723596 Soak Lime Rinds in Sugar First for More Flavorful Limeade
+https://littlespoonfarm.com/sourdough-english-muffins-recipe/ Sourdough English Muffins - Easy Overnight Recipe! | Little Spoon Farm
+http://www.instructables.com/id/Sourdough-Starter-and-Bread-Recipe/ Sourdough Starter and Bread Recipe: 12 Steps (with Pictures)
+http://www.rachaelraymag.com/recipe/sparkling-cucumber-limeade/ Sparkling Cucumber Limeade
+http://skillet.lifehacker.com/take-your-condiments-to-the-next-level-with-these-homem-1712130564 Take Your Condiments to the Next Level with These Homemade Flavor Boosts
+https://www.thekitchenmagpie.com/wprm_print/recipe/43297 The Best Brownies AKA Chocolate Chewy Wonders - The Kitchen Magpie
+https://www.momontimeout.com/best-homemade-baked-mac-and-cheese-recipe/ The BEST Homemade Baked Mac and Cheese - Mom On Timeout
+https://lifehacker.com/the-best-pasta-sauce-has-three-ingredients-1820519444 The Best Pasta Sauce Has Three Ingredients
+https://www.foodnetwork.com/recipes/the-bomb-bakers-recipe-1946128 The Bomb Bakers Recipe | Guy Fieri | Food Network
+http://lifehacker.com/5959061/the-five-home-bar-essentials-that-can-make-nearly-any-drink-and-how-to-get-them-for-cheap The Five Home Bar Essentials That Can Make Nearly Any Drink (and How to Get Them for Cheap)
+http://lifehacker.com/the-fruit-alton-brown-recommends-for-grilling-1707288398 The Fruit Alton Brown Recommends for Grilling
+http://gizmodo.com/5869935/the-punch-that-gets-your-whole-party-faced The Punch That Gets Your Whole Party 'faced
+https://skillet.lifehacker.com/make-and-freeze-your-own-french-bread-pizzas-1828553815 These Homemade French Bread Pizzas Are Better Than Frozen
+https://skillet.lifehacker.com/this-diy-garlic-sauce-is-way-better-than-papa-johns-1826018011 This DIY Garlic Sauce Is Way Better Than Papa John's
+https://www.wellandgood.com/good-food/vegan-mexican-stew/ This Mexican stew is loaded with protein—and it’s 100 percent vegan | Well+Good
+http://www.rd.com/food/recipes-cooking/this-pickled-apples-recipe-will-electrify-your-taste-buds/ This Pickled Apples Recipe Will Electrify Your Taste Buds | Reader's Digest
+http://skillet.lifehacker.com/this-two-ingredient-cocktail-is-as-festive-as-it-is-e-1749884170 This Two-Ingredient "Cocktail" Is as Festive as It Is Easy
+http://lifehacker.com/top-10-diy-projects-that-simplify-your-kitchen-1538640661 Top 10 DIY Projects That Simplify Your Kitchen
+http://lifehacker.com/top-10-food-staples-you-can-make-better-and-cheaper-at-1673333794 Top 10 Food Staples You Can Make Better and Cheaper at Home
+https://lifehacker.com/top-10-surprising-foods-you-can-make-in-your-waffle-iro-1762895145 Top 10 Surprising Foods You Can Make in Your Waffle Iron
+http://www.seriouseats.com/recipes/2015/01/how-to-waffle-iron-fried-cheese-queso-frito-recipe.html Waffle Iron "Fried" Cheese (Queso Frito) Recipe | Serious Eats
+http://www.instructables.com/id/Watermelon-Braid-Bread/ Watermelon Braid (Bread) - All
+http://www.instructables.com/id/Watermelon-Cupcakes-Made-with-Real-Watermelon/ Watermelon Cupcakes: Made with Real Watermelon - All
+http://www.instructables.com/id/Watermelon-Jerky/ Watermelon Jerky - All
+http://www.instructables.com/id/Watermelon-on-Grill/ Watermelon on Grill - All
+http://www.instructables.com/id/Watermelon-Soup/ Watermelon Soup - All
+http://lifehacker.com/what-to-do-with-stale-bread-1633852738 What To Do with Stale Bread
+http://lifehacker.com/zen-and-the-art-of-making-bread-1789065514 Zen and the Art of Making Bread
+https://rishidoshi.blogspot.com/2010/07/look-ahead.html?m=1 RiDo's Hunting Story for F2L: How to improve “look ahead” for F2L and solve quicker
+https://solvethecube.com/speedcubing Speedcubing Guide | SolveTheCube
+https://www.buzzfeed.com/peggy/insanely-clever-upgrades-you-should-make-to-your-home?s=mobile&utm_term=.uam7ANwWd#.csarzqD7G 33 Insanely Clever Upgrades To Make To Your Home
+http://www.ana-white.com/2010/10/large-wood-pet-kennel-end-table Ana White | Build a Large Wood Pet Kennel End Table | Free and Easy DIY Project and Furniture Plans
+http://www.instructables.com/id/Bedroom-Nightstand-With-Secret-Compartment/?ALLSTEPS Bedroom Nightstand with Secret Compartment - All
+http://www.instructables.com/id/Build-a-Closet-Office/?ALLSTEPS Build a Closet Office - All
+http://workshop.lifehacker.com/build-a-diy-fold-down-workbench-to-save-floorspace-in-y-1699142770 Build a DIY Fold-Down Workbench To Save Floorspace in Your Shop
+http://workshop.lifehacker.com/build-a-modern-bookcase-using-a-single-sheet-of-plywood-1715395117 Build a Modern Bookcase Using a Single Sheet of Plywood
+http://workshop.lifehacker.com/build-a-woodworkers-workbench-that-can-handle-any-proje-1703051441 Build a Woodworkers Workbench That Can Handle Any Project
+http://workshop.lifehacker.com/build-wood-garage-storage-shelves-for-under-50-1689092012 Build Wood Garage Storage Shelves​​ for Under $50
+http://blog.homedepot.com/diy-bookshelves-in-home-office-makeover/ Check Out the DIY Bookshelves in This Home Office
+http://workshop.lifehacker.com/convert-a-drywall-doorway-into-an-arch-1637789146 Convert a Drywall Doorway Into an Arch
+http://www.instructables.com/id/Hardware-Store-Steel-and-Copper-Bracelet/?ALLSTEPS Hardware Store Steel and Copper Bracelet - All
+http://www.instructables.com/id/How-to-Build-a-Medieval-Dining-Room-Set/ How to build a Medieval Dining Room Set
+https://morningchores.com/how-to-build-wattle-fence-with-tree-branches/ How to Build a Sturdy Wattle Fence with Tree Branches
+http://www.instructables.com/id/How-to-build-a-sturdy-workbench-inexpensively/?ALLSTEPS How to build a sturdy workbench inexpensively - All
+http://lifehacker.com/how-to-build-the-essential-toolbox-for-every-level-of-d-510463658 How to Build the Essential Toolbox for Every Level of DIY
+http://www.artofmanliness.com/2011/10/27/make-a-dining-room-table-by-thanksgiving/ How to Make a Dining Room Table by Hand | The Art of Manliness
+http://www.artofmanliness.com/2011/05/12/how-to-make-bar-of-soap/ How to Make a Manly Bar of Soap | The Art of Manliness
+http://www.instructables.com/id/How-to-make-a-secret-doorbook-case/ How to make a secret door/book case
+http://www.artofmanliness.com/2012/04/04/how-to-make-a-work-bench/ How to Make a Work Bench | The Art of Manliness
+http://www.artofmanliness.com/2015/11/24/diy-chandlery-how-to-make-your-own-candles/ How To Make Your Own Candles at Home | The Art of Manliness
+http://www.instructables.com/id/How-to-Tie-a-Globe-Knot/?ALLSTEPS How To Tie A Globe Knot (or any Turk's head-like knot) - All
+https://www.familyhandyman.com/tools/circular-saws/how-to-use-a-circular-saw-long-cuts/view-all/ How To Use A Circular Saw: Long Cuts | The Family Handyman
+https://www.buzzfeed.com/amphtml/cieravelarde/tips-tricks-fresh-new-look-home Instead Of Remodeling Your Home, Try Out These 45 Tips And Tricks To Give It A Fresh New Look
+http://lifehacker.com/make-a-diy-fizzy-bath-bomb-for-your-valentine-1758804837 Make a DIY Fizzy Bath Bomb for Your Valentine
+http://vitor.io/notes-pibookpro-2020 Notes on the Pi Book Pro laptop shell (nee Sentio Superbook) – vitor.io
+http://www.instructables.com/id/Pallet-chest-1/?ALLSTEPS Pallet chest - All
+http://www.instructables.com/id/Lift-top-Pallet-Coffee-Table-with-Landing-Gear/ Pallet Coffee Table with Lifting Top and Landing Gear
+http://www.instructables.com/id/Pallet-Nightstand/ Pallet Nightstand - All
+http://www.instructables.com/id/Rustic-Bed-Frame-Queen-Size/?ALLSTEPS Rustic Bed Frame - Queen Size - All
+http://www.instructables.com/id/Signet-Ring-From-Nut/?ALLSTEPS Signet Ring From Nut - All
+http://www.instructables.com/id/TARDIS-Bird-Feeder/ TARDIS Bird Feeder - All
+http://lifehacker.com/the-murphy-bed-workspace-1655084238 The Murphy Bed Workspace
+https://www.makeuseof.com/upcycle-your-kindle/ The Top 5 Projects to Upcycle Your Old Kindle
+https://lifehacker.com/top-10-printable-paper-productivity-tools-399067 Top 10 Printable Paper Productivity Tools
+http://lifehacker.com/turn-ikea-cabinets-into-a-murphy-bed-1742367384 Turn IKEA Cabinets into a Murphy Bed
+http://www.makeuseof.com/tag/10-money-management-tools-inside-google-drive-use-today/ 10 Money Management Tools Inside Google Drive You Should Use Today
+https://brobible.com/success/article/how-to-live-like-a-millionaire-quick-steps/ 10 Quick Steps To Manage Your Money Like A Millionaire – BroBible
+http://twocents.lifehacker.com/a-basic-guide-to-the-different-types-of-bank-accounts-1620905545 A Basic Guide to the Different Types of Bank Accounts
+http://www.makeuseof.com/tag/are-you-taking-advantage-of-all-the-money-saving-deals-on-amazon/ Are You Taking Advantage Of All The Money Saving Deals On Amazon?
+http://twocents.lifehacker.com/boring-money-advice-that-actually-matters-1612379685 Boring Money Advice That Actually Matters
+http://twocents.lifehacker.com/decode-your-confusing-credit-report-with-this-cheat-she-1688528741 Decode Your Confusing Credit Report With This Cheat Sheet
+http://lifehacker.com/five-best-rewards-credit-cards-1622819827 Five Best Rewards Credit Cards
+http://twocents.lifehacker.com/how-can-i-open-a-bank-account-when-my-credit-sucks-1585417920 How Can I Open a Bank Account When My Credit Sucks?
+http://lifehacker.com/how-to-automate-your-finances-and-save-money-explained-1723625611 How to Automate Your Finances and Save Money, Explained in One Graphic
+http://lifehacker.com/how-to-get-reduced-prices-and-save-money-when-shopping-5910524 How to Get Reduced Prices and Save Money When Shopping on Amazon
+http://lifehacker.com/how-to-monitor-your-own-credit-for-free-forever-1510277742 How to Monitor Your Own Credit, For Free, Forever
+http://lifehacker.com/5887412/how-to-sell-your-excess-crap-for-cash-in-just-a-few-hours-with-amazons-fulfillment-program How to Sell Your Excess Crap for Cash in Just a Few Hours with Amazon's Fulfillment Program
+https://www.solosuit.com/ SoloSuit | Win Your Debt Collection Lawsuit
+https://www.fool.com/investing/2022/04/09/want-passive-income-invest-buffett-dividend/ Want $3,000 in Passive Income? Invest $16,000 in These 3 Warren Buffett Dividend Stocks and Wait 5 Years | The Motley Fool
+http://twocents.lifehacker.com/what-to-do-when-debt-collectors-start-calling-1710253131 What To Do When Debt Collectors Start Calling
+http://www.makeuseof.com/tag/5-best-retro-games-emulate-android/ 5 Best Retro Games That You Can Emulate On Android
+https://www.makeuseof.com/tag/4-sites-where-you-can-download-old-pc-games-for-free-nb/ 5 Sites Where You Can Download Old PC Games for Free
+http://lifehacker.com/bring-your-retro-games-into-the-modern-age-with-these-e-1516605379 Bring Your Retro Games Into the Modern Age with These Emulator Tricks
+http://www.makeuseof.com/tag/easily-turn-android-device-retro-gaming-hub/ Easily Turn Your Android Device Into A Retro Gaming Hub
+https://gamesnacks.com/embed/ GameSnacks - Bite-Sized Games
+http://www.howtogeek.com/261169/how-to-browse-and-play-terabytes-of-retro-games-from-your-couch-with-kodi/ How to Browse and Play Terabytes of Retro Games From Your Couch With Kodi
+http://lifehacker.com/how-to-turn-your-raspberry-pi-into-a-retro-game-console-498561192 How to Build a Raspberry Pi Retro Game Console for $35
+http://www.makeuseof.com/tag/get-game-controllers-running-linux/ How to Get Game Controllers Running on Linux
+https://www.howtogeek.com/395011/how-to-play-retro-games-on-your-nvidia-shield-tv-with-emulators/ How to Play Retro Games on Your NVIDIA SHIELD TV with Emulators
+http://lifehacker.com/how-to-set-up-an-all-in-one-retro-game-emulator-with-re-1745863517 How to Set Up an All-In-One Retro Game Emulator with RetroArch
+http://lifehacker.com/5915083/how-to-turn-your-android-into-an-awesome-portable-media-and-gaming-center How to Turn Your Android into a Killer Portable Media and Gaming Center
+http://lifehacker.com/5849961/how-to-turn-your-android-or-iphone-into-a-portable-retro-game-arcade How to Turn Your Android or iPhone into a Portable Retro Game Arcade
+http://kotaku.com/how-to-turn-your-android-phone-into-a-gaming-powerhouse-505045321 How To Turn Your Android Phone Into A Gaming Powerhouse
+https://www.theverge.com/platform/amp/2019/3/8/18253559/how-to-upgrade-nintendo-switch-storage-microsd-transfer-games-files How to upgrade your Nintendo Switch storage and migrate your games - The Verge
+https://www.buzzfeed.com/alanwhite/the-23-best-vintage-video-games-you-can-play-in-your-browser The 23 Best Vintage Video Games You Can Play In Your Browser
+http://home.arcor.de/jens.meder/3dschach/chess3d.htm TOURNAMENT RULES FOR THREE-DIMENSIONAL CHESS
+http://ligurio.github.io/awesome-ttygames/ Unix ASCII games | awesome-ttygames
+http://www.makeuseof.com/tag/what-is-the-easiest-way-to-solve-a-rubiks-cube/ What Is The Easiest Way To Solve A Rubik's Cube?
+https://livelovefruit.com/vegetables-you-can-grow-from-scraps/ 12 Vegetables You Can Grow From Scraps - Live Love Fruit
+http://www.lifehack.org/363822/15-houseplants-that-clean-the-air-and-are-almost-impossible-kill 15 Houseplants That Clean The Air And Are Almost Impossible To Kill
+http://wakeup-world.com/2012/10/15/16-foods-thatll-re-grow-from-kitchen-scraps/ 16 Foods That’ll Re-Grow from Kitchen Scraps | Wake Up World
+http://mentalfloss.com/article/80421/dont-have-garden-regrow-vegetables-your-kitchen Don’t Have a Garden? Regrow Vegetables in Your Kitchen | Mental Floss
+http://myscienceacademy.org/2016/01/05/grow-full-size-fruits-in-a-fraction-of-the-area-with-bonsai-trees/ Grow Full Size Fruits In a Fraction Of The Area With Bonsai Trees — myscienceacademy.org
+http://www.apartmenttherapy.com/how-to-grow-baby-lettuce-157297 How To Grow Baby Lettuce (It's Easier Than You Think!) — Apartment Therapy Tutorials | Apartment Therapy
+http://lifehacker.com/make-a-strawberry-tower-with-built-in-water-reservoir-1698485492 Make a Strawberry Tower with Built-in Water Reservoir
+http://westphoria.sunset.com/2015/01/07/fruit-trees/ Q&A with Ann Ralph: Keeping Fruit Trees Small | A blog by Sunset
+http://www.lifehack.org/361269/simple-and-easy-10-vegetables-you-buy-once-and-regrow-forever Simple And Easy: 10 Vegetables You Buy Once And Regrow Forever
+https://www.sitepoint.com/10-tips-git-next-level/ 10 Tips to Push Your Git Skills to the Next Level
+https://wildlyinaccurate.com/a-hackers-guide-to-git/ A Hacker's Guide to Git | Wildly Inaccurate
+https://rogerdudler.github.io/git-guide/ git - the simple guide - no deep shit!
+https://www.sitepoint.com/git-for-beginners/ Git for Beginners
+http://code.tutsplus.com/articles/git-bitbucket-and-you--cms-21908 Git, Bitbucket, and You
+http://alistapart.com/article/git-the-safety-net-for-your-projects Git: The Safety Net for Your Projects · An A List Apart Article
+https://github.com/blog/2019-how-to-undo-almost-anything-with-git How to undo (almost) anything with Git · GitHub
+https://www.smashingmagazine.com/2014/05/moving-git-repository-new-server/ Moving A Git Repository To A New Server – Smashing Magazine
+https://www.sitepoint.com/understanding-version-control-diffs/ Understanding Version Control with Diffs
+http://wayneofthewoods.com/coffin%202.html Free Coffin Plans - How to Build A Coffin - How to Build A Halloween Coffin Prop
+http://www.instructables.com/id/Halloween-Fence-from-Pallets/ Halloween Fence from Pallets - All
+http://m.wikihow.com/Make-a-3D-Paper-Snowflake How to Make a 3D Paper Snowflake: 12 Steps (with Pictures)
+http://www.notmartha.org/archives/2010/12/21/christmas-tree-ornament-mobile-how-to/ not martha — Christmas tree ornament mobile, how-to
+https://lilybet85.blogspot.com/2010/11/weeping-angel-christmas-tree-topper.html The Creative Crossing: Weeping Angel Christmas Tree Topper!
+https://wich-crafts.blogspot.com/2011/03/dont-blink.html wich-crafting: Don't Blink!
+https://www.buzzfeed.com/amphtml/jamesmcmahon/things-from-walmart-for-anyone-whose-home-is-starting-to 31 Things From Walmart For Anyone Whose Home Is Starting To Feel Cramped
+http://www.artofmanliness.com/2016/01/25/the-ultimate-list-of-hobbies-for-men-75-ideas-for-your-free-time/ 75+ Hobby Ideas For Men | The Art of Manliness
+https://www.mentalfloss.com/article/639892/amazon-tips-save-you-money Amazon Tips That Will Save You Money | Mental Floss
+http://www.makeuseof.com/tag/battle-smart-home-hubs-whats-whats-coming/ Battle of the Smart Home Hubs: What's Out There and What's Coming?
+http://www.instructables.com/id/Build-a-simple-shed-a-complete-guide/?ALLSTEPS Build a simple shed: a complete guide - All
+http://workshop.lifehacker.com/five-ways-to-update-old-kitchen-counters-1629880581 Five Ways to Update Old Kitchen Counters
+http://www.instructables.com/id/HomeMade-Modern-DIY-Concrete-Fire-Pit/?ALLSTEPS HomeMade Modern DIY Concrete Fire Pit - All
+https://lifehacker.com/5606282/how-to-be-the-perfect-host-in-the-21st-century How to Be the Perfect Host in the 21st Century
+http://www.artofmanliness.com/2011/08/19/how-to-decorate-a-man-room/ How to Decorate a Man Room | The Art of Manliness
+http://workshop.lifehacker.com/how-to-install-epoxy-garage-floor-coating-1671598832 How to Install Epoxy Garage Floor Coating
+http://twocents.lifehacker.com/how-to-save-up-for-a-home-down-payment-1741784087 How to Save Up for a Home Down Payment
+http://lifehacker.com/how-to-use-basic-design-principles-to-decorate-your-hom-1687607782#_ga=1.201921425.1055861349.1441835238 How to Use Basic Design Principles to Decorate Your Home
+http://www.makeuseof.com/tag/learn-play-instrument-7-free-online-music-lessons/ Learn to Play an Instrument with 7 Free Online Music Lessons
+http://workshop.lifehacker.com/make-a-small-air-conditioner-out-of-an-ice-bucket-1627528963 Make a Small Air Conditioner Out of an Ice Bucket
+http://www.tomsguide.com/us/philips-hue-bulb-types,review-4161.html Philips Hue Lights: A Guide to What Each Does (and Costs)
+http://io9.gizmodo.com/the-ultimate-collection-of-clever-halloween-decorations-1649445688 Scare Your Neighbors With These DIY Halloween Decorations
+http://www.instructables.com/id/Street-light-floor-lamp/?ALLSTEPS Street light floor lamp - All
+http://lifehacker.com/the-start-to-finish-guide-to-buying-a-home-1663317601 The Start-to-Finish Guide to Buying a Home
+https://theinventory.com/there-is-a-secret-to-cleaning-the-bathroom-in-just-10-m-1839920826 There Is A Secret To Cleaning The Bathroom In Just 10 Minutes
+http://lifehacker.com/top-10-smart-ways-to-organize-and-upgrade-your-garage-1706343727 Top 10 Smart Ways to Organize and Upgrade Your Garage
+http://lifehacker.com/top-10-things-you-need-to-know-before-you-buy-a-home-1709505200 Top 10 Things You Need to Know Before You Buy a Home
+http://www.artofmanliness.com/2010/08/19/how-to-buy-and-restore-vintage-shaving-gear/ Vintage Razor Restoration | The Art of Manliness
+http://www.makeuseof.com/tag/smart-home/ What Is A Smart Home?
+http://www.makeuseof.com/tag/control-sound-bars-roku-tv-remote/ How to Control Sound Bars With a Roku TV Remote
+http://www.makeuseof.com/tag/remove-drm-every-ebook-own/ How to Remove the DRM on Every eBook You Own
+https://www.makeuseof.com/tag/raspberry-pi-plex-media-server/ How to Turn a Raspberry Pi Into a Plex Media Server
+http://www.howtogeek.com/142044/how-to-turn-a-raspberry-pi-into-an-always-on-bittorrent-box/ How to Turn a Raspberry Pi into an Always-On BitTorrent Box
+https://www.makeuseof.com/turn-old-laptop-into-plex-media-server/ How to Turn Your Old Laptop Into a Plex Media Server
+http://lifehacker.com/5919558/turn-an-old-computer-into-a-networked-backup-streaming-or-torrenting-machine-with-ubuntu Turn an Old Computer into a Networked Backup, Streaming, or Torrenting Machine with Linux
+http://www.makeuseof.com/tag/10-neat-ways-create-beautiful-google-documents/ 10 Neat Ways to Create Beautiful Google Documents
+https://www.makeuseof.com/online-tools-for-freelancers-on-a-budget/?user_id=josh@surber.us 15 Easy-to-Use Online Tools for Freelancers on a Budget
+https://www.makeuseof.com/tag/free-modern-online-image-editors/ 5 Free and Modern Online Image Editors to Replace Clunky Programs & Apps
+https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/ Build A Blog With Jekyll And GitHub Pages — Smashing Magazine
+https://bennettfeely.com/clippy/ Clippy — CSS clip-path maker
+https://lifehacker.com/copy-emoji-and-special-characters-with-copychar-1832792618 Copy Emoji and Special Characters With CopyChar
+http://css3clickchart.com/#box-sizing CSS3 Click Chart | CSS3 Browser Support and Information
+https://signature-maker.net/email-signature Email Signature Generator - Online Signature Maker
+http://www.favicon.cc/ favicon.ico Generator
+http://cooletips.de/htaccess/ htaccess Generator
+https://cdn.ampproject.org/c/lifehacker.com/learn-how-to-master-google-forms-with-this-handy-visual-1784277586/amp Learn How to Master Google Forms With This Handy Visual Guide
+https://www.printablepaper.net/ Printable Paper
+http://quantityqueries.com/ QQ - Quantity Queries Builder
+https://www.remove.bg/ Remove Background from Image – remove.bg
+https://simpleicons.org/ Simple Icons
+https://smallpdf.com/ Smallpdf.com - A Free Solution to all your PDF Problems
+https://txt2re.com/ txt2re: headache relief for programmers :: regular expression generator
+https://offspring.lifehacker.com/get-rid-of-your-kids-bad-day-with-a-magic-spell-1833295489 Get Rid of Your Kid's Bad Day With a Magic Spell
+https://offspring.lifehacker.com/how-to-entertain-kids-at-restaurants-without-screens-1830413041 How to Entertain Kids at Restaurants—Without Screens
+https://offspring.lifehacker.com/how-to-get-your-kid-to-genuinely-smile-in-photos-1825699812 How to Get Your Kid to Genuinely Smile in Photos
+https://offspring.lifehacker.com/how-to-move-and-stay-sane-when-you-have-kids-1832751141 How to Move When You Have Kids
+https://offspring.lifehacker.com/our-2018-guide-to-surviving-toddlers-1830990405 https://offspring.lifehacker.com/our-2018-guide-to-surviving-toddlers-1830990405
+https://www.artofmanliness.com/articles/the-importance-of-roughhousing-with-your-kids/ https://www.artofmanliness.com/articles/the-importance-of-roughhousing-with-your-kids/
+https://offspring.lifehacker.com/play-hand-clapping-games-with-your-kids-1832930144 Play Hand-Clapping Games With Your Kids
+https://offspring.lifehacker.com/put-your-kids-in-charge-of-gift-giving-this-year-1830657124 Put Your Kids in Charge of Gift-Giving This Year
+https://offspring.lifehacker.com/why-you-should-watch-silent-movies-with-your-kid-1825826161 Why You Should Watch Silent Movies With Your Kid
+https://vitals.lifehacker.com/you-could-prevent-peanut-allergies-with-a-99-cent-snack-1825245182 You Could Prevent Peanut Allergies With a 99 Cent Snack
+http://www.makeuseof.com/tag/12-sites-kindle-owner/ 12 Sites Every Kindle Owner Should Really Know About
+http://www.makeuseof.com/tag/15-android-apps-remote-control-linux-pc/ 15 Android Apps to Remote Control Your Linux PC
+https://www.popsci.com/diy/android-live-wallpapers/ 6 great Android live wallpapers we think you'll love | Popular Science
+http://www.artofmanliness.com/2015/05/05/a-primer-on-fountain-pens/?utm_content=bufferaf618&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer Beginner's Guide to Fountain Pens | The Art of Manliness
+http://www.makeuseof.com/tag/google-docs-can-help-come-across-professional/ How Google Docs Can Help You Come Across As A Professional
+http://www.artofmanliness.com/2011/03/13/pregnant-wife/ How to Take Care of a Pregnant Wife | The Art of Manliness
+https://www.androidpolice.com/2018/03/31/automatically-mark-archived-emails-read-gmail-inbox/ How to: Automatically mark archived emails as read in Gmail or Inbox
+http://lifehacker.com/start-difficult-emails-off-right-with-these-templates-1662644999 Start Difficult Emails Off Right with These Templates
+https://www.makeuseof.com/tag/professional-google-docs-addons/ The 10 Best Google Docs Add-Ons for More Professional Documents
+https://zapier.com/blog/excel-macros/?utm_campaign=The%20Beginner%27s%20Guide%20to%20Excel%20Macros&utm_medium=social&utm_source=twitter The Beginner's Guide to Excel Macros
+http://lifehacker.com/what-all-of-those-confusing-dress-code-terms-really-mea-1724671659 What All of Those Confusing Dress Code Terms Really Mean
+https://www.makeuseof.com/tag/raspberry-pi-learn-online-security/ 8 Ways a Raspberry Pi Can Help You Learn Online Security Skills
+https://byrna.com/ Byrna | Best Non Lethal Self-Defense Products
+http://lifehacker.com/5305094/how-to-crack-a-wi-fi-networks-wep-password-with-backtrack How to Crack a Wi-Fi Network's WEP Password with BackTrack
+http://lifehacker.com/5873407/how-to-crack-a-wi-fi-networks-wpa-password-with-reaver How to Crack a Wi-Fi Network's WPA Password with Reaver
+http://lifehacker.com/how-to-hack-your-own-network-and-beef-up-its-security-w-1649785071 How to Hack Your Own Network and Beef Up Its Security with Kali Linux
+https://lifehacker.com/learning-to-pick-locks-taught-me-how-crappy-door-locks-1750091711?utm_campaign=socialflow_lifehacker_twitter&utm_source=lifehacker_twitter&utm_medium=socialflow Learning to Pick Locks Taught Me How Crappy Door Locks Really Are
+http://blog.sanctum.geek.nz/series/linux-crypto/ Linux Crypto Archives - Arabesque
+https://www.lifewire.com/free-and-public-dns-servers-2626062 The Best Free and Public DNS Servers (December 2022)
+https://www.smashingmagazine.com/2017/05/oauth2-logging-in-facebook/ What You Need To Know About OAuth2 And Logging In With Facebook – Smashing Magazine
+http://www.itstactical.com/transcom/13-common-sense-items-you-need-in-a-winter-vehicle-emergency-kit/ 13 Items You Need in a Winter Emergency Vehicle Kit
+https://www.thesurvivalistblog.net/top-14-survival-downloads/ 14+ Survival Materials to Download Today | The Survivalist Blog
+http://lifehacker.com/30-essential-things-you-should-keep-in-your-car-1263514115 30 Essential Things You Should Keep in Your Car
+http://tacticalintelligence.net/blog/36-awesome-baking-soda-uses-for-preppers.htm 36 Awesome Baking Soda Uses for Preppers
+https://twentytwowords.com/37-things-experts-say-you-need-in-your-disaster-survival-kit/ 37 Things Experts Say You Need in Your Disaster Survival Kit | 22 Words
+http://indefinitelywild.gizmodo.com/an-easy-affordable-effective-guide-to-preparing-for-a-1572014016 An Easy, Affordable, Effective Guide To Preparing For A Disaster
+http://hiconsumption.com/2017/03/best-survival-everyday-carry-gear/ Bug Out: 15 Survival EDC Essentials | HiConsumption
+https://www.getoutwiththekids.co.uk/family-hiking/creating-a-survival-kit-for-your-kids/ Create your own Kids Survival Kit
+http://www.itstactical.com/intellicom/diy/diy-inexpensive-gun-magnet-mount-conceal-your-firearm-within-arms-reach/ DIY Inexpensive Gun Magnet Mount: Conceal Your Firearm Within Arm's Reach - ITS Tactical
+http://lifehacker.com/doomsday-prep-for-non-paranoid-people-1793870107?utm_campaign=socialflow_lifehacker_twitter&utm_source=lifehacker_twitter&utm_medium=socialflow Doomsday Prep For Non-Paranoid People
+http://indefinitelywild.gizmodo.com/fix-absolutely-anything-anywhere-with-a-keychain-toolk-1571052588 Fix Absolutely Anything, Anywhere With A Keychain Toolkit
+http://www.instructables.com/id/How-to-Build-a-Propper-Bug-Out-Bag/ How to Build a Proper Bug Out Bag
+http://www.artofmanliness.com/2014/08/07/how-to-build-the-ultimate-survival-shelter/ How to Build A Survival Shelter | The Art of Manliness
+http://indefinitelywild.gizmodo.com/how-to-find-the-perfect-led-flashlight-1583454051 ​How To Find The Perfect LED Flashlight
+http://indefinitelywild.gizmodo.com/how-to-find-the-perfect-multitool-in-five-easy-steps-1578830637 ​How To Find the Perfect Multitool In Six Easy Steps
+http://indefinitelywild.gizmodo.com/how-to-find-the-perfect-pocket-knife-1590084875 ​How To Find The Perfect Pocket Knife
+http://indefinitelywild.gizmodo.com/how-to-find-the-perfect-tent-1624706473 ​How To Find The Perfect Tent
+http://www.artofmanliness.com/2011/03/07/how-to-make-a-bug-out-bag-your-72-hour-emergency-evacuation-survival-kit/ How to Make a Bug Out Bag | The Art of Manliness
+http://tacticalintelligence.net/blog/how-to-make-dehydrated-bug-out-toothpaste.htm How to Make Dehydrated Bug-Out Toothpaste
+https://urbansurvivalsite.com/make-your-own-hardtack/ How to Make Hardtack: A Cracker That Lasts for Years
+http://www.itstactical.com/medcom/medical/how-to-repackage-over-the-counter-meds-for-aid-bags-and-kits/ How to Repackage Over The Counter Meds for Aid Bags and Kits - ITS Tactical
+http://indefinitelywild.gizmodo.com/how-to-stay-warm-when-its-cold-outside-1643473572 How To Stay Warm When It's Cold Outside
+http://www.artofmanliness.com/2012/04/08/how-to-whistle-with-your-fingers/ How to Whistle With Your Fingers | The Art of Manliness
+http://hiconsumption.com/2017/05/best-minimalist-everyday-carry-gear/ Less Is More: 20 Minimalist EDC Essentials | HiConsumption
+http://lifehacker.com/make-a-survival-bracelet-to-save-you-in-any-worst-case-1688438841 Make a Survival Bracelet to Save You in Any Worst Case Scenario
+http://lifehacker.com/prepare-yourself-for-anything-with-a-bug-out-kindle-1593799819 Prepare Yourself for Anything with a Bug Out Kindle
+https://www.cityprepping.com/2021/07/07/preppers-free-pdf-library/ Prepper's Free PDF Library - City Prepping
+https://m.youtube.com/watch?feature=youtu.be&v=dSLi-n_JPRo Recipe for Making Your Own Emergency Rations (1080p HD) - YouTube
+http://lifehacker.com/5915897/survival-guide-puts-the-us-military-survival-manual-in-your-pocket Survival Guide Puts the US Military Survival Manual in Your Pocket
+http://lifehacker.com/5881604/be-a-grown-up-boy-scout-the-wilderness-survival-skills-everyone-should-know The Wilderness Survival Skills Everyone Should Know
+http://mentalfloss.com/article/50569/10-hotel-secrets-behind-front-desk 10 Hotel Secrets from Behind the Front Desk | Mental Floss
+http://mentalfloss.com/article/57825/14-hidden-things-look-disneyland 14 Hidden Things to Look for at Disneyland | Mental Floss
+http://www.makeuseof.com/tag/4-free-android-apps-you-need-when-youre-at-disneyland/ 4 Free Android Apps You Need When You're At Disneyland
+https://www.buzzfeed.com/peggy/camping-hacks-that-are-borderline-genius 41 Camping Hacks That Are Borderline Genius
+http://shareably.net/perfect-road-trip-map/ According To Science, This Is The Perfect And Best Road Trip You Can Possibly Take
+https://mytopo.com/ Custom Topographic Maps and Aerial Maps for the USA & Canada
+http://lifehacker.com/freecampsites-net-guides-you-to-wallet-friendly-outdoor-1552433638 FreeCampsites.Net Guides You to Wallet-Friendly Outdoor Adventures
+https://www.hoteltonight.com/ Last Minute Hotel Deals at Great Hotels - Hotel Tonight
+http://lifehacker.com/override-your-hotel-room-thermostat-and-set-it-as-hot-o-1462595059 Override Your Hotel Room Thermostat and Set It As Hot or Cold You Like
+http://lifehacker.com/the-air-travel-rights-you-arent-aware-of-and-how-to-g-508983488 The Air Travel Rights You Aren't Aware of (and How to Get Them)
+http://upl.codeq.info/ The Universal Packing List
+http://lifehacker.com/5881839/top-10-ways-to-travel-smarter-safer-and-cheaper Top 10 Ways to Travel Smarter, Safer, and Cheaper
+https://github.com/sheerun/blog/blob/master/_posts/2014-03-21-how-to-boost-your-vim-productivity.markdown blog/2014-03-21-how-to-boost-your-vim-productivity.markdown at master · sheerun/blog
+http://stevelosh.com/blog/2010/09/coming-home-to-vim/ Coming Home to Vim / Steve Losh
+https://gist.github.com/Gavinok/43d004e767e65694f6e8a9cdfe5afb61 Confuguration used for navigating between files in vim.
+https://github.com/tonsky/FiraCode GitHub - tonsky/FiraCode: Monospaced font with programming ligatures
+http://nvie.com/posts/how-i-boosted-my-vim/ How I boosted my Vim » nvie.com
+https://www.reddit.com/r/vim/comments/iq028u/how_to_enable_ligatures/ How to enable ligatures: vim
+https://itsfoss.com/install-latest-vim-ubuntu/ How to Install Latest Vim 9.0 on Ubuntu & Linux Mint
+https://blog.inkdrop.app/how-to-set-up-neovim-0-5-modern-plugins-lsp-treesitter-etc-542c3d9c9887 How to set up Neovim 0.5 + Modern plugins (LSP, Treesitter, Fuzzy finder, etc) | by Takuya Matsuyama | Dev as Life
+http://blog.stevenocchipinti.com/2016/12/28/using-netrw-instead-of-nerdtree-for-vim http://blog.stevenocchipinti.com/2016/12/28/using-netrw-instead-of-nerdtree-for-vim
+https://github.com/lifepillar/vim-mucomplete lifepillar/vim-mucomplete: Chained completion that works the way you want!
+https://github.com/neoclide/coc.nvim neoclide/coc.nvim: Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
+https://www.mattlayman.com/blog/2019/supercharging-vim-navigate-files-instantly/ Supercharging Vim: Navigate files instantly · Matt Layman
+https://jakobgm.com/posts/vim/git-integration/ Tightly Integrating Git into Vim :: JakobGM's Homepage
+https://dev.to/fidelve/using-vim-as-your-main-editor-for-web-development-5a73 Using Vim as your main editor for web development - DEV Community
+http://vim-adventures.com/ VIM Adventures
+https://vimawesome.com/ Vim Awesome
+http://csswizardry.com/2014/06/vim-for-people-who-think-things-like-vim-are-weird-and-hard/ Vim for people who think things like Vim are weird and hard – CSS Wizardry – CSS, OOCSS, front-end architecture, performance and more, by Harry Roberts
+https://robots.thoughtbot.com/vim-you-complete-me Vim, You Complete Me
+http://mislav.net/2011/12/vim-revisited/ Vim: revisited
+http://www.moolenaar.net/habits.html Vim: Seven habits of effective text editing
+https://css-tricks.com/now-ever-might-not-need-jquery/ (Now More Than Ever) You Might Not Need jQuery | CSS-Tricks
+https://www.geeksforgeeks.org/10-useful-chrome-extension-for-web-developers-and-designers/ 10 Useful Chrome Extension For Web Developers And Designers - GeeksforGeeks
+https://www.sitepoint.com/12-little-known-css-facts/ 12 Little-Known CSS Facts
+http://developer.telerik.com/featured/16-ways-to-search-find-and-edit-with-chrome-devtools/ 16 Ways to Search, Find and Edit with Chrome DevTools -Telerik Developer Network
+https://www.makeuseof.com/popular-professional-web-development-tools/ 8 Popular Web Development Tools Used by Professionals
+http://blog.adtile.me/2014/01/16/a-dive-into-plain-javascript/ A Dive Into Plain JavaScript
+https://www.smashingmagazine.com/2021/03/css-generators/ CSS Generators — Smashing Magazine
+https://devdocs.io/ DevDocs API Documentation
+https://www.fontpair.co/ Fontpair - Free, beautiful fonts and font pairings curated just for you
+https://utopia.fyi/ Home | Utopia
+https://svgsprit.es/ https://svgsprit.es
+https://javascript.plainenglish.io/i-wrote-these-10-single-lines-of-javascript-code-the-team-lead-praised-the-code-for-being-elegant-6a9c471a9613 I Wrote These 10+ Single Lines of JavaScript Code; the Team Lead Praised the Code for Being Elegant | by Zard-x | JavaScript in Plain English
+https://www.sitepoint.com/introduction-to-the-fetch-api/ Introduction to the Fetch API — SitePoint
+https://developer.mozilla.org/en-US/docs/Web/JavaScript JavaScript | MDN
+https://www.sitepoint.com/shorthand-javascript-techniques/?utm_content=bufferc48af&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer JavaScript Shorthand Coding Techniques — SitePoint
+https://javascript.plainenglish.io/javascript-negative-indexing-with-the-at-method-9bc72c3bb903 JavaScript: Negative Indexing With the at() Method | JavaScript in Plain English
+https://www.sitepoint.com/migrating-flexbox-cutting-mustard/ Migrating to Flexbox by Cutting the Mustard
+https://smolcss.dev/ SmolCSS
+https://www.sitepoint.com/sqlite-3-beyond-basics/ SQLite 3 Beyond the Basics
+https://dev.to/lissy93/super-useful-css-resources-1ba3 Super Useful CSS Resources 🌈 - DEV Community 👩‍💻👨‍💻
+https://www.sitepoint.com/javascript-missing-math-methods/ The Missing Math Methods in JavaScript - SitePoint
+https://www.makeuseof.com/tag/ultimate-javascript-cheat-sheet/ The Ultimate JavaScript Cheat Sheet
+https://typespiration.com/ typespiration.com - A showcase of web typography designs with ready-to-use CSS codes.
+https://www.smashingmagazine.com/2021/06/useful-frontend-boilerplates-starter-kits/#bootstrap-your-dotfiles Useful Front-End Boilerplates And Starter Kits — Smashing Magazine
+https://www.androidpolice.com/repainter-android-12-how-to/ How to use Repainter to improve Android 12's Material You themes on Pixel and Galaxy phones
+http://www.fakewhats.com/generator Fake WhatsApp Chat Generator | fakewhats.com
+https://fakeupdate.net/ FakeUpdate.net - Windows Update Prank by fediaFedia
+https://elgoog.im/terminal/ Google Terminal - elgooG
+https://hackertyper.net/# Hacker Typer
+https://pranx.com/ Online Pranks 😈😂 | Geek Prank is now Pranx
+https://www.walmart.com/account/order/5602099375006?comm-msg-vehicle=EMAIL&comm-msg-id=1c225c05-74dd-4b54-aa36-cc3434240a7d Account
+https://dolphin-emu.org/download/ Dolphin Emulator - Download
+https://www.legacyfoodstorage.com/products/120-serving-breakfast-lunch-and-dinner-bucket Emergency Freeze Dried Food Storage Ready Meals– Legacy Food Storage
+https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en Google News
+https://shoppinglist.google.com/lists/10139583724715455696?ouid=109979382707606190208&hl=en-US Google Shopping List
