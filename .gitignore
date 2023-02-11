@@ -16,3 +16,4 @@ vifm/.config/vifm/vifm-help.txt
 vifm/.config/vifm/vifminfo.json
 dmscripts/.config/dmscripts/global
 qutebrowser/.config/qutebrowser/autoconfig.yml
+nvim/.config/nvim/lazy-lock.json
