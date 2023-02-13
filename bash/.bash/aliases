@@ -22,11 +22,10 @@ alias mutt='neomutt'
 
 [[ -x "$(command -v rg)" ]] && alias grep='rg'
 
+[[ -x "$(command -v exa)" ]] && alias ls='exa'
+
 [[ -x "$(command -v apt)" ]] && alias i='sudo apt install'
 [[ -x "$(command -v pacman)" ]] && alias i='sudo pacman -S'
-
-# Exa is different because if I alias ls to exa it gets clobbered when hot reloading rc files
-[[ -x "$(command -v exa)" ]] || alias exa='ls'
 
 [[ $TERM == 'xterm-kitty' ]] && alias theme='kitty +kitten themes'
 
@@ -36,49 +35,40 @@ alias gc='git commit'
 alias gd='git diff'
 alias gp='git push'
 alias gs='git add' # git stage
+alias ga='git add'
 
 # MOVE AROUND
-# alias up='cd ..' # Replaced with function
 alias back='cd -'
 alias cdvi='cd ~/.config/nvim/'
 alias ..='cd ..'
 alias ...='cd ../..'
 
 # GUARD RAILS
-alias rm='rm -i'
-alias mv='mv -i'
-alias cp='cp -i'
-alias ln='ln -i'
+# alias rm='rm -i'
+# alias mv='mv -i'
+# alias cp='cp -i'
+# alias ln='ln -i'
 alias mkdir='mkdir -p'
 
 # LS ALIASES
 alias cls="clear;ls"
 alias exa='exa --icons --color=always --group-directories-first'
-alias ls='exa -l'
-alias la='exa -la'
-alias l.='exa -la|grep "^\."'
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias l.='ls -la|grep "^\."'
 
 # WEB DEV ALIASES
 # alias serve='browser-sync start --server --files . > /dev/null '
 alias serve=live-server
+
 alias drive='rclone mount drive: ~/drive --daemon'
+alias rbash='source ~/.bashrc'
 
 # QUICKFIX COMMON MISTAKES
 alias fuck='sudo $(history -p \!\!)'   # As in "fuck, I forgot to sudo that command!"
 alias moar='$(history -p \!\!) | less' # Run the last command through more (actually less)
-alias rbash='source ~/.bashrc'
 
+# PACMAN UTILS
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
-
-alias pacrm='sudo pacman -Rs'     # - Remove a package and its dependencies:
-alias pacfd='pacman -Ss'          # - Search the package database for a regular expression or keyword:
-alias pacq='pacman -Q'            # - List installed packages and versions:
-alias pacqe='pacman -Qe'          # - List only the explicitly installed packages and versions:
-alias pacorphan='pacman -Qtdq'    # - List orphan packages (installed as dependencies but not actually required by any package):
-alias paccache='sudo pacman -Scc' # - Empty the entire pacman cache:
-
-alias yayrm='yay -Rns'    # - Remove an installed package and both its dependencies and configuration files:
-alias yayfd='yay -Ss'     # - Search the package database for a keyword from the repos and AUR:
-alias yayorphan='yay -Yc' # - Remove orphaned packages (installed as dependencies but not required by any package):
-alias yaystats='yay -Ps'  # - Show statistics for installed packages and system health:
