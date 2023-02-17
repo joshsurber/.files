@@ -4,6 +4,7 @@ bat
 blueman
 cbatticon
 cups
+dmenu
 exa
 fd
 fuse2
@@ -19,7 +20,9 @@ neomutt
 neovim
 nitrogen
 noto-fonts-emoji
+npm
 pass
+pass-otp
 pcmanfm
 picom
 pkgfile
@@ -37,6 +40,7 @@ ttf-cascadia-code
 ttf-firacode-nerd
 ttf-roboto
 unzip
+vicious
 vifm
 volumeicon
 xclip
