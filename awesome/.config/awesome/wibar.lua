@@ -93,29 +93,39 @@ awful.screen.connect_for_each_screen(function(s)
 
     local vicious = require('vicious')
     -- https://vicious.readthedocs.io/en/latest/widgets.html
-    datewidget = wibox.widget.textbox()
+    local datewidget = wibox.widget.textbox()
     vicious.register(datewidget, vicious.widgets.date, "%b %d, %R")
 
-    memwidget = wibox.widget.textbox()
+    local memwidget = wibox.widget.textbox()
     vicious.cache(vicious.widgets.mem)
-    vicious.register(memwidget, vicious.widgets.mem, "Mem: $1% ($2MiB/$3MiB)", 15)
+    vicious.register(memwidget, vicious.widgets.mem, "Mem: $1%", 15)
+    -- vicious.register(memwidget, vicious.widgets.mem, "Mem: $1% ($2MiB/$3MiB)", 15)
 
-    cpuwidget = awful.widget.graph()
-    cpuwidget:set_width(50)
-    cpuwidget:set_background_color "#494B4F"
-    cpuwidget:set_color { type = "linear", from = { 0, 0 }, to = { 50, 0 },
-        stops = { { 0, "#FF5656" },
-            { 0.5, "#88A175" },
-            { 1,   "#AECF96" } } }
-    vicious.register(cpuwidget, vicious.widgets.cpu, "$1", 3)
+    -- local cpuwidget = awful.widget.graph()
+    -- cpuwidget:set_width(50)
+    -- cpuwidget:set_background_color "#494B4F"
+    -- cpuwidget:set_color { type = "linear", from = { 0, 0 }, to = { 50, 0 },
+    --     stops = { { 0, "#FF5656" },
+    --         { 0.5, "#88A175" },
+    --         { 1,   "#AECF96" } } }
+    -- vicious.register(cpuwidget, vicious.widgets.cpu, "$1", 3)
 
-    uptimewidget = wibox.widget.textbox()
-    vicious.cache(vicious.widgets.uptime)
-    vicious.register(uptimewidget, vicious.widgets.uptime, "Up:$1d$2h$3M")
+    local uptimewidget = wibox.widget.textbox()
+    -- vicious.cache(vicious.widgets.uptime)
+    vicious.register(uptimewidget, vicious.widgets.uptime, "Up: $1d$2h LdAvg $4")
 
-    weatherwidget = wibox.widget.textbox()
-    -- vicious.cache(vicious.widgets.weather)
-    vicious.register(weatherwidget, vicious.widgets.weather, "${tempf}F", 2, 'KSAT')
+    local weatherwidget = wibox.widget.textbox()
+    vicious.cache(vicious.widgets.weather)
+    vicious.register(weatherwidget, vicious.widgets.weather, function(widget, args)
+        local wind = string.gmatch(args['{wind}'], "[NEWS]+")()
+        return ("%dF, %s, %s %smph"):format(
+                args['{tempf}'], args['{sky}'], wind, args['{windmph}'])
+    end, 2, 'KSAT')
+
+    local fswidget = wibox.widget.textbox()
+    vicious.register(fswidget, vicious.widgets.fs, function(widget, args)
+        return ("HD: %sG of %sG"):format(args['{/ used_gb}'], args['{/ size_gb}'])
+    end)
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -130,13 +140,13 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             spacing = 10,
+            -- cpuwidget,
             weatherwidget,
-            cpuwidget,
-            memwidget,
             uptimewidget,
+            fswidget,
+            memwidget,
             wibox.widget.systray(),
             datewidget,
-            -- mytextclock,
             s.mylayoutbox,
         },
     }
