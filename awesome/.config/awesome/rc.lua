@@ -57,7 +57,6 @@ end
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "gtk/theme.lua")
 beautiful.init(gears.filesystem.get_dir('config') .. 'theme.lua')
 
-
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
 editor = os.getenv("EDITOR") or "nvim"
@@ -101,3 +100,4 @@ require('signals')
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 
 beautiful.useless_gap = 2
+-- vim: fdm=marker

@@ -1,6 +1,3 @@
--- Create a textclock widget
-mytextclock = wibox.widget.textclock('%H.%M')
-
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
         awful.button({}, 1, function(t) t:view_only() end),
@@ -91,48 +88,65 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
-    local vicious = require('vicious')
-    -- https://vicious.readthedocs.io/en/latest/widgets.html
-    local datewidget = wibox.widget.textbox()
-    vicious.register(datewidget, vicious.widgets.date, "%b %d, %R")
+    -- Create a textclock widget
+    -- mytextclock = wibox.widget.textclock('%H.%M')
+    mytextclock = wibox.widget.textclock('%b %d, %R')
 
-    local memwidget = wibox.widget.textbox()
-    vicious.cache(vicious.widgets.mem)
-    vicious.register(memwidget, vicious.widgets.mem, "Mem: $1%", 15)
-    -- vicious.register(memwidget, vicious.widgets.mem, "Mem: $1% ($2MiB/$3MiB)", 15)
+    local memwidget = awful.widget.watch(
+            [[ bash -c 'free|head -2|tail -1' ]], 13,
+            function(widget, stdout)
+                local used, total
+                for str in stdout:gmatch("%d+") do
+                    if total == nil then
+                        total = str
+                    elseif used == nil then
+                        used = str
+                    end
+                end
+                widget:set_text(string.format('Mem: %.0f%%', used / total * 100))
+            end)
 
-    -- local cpuwidget = awful.widget.graph()
-    -- cpuwidget:set_width(50)
-    -- cpuwidget:set_background_color "#494B4F"
-    -- cpuwidget:set_color { type = "linear", from = { 0, 0 }, to = { 50, 0 },
-    --     stops = { { 0, "#FF5656" },
-    --         { 0.5, "#88A175" },
-    --         { 1,   "#AECF96" } } }
-    -- vicious.register(cpuwidget, vicious.widgets.cpu, "$1", 3)
+    local uptimewidget = awful.widget.watch('uptime -p', 67,
+            function(widget, stdout)
+                stdout = stdout:gsub('up', 'Up:')
+                stdout = stdout:gsub(' weeks?,?', 'w')
+                stdout = stdout:gsub(' days?,?', 'd')
+                stdout = stdout:gsub(' hours?,?', 'h')
+                stdout = stdout:gsub(' minutes?,?', 'm')
+                widget:set_text(stdout)
+            end)
 
-    local uptimewidget = wibox.widget.textbox()
-    -- vicious.cache(vicious.widgets.uptime)
-    vicious.register(uptimewidget, vicious.widgets.uptime, "Up: $1d$2h LdAvg $4")
+    local weatherwidget = awful.widget.watch(
+            [[ curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=0\&locCode\=78245 ]],
+            17, function(widget, stdout)
+            for line in stdout:gmatch("[^\r\n]+") do
+                if line:match("Currently") then
+                    line = line:gsub('<title>Currently: ', '')
+                    line = line:gsub('</title>', '')
+                    widget:set_text(line)
+                    return
+                end
+            end
+        end)
 
-    local weatherwidget = wibox.widget.textbox()
-    vicious.cache(vicious.widgets.weather)
-    vicious.register(weatherwidget, vicious.widgets.weather, function(widget, args)
-        local wind = string.gmatch(args['{wind}'], "[NEWS]+")()
-        return ("%dF, %s, %s %smph"):format(
-                args['{tempf}'], args['{sky}'], wind, args['{windmph}'])
-    end, 2, 'KSAT')
-
-    local fswidget = wibox.widget.textbox()
-    vicious.register(fswidget, vicious.widgets.fs, function(widget, args)
-        return ("HD: %sG of %sG"):format(args['{/ used_gb}'], args['{/ size_gb}'])
-    end)
+    local fswidget = awful.widget.watch(
+            "bash -c 'df -h --output='used,size,pcent' /|tail -1'",
+            19, function(widget, stdout)
+            local t = {}
+            for str in stdout:gmatch('[^%s]+') do
+                table.insert(t,str)
+                -- t:insert(str)
+            end
+            widget:set_text(string.format('HD: %s/%s (%s)',t[1],t[2],t[3]))
+        end
+        )
 
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
+            -- mylauncher, -- logo button
             s.mytaglist,
             s.mypromptbox,
         },
@@ -147,6 +161,7 @@ awful.screen.connect_for_each_screen(function(s)
             memwidget,
             wibox.widget.systray(),
             datewidget,
+            mytextclock,
             s.mylayoutbox,
         },
     }
