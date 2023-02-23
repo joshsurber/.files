@@ -60,12 +60,24 @@ end)
 -- client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 -- client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
--- Make unfocused windows transparent
-client.connect_signal("focus", function(c)
-    c.border_color = beautiful.border_focus
-    c.opacity = 1
-end)
-client.connect_signal("unfocus", function(c)
-    c.border_color = beautiful.border_normal
-    if c.type == 'normal' then c.opacity = 0.8 end
+-- -- Make unfocused windows transparent
+-- client.connect_signal("focus", function(c)
+--     c.border_color = beautiful.border_focus
+--     c.opacity = 1
+-- end)
+-- client.connect_signal("unfocus", function(c)
+--     c.border_color = beautiful.border_normal
+--     if c.type == 'normal' then c.opacity = 0.8 end
+-- end)
+
+-- No borders when rearranging only 1 non-floating or maximized client
+screen.connect_signal("arrange", function(s)
+    local only_one = #s.tiled_clients == 1
+    for _, c in pairs(s.clients) do
+        if only_one and not c.floating or c.maximized or c.fullscreen then
+            c.border_width = 0
+        else
+            c.border_width = beautiful.border_width
+        end
+    end
 end)
