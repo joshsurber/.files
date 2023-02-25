@@ -93,7 +93,7 @@ awful.screen.connect_for_each_screen(function(s)
     mytextclock = wibox.widget.textclock('%b %d, %R')
 
     local memwidget = awful.widget.watch(
-            [[ bash -c 'free|head -2|tail -1' ]], 13,
+            [[ bash -c 'free|head -2|tail -1' ]], 2,
             function(widget, stdout)
                 local used, total
                 for str in stdout:gmatch("%d+") do
@@ -106,7 +106,7 @@ awful.screen.connect_for_each_screen(function(s)
                 widget:set_text(string.format('Mem: %.0f%%', used / total * 100))
             end)
 
-    local uptimewidget = awful.widget.watch('uptime -p', 67,
+    local uptimewidget = awful.widget.watch('uptime -p', 61,
             function(widget, stdout)
                 stdout = stdout:gsub('up', 'Up:')
                 stdout = stdout:gsub(' weeks?,?', 'w')
@@ -118,7 +118,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     local weatherwidget = awful.widget.watch(
             [[ curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=0\&locCode\=78245 ]],
-            17, function(widget, stdout)
+            97, function(widget, stdout)
             for line in stdout:gmatch("[^\r\n]+") do
                 if line:match("Currently") then
                     line = line:gsub('<title>Currently: ', '')
@@ -131,7 +131,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     local fswidget = awful.widget.watch(
             "bash -c 'df -h --output='used,size,pcent' /|tail -1'",
-            19, function(widget, stdout)
+            29, function(widget, stdout)
             local t = {}
             for str in stdout:gmatch('[^%s]+') do
                 table.insert(t,str)
