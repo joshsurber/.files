@@ -1,4 +1,4 @@
-source ~/.config/mutt/colors.linux
+source ~/.config/mutt/gruvbox.mutt.rc
 source ~/.config/mutt/gpg.rc
 set imap_user="josh@surber.us"
 set imap_pass="`pass show josh@surber.us`"
