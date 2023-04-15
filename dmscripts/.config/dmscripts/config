@@ -10,12 +10,14 @@
 # -p is needed as we use prompts, alternative programs have to handle prompts well.
 
 DMENU="dmenu -i -l 20 -fn CascadiaMono-10 -p"
+FMENU="fzf --border=rounded --margin=5% --color=dark --height 100% --reverse --header=$(basename "$0") --info=hidden --header-first --prompt"
+RMENU="rofi -dmenu -p"
 
 PDF_VIEWER="zathura"
 
 DMBROWSER="qutebrowser"
 
-DMTERM="qterminal -e"
+DMTERM="kitty -e"
 
 DMEDITOR="${DMTERM} nvim"
 
@@ -262,4 +264,4 @@ declare -A currencies
 # currencies[Monero]="XMR"
 # see: https://rate.sx/:currencies and https://rate.sx/:coins
 
-_revision=22
+_revision=23
