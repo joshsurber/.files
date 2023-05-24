@@ -1,5 +1,5 @@
-Control-j: menu-complete
-Control-k: menu-complete-backward
+Control-n: menu-complete
+Control-e: menu-complete-backward
 set completion-ignore-case on
 set completion-prefix-display-length 2
 set show-all-if-ambiguous on
@@ -13,9 +13,9 @@ $if mode=vi
     set vi-ins-mode-string "|"
     set keymap vi-insert
     Control-l: clear-screen
-    ESC: "~"       # For my odd keyboard
+    # ESC: "~"       # For my odd keyboard
     # Control-ESC: "~"    # For my odd keyboard
     # Control-\': "`"     # For my odd keyboard
-    "jk": vi-movement-mode # remap escape
+    # "jk": vi-movement-mode # remap escape
 	# "--": '~'
 $endif
