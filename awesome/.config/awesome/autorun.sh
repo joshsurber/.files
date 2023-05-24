@@ -16,3 +16,4 @@ run pcmanfm --desktop
 run volumeicon
 run xscreensaver --no-splash
 setxkbmap -option caps:escape
+setxkbmap us -variant colemak
