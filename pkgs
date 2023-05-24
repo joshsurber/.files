@@ -1,3 +1,4 @@
+aerc
 awesome
 bash-completion
 bat
@@ -11,10 +12,12 @@ fuse2
 fzf
 git
 gnome-backgrounds
+kitty
 light
 locate
 make
 man-db
+moreutils
 neofetch
 neomutt
 neovim
