@@ -75,7 +75,7 @@ globalkeys = gears.table.join(
         ,
         awful.key(ShiftOS, "space", function() awful.layout.inc( -1) end,
             { description = "select previous layout", group = "layout" }),
-        awful.key(ShiftOS, "n", function()
+        awful.key(ShiftOS, "k", function()
             local c = awful.client.restore()
             -- Focus restored client
             if c then c:emit_signal("request::activate", "key.unminimize", { raise = true }) end
@@ -124,7 +124,7 @@ clientkeys = gears.table.join(
         ,
         awful.key(KeyOS, "t", function(c) c.ontop = not c.ontop end,
             { description = "toggle keep on top", group = "client" }),
-        awful.key(KeyOS, "n", function(c)
+        awful.key(KeyOS, "k", function(c)
             -- The client currently has the input focus, so it cannot be
             -- minimized, since minimized clients can't have the focus.
             c.minimized = true
