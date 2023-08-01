@@ -10,7 +10,7 @@ local CtrlOS = { modkey, "Control" }
 local CtrlShiftOS = { modkey, "Control", "Shift" }
 
 globalkeys = gears.table.join(
-        awful.key(KeyOS, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
+        awful.key(KeyOS, "d", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
         -- awful.key(OS, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
         -- awful.key(OS, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
         awful.key(KeyOS, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
@@ -23,17 +23,11 @@ globalkeys = gears.table.join(
         ,
 
         -- Layout manipulation
-        awful.key(ShiftOS, "n", function() awful.client.swap.byidx(1) end,
-            { description = "swap with next client by index", group = "client" }),
-        awful.key(ShiftOS, "e", function() awful.client.swap.byidx( -1) end,
-            { description = "swap with previous client by index", group = "client" }),
-        awful.key(CtrlOS, "n", function() awful.screen.focus_relative(1) end,
-            { description = "focus the next screen", group = "screen" }),
-        awful.key(CtrlOS, "e", function() awful.screen.focus_relative( -1) end,
-            { description = "focus the previous screen", group = "screen" }),
-        awful.key(KeyOS, "u", awful.client.urgent.jumpto,
-            { description = "jump to urgent client", group = "client" })
-        ,
+        awful.key(ShiftOS, "n", function() awful.client.swap.byidx(1) end, { description = "swap with next client by index", group = "client" }),
+        awful.key(ShiftOS, "e", function() awful.client.swap.byidx( -1) end, { description = "swap with previous client by index", group = "client" }),
+        awful.key(CtrlOS, "n", function() awful.screen.focus_relative(1) end, { description = "focus the next screen", group = "screen" }),
+        awful.key(CtrlOS, "e", function() awful.screen.focus_relative( -1) end, { description = "focus the previous screen", group = "screen" }),
+        awful.key(KeyOS, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
         awful.key(KeyOS, "Tab",
             function()
                 awful.client.focus.history.previous()
@@ -42,36 +36,23 @@ globalkeys = gears.table.join(
             { description = "go back", group = "client" }),
 
         -- Standard program
-        awful.key(KeyOS, "Return", function() awful.spawn(terminal) end,
-            { description = "open a terminal", group = "launcher" }),
-        awful.key(KeyOS, "'", function() awful.spawn('qutebrowser') end,
-            { description = "launch qutebrowser", group = "launcher" }),
-        -- awful.key(OSCtrl, ";", function() awful.spawn('brave') end,
-        -- { description = "launch Brave", group = "launcher" }),
-        awful.key(ShiftOS, "'", function() awful.spawn('google-chrome-stable') end,
-            { description = "launch Chrome", group = "launcher" }),
-        awful.key(KeyOS, ";", function() awful.spawn('pcmanfm') end,
-            { description = "launch pcmanfm", group = "launcher" }),
-        awful.key(ShiftOS, ";", function() awful.spawn(terminal .. ' -e vifm') end,
-            { description = "launch vifm", group = "launcher" }),
-        awful.key(CtrlOS, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
-        awful.key(ShiftOS, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
-        awful.key(KeyOS, "z", function() awful.spawn('xscreensaver-command -lock') end,
-            { description = "Lock screen", group = "launcher" }),
-        awful.key(KeyOS, "l", function() awful.tag.incmwfact(0.05) end,
-            { description = "increase master width factor", group = "layout" }),
-        awful.key(KeyOS, "h", function() awful.tag.incmwfact( -0.05) end,
-            { description = "decrease master width factor", group = "layout" }),
-        awful.key(ShiftOS, "h", function() awful.tag.incnmaster(1, nil, true) end,
-            { description = "increase the number of master clients", group = "layout" }),
-        awful.key(ShiftOS, "i", function() awful.tag.incnmaster( -1, nil, true) end,
-            { description = "decrease the number of master clients", group = "layout" }),
-        awful.key(CtrlOS, "h", function() awful.tag.incncol(1, nil, true) end,
-            { description = "increase the number of columns", group = "layout" }),
-        awful.key(CtrlOS, "i", function() awful.tag.incncol( -1, nil, true) end,
-            { description = "decrease the number of columns", group = "layout" }),
-        awful.key(KeyOS, "space", function() awful.layout.inc(1) end,
-            { description = "select next layout", group = "layout" })
+        awful.key(KeyOS, "t", function() awful.spawn(terminal) end, { description = "open a terminal", group = "launcher" }),
+        awful.key(KeyOS, "s", function() awful.spawn('google-chrome-stable') end, { description = "launch Chrome", group = "launcher" }),
+        awful.key(CtrlOS, "s", function() awful.spawn('qutebrowser') end, { description = "launch qutebrowser", group = "launcher" }),
+        awful.key(KeyOS, "r", function() awful.spawn('pcmanfm') end, { description = "launch pcmanfm", group = "launcher" }),
+        awful.key(CtrlOS, "r", function() awful.spawn(terminal .. ' -e vifm') end, { description = "launch vifm", group = "launcher" }),
+
+        awful.key(KeyOS, "z", function() awful.spawn('xscreensaver-command -lock') end, { description = "Lock screen", group = "launcher" }),
+        awful.key(CtrlOS, "z", awesome.restart, { description = "reload awesome", group = "awesome" }),
+        awful.key(CtrlOS, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
+
+        awful.key(KeyOS, "h", function() awful.tag.incmwfact( -0.05) end, { description = "decrease master width factor", group = "layout" }),
+        awful.key(KeyOS, "i", function() awful.tag.incmwfact(0.05) end, { description = "increase master width factor", group = "layout" }),
+        awful.key(ShiftOS, "h", function() awful.tag.incnmaster(1, nil, true) end, { description = "increase the number of master clients", group = "layout" }),
+        awful.key(ShiftOS, "i", function() awful.tag.incnmaster( -1, nil, true) end, { description = "decrease the number of master clients", group = "layout" }),
+        awful.key(CtrlOS, "h", function() awful.tag.incncol(1, nil, true) end, { description = "increase the number of columns", group = "layout" }),
+        awful.key(CtrlOS, "i", function() awful.tag.incncol( -1, nil, true) end, { description = "decrease the number of columns", group = "layout" }),
+        awful.key(KeyOS, "space", function() awful.layout.inc(1) end, { description = "select next layout", group = "layout" })
         ,
         awful.key(ShiftOS, "space", function() awful.layout.inc( -1) end,
             { description = "select previous layout", group = "layout" }),
@@ -83,20 +64,12 @@ globalkeys = gears.table.join(
 
         -- Prompt
         -- awful.key(OS,            "r",     function () awful.screen.focused().mypromptbox:run() end, {description = "run prompt", group = "launcher"}),
-        awful.key(KeyOS, "p", function() awful.spawn('dmenu_run -fn CascadiaMono-10') end,
-            { description = "run dmenu", group = "launcher" }),
-        awful.key(CtrlOS, "p", function() awful.spawn('dmenu_run -z -fn CascadiaMono-10') end,
-            { description = "run dmenu fuzzy", group = "launcher" }),
-        awful.key(ShiftOS, "p", function() awful.spawn('passmenu -fn CascadiaMono-10') end,
-            { description = "list passwords", group = "launcher" }),
-        awful.key(KeyOS, "b", function() awful.spawn('dm-logout') end,
-            { description = "shutdown menu", group = "launcher" }),
-        awful.key(ShiftOS, "o", function() awful.spawn('dm-bookman') end,
-            { description = "open webpage", group = "launcher" }),
-        awful.key(KeyOS, "c", function() awful.spawn('dm-confedit') end,
-            { description = "edit config file", group = "launcher" }),
-        awful.key(ShiftOS, "s", function() awful.spawn('dm-websearch') end,
-            { description = "search for stuff", group = "launcher" }),
+        awful.key(KeyOS, "p", function() awful.spawn('dmenu_run -fn CascadiaMono-10') end, { description = "run dmenu", group = "launcher" }),
+        awful.key(CtrlOS, "p", function() awful.spawn('dmenu_run -z -fn CascadiaMono-10') end, { description = "run dmenu fuzzy", group = "launcher" }),
+        awful.key(ShiftOS, "p", function() awful.spawn('passmenu -fn CascadiaMono-10') end, { description = "list passwords", group = "launcher" }),
+        awful.key(KeyOS, "b", function() awful.spawn('dm-logout') end, { description = "shutdown menu", group = "launcher" }),
+        awful.key(KeyOS, "c", function() awful.spawn('dm-confedit') end, { description = "edit config file", group = "launcher" }),
+        awful.key(ShiftOS, "s", function() awful.spawn('dm-websearch') end, { description = "search for stuff", group = "launcher" }),
 
         awful.key(KeyOS, "x",
             function()
@@ -104,8 +77,7 @@ globalkeys = gears.table.join(
                     exe_callback = awful.util.eval, history_path = awful.util.get_cache_dir() .. "/history_eval" }
             end,
             { description = "lua execute prompt", group = "awesome" }),
-        awful.key(KeyOS, "r", function() menubar.show() end,
-            { description = "show the menubar", group = "launcher" })
+        awful.key(KeyOS, "g", function() menubar.show() end, { description = "show the menubar", group = "launcher" })
     )
 
 clientkeys = gears.table.join(
@@ -115,15 +87,10 @@ clientkeys = gears.table.join(
         end,
             { description = "toggle fullscreen", group = "client" }),
         awful.key(KeyOS, "q", function(c) c:kill() end, { description = "close", group = "client" }),
-        awful.key(ShiftOS, "f", awful.client.floating.toggle,
-            { description = "toggle floating", group = "client" }),
-        awful.key(CtrlOS, "Return", function(c) c:swap(awful.client.getmaster()) end,
-            { description = "move to master", group = "client" }),
-        awful.key(KeyOS, "o", function(c) c:move_to_screen() end,
-            { description = "move to screen", group = "client" })
-        ,
-        awful.key(KeyOS, "t", function(c) c.ontop = not c.ontop end,
-            { description = "toggle keep on top", group = "client" }),
+        awful.key(ShiftOS, "f", awful.client.floating.toggle, { description = "toggle floating", group = "client" }),
+        awful.key(CtrlOS, "Return", function(c) c:swap(awful.client.getmaster()) end, { description = "move to master", group = "client" }),
+        awful.key(KeyOS, "o", function(c) c:move_to_screen() end, { description = "move to screen", group = "client" }) ,
+        awful.key(KeyOS, "t", function(c) c.ontop = not c.ontop end, { description = "toggle keep on top", group = "client" }),
         awful.key(KeyOS, "k", function(c)
             -- The client currently has the input focus, so it cannot be
             -- minimized, since minimized clients can't have the focus.
