@@ -14,13 +14,9 @@ globalkeys = gears.table.join(
         -- awful.key(OS, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
         -- awful.key(OS, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
         awful.key(KeyOS, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
-        awful.key(KeyOS, "n", function() awful.client.focus.byidx(1) end,
-            { description = "focus next by index", group = "client" }),
-        awful.key(KeyOS, "e", function() awful.client.focus.byidx( -1) end,
-            { description = "focus previous by index", group = "client" }),
-        awful.key(KeyOS, "w", function() mymainmenu:show() end,
-            { description = "show main menu", group = "awesome" })
-        ,
+        awful.key(KeyOS, "n", function() awful.client.focus.byidx(1) end, { description = "focus next by index", group = "client" }),
+        awful.key(KeyOS, "e", function() awful.client.focus.byidx( -1) end, { description = "focus previous by index", group = "client" }),
+        awful.key(KeyOS, "w", function() mymainmenu:show() end, { description = "show main menu", group = "awesome" }),
 
         -- Layout manipulation
         awful.key(ShiftOS, "n", function() awful.client.swap.byidx(1) end, { description = "swap with next client by index", group = "client" }),
@@ -42,7 +38,8 @@ globalkeys = gears.table.join(
         awful.key(KeyOS, "r", function() awful.spawn('pcmanfm') end, { description = "launch pcmanfm", group = "launcher" }),
         awful.key(CtrlOS, "r", function() awful.spawn(terminal .. ' -e vifm') end, { description = "launch vifm", group = "launcher" }),
 
-        awful.key(KeyOS, "z", function() awful.spawn('xscreensaver-command -lock') end, { description = "Lock screen", group = "launcher" }),
+        -- awful.key(KeyOS, "z", function() awful.spawn('xscreensaver-command -lock') end, { description = "Lock screen", group = "launcher" }),
+        awful.key(KeyOS, "z", function() awful.spawn('dm-logout') end, { description = "Lock screen", group = "launcher" }),
         awful.key(CtrlOS, "z", awesome.restart, { description = "reload awesome", group = "awesome" }),
         awful.key(CtrlOS, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
