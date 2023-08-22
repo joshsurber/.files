@@ -72,3 +72,6 @@ alias moar='$(history -p \!\!) | less' # Run the last command through more (actu
 # PACMAN UTILS
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
+
+alias fdsa="setxkbmap us -variant colemak;setxkbmap -option caps:escape"
+alias tsra="setxkbmap us;setxkbmap -option caps:escape"
