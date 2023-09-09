@@ -68,8 +68,8 @@ globalkeys = gears.table.join(
         awful.key(KeyOS, "c", function() awful.spawn('dm-confedit') end, { description = "edit config file", group = "launcher" }),
         awful.key(ShiftOS, "s", function() awful.spawn('dm-websearch') end, { description = "search for stuff", group = "launcher" }),
 
-        awful.key({}, "Print", function () awful.util.spawn("dm-maim") end),
-        awful.key(KeyOS, "Print", function () awful.util.spawn_with_shell("maim --select | xclip -selection clipboard -target image/png") end),
+        awful.key({}, "Print", function () awful.util.spawn_with_shell("maim --select | xclip -selection clipboard -target image/png") end),
+        awful.key(KeyOS, "Print", function () awful.util.spawn("dm-maim") end),
         awful.key(KeyOS, "b", function () awful.util.spawn("dm-lights") end),
 
         awful.key(KeyOS, "x",
