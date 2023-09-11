@@ -16,7 +16,7 @@ globalkeys = gears.table.join(
         awful.key(KeyOS, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
         awful.key(KeyOS, "n", function() awful.client.focus.byidx(1) end, { description = "focus next by index", group = "client" }),
         awful.key(KeyOS, "e", function() awful.client.focus.byidx( -1) end, { description = "focus previous by index", group = "client" }),
-        awful.key(KeyOS, "w", function() mymainmenu:show() end, { description = "show main menu", group = "awesome" }),
+        -- awful.key(KeyOS, "w", function() mymainmenu:show() end, { description = "show main menu", group = "awesome" }),
 
         -- Layout manipulation
         awful.key(ShiftOS, "n", function() awful.client.swap.byidx(1) end, { description = "swap with next client by index", group = "client" }),
@@ -63,22 +63,19 @@ globalkeys = gears.table.join(
         -- awful.key(OS,            "r",     function () awful.screen.focused().mypromptbox:run() end, {description = "run prompt", group = "launcher"}),
         awful.key(KeyOS, "p", function() awful.spawn('dmenu_run -fn CascadiaMono-10') end, { description = "run dmenu", group = "launcher" }),
         awful.key(CtrlOS, "p", function() awful.spawn('dmenu_run -z -fn CascadiaMono-10') end, { description = "run dmenu fuzzy", group = "launcher" }),
-        awful.key(ShiftOS, "p", function() awful.spawn('passmenu -fn CascadiaMono-10') end, { description = "list passwords", group = "launcher" }),
-        awful.key(KeyOS, "b", function() awful.spawn('dm-logout') end, { description = "shutdown menu", group = "launcher" }),
-        awful.key(KeyOS, "c", function() awful.spawn('dm-confedit') end, { description = "edit config file", group = "launcher" }),
-        awful.key(ShiftOS, "s", function() awful.spawn('dm-websearch') end, { description = "search for stuff", group = "launcher" }),
+        -- awful.key(ShiftOS, "p", function() awful.spawn('passmenu -fn CascadiaMono-10') end, { description = "list passwords", group = "launcher" }),
 
         awful.key({}, "Print", function () awful.util.spawn_with_shell("maim --select | xclip -selection clipboard -target image/png") end),
         awful.key(KeyOS, "Print", function () awful.util.spawn("dm-maim") end),
         awful.key(KeyOS, "b", function () awful.util.spawn("dm-lights") end),
 
-        awful.key(KeyOS, "x",
-            function()
-                awful.prompt.run { prompt = "Run Lua code: ", textbox = awful.screen.focused().mypromptbox.widget,
-                    exe_callback = awful.util.eval, history_path = awful.util.get_cache_dir() .. "/history_eval" }
-            end,
-            { description = "lua execute prompt", group = "awesome" }),
-        awful.key(KeyOS, "g", function() menubar.show() end, { description = "show the menubar", group = "launcher" })
+        -- awful.key(KeyOS, "x",
+        --     function()
+        --         awful.prompt.run { prompt = "Run Lua code: ", textbox = awful.screen.focused().mypromptbox.widget,
+        --             exe_callback = awful.util.eval, history_path = awful.util.get_cache_dir() .. "/history_eval" }
+        --     end,
+        --     { description = "lua execute prompt", group = "awesome" }),
+        -- awful.key(KeyOS, "g", function() menubar.show() end, { description = "show the menubar", group = "launcher" })
     )
 
 clientkeys = gears.table.join(
