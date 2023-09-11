@@ -38,8 +38,8 @@ globalkeys = gears.table.join(
         awful.key(KeyOS, "r", function() awful.spawn('pcmanfm') end, { description = "launch pcmanfm", group = "launcher" }),
         awful.key(CtrlOS, "r", function() awful.spawn(terminal .. ' -e vifm') end, { description = "launch vifm", group = "launcher" }),
 
-        -- awful.key(KeyOS, "z", function() awful.spawn('xscreensaver-command -lock') end, { description = "Lock screen", group = "launcher" }),
-        awful.key(KeyOS, "z", function() awful.spawn('dm-logout') end, { description = "Lock screen", group = "launcher" }),
+        awful.key(KeyOS, "l", function() awful.spawn('xscreensaver-command -lock') end, { description = "Lock screen", group = "launcher" }),
+        awful.key(KeyOS, "x", function() awful.spawn('dm-logout') end, { description = "Power menu", group = "launcher" }),
         awful.key(CtrlOS, "z", awesome.restart, { description = "reload awesome", group = "awesome" }),
         awful.key(CtrlOS, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
@@ -67,7 +67,7 @@ globalkeys = gears.table.join(
 
         awful.key({}, "Print", function () awful.util.spawn_with_shell("maim --select | xclip -selection clipboard -target image/png") end),
         awful.key(KeyOS, "Print", function () awful.util.spawn("dm-maim") end),
-        awful.key(KeyOS, "b", function () awful.util.spawn("dm-lights") end),
+        awful.key(KeyOS, "b", function () awful.util.spawn("dm-lights") end)
 
         -- awful.key(KeyOS, "x",
         --     function()
@@ -82,12 +82,11 @@ clientkeys = gears.table.join(
         awful.key(KeyOS, "f", function(c)
             c.fullscreen = not c.fullscreen
             c:raise()
-        end,
-            { description = "toggle fullscreen", group = "client" }),
+        end, { description = "toggle fullscreen", group = "client" }),
         awful.key(KeyOS, "q", function(c) c:kill() end, { description = "close", group = "client" }),
         awful.key(ShiftOS, "f", awful.client.floating.toggle, { description = "toggle floating", group = "client" }),
         awful.key(CtrlOS, "Return", function(c) c:swap(awful.client.getmaster()) end, { description = "move to master", group = "client" }),
-        awful.key(KeyOS, "o", function(c) c:move_to_screen() end, { description = "move to screen", group = "client" }) ,
+        awful.key(KeyOS, "o", function(c) c:move_to_screen() end, { description = "move to screen", group = "screen" }) ,
         awful.key(KeyOS, "t", function(c) c.ontop = not c.ontop end, { description = "toggle keep on top", group = "client" }),
         awful.key(KeyOS, "k", function(c)
             -- The client currently has the input focus, so it cannot be
@@ -111,8 +110,8 @@ clientkeys = gears.table.join(
             { description = "(un)maximize horizontally", group = "client" }),
 
         -- Move and resize floating windows via kbd
-        awful.key(KeyOS, "Next", function(c) c:relative_move(20, 20, -40, -40) end), -- bigger
-        awful.key(KeyOS, "Prior", function(c) c:relative_move( -20, -20, 40, 40) end), -- smaller
+        awful.key(KeyOS, "Next", function(c) c:relative_move(20, 20, -40, -40) end), -- bigger PgUp
+        awful.key(KeyOS, "Prior", function(c) c:relative_move( -20, -20, 40, 40) end), -- smaller PgDn
         awful.key(KeyOS, "Up", function(c) c:relative_move(0, -20, 0, 0) end), -- move up
         awful.key(KeyOS, "Down", function(c) c:relative_move(0, 20, 0, 0) end), -- move down
         awful.key(KeyOS, "Left", function(c) c:relative_move( -20, 0, 0, 0) end), -- move left
