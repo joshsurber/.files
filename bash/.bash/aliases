@@ -75,3 +75,4 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
 
 alias asdf="echo 'Using Colemak';setxkbmap us -variant colemak;setxkbmap -option caps:escape"
 alias arst="echo 'Using QWERTY';setxkbmap us;setxkbmap -option caps:escape"
+alias aprg="echo 'Using QWERTY';setxkbmap us;setxkbmap -option caps:escape"
