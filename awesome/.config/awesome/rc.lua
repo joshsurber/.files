@@ -90,7 +90,23 @@ require('keys')
 require('rules')
 require('signals')
 
-awful.spawn.with_shell("~/.config/awesome/autorun.sh")
-
 beautiful.useless_gap = 2
+
+-- awful.spawn.with_shell("~/.config/awesome/autorun.sh")
+
+for _, cmd in pairs({
+    "picom",
+    "nm-applet",
+    "blueman-applet",
+    "cbatticon",
+    "nitrogen --restore",
+    -- "pcmanfm --desktop",
+    -- "pcmanfm -d",
+    "volumeicon",
+    "xscreensaver --no-splash",
+    "setxkbmap -option caps:escape",
+    -- "setxkbmap -option caps:escape us -variant colemak",
+}) do
+    awful.util.spawn(cmd)
+end
 -- vim: fdm=marker
