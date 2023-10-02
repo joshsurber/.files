@@ -176,7 +176,7 @@ config.set('content.images', True, 'devtools://*')
 # QtWebEngine, writing the clipboard as response to a user interaction
 # is always allowed.
 # Type: Bool
-c.content.javascript.can_access_clipboard = True
+# c.content.javascript.can_access_clipboard = True
 
 # Enable JavaScript.
 # Type: Bool
@@ -358,11 +358,10 @@ config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
 config.bind('n', 'scroll down')
 config.bind('e', 'scroll up')
-# config.bind('i', 'scroll right')
+config.bind('i', 'scroll right')
 config.bind('N', 'tab-next')
 config.bind('E', 'tab-prev')
-# config.bind('H', 'previous')
-# config.bind('I', 'next')
-# config.bind('j', 'n')
-# config.bind('k', 'e')
-# config.bind('l', 'i')
+config.bind('I', 'forward')
+config.bind('l', 'mode-ender insert')
+config.bind('k', 'search-next')
+config.bind('K', 'search-prev')
