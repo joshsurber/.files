@@ -1,9 +1,16 @@
 #!/bin/sh
 
-run() {
-    if ! pgrep -f "$1"; then
-        "$@" &
-    fi
+# run() {
+#     if ! pgrep -f "$1"; then
+#         "$@" &
+#     fi
+# }
+
+function run {
+  if ! pgrep $1 ;
+  then
+    $@&
+  fi
 }
 
 run picom
@@ -15,5 +22,5 @@ run nitrogen --restore
 # run pcmanfm -d
 run volumeicon
 run xscreensaver --no-splash
-setxkbmap -option caps:escape
+run setxkbmap -option caps:escape
 # setxkbmap us -variant colemak

@@ -8,8 +8,7 @@ local KeyOS = { modkey }
 local CtlOS = { modkey, "Control" }
 local SftOS = { modkey, "Shift" }
 local CtrlShiftOS = { modkey, "Control", "Shift" }
-local awesome = awesome
-local client = client
+local awesome,client = awesome,client
 
 globalkeys = gears.table.join(
     -- Global commands
@@ -17,7 +16,8 @@ globalkeys = gears.table.join(
         awful.key(CtlOS, "z", awesome.restart, { description = "reload awesome", group = "awesome" }),
         awful.key(CtlOS, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
-        awful.key(KeyOS, "l", function() awful.spawn('xscreensaver-command -lock') end, { description = "Lock screen", group = "launcher" }),
+        -- awful.key(KeyOS, "l", function() awful.spawn('xscreensaver-command -lock') end, { description = "Lock screen", group = "launcher" }),
+        awful.key(KeyOS, "l", function() awful.spawn('slock') end, { description = "Lock screen", group = "launcher" }),
         awful.key(KeyOS, "x", function() awful.spawn('dm-logout') end, { description = "Power menu", group = "launcher" }),
         awful.key(KeyOS, "p", function() awful.spawn('dmenu_run -fn Cascadi0manipulation0manipulationMono-10') end, { description = "run dmenu", group = "launcher" }),
         awful.key(CtlOS, "p", function() awful.spawn('dmenu_run -z -fn CascadiaMono-10') end, { description = "run dmenu fuzzy", group = "launcher" }),
