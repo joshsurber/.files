@@ -8,6 +8,7 @@ local KeyOS = { modkey }
 local CtlOS = { modkey, "Control" }
 local SftOS = { modkey, "Shift" }
 local CtrlShiftOS = { modkey, "Control", "Shift" }
+local DMargs=' -i -l 20 -fn CascadiaMono-10'
 local awesome,client = awesome,client
 
 globalkeys = gears.table.join(
@@ -17,9 +18,10 @@ globalkeys = gears.table.join(
         awful.key(CtlOS, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
         -- awful.key(KeyOS, "l", function() awful.spawn('xscreensaver-command -lock') end, { description = "Lock screen", group = "launcher" }),
+        awful.key(KeyOS, "v", function() awful.spawn('clipmenu'..DMargs) end, { description = "Clipboard history", group = "launcher" }),
         awful.key(KeyOS, "l", function() awful.spawn('slock') end, { description = "Lock screen", group = "launcher" }),
         awful.key(KeyOS, "x", function() awful.spawn('dm-logout') end, { description = "Power menu", group = "launcher" }),
-        awful.key(KeyOS, "p", function() awful.spawn('dmenu_run -fn Cascadi0manipulation0manipulationMono-10') end, { description = "run dmenu", group = "launcher" }),
+        awful.key(KeyOS, "p", function() awful.spawn('dmenu_run'..DMargs) end, { description = "run dmenu", group = "launcher" }),
         awful.key(CtlOS, "p", function() awful.spawn('dmenu_run -z -fn CascadiaMono-10') end, { description = "run dmenu fuzzy", group = "launcher" }),
         awful.key(KeyOS, "b", function() awful.util.spawn("dm-lights") end),
         awful.key(KeyOS, "Print", function() awful.util.spawn("dm-maim") end),
