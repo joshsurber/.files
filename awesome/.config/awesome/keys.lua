@@ -8,8 +8,9 @@ local KeyOS = { modkey }
 local CtlOS = { modkey, "Control" }
 local SftOS = { modkey, "Shift" }
 local CtrlShiftOS = { modkey, "Control", "Shift" }
-local DMargs=' -i -l 20 -fn CascadiaMono-10'
-local awesome,client = awesome,client
+-- local DMargs=' -i -l 20 -fn CascadiaMono-10'
+local DMargs = ' -i -fn CascadiaMono-10'
+local awesome, client = awesome, client
 
 globalkeys = gears.table.join(
     -- Global commands
@@ -18,11 +19,11 @@ globalkeys = gears.table.join(
         awful.key(CtlOS, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
         -- awful.key(KeyOS, "l", function() awful.spawn('xscreensaver-command -lock') end, { description = "Lock screen", group = "launcher" }),
-        awful.key(KeyOS, "v", function() awful.spawn('clipmenu'..DMargs) end, { description = "Clipboard history", group = "launcher" }),
+        awful.key(KeyOS, "v", function() awful.spawn('clipmenu' .. DMargs) end, { description = "Clipboard history", group = "launcher" }),
         awful.key(KeyOS, "l", function() awful.spawn('slock') end, { description = "Lock screen", group = "launcher" }),
         awful.key(KeyOS, "x", function() awful.spawn('dm-logout') end, { description = "Power menu", group = "launcher" }),
-        awful.key(KeyOS, "p", function() awful.spawn('dmenu_run'..DMargs) end, { description = "run dmenu", group = "launcher" }),
-        awful.key(CtlOS, "p", function() awful.spawn('dmenu_run -z -fn CascadiaMono-10') end, { description = "run dmenu fuzzy", group = "launcher" }),
+        awful.key(KeyOS, "p", function() awful.spawn('dmenu_run' .. DMargs) end, { description = "run dmenu", group = "launcher" }),
+        awful.key(CtlOS, "p", function() awful.spawn('dmenu_run -z ' .. DMargs) end, { description = "run dmenu fuzzy", group = "launcher" }),
         awful.key(KeyOS, "b", function() awful.util.spawn("dm-lights") end),
         awful.key(KeyOS, "Print", function() awful.util.spawn("dm-maim") end),
         awful.key({}, "Print", function() awful.util.spawn_with_shell("maim --select | xclip -selection clipboard -target image/png") end),
@@ -57,7 +58,6 @@ globalkeys = gears.table.join(
         awful.key(KeyOS, "s", function() awful.spawn('google-chrome-stable') end, { description = "launch Chrome", group = "launcher" }),
         awful.key(CtlOS, "s", function() awful.spawn('qutebrowser') end, { description = "launch qutebrowser", group = "launcher" }),
         awful.key(KeyOS, "t", function() awful.spawn(terminal) end, { description = "open a terminal", group = "launcher" }),
-
         nil -- Allows for moving lines, since they can all end in a space
     )
 

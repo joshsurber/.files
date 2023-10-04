@@ -9,7 +9,8 @@
 
 # -p is needed as we use prompts, alternative programs have to handle prompts well.
 
-DMENU="dmenu -i -l 20 -fn CascadiaMono-10 -p"
+# DMENU="dmenu -i -l 20 -fn CascadiaMono-10 -p"
+DMENU="dmenu -i -fn CascadiaMono-10 -p"
 FMENU="fzf --border=rounded --margin=5% --color=dark --height 100% --reverse --header=$(basename "$0") --info=hidden --header-first --prompt"
 RMENU="rofi -dmenu -p"
 

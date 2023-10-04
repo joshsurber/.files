@@ -103,7 +103,8 @@ for _, cmd in pairs({
     -- "pcmanfm --desktop",
     -- "pcmanfm -d",
     "volumeicon",
-    "xscreensaver --no-splash",
+    -- "xscreensaver --no-splash",
+    "clipmenud",
     "setxkbmap -option caps:escape",
     -- "setxkbmap -option caps:escape us -variant colemak",
 }) do
