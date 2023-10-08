@@ -27,4 +27,7 @@ shopt -s histappend # don't overwrite history
 shopt -s extglob
 PROMPT_COMMAND='history -a'
 
+# For clipmenu
+export CM_SELECTIONS=clipboard
+
 setxkbmap -option caps:escape
