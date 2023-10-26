@@ -117,7 +117,7 @@ awful.screen.connect_for_each_screen(function(s)
             end)
 
     local weatherwidget = awful.widget.watch(
-            [[ curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=0\&locCode\=78245 ]],
+            [[ curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=0\&locCode\=78233 ]],
             97, function(widget, stdout)
             for line in stdout:gmatch("[^\r\n]+") do
                 if line:match("Currently") then
