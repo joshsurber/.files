@@ -96,6 +96,7 @@ beautiful.useless_gap = 2
 
 for _, cmd in pairs({
     "xrandr --output eDP-1 --primary --mode 1366x768 --pos 1680x0 --rotate normal --output HDMI-1 --mode 1680x1050 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-2 --off",
+    "nitrogen --restore",
     "picom",
     "nm-applet",
     "blueman-applet",
@@ -106,7 +107,6 @@ for _, cmd in pairs({
     -- "xscreensaver --no-splash",
     "clipmenud",
     "setxkbmap -option caps:escape",
-    "nitrogen --restore",
     -- "setxkbmap -option caps:escape us -variant colemak",
 }) do
     awful.util.spawn(cmd)
