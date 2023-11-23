@@ -60,6 +60,7 @@ globalkeys = gears.table.join(
         awful.key(KeyOS, "s", function() awful.spawn('google-chrome-stable') end, { description = "launch Chrome", group = "launcher" }),
         awful.key(CtlOS, "s", function() awful.spawn('qutebrowser') end, { description = "launch qutebrowser", group = "launcher" }),
         awful.key(KeyOS, "t", function() awful.spawn(terminal) end, { description = "open a terminal", group = "launcher" }),
+        awful.key(CtlOS, "t", function() awful.spawn('neovide') end, { description = "open Neovide", group = "launcher" }),
         nil -- Allows for moving lines, since they can all end in a space
     )
 
