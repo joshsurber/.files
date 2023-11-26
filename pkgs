@@ -35,7 +35,6 @@ prettier
 qutebrowser
 rclone
 ripgrep
-selectdefaultapplication-git
 shfmt
 slock
 starship
