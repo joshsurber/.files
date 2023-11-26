@@ -92,6 +92,7 @@ require('signals')
 
 beautiful.useless_gap = 2
 
+awful.spawn.with_shell("~/.screenlayout/default.sh")
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 
 -- for _, cmd in pairs({
