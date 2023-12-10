@@ -23,8 +23,8 @@ DMTERM="kitty -e"
 DMEDITOR="${DMTERM} nvim"
 
 # TODO: Rename this variable to something more traditional
-# logout_locker='xscreensaver-command -lock'
-logout_locker='slock'
+logout_locker='xscreensaver-command -lock'
+# logout_locker='slock'
 # logout_locker='dm-tool lock'
 
 # dmscripts will notify you if your configuration is outdated, to shut it up uncomment this.
@@ -274,4 +274,4 @@ declare -A currencies
 # currencies[Monero]="XMR"
 # see: https://rate.sx/:currencies and https://rate.sx/:coins
 
-_revision=25
+_revision=26

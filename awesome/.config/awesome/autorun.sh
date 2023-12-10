@@ -24,3 +24,4 @@ run nitrogen --restore
 run xscreensaver --no-splash
 # run setxkbmap -option caps:escape
 # setxkbmap us -variant colemak
+run clipmenud
