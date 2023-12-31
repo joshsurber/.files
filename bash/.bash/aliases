@@ -64,7 +64,7 @@ alias serve=live-server
 alias cinew="composer create-project codeigniter4/appstarter"
 alias cisrv="php spark serve"
 
-alias drive='rclone mount drive: ~/drive --daemon'
+alias drive='rclone mount drive: ~/Google --daemon'
 alias rbash='source ~/.bashrc'
 
 # QUICKFIX COMMON MISTAKES
