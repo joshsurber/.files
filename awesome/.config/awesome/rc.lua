@@ -58,7 +58,7 @@ end
 beautiful.init(gears.filesystem.get_dir('config') .. 'theme.lua')
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -94,6 +94,14 @@ beautiful.useless_gap = 2
 
 awful.spawn.with_shell("~/.screenlayout/default.sh")
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
+
+collectgarbage("setpause", 160)
+collectgarbage("setstepmul", 400)
+
+gears.timer.start_new(10, function()
+  collectgarbage("step", 20000)
+  return true
+end)
 
 -- for _, cmd in pairs({
 --     "nitrogen --restore",
