@@ -21,9 +21,9 @@ globalkeys = gears.table.join(
         -- System stuff
         -- awful.key(KeyOS, "l", function() awful.spawn('xscreensaver-command -lock') end, { description = "Lock screen", group = "launcher" }),
         awful.key(KeyOS, "v", function() awful.spawn('clipmenu' .. DMargs) end, { description = "Clipboard history", group = "system" }),
-        -- awful.key(KeyOS, "l", function() awful.spawn('slock') end, { description = "Lock screen", group = "system" }),
-        awful.key(KeyOS, "l", function() awful.spawn('xscreensaver-command --lock') end, { description = "Lock screen", group = "system" }),
-        awful.key(CtlOS, "l", function() awful.spawn('xscreensaver-command --activate') end, { description = "Activate screensaver", group = "system" }),
+        awful.key(KeyOS, "l", function() awful.spawn('slock') end, { description = "Lock screen", group = "system" }),
+        -- awful.key(KeyOS, "l", function() awful.spawn('xscreensaver-command --lock') end, { description = "Lock screen", group = "system" }),
+        -- awful.key(CtlOS, "l", function() awful.spawn('xscreensaver-command --activate') end, { description = "Activate screensaver", group = "system" }),
         awful.key(SftOS, "z", function() awful.spawn('nitrogen --restore') end, { description = "Restore wallpaper", group = "system" }),
         awful.key(KeyOS, "x", function() awful.spawn('dm-logout') end, { description = "Power menu", group = "system" }),
         awful.key(KeyOS, "p", function() awful.spawn('dmenu_run' .. DMargs) end, { description = "run dmenu", group = "system" }),
