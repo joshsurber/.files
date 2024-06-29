@@ -18,13 +18,14 @@ PDF_VIEWER="zathura"
 
 DMBROWSER="qutebrowser"
 
-DMTERM="kitty -e"
+# DMTERM="kitty -e"
+DMTERM="alacritty"
 
 DMEDITOR="${DMTERM} nvim"
 
 # TODO: Rename this variable to something more traditional
-logout_locker='xscreensaver-command -lock'
-# logout_locker='slock'
+# logout_locker='xscreensaver-command -lock'
+logout_locker='slock'
 # logout_locker='dm-tool lock'
 
 # dmscripts will notify you if your configuration is outdated, to shut it up uncomment this.
