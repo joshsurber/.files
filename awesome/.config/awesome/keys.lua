@@ -61,7 +61,7 @@ globalkeys = gears.table.join(
         awful.key(CtlOS, "a", function() awful.spawn('obsidian') end, { description = "launch obsidian", group = "launcher" }),
         awful.key(KeyOS, "r", function() awful.spawn('pcmanfm') end, { description = "launch pcmanfm", group = "launcher" }),
         awful.key(CtlOS, "r", function() awful.spawn(terminal .. ' -e vifm') end, { description = "launch vifm", group = "launcher" }),
-        awful.key(KeyOS, "s", function() awful.spawn('google-chrome-stable') end, { description = "launch Chrome", group = "launcher" }),
+        awful.key(KeyOS, "s", function() awful.spawn('chromium') end, { description = "launch Chrome", group = "launcher" }),
         awful.key(CtlOS, "s", function() awful.spawn('qutebrowser') end, { description = "launch qutebrowser", group = "launcher" }),
         awful.key(KeyOS, "t", function() awful.spawn(terminal) end, { description = "open a terminal", group = "launcher" }),
         awful.key(CtlOS, "t", function() awful.spawn('neovide') end, { description = "open Neovide", group = "launcher" }),
