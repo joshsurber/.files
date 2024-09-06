@@ -18,8 +18,8 @@ PDF_VIEWER="zathura"
 
 DMBROWSER="qutebrowser"
 
-# DMTERM="kitty -e"
-DMTERM="alacritty"
+DMTERM="kitty -e"
+# DMTERM="alacritty"
 
 DMEDITOR="${DMTERM} nvim"
 
