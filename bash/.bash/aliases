@@ -61,6 +61,7 @@ alias l.='ls -la|grep "^\."'
 # WEB DEV ALIASES
 # alias serve='browser-sync start --server --files . > /dev/null '
 alias serve=live-server
+alias lamp='sudo /opt/lampp/lampp start'
 alias cinew="composer create-project codeigniter4/appstarter"
 alias cisrv="php spark serve"
 
