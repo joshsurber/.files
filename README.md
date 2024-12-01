@@ -15,7 +15,7 @@ ssh-keygen -p
 ## Clone the repo
 
 ```bash
-sudo pacman -S git base-devel
+sudo pacman -S git base-devel openssh
 git clone git@github.com:joshsurber/.files
 cd .files
 ```
