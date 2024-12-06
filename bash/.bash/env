@@ -9,7 +9,7 @@ export PAGER=less
 export BROWSER=qutebrowser
 
 # PATHS
-export PATH=~/.local/bin:~/.cargo/bin:$PATH
+export PATH=~/.local/bin:~/.cargo/bin:$PATH:/opt/nvim-linux64/bin
 export CDPATH=.:~
 
 export FZF_DEFAULT_COMMAND="$FIND --type f --strip-cwd-prefix"
