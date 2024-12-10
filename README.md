@@ -14,8 +14,18 @@ ssh-keygen -p
 
 ## Clone the repo
 
+Arch
+
 ```bash
-sudo pacman -S git
+sudo pacman -S git base-devel openssh
+git clone git@github.com:joshsurber/.files
+cd .files
+```
+
+Debian etc
+
+```bash
+sudo apt install git make
 git clone git@github.com:joshsurber/.files
 cd .files
 ```
@@ -24,11 +34,14 @@ Validate the software list from pkgs and remove any you don't want to install at
 
 ## make
 
-Run `make setup` to:
+Run `make arch` to:
 
 - Install the software in ./pkgs `make install`
 - Symlink the dotfiles `make`
 - Setup bash init files to source the custom dotfiles `make link`
 - Install yay for accessing the AUR `make yay`
 
-After this you can run `yay google-chrome` or `yay brave-bin` for a browser.
+Run `make deb` to:
+- Install the software in .pkgs.deb `make debinstall`
+- Symlink the dotfiles `make`
+- Setup bash init files to source the custom dotfiles `make link`

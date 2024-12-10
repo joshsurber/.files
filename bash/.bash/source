@@ -9,7 +9,8 @@ source ~/.bash/functions
 [[ -r /usr/share/doc/pkgfile ]] && source /usr/share/doc/pkgfile/command-not-found.bash
 
 # FZF
-[[ -e /usr/share/doc/fzf/ ]] && source /usr/share/doc/fzf/exampleskey-bindings.bash && source /usr/share/doc/fzf/examplescompletion.bash
+[[ -e /usr/share/doc/fzf/examples/ ]] && source /usr/share/doc/fzf/examples/key-bindings.bash
+[[ -e /usr/share/doc/fzf/ ]] && source /usr/share/doc/fzf/exampleskey-bindings.bash 2> /dev/null && source /usr/share/doc/fzf/examplescompletion.bash
 [[ -e /usr/share/fzf/ ]] && source /usr/share/fzf/key-bindings.bash && source /usr/share/fzf/completion.bash
 
 [ -x "$(command -v starship)" ] && eval "$(starship init bash)"
@@ -17,4 +18,4 @@ source ~/.bash/functions
 [ -x "$(command -v pandoc)" ] && eval "$(pandoc --bash-completion)"
 [ -x "$(command -v zoxide)" ] && eval "$(zoxide init bash)"
 
-# neofetch
+# neofetc
