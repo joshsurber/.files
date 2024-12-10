@@ -1,5 +1,5 @@
 #!/bin/bash
-
+alias hidraw='sudo chmod a+rw /dev/hidraw1'
 # TYPING SAVERS
 alias bv='back&&vi'
 alias f='find'
