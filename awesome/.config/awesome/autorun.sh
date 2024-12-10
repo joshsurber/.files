@@ -16,7 +16,7 @@ function run {
 run picom
 run nm-applet
 run blueman-applet
-run cbatticon
+# run cbatticon
 run nitrogen --restore
 # run pcmanfm --desktop
 # run pcmanfm -d
