@@ -20,14 +20,41 @@ set $down n
 set $up e
 set $right i
 
+exec_always --no-startup-id xset dpms 120 600 0
+
 set $term kitty
 set $browser chromium
 
 bindsym Print exec maim --select | xclip -selection clipboard -target image/png
 bindsym $mod+Print exec dm-maim
-bindsym $mod+x exec dm-logout
 bindsym $mod+v exec clipmenu
 bindsym $mod+b exec dm-lights
+bindsym $mod+x exec dm-logout
+
+# set $Locker i3lock && sleep 1
+# set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+# mode "$mode_system" {
+#     bindsym l exec --no-startup-id $Locker, mode "default"
+#     bindsym e exec --no-startup-id i3-msg exit, mode "default"
+#     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+#     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+#     bindsym r exec --no-startup-id systemctl reboot, mode "default"
+#     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+#     # back to normal: Enter or Escape
+#     bindsym Return mode "default"
+#     bindsym Escape mode "default"
+# }
+# bindsym $mod+x mode "$mode_system"
+
+# # Setup xss-lock daemon
+# exec_always --no-startup-id xset +dpms dpms 0 300 300
+# exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/dotfiles/lock.sh
+# bindsym $mod+x mode "lock"
+# mode "lock" {
+#     bindsym l exec i3lock --ignore-empty-password --tiling --image='/path/to/img.png' 2>/dev/null, mode "default"
+#     # just force suspend. i3lock will be called automatically via lock.sh
+#     bindsym s exec --no-startup-id sleep 1 && xset dpms force suspend , mode "default"
+# }
 
 # App shortcuts
 bindsym $mod+Return exec $term
@@ -54,8 +81,8 @@ bindsym $mod+u layout tabbed
 bindsym $mod+y layout toggle split
 bindsym $mod+d mode "resize"
 
-bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
 
 bindsym $mod+o focus parent
 bindsym $mod+Shift+o focus child

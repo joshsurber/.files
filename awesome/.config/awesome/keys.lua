@@ -47,6 +47,7 @@ globalkeys = gears.table.join(
 
     -- Move and resize windows
     awful.key(SftOS, "k", function() local c = awful.client.restore() if c then c:emit_signal("request::activate", "key.unminimize", { raise = true }) end end, { description = "restore minimized", group = "client" }),
+
     awful.key(SftOS, "n", function() awful.client.swap.byidx(1) end, { description = "swap with next client by index", group = "client" }),
     awful.key(SftOS, "e", function() awful.client.swap.byidx(-1) end, { description = "swap with previous client by index", group = "client" }),
     awful.key(KeyOS, "h", function() awful.tag.incmwfact(-0.05) end, { description = "decrease master width factor", group = "layout" }),
