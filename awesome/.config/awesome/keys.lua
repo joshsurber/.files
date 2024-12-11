@@ -17,90 +17,54 @@ globalkeys = gears.table.join(
 -- Global commands
     awful.key(KeyOS, "d", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
     awful.key(CtlOS, "z", awesome.restart, { description = "reload awesome", group = "awesome" }),
-    awful.key(AltOS, "z", function()
-            collectgarbage("collect")
-            collectgarbage("collect")
-        end,
-        { description = "take out the trash", group = "awesome" }),
+    awful.key(AltOS, "z", function() collectgarbage("collect") collectgarbage("collect") end, { description = "take out the trash", group = "awesome" }),
     awful.key(CtlOS, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
     -- System stuff
     -- awful.key(KeyOS, "l", function() awful.spawn('xscreensaver-command -lock') end, { description = "Lock screen", group = "launcher" }),
-    awful.key(KeyOS, "v", function() awful.spawn('clipmenu' .. DMargs) end,
-        { description = "Clipboard history", group = "system" }),
+    awful.key(KeyOS, "v", function() awful.spawn('clipmenu' .. DMargs) end, { description = "Clipboard history", group = "system" }),
     awful.key(KeyOS, "l", function() awful.spawn('slock') end, { description = "Lock screen", group = "system" }),
     -- awful.key(KeyOS, "l", function() awful.spawn('xscreensaver-command --lock') end, { description = "Lock screen", group = "system" }),
     -- awful.key(CtlOS, "l", function() awful.spawn('xscreensaver-command --activate') end, { description = "Activate screensaver", group = "system" }),
-    awful.key(SftOS, "z", function() awful.spawn('nitrogen --restore') end,
-        { description = "Restore wallpaper", group = "system" }),
+    awful.key(SftOS, "z", function() awful.spawn('nitrogen --restore') end, { description = "Restore wallpaper", group = "system" }),
     awful.key(KeyOS, "x", function() awful.spawn('dm-logout') end, { description = "Power menu", group = "system" }),
-    awful.key(KeyOS, "p", function() awful.spawn('dmenu_run' .. DMargs) end,
-        { description = "run dmenu", group = "system" }),
-    awful.key(CtlOS, "p", function() awful.spawn('dmenu_run -z ' .. DMargs) end,
-        { description = "run dmenu fuzzy", group = "system" }),
+    awful.key(KeyOS, "p", function() awful.spawn('dmenu_run' .. DMargs) end, { description = "run dmenu", group = "system" }),
+    awful.key(CtlOS, "p", function() awful.spawn('dmenu_run -z ' .. DMargs) end, { description = "run dmenu fuzzy", group = "system" }),
     awful.key(KeyOS, "b", function() awful.spawn("dm-lights") end, { description = "Adjust backlight", group = "system" }),
-    awful.key(KeyOS, "Print", function() awful.util.spawn("dm-maim") end,
-        { description = "Take screenshot with options", group = "system" }),
-    awful.key({}, "Print",
-        function() awful.util.spawn_with_shell("maim --select | xclip -selection clipboard -target image/png") end,
-        { description = "Copy area screenshot to clipboard", group = "system" }),
+    awful.key(KeyOS, "Print", function() awful.util.spawn("dm-maim") end, { description = "Take screenshot with options", group = "system" }),
+    awful.key({}, "Print", function() awful.util.spawn_with_shell("maim --select | xclip -selection clipboard -target image/png") end, { description = "Copy area screenshot to clipboard", group = "system" }),
     -- awful.key(KeyOS, "r", function() awful.screen.focused().mypromptbox:run() end, { description = "run prompt", group = "launcher" }),
     -- awful.key(KeyOS, "w", function() mymainmenu:show() end, { description = "show main menu", group = "awesome" }),
 
     -- Switch windows
     awful.key(KeyOS, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
-    awful.key(KeyOS, "Tab",
-        function()
-            awful.client.focus.history.previous()
-            if client.focus then client.focus:raise() end
-        end, { description = "go back", group = "client" }),
+    awful.key(KeyOS, "Tab", function() awful.client.focus.history.previous() if client.focus then client.focus:raise() end end, { description = "go back", group = "client" }),
     awful.key(KeyOS, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
-    awful.key(KeyOS, "n", function() awful.client.focus.byidx(1) end,
-        { description = "focus next by index", group = "client" }),
-    awful.key(KeyOS, "e", function() awful.client.focus.byidx(-1) end,
-        { description = "focus previous by index", group = "client" }),
-    awful.key(CtlOS, "n", function() awful.screen.focus_relative(1) end,
-        { description = "focus the next screen", group = "screen" }),
-    awful.key(CtlOS, "e", function() awful.screen.focus_relative(-1) end,
-        { description = "focus the previous screen", group = "screen" }),
+    awful.key(KeyOS, "n", function() awful.client.focus.byidx(1) end, { description = "focus next by index", group = "client" }),
+    awful.key(KeyOS, "e", function() awful.client.focus.byidx(-1) end, { description = "focus previous by index", group = "client" }),
+    awful.key(CtlOS, "n", function() awful.screen.focus_relative(1) end, { description = "focus the next screen", group = "screen" }),
+    awful.key(CtlOS, "e", function() awful.screen.focus_relative(-1) end, { description = "focus the previous screen", group = "screen" }),
 
     -- Move and resize windows
-    awful.key(SftOS, "k",
-        function()
-            local c = awful.client.restore()
-            if c then c:emit_signal("request::activate", "key.unminimize", { raise = true }) end
-        end, { description = "restore minimized", group = "client" }),
-    awful.key(SftOS, "n", function() awful.client.swap.byidx(1) end,
-        { description = "swap with next client by index", group = "client" }),
-    awful.key(SftOS, "e", function() awful.client.swap.byidx(-1) end,
-        { description = "swap with previous client by index", group = "client" }),
-    awful.key(KeyOS, "h", function() awful.tag.incmwfact(-0.05) end,
-        { description = "decrease master width factor", group = "layout" }),
-    awful.key(KeyOS, "i", function() awful.tag.incmwfact(0.05) end,
-        { description = "increase master width factor", group = "layout" }),
-    awful.key(SftOS, "h", function() awful.tag.incnmaster(1, nil, true) end,
-        { description = "increase the number of master clients", group = "layout" }),
-    awful.key(SftOS, "i", function() awful.tag.incnmaster(-1, nil, true) end,
-        { description = "decrease the number of master clients", group = "layout" }),
-    awful.key(CtlOS, "h", function() awful.tag.incncol(1, nil, true) end,
-        { description = "increase the number of columns", group = "layout" }),
-    awful.key(CtlOS, "i", function() awful.tag.incncol(-1, nil, true) end,
-        { description = "decrease the number of columns", group = "layout" }),
-    awful.key(KeyOS, "space", function() awful.layout.inc(1) end,
-        { description = "select next layout", group = "layout" }),
-    awful.key(SftOS, "space", function() awful.layout.inc(-1) end,
-        { description = "select previous layout", group = "layout" }),
+    awful.key(SftOS, "k", function() local c = awful.client.restore() if c then c:emit_signal("request::activate", "key.unminimize", { raise = true }) end end, { description = "restore minimized", group = "client" }),
+    awful.key(SftOS, "n", function() awful.client.swap.byidx(1) end, { description = "swap with next client by index", group = "client" }),
+    awful.key(SftOS, "e", function() awful.client.swap.byidx(-1) end, { description = "swap with previous client by index", group = "client" }),
+    awful.key(KeyOS, "h", function() awful.tag.incmwfact(-0.05) end, { description = "decrease master width factor", group = "layout" }),
+    awful.key(KeyOS, "i", function() awful.tag.incmwfact(0.05) end, { description = "increase master width factor", group = "layout" }),
+    awful.key(SftOS, "h", function() awful.tag.incnmaster(1, nil, true) end, { description = "increase the number of master clients", group = "layout" }),
+    awful.key(SftOS, "i", function() awful.tag.incnmaster(-1, nil, true) end, { description = "decrease the number of master clients", group = "layout" }),
+    awful.key(CtlOS, "h", function() awful.tag.incncol(1, nil, true) end, { description = "increase the number of columns", group = "layout" }),
+    awful.key(CtlOS, "i", function() awful.tag.incncol(-1, nil, true) end, { description = "decrease the number of columns", group = "layout" }),
+    awful.key(KeyOS, "space", function() awful.layout.inc(1) end, { description = "select next layout", group = "layout" }),
+    awful.key(SftOS, "space", function() awful.layout.inc(-1) end, { description = "select previous layout", group = "layout" }),
 
     -- Launcher
-    awful.key(KeyOS, "a", function() awful.spawn('thunderbird') end,
-        { description = "launch thunderbird", group = "launcher" }),
+    awful.key(KeyOS, "a", function() awful.spawn('thunderbird') end, { description = "launch thunderbird", group = "launcher" }),
     awful.key(CtlOS, "a", function() awful.spawn('obsidian') end, { description = "launch obsidian", group = "launcher" }),
     awful.key(KeyOS, "r", function() awful.spawn('pcmanfm') end, { description = "launch pcmanfm", group = "launcher" }),
-    awful.key(CtlOS, "r", function() awful.spawn(terminal .. ' -e vifm') end,
-        { description = "launch vifm", group = "launcher" }),
+    awful.key(CtlOS, "r", function() awful.spawn(terminal .. ' -e vifm') end, { description = "launch vifm", group = "launcher" }),
     awful.key(KeyOS, "s", function() awful.spawn('chromium') end, { description = "launch Chrome", group = "launcher" }),
-    awful.key(CtlOS, "s", function() awful.spawn('qutebrowser') end,
-        { description = "launch qutebrowser", group = "launcher" }),
+    awful.key(CtlOS, "s", function() awful.spawn('qutebrowser') end, { description = "launch qutebrowser", group = "launcher" }),
     awful.key(KeyOS, "t", function() awful.spawn(terminal) end, { description = "open a terminal", group = "launcher" }),
     awful.key(CtlOS, "t", function() awful.spawn('neovide') end, { description = "open Neovide", group = "launcher" }),
     nil -- Allows for moving lines, since they can all end in a space
@@ -110,24 +74,11 @@ clientkeys = gears.table.join(
     awful.key(SftOS, "f", awful.client.floating.toggle, { description = "toggle floating", group = "client" }),
     awful.key(KeyOS, "t", function(c) c.ontop = not c.ontop end, { description = "toggle keep on top", group = "client" }),
     awful.key(KeyOS, "k", function(c) c.minimized = true end, { description = "minimize", group = "client" }),
-    awful.key(CtlOS, "Return", function(c) c:swap(awful.client.getmaster()) end,
-        { description = "move to master", group = "client" }),
-    awful.key(KeyOS, "f", function(c)
-        c.fullscreen = not c.fullscreen
-        c:raise()
-    end, { description = "toggle fullscreen", group = "client" }),
-    awful.key(KeyOS, "m", function(c)
-        c.maximized = not c.maximized
-        c:raise()
-    end, { description = "(un)maximize", group = "client" }),
-    awful.key(CtlOS, "m", function(c)
-        c.maximized_vertical = not c.maximized_vertical
-        c:raise()
-    end, { description = "(un)maximize vertically", group = "client" }),
-    awful.key(SftOS, "m", function(c)
-        c.maximized_horizontal = not c.maximized_horizontal
-        c:raise()
-    end, { description = "(un)maximize horizontally", group = "client" }),
+    awful.key(CtlOS, "Return", function(c) c:swap(awful.client.getmaster()) end, { description = "move to master", group = "client" }),
+    awful.key(KeyOS, "f", function(c) c.fullscreen = not c.fullscreen c:raise() end, { description = "toggle fullscreen", group = "client" }),
+    awful.key(KeyOS, "m", function(c) c.maximized = not c.maximized c:raise() end, { description = "(un)maximize", group = "client" }),
+    awful.key(CtlOS, "m", function(c) c.maximized_vertical = not c.maximized_vertical c:raise() end, { description = "(un)maximize vertically", group = "client" }),
+    awful.key(SftOS, "m", function(c) c.maximized_horizontal = not c.maximized_horizontal c:raise() end, { description = "(un)maximize horizontally", group = "client" }),
     awful.key(KeyOS, "o", function(c) c:move_to_screen() end, { description = "move to screen", group = "screen" }),
     awful.key(KeyOS, "q", function(c) c:kill() end, { description = "close", group = "client" }),
 
