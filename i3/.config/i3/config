@@ -23,6 +23,12 @@ set $right i
 set $term kitty
 set $browser chromium
 
+bindsym Print exec maim --select | xclip -selection clipboard -target image/png
+bindsym $mod+Print exec dm-maim
+bindsym $mod+x exec dm-logout
+bindsym $mod+v exec clipmenu
+bindsym $mod+b exec dm-lights
+
 # App shortcuts
 bindsym $mod+Return exec $term
 bindsym $mod+apostrophe exec $browser
@@ -36,20 +42,16 @@ bindsym $mod+Shift+s exec qutebrowser
 bindsym $mod+Shift+t exec neovide
 
 # start dmenu (a program launcher)
-bindsym $mod+Shift+p exec --no-startup-id dmenu_run
-# A more modern dmenu replacement is rofi:
-# bindsym $mod+d exec "rofi -modi drun,run -show drun"
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
 bindsym $mod+p exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Shift+p exec --no-startup-id dmenu_run
 
 # Window management
-bindsym $mod+m split h
-bindsym $mod+v split v
+bindsym $mod+j split h
+bindsym $mod+g split v
 bindsym $mod+f fullscreen toggle
-bindsym $mod+u layout stacking
-bindsym $mod+y layout tabbed
-bindsym $mod+semicolon layout toggle split
+bindsym $mod+semicolon layout stacking
+bindsym $mod+u layout tabbed
+bindsym $mod+y layout toggle split
 bindsym $mod+d mode "resize"
 
 bindsym $mod+Shift+space floating toggle
