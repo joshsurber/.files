@@ -20,9 +20,20 @@ set $down n
 set $up e
 set $right i
 
+set $term kitty
+set $browser chromium
+
 # App shortcuts
-bindsym $mod+Return exec kitty
-bindsym $mod+apostrophe exec chromium
+bindsym $mod+Return exec $term
+bindsym $mod+apostrophe exec $browser
+bindsym $mod+a exec thunderbird
+bindsym $mod+r exec pcmanfm
+bindsym $mod+s exec chromium
+bindsym $mod+t exec kitty
+bindsym $mod+Shift+a exec thunderbird
+bindsym $mod+Shift+r exec $term -e vifm
+bindsym $mod+Shift+s exec qutebrowser
+bindsym $mod+Shift+t exec neovide
 
 # start dmenu (a program launcher)
 bindsym $mod+Shift+p exec --no-startup-id dmenu_run
@@ -39,7 +50,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+u layout stacking
 bindsym $mod+y layout tabbed
 bindsym $mod+semicolon layout toggle split
-bindsym $mod+r mode "resize"
+bindsym $mod+d mode "resize"
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
@@ -81,6 +92,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id picom
+exec --no-startup-id volumeicon
+exec --no-startup-id clipmenud
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -88,6 +102,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -166,7 +182,7 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym $mod+d mode "default"
 }
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -175,3 +191,15 @@ bar {
         status_command i3status
         position top
 }
+
+# gaps inner 2
+gaps inner 5
+gaps outer 0
+gaps top 2
+gaps bottom 2
+smart_gaps on
+
+client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
+client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
+client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
+for_window [title="Picture-in-picture"] floating enable
