@@ -1,60 +1,19 @@
 # i3 config file (v4)
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-#
-# This config file uses keycodes (bindsym) and was written for the QWERTY
-# layout.
-#
-# To get a config file with the same key positions, but for your current
-# layout, use the i3-config-wizard
-#
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# font pango:monospace 10
 font pango:CaskaydiaCove NF 10
 
+set $term kitty
+set $browser chromium
 set $mod Mod4
 set $left h
 set $down n
 set $up e
 set $right i
 
-exec_always --no-startup-id xset dpms 120 600 0
-
-set $term kitty
-set $browser chromium
-
 bindsym Print exec maim --select | xclip -selection clipboard -target image/png
 bindsym $mod+Print exec dm-maim
 bindsym $mod+v exec clipmenu
 bindsym $mod+b exec dm-lights
 bindsym $mod+x exec dm-logout
-
-# set $Locker i3lock && sleep 1
-# set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-# mode "$mode_system" {
-#     bindsym l exec --no-startup-id $Locker, mode "default"
-#     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-#     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-#     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-#     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-#     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
-#     # back to normal: Enter or Escape
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
-# }
-# bindsym $mod+x mode "$mode_system"
-
-# # Setup xss-lock daemon
-# exec_always --no-startup-id xset +dpms dpms 0 300 300
-# exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/dotfiles/lock.sh
-# bindsym $mod+x mode "lock"
-# mode "lock" {
-#     bindsym l exec i3lock --ignore-empty-password --tiling --image='/path/to/img.png' 2>/dev/null, mode "default"
-#     # just force suspend. i3lock will be called automatically via lock.sh
-#     bindsym s exec --no-startup-id sleep 1 && xset dpms force suspend , mode "default"
-# }
 
 # App shortcuts
 bindsym $mod+Return exec $term
@@ -73,8 +32,8 @@ bindsym $mod+p exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+p exec --no-startup-id dmenu_run
 
 # Window management
-bindsym $mod+j split h
-bindsym $mod+g split v
+bindsym $mod+g split h
+bindsym $mod+j split v
 bindsym $mod+f fullscreen toggle
 bindsym $mod+semicolon layout stacking
 bindsym $mod+u layout tabbed
@@ -117,13 +76,12 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom
 exec --no-startup-id volumeicon
 exec --no-startup-id clipmenud
+exec_always --no-startup-id xset dpms 120 600 0
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -222,10 +180,10 @@ bar {
 }
 
 # gaps inner 2
-gaps inner 5
+gaps inner 2
 gaps outer 0
-gaps top 2
-gaps bottom 2
+# gaps top 2
+# gaps bottom 2
 smart_gaps on
 
 client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
