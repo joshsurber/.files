@@ -12,22 +12,20 @@ set $down n
 set $up e
 set $right i
 # }}}
-
 # System controls{{{
 bindsym Print exec maim --select | xclip -selection clipboard -target image/png
 bindsym $mod+Print exec dm-maim
-bindsym $mod+v exec clipmenu
-bindsym $mod+b exec dm-lights
-bindsym $mod+x exec dm-logout
 bindsym $mod+p exec --no-startup-id i3-dmenu-desktop
 bindsym $modalt+p exec --no-startup-id dmenu_run
-bindsym $mod+q kill
+bindsym $mod+v exec clipmenu
+bindsym $mod+b exec dm-lights
 bindsym $mod+l exec i3lock --color=000000
+bindsym $mod+x exec dm-logout
+bindsym $mod+q kill
+bindsym $modalt+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+z reload
 bindsym $modalt+z restart
-bindsym $modalt+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # }}}
-
 # App shortcuts{{{
 bindsym $mod+Return exec $term
 bindsym $mod+apostrophe exec $browser
@@ -40,7 +38,6 @@ bindsym $modalt+r exec $term -e vifm
 bindsym $modalt+s exec qutebrowser
 bindsym $modalt+t exec neovide
 # }}}
-
 # Window management{{{
 bindsym $mod+g split h
 bindsym $mod+j split v
@@ -48,12 +45,12 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+semicolon layout stacking
 bindsym $mod+u layout tabbed
 bindsym $mod+y layout toggle split
-bindsym $mod+d mode "resize"
+bindsym $mod+o mode "resize"
 bindsym $mod+space focus mode_toggle
 bindsym $modalt+space floating toggle
 
-bindsym $mod+o focus parent
-bindsym $modalt+o focus child
+bindsym $mod+d focus parent
+bindsym $modalt+d focus child
 
 bindsym $modalt+minus move scratchpad
 bindsym $mod+minus scratchpad show
@@ -64,7 +61,6 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 # }}}
-
 # Startup programs{{{
 # # Start XDG autostart .desktop files using dex. See also
 # # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -81,7 +77,6 @@ exec --no-startup-id volumeicon
 exec --no-startup-id clipmenud
 exec_always --no-startup-id xset dpms 120 600 0
 # }}}
-
 # System contol buttons{{{
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -91,7 +86,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86MonBrightnessUp exec light -A 5
 # }}}
-
 # Window moving{{{
 # change focus
 bindsym $mod+$left focus left
@@ -117,7 +111,6 @@ bindsym $modalt+Down move down
 bindsym $modalt+Up move up
 bindsym $modalt+Right move right
 # }}}
-
 # Workspaces{{{
 # Worpspace names{{{
     set $ws1 "1"
@@ -156,7 +149,6 @@ bindsym $modalt+Right move right
         bindsym $modalt+0 move container to workspace number $ws10
 # }}}
 # }}}
-
 # resize window (you can also use the mouse for that){{{
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -181,7 +173,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+d mode "default"
 }# }}}
-
 # i3bar{{{
 bar {
     output HDMI-1
@@ -201,7 +192,6 @@ bar {
         position top
 }
 # }}}
-
 # Window appearance{{{
 for_window [all] title_window_icon yes
 gaps inner 2
@@ -210,7 +200,6 @@ gaps outer 0
 # gaps bottom 2
 smart_gaps on
 # }}}
-
 # Color scheme{{{
 client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
 client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
