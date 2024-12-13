@@ -17,6 +17,7 @@ return {
             'colors',            -- Tweak and save any color scheme                       -- minicolors
             'comment',           -- Comment                                               -- minicomment
             'cursorword',        -- Autohighlight word under cursor                       -- minicursorword
+            'deps',              -- Plugin manager                                        -- minideps
             'extra',             -- Extra mini.nvim functionality                         -- miniextra
             'files',             -- Navigate and manipulate file system                   -- minifiles
             'hipatterns',        -- Highlight patterns in text                            -- minihipatterns
@@ -38,7 +39,6 @@ return {
             'visits',            -- Track and reuse file system visits                    -- minivisits
             -- 'base16' ,           -- Base16 colorscheme creation                           -- minibase16
             -- 'completion',        -- Completion and signature help                         -- minicompletion
-            -- 'deps',              -- Plugin manager                                        -- minideps
             -- 'diff',              -- Work with diff hunks                                  -- minidiff
             -- 'doc' ,              -- Generate Neovim help files                            -- minidoc
             -- 'fuzzy' ,            -- Fuzzy matching                                        -- minifuzzy
@@ -146,6 +146,9 @@ return {
             completion = {
                 after = function()
                 end
+            },
+            deps={
+
             },
             hipatterns = {
                 highlighters = {
