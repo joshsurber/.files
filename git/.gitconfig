@@ -10,6 +10,7 @@
 	last = log -1 HEAD
 [push]
 	default = simple
+    autoSetupRemote = true
 [pull]
 	rebase = false
 [init]
