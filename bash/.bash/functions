@@ -6,6 +6,10 @@ mkcd() {
     cd "$*"
 }
 
+# Clone a git repo
+gh() { git clone https://github.com/$*.git; }
+gj() { git clone git@github.com:joshsurber/$*.git; }
+
 # CASE-INSENSITIVE FILTERED HISTORY COMMAND.
 hist() {
     # "hist" ==> "history"
