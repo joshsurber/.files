@@ -184,11 +184,26 @@ mode "resize" {
 
 # i3bar{{{
 bar {
+    output HDMI-1
+        output DP-1
+        output HDMI-2
         status_command i3status
         position top
-} # }}}
+}
+# laptop monitor: bright colors and i3status with less modules.
+bar {
+    output eDP-1
+    status_command i3status --config ~/.config/i3status/laptop
+    colors {
+        background #000000
+        statusline #ffffff
+    }
+        position top
+}
+# }}}
 
 # Window appearance{{{
+for_window [all] title_window_icon yes
 gaps inner 2
 gaps outer 0
 # gaps top 2
