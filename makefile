@@ -9,7 +9,7 @@ link:
 	echo 'source ~/.bash/profile' >> ~/.bash_profile
 	echo 'source ~/.bash/logout' >> ~/.bash_logout
 
-arch: archinstall all link yay
+arch: dirs archinstall all link yay
 
 archinstall:
 	sudo pacman -S --needed -< ./pkgs.arch
@@ -20,7 +20,7 @@ yay:
 	 yay -Syu --devel
 	 yay -Y --devel --save
 
-deb: debinstall neovim all link
+deb: dirs debinstall neovim all link
 
 debinstall:
 	# Install packages
@@ -33,3 +33,6 @@ neovim:
 	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 	sudo rm -rf /opt/nvim
 	sudo tar -C /opt -xzf nvim-linux64.tar.gz
+
+dirs:
+	mkdir ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Projects ~/Public ~/Templates ~/Videos
