@@ -1,0 +1,3 @@
+#! /bin/bash
+echo 'Using QWERTY'
+setxkbmap us;setxkbmap -option caps:escape

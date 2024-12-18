@@ -1,0 +1,3 @@
+#! /bin/bash
+echo 'Using Colemak'
+setxkbmap us -variant colemak;setxkbmap -option caps:escape
