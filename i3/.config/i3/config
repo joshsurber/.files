@@ -173,24 +173,31 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+d mode "default"
 }# }}}
-# i3bar{{{
-bar {
-    output HDMI-1
-        output DP-1
-        output HDMI-2
-        status_command i3status
-        position top
-}
-# laptop monitor: bright colors and i3status with less modules.
-bar {
-    output eDP-1
-    status_command i3status --config ~/.config/i3status/laptop
-    colors {
-        background #000000
-        statusline #ffffff
-    }
-        position top
-}
+# bar{{{
+
+# exec_always ~/.config/polybar/launch.sh
+exec_always polybar-msg cmd quit
+exec_always polybar
+
+# bar {
+#     output HDMI-1
+#         output DP-1
+#         output HDMI-2
+#         status_command i3status
+#         position top
+# }
+# # laptop monitor: bright colors and i3status with less modules.
+# bar {
+#     # output eDP-1
+#     # status_command i3status --config ~/.config/i3status/laptop
+#     status_command polybar
+#     colors {
+#         background #000000
+#         statusline #ffffff
+#     }
+#         position top
+# }
+
 # }}}
 # Window appearance{{{
 for_window [all] title_window_icon yes
@@ -201,6 +208,7 @@ gaps outer 0
 smart_gaps on
 # }}}
 # Color scheme{{{
+# class                 border  bg      text    indicator child-border
 client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
 client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
 client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
