@@ -1,6 +1,6 @@
 arandr
-xfce4-artwork
 autorandr
+autotiling
 awesome
 base-devel
 bash-completion
@@ -31,6 +31,7 @@ npm
 pcmanfm
 picom
 pkgfile
+polybar
 prettier
 qutebrowser
 rclone
