@@ -76,6 +76,7 @@ exec --no-startup-id picom
 exec --no-startup-id volumeicon
 exec --no-startup-id clipmenud
 exec_always --no-startup-id xset dpms 120 600 0
+exec_always --no-startup-id autotiling
 # }}}
 # System contol buttons{{{
 set $refresh_i3status killall -SIGUSR1 i3status
