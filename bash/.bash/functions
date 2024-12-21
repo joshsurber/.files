@@ -11,7 +11,7 @@ gh() { git clone https://github.com/$*.git; }
 gj() { git clone git@github.com:joshsurber/$*.git; }
 
 # Load static pws in yubibey call ykey [slot] [password]
-ykey() { echo ykman otp static --keyboard-layout=us $* }
+ykey() { echo ykman otp static --keyboard-layout=us $*; }
 
 # CASE-INSENSITIVE FILTERED HISTORY COMMAND.
 hist() {
