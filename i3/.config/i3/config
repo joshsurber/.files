@@ -22,7 +22,8 @@ bindsym $mod+b exec dm-lights
 bindsym $mod+l exec i3lock --color=000000
 bindsym $mod+x exec dm-logout
 bindsym $mod+q kill
-bindsym $modalt+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $modalt+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $modalt+q exec i3-msg exit
 bindsym $mod+z reload
 bindsym $modalt+z restart
 # }}}
