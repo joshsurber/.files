@@ -6,8 +6,6 @@ alias f='find'
 alias o='open'
 alias v='vi'
 alias v.='v .'
-alias f.='vifm .'
-alias m='aerc'
 
 alias vi=$EDITOR
 alias more='less' # less is more
