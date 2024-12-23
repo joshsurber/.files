@@ -5,6 +5,7 @@
 font pango:CaskaydiaCove NF 10
 set $term kitty
 set $browser chromium
+set $apppath /home/josh/.local/bin
 set $mod Mod4
 set $modalt Mod4+Control
 set $left h
@@ -16,11 +17,12 @@ set $right i
 bindsym Print exec maim --select | xclip -selection clipboard -target image/png
 bindsym $mod+Print exec dm-maim
 bindsym $mod+p exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+p exec "rofi -modi drun,run -show drun"
 bindsym $modalt+p exec --no-startup-id dmenu_run
 bindsym $mod+v exec clipmenu
-bindsym $mod+b exec dm-lights
+bindsym $mod+b exec $apppath/dm-lights
 bindsym $mod+l exec i3lock --color=000000
-bindsym $mod+x exec dm-logout
+bindsym $mod+x exec $apppath/dm-logout
 bindsym $mod+q kill
 # bindsym $modalt+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $modalt+q exec i3-msg exit
@@ -32,10 +34,9 @@ bindsym $mod+Return exec $term
 bindsym $mod+apostrophe exec $browser
 bindsym $mod+a exec thunderbird
 bindsym $mod+r exec pcmanfm
-bindsym $mod+s exec chromium
-bindsym $mod+t exec kitty
+bindsym $mod+s exec $browser
+bindsym $mod+t exec $term
 bindsym $modalt+a exec thunderbird
-bindsym $modalt+r exec $term -e vifm
 bindsym $modalt+s exec qutebrowser
 bindsym $modalt+t exec neovide
 # }}}
@@ -77,7 +78,7 @@ exec --no-startup-id picom
 exec --no-startup-id volumeicon
 exec --no-startup-id clipmenud
 exec_always --no-startup-id xset dpms 600 1200 0
-exec_always --no-startup-id autotiling
+# exec_always --no-startup-id autotiling
 # }}}
 # System contol buttons{{{
 set $refresh_i3status killall -SIGUSR1 i3status
