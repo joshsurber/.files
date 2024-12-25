@@ -22,7 +22,8 @@ bindsym $modalt+p exec --no-startup-id dmenu_run
 bindsym $mod+v exec clipmenu
 bindsym $mod+b exec $apppath/dm-lights
 bindsym $mod+l exec i3lock --color=000000
-bindsym $mod+x exec $apppath/dm-logout
+# bindsym $mod+x exec $apppath/dm-logout
+bindsym $mod+x mode Logout
 bindsym $mod+q kill
 # bindsym $modalt+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $modalt+q exec i3-msg exit
@@ -176,28 +177,24 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+d mode "default"
 }# }}}
+mode "Logout" {
+        bindsym l exec i3lock --color=000000
+        bindsym x exec loginctl kill-user "$UID"
+        bindsym r exec systemctl reboot
+        bindsym u exec systemctl poweroff
+        bindsym s exec systemctl suspend
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 # bar{{{
 
 exec_always polybar-msg cmd quit
 exec_always polybar -r
+
 # r flag causes bar to reload when config changes
 
 # bar {
-#     output HDMI-1
-#         output DP-1
-#         output HDMI-2
 #         status_command i3status
-#         position top
-# }
-# # laptop monitor: bright colors and i3status with less modules.
-# bar {
-#     # output eDP-1
-#     # status_command i3status --config ~/.config/i3status/laptop
-#     status_command polybar
-#     colors {
-#         background #000000
-#         statusline #ffffff
-#     }
 #         position top
 # }
 
