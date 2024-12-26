@@ -73,7 +73,7 @@ tiling_drag modifier titlebar
 # # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom
 # exec --no-startup-id volumeicon
@@ -154,6 +154,7 @@ bindsym $modalt+Right move right
 # }}}
 # }}}
 # resize window (you can also use the mouse for that){{{
+
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -177,6 +178,7 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+d mode "default"
 }# }}}
+# Logout menu {{{
 mode "Logout" {
         bindsym l exec i3lock --color=000000
         bindsym x exec loginctl kill-user "$UID"
@@ -186,6 +188,7 @@ mode "Logout" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+# }}}
 # bar{{{
 
 exec_always polybar-msg cmd quit
