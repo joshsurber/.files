@@ -12,7 +12,7 @@ cups
 dmenu
 exa
 fd
-fuse2
+fuse3
 fzf
 git
 gnome-backgrounds
@@ -48,5 +48,6 @@ ttf-roboto
 unzip
 vifm
 volumeicon
+xarchiver
 xclip
 xscreensaver
