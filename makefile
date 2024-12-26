@@ -35,4 +35,4 @@ neovim:
 	sudo tar -C /opt -xzf nvim-linux64.tar.gz
 
 dirs:
-	mkdir -p ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Projects ~/Public ~/Templates ~/Videos
+	mkdir -p ~/Desktop ~/Documents ~/Downloads ~/Google ~/Music ~/Pictures ~/Projects ~/Public ~/Templates ~/Videos
