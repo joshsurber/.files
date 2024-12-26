@@ -27,6 +27,8 @@ alias mutt='neomutt'
 
 [[ $TERM == 'xterm-kitty' ]] && alias theme='kitty +kitten themes'
 
+alias ducks='du -cks *|sort -rn|head -11'
+
 # SHORT GIT ALIASES (using same mnemonics from nvim)
 alias gg='git status'
 alias gc='git commit'
