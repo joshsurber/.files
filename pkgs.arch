@@ -5,6 +5,9 @@ awesome
 base-devel
 bash-completion
 bat
+blueman
+bluez
+bluez-utils
 cbatticon
 chromium
 clipmenu
@@ -16,6 +19,8 @@ fuse3
 fzf
 git
 gnome-backgrounds
+gvfs
+gvfs-smb
 kitty
 locate
 maim
