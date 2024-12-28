@@ -31,4 +31,4 @@ PROMPT_COMMAND='history -a'
 # For clipmenu
 export CM_SELECTIONS=clipboard
 
-[[ -x "$(command -v setxkbmap)" ]] && setxkbmap -option caps:escape
+[[ -x "$(command -v setxkbmap)" ]] && setxkbmap -option caps:escape 2> /dev/null
