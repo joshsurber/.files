@@ -108,7 +108,7 @@ bindsym $mod+Right focus right
 bindsym $modalt+$left move left
 bindsym $modalt+$down move down
 bindsym $modalt+$up move up
-bindsym $modalt+$+right move right
+bindsym $modalt+$right move right
 
 # alternatively, you can use the cursor keys:
 bindsym $modalt+Left move left
