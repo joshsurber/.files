@@ -223,9 +223,28 @@ for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 # }}}
 # Color scheme{{{
-# class                 border  bg      text    indicator child-border
-client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
-client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
-client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
-for_window [title="Picture-in-picture"] floating enable
+
+# # Tokyo Night            border  bg      text    indicator child-border
+# client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
+# client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
+# client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
+# for_window [title="Picture-in-picture"] floating enable
+
+# Gruvbox
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+set $lightgray #bdae93
+# class                 border|backgr|text|indicator|child_border
+client.focused          $lightgray $lightgray $bg $purple $darkgray
+client.focused_inactive $darkgray $darkgray $lightgray $purple $darkgray
+client.unfocused        $darkgray $darkgray $lightgray $purple $darkgray
+client.urgent           $red $red $white $red $red
+
 # }}}
