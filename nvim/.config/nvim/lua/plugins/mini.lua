@@ -7,37 +7,40 @@ return {
         end
 
         local modules = {
-            'ai',                -- Extend and create `a`/`i` textobjects                 -- miniai
-            'align',             -- Align text interactively                              -- minialign
-            'animate',           -- Animate common Neovim actions                         -- minianimate
-            'basics',            -- Common config presets                                 -- minibasics
-            'bracketed',         -- Go forward/backward with square brackets              -- minibracketed
-            'bufremove',         -- Remove buffers                                        -- minibufremove
-            'clue',              -- Show next key clues                                   -- miniclue
-            'colors',            -- Tweak and save any color scheme                       -- minicolors
-            'comment',           -- Comment                                               -- minicomment
-            'cursorword',        -- Autohighlight word under cursor                       -- minicursorword
-            'extra',             -- Extra mini.nvim functionality                         -- miniextra
-            'files',             -- Navigate and manipulate file system                   -- minifiles
-            'hipatterns',        -- Highlight patterns in text                            -- minihipatterns
-            'icons',             -- Icon provider                                         -- miniicons
-            'indentscope',       -- Visualize and operate on indent scope                 -- miniindentscope
-            'jump',              -- Jump forward/backward to a single character           -- minijump
-            'jump2d',            -- Jump within visible lines                             -- minijump2d
-            'move',              -- Move any selection in any direction                   -- minimove
-            'operators',         -- Text edit operators                                   -- minioperators
-            'pairs',             -- Autopairs                                             -- minipairs
-            'pick',              -- Pick anything                                         -- minipick
-            'sessions',          -- Session management                                    -- minisessions
-            'splitjoin',         -- Split and join arguments                              -- minisplitjoin
-            'starter',           -- Start screen                                          -- ministarter
-            'statusline',        -- Statusline                                            -- ministatusline
-            'surround',          -- Surround actions                                      -- minisurround
-            'tabline',           -- Tabline                                               -- minitabline
-            'trailspace',        -- Trailspace (highlight and remove)                     -- minitrailspace
-            'visits',            -- Track and reuse file system visits                    -- minivisits
+            -- 'animate',     -- Leave commented; applied first but not in Neovide
+
+            'ai',          -- Extend and create `a`/`i` textobjects                 -- miniai
+            'align',       -- Align text interactively                              -- minialign
+            'basics',      -- Common config presets                                 -- minibasics
+            'bracketed',   -- Go forward/backward with square brackets              -- minibracketed
+            'bufremove',   -- Remove buffers                                        -- minibufremove
+            'clue',        -- Show next key clues                                   -- miniclue
+            'colors',      -- Tweak and save any color scheme                       -- minicolors
+            'comment',     -- Comment                                               -- minicomment
+            'completion',  -- Completion and signature help                         -- minicompletion
+            'cursorword',  -- Autohighlight word under cursor                       -- minicursorword
+            'extra',       -- Extra mini.nvim functionality                         -- miniextra
+            'files',       -- Navigate and manipulate file system                   -- minifiles
+            'hipatterns',  -- Highlight patterns in text                            -- minihipatterns
+            'icons',       -- Icon provider                                         -- miniicons
+            'indentscope', -- Visualize and operate on indent scope                 -- miniindentscope
+            'jump',        -- Jump forward/backward to a single character           -- minijump
+            'jump2d',      -- Jump within visible lines                             -- minijump2d
+            'move',        -- Move any selection in any direction                   -- minimove
+            'notify',      -- Show notifications                                    -- mininotify
+            'operators',   -- Text edit operators                                   -- minioperators
+            'pairs',       -- Autopairs                                             -- minipairs
+            'pick',        -- Pick anything                                         -- minipick
+            'sessions',    -- Session management                                    -- minisessions
+            'snippets',    -- Manage and expand snippets                            -- minisnippets
+            'splitjoin',   -- Split and join arguments                              -- minisplitjoin
+            'starter',     -- Start screen                                          -- ministarter
+            'statusline',  -- Statusline                                            -- ministatusline
+            'surround',    -- Surround actions                                      -- minisurround
+            'tabline',     -- Tabline                                               -- minitabline
+            'trailspace',  -- Trailspace (highlight and remove)                     -- minitrailspace
+            'visits',      -- Track and reuse file system visits                    -- minivisits
             -- 'base16' ,           -- Base16 colorscheme creation                           -- minibase16
-            -- 'completion',        -- Completion and signature help                         -- minicompletion
             -- 'deps',              -- Plugin manager                                        -- minideps
             -- 'diff',              -- Work with diff hunks                                  -- minidiff
             -- 'doc' ,              -- Generate Neovim help files                            -- minidoc
@@ -46,6 +49,7 @@ return {
             -- 'map' ,              -- Window with buffer text overview                      -- minimap
             -- 'misc' ,             -- Miscellaneous functions                               -- minimisc
             -- 'test' ,             -- Test Neovim plugins                                   -- minitest
+
         }
 
         local config = {
@@ -55,18 +59,12 @@ return {
                     -- win_borders = 'default',
                 },
                 mappings = {
-                    windows = true,       -- Window navigation with <C-hjkl>, resize with <C-arrow>
+                    -- windows = true,       -- Window navigation with <C-hjkl>, resize with <C-arrow>
                     move_with_alt = true, -- Move cursor in Insert, Command, and Terminal mode with <M-hjkl>
                 },
                 autocommands = {
                     relnum_in_visual_mode = true,
                 },
-            },
-            bufremove = {
-                after = function()
-                    vim.keymap.set("n", "<leader>q", "<cmd>lua MiniBufremove.wipeout()<cr>",
-                        { desc = 'Wipeout buffer (close tab)' })
-                end
             },
             bufremove = {
                 after = function()
@@ -145,6 +143,36 @@ return {
             },
             completion = {
                 after = function()
+                    local imap_expr = function(lhs, rhs)
+                        vim.keymap.set('i', lhs, rhs, { expr = true })
+                    end
+
+                    -- local keycode = vim.keycode or function(x)
+                    --     return vim.api.nvim_replace_termcodes(x, true, true, true)
+                    -- end
+                    -- local keys = {
+                    --     ['cr']        = keycode('<CR>'),
+                    --     ['ctrl-y']    = keycode('<C-y>'),
+                    --     ['ctrl-y_cr'] = keycode('<C-y><CR>'),
+                    -- }
+
+                    imap_expr('<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
+                    imap_expr('<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
+
+                    -- _G.cr_action = function()
+                    --     if vim.fn.pumvisible() ~= 0 then
+                    --         -- If popup is visible, confirm selected item or add new line otherwise
+                    --         local item_selected = vim.fn.complete_info()['selected'] ~= -1
+                    --         return item_selected and keys['ctrl-y'] or keys['ctrl-y_cr']
+                    --     else
+                    --         -- If popup is not visible, use plain `<CR>`. You might want to customize
+                    --         -- according to other plugins. For example, to use 'mini.pairs', replace
+                    --         -- next line with `return require('mini.pairs').cr()`
+                    --         return keys['cr']
+                    --     end
+                    -- end
+
+                    -- vim.keymap.set('i', '<CR>', 'v:lua._G.cr_action()', { expr = true })
                 end
             },
             hipatterns = {
@@ -157,7 +185,6 @@ return {
             },
             files = {
                 after = function()
-                    vim.notify('foobar')
                     vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>",
                         { desc = 'Open file explorer' })
                 end,
@@ -168,7 +195,7 @@ return {
                 exchange = { prefix = '<leader>x' },
                 multiply = { prefix = '<leader>m' },
                 replace = { prefix = '<leader>r' },
-                sort = { prefix = '<leader>s' },
+                sort = { prefix = '<leader>S' },
                 --]]
             },
             pick = {
@@ -205,6 +232,27 @@ return {
                         MiniSessions.write()
                     end, {})
                 end
+            },
+            snippets={
+                snippets = {
+                    -- Load custom file with global snippets first (adjust for Windows)
+                    require('mini.snippets').gen_loader
+                        .from_file('~/.config/nvim/snippets/global.json'),
+
+                    -- Load snippets based on current language by reading files from
+                    -- "snippets/" subdirectories from 'runtimepath' directories.
+                    require('mini.snippets').gen_loader.from_lang(),
+                },
+                mappings = {
+                    -- Expand snippet at cursor position. Created globally in Insert mode.
+                    expand = '<C-n>',
+
+                    -- Interact with default `expand.insert` session.
+                    -- Created for the duration of active session(s)
+                    jump_next = '<C-i>',
+                    jump_prev = '<C-h>',
+                    stop = '<C-c>',
+                },
             },
             starter = {
                 after = function()

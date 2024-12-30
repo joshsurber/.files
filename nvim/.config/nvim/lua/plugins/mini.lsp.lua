@@ -1,9 +1,10 @@
 return {
     'neovim/nvim-lspconfig',                 -- Required
-    enabled=false,
+    enabled=true,
     dependencies = {
         'williamboman/mason.nvim',           -- Optional
         'williamboman/mason-lspconfig.nvim', -- Optional{
+        'rafamadriz/friendly-snippets',      -- Optional
     },
     config = function()
         local lspconfig = require('lspconfig')

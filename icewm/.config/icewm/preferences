@@ -1506,4 +1506,3 @@ WorkspaceNames=" 1 ", " 2 ", " 3 ", " 4 "
 
 #  Support for semitransparent terminals like Eterm or gnome-terminal.
 # SupportSemitransparency=1 # 0/1
-
