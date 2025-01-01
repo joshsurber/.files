@@ -9,7 +9,7 @@ link:
 	echo 'source ~/.bash/profile' >> ~/.bash_profile
 	echo 'source ~/.bash/logout' >> ~/.bash_logout
 
-arch: dirs archinstall all link yay
+arch: archinstall dirs all link yay
 
 archinstall:
 	sudo pacman -S --needed -< ./pkgs.arch
