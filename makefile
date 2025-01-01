@@ -20,12 +20,12 @@ yay:
 	 yay -Syu --devel
 	 yay -Y --devel --save
 
-deb: dirs debinstall neovim all link
+deb: debinstall dirs neovim all link
 
 debinstall:
 	# Install packages
 	# for i in $$(cat pkgs); do sudo apt-get install $i; done
-	xargs sudo apt-get install < pkgs
+	xargs sudo apt-get install < pkgs.deb
 	# Install starship
 	curl -sS https://starship.rs/install.sh | sh
 
