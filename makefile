@@ -6,7 +6,7 @@ delete:
 
 link:
 	echo 'source ~/.bash/source' >> ~/.bashrc
-	echo 'source ~/.bash/profile' >> ~/.bash_profile
+	echo 'source ~/.bash/profile' >> ~/.profile
 	echo 'source ~/.bash/logout' >> ~/.bash_logout
 
 arch: archinstall dirs all link yay
