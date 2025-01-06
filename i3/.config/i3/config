@@ -3,7 +3,7 @@
 
 # Variables{{{
 font pango:CaskaydiaCove NF 10
-set $term kitty
+set $term i3-sensible-terminal
 set $browser chromium
 set $locker i3lock -c 000000
 set $apppath /home/josh/.local/bin
