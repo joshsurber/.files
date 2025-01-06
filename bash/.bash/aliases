@@ -30,6 +30,9 @@ alias mutt='neomutt'
 
 alias ducks='du -cks *|sort -rn|head -11'
 
+ccopy() { for i in $*; do cp -a $i /tmp/ccopy.$i; done }
+alias cpaste="ls -d /tmp/ccopy* | sed 's|[^\.]*.\.||' | xargs -I % mv /tmp/ccopy.% ./%"
+
 # SHORT GIT ALIASES (using same mnemonics from nvim)
 alias gg='git status'
 alias gc='git commit'
