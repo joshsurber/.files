@@ -1,20 +1,6 @@
 #!/bin/bash
 # This contains environment variables and shell options
 
-# COMMON APPS
-export EDITOR=nvim
-export VISUAL=$EDITOR
-export PAGER=less
-# export MANPAGER="sh -c 'col -bx | bat -l man -p'" # "bat" as manpager
-export BROWSER=qutebrowser
-export TERMINAL=kitty
-
-# PATHS
-export PATH=~/.local/bin:~/.cargo/bin:$PATH:/opt/nvim-linux64/bin
-export CDPATH=.:~
-
-export FZF_DEFAULT_COMMAND="$FIND --type f --strip-cwd-prefix"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # BASH OPTIONS
 export HISTIGNORE="&:[ \t]*:ls:[bf]g:exit"
