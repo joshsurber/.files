@@ -5,8 +5,17 @@
 font pango:CaskaydiaCove NF 10
 set $term i3-sensible-terminal
 set $browser chromium
+set $fileman pcmanfm
+set $email thunderbird
+set $altterm neovide
+set $altbrowser qutebrowser
+set $altfileman pcmanfm
+set $altemail thunderbird
+
 set $locker i3lock -c 000000
+
 set $apppath /home/josh/.local/bin
+
 set $mod Mod4
 set $modalt Mod4+Control
 set $left h
@@ -34,13 +43,17 @@ bindsym $modalt+z restart
 # App shortcuts{{{
 bindsym $mod+Return exec $term
 bindsym $mod+apostrophe exec $browser
-bindsym $mod+a exec thunderbird
-bindsym $mod+r exec pcmanfm
+bindsym $mod+backslash exec $fileman
+bindsym $modalt+Return exec $altterm
+bindsym $modalt+apostrophe exec $altbrowser
+bindsym $mod+a exec $email
+bindsym $mod+r exec $fileman
 bindsym $mod+s exec $browser
 bindsym $mod+t exec $term
-bindsym $modalt+a exec thunderbird
-bindsym $modalt+s exec qutebrowser
-bindsym $modalt+t exec neovide
+bindsym $modalt+a exec $altemail
+bindsym $modalt+r exec $altfileman
+bindsym $modalt+s exec $altbrowser
+bindsym $modalt+t exec $altterm
 # }}}
 # Window management{{{
 bindsym $mod+g split h
