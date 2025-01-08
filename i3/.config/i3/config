@@ -3,7 +3,7 @@
 
 # Variables{{{
 font pango:CaskaydiaCove NF 10
-set $term i3-sensible-terminal
+set $term kitty
 set $browser chromium
 set $fileman pcmanfm
 set $email thunderbird
@@ -27,6 +27,8 @@ set $right i
 bindsym Print exec maim --select | xclip -selection clipboard -target image/png
 bindsym $mod+Print exec dm-maim
 bindsym $mod+p exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
+bindsym $modalt+space exec --no-startup-id dmenu_run
 # bindsym $mod+p exec "rofi -modi drun,run -show drun"
 bindsym $modalt+p exec --no-startup-id dmenu_run
 bindsym $mod+v exec clipmenu
@@ -63,8 +65,8 @@ bindsym $mod+semicolon layout stacking
 bindsym $mod+u layout tabbed
 bindsym $mod+y layout toggle split
 bindsym $mod+o mode "resize"
-bindsym $mod+space focus mode_toggle
-bindsym $modalt+space floating toggle
+bindsym $mod+shift+space focus mode_toggle
+bindsym $modalt+shift+space floating toggle
 
 bindsym $mod+d focus parent
 bindsym $modalt+d focus child
@@ -92,6 +94,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom
 # exec --no-startup-id volumeicon
 exec --no-startup-id clipmenud
+exec --no-startup-id dunst
 exec_always --no-startup-id xset dpms 600 1200 0
 # exec_always --no-startup-id autotiling
 # }}}
