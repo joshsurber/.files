@@ -13,6 +13,7 @@ chromium
 clipmenu
 cups
 dmenu
+dunst
 exa
 fd
 fuse3
@@ -56,3 +57,5 @@ volumeicon
 xarchiver
 xclip
 xscreensaver
+bspwm
+sxhkd
