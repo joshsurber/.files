@@ -22,7 +22,7 @@ super + Escape
 # quit/restart bspwm
 super + ctrl + {q,z}
 	bspc {quit,wm -r};\
-    notify-send -t 1500 'sxhkd' 'Config reloaded'
+    notify-send -t 1500 'bspwm' 'Config reloaded'
 
 # close and kill
 super + {_,ctrl + }w
