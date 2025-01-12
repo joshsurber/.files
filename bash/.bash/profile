@@ -10,6 +10,7 @@ export PAGER=less
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'" # "bat" as manpager
 export BROWSER=qutebrowser
 export TERMINAL=kitty
+export MENUPRG=rofi
 
 # PATHS
 export PATH=~/.local/bin:~/.cargo/bin:$PATH:/opt/nvim-linux64/bin
@@ -17,4 +18,5 @@ export CDPATH=.:~
 
 export FZF_DEFAULT_COMMAND="$FIND --type f --strip-cwd-prefix"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export CM_LAUNCHER=$MENUPRG
 source $HOME/.bashrc
