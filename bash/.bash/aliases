@@ -40,6 +40,7 @@ alias gd='git diff'
 alias gp='git push'
 alias gs='git add' # git stage
 alias ga='git add'
+alias lg='lazygit'
 
 # MOVE AROUND
 alias back='cd -'
