@@ -11,9 +11,10 @@ super + @space
     rofi -show drun
 
 {_,super + }Print
-    { maim --select | xclip -selection clipboard -target image/png, dm-maim }
+    { maim --select | xclip -selection clipboard -target image/png, dm-maim -r}
+
 super + {x,v,b,l}
-    {dm-logout, clipmenu, dm-lights, i3lock -c 000000 }
+    {dm-logout -r, clipmenu, dm-lights -r, i3lock -c 000000 }
 
 # make sxhkd reload its configuration files:
 super + Escape
