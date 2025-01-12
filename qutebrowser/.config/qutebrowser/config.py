@@ -114,7 +114,8 @@ config.set('content.geolocation', True, 'https://www.google.com')
 # Value to send in the `Accept-Language` header. Note that the value
 # read from JavaScript is always the global value.
 # Type: String
-config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io/*')
+config.set('content.headers.accept_language',
+           '', 'https://matchmaker.krunker.io/*')
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -130,7 +131,8 @@ config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
+config.set('content.headers.user_agent',
+           'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -146,7 +148,8 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{w
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101 Firefox/90.0', 'https://accounts.google.com/*')
+config.set('content.headers.user_agent',
+           'Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101 Firefox/90.0', 'https://accounts.google.com/*')
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -162,7 +165,8 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:90.0) Gecko
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
+config.set('content.headers.user_agent',
+           'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
 
 # Load images automatically in web pages.
 # Type: Bool
@@ -208,7 +212,8 @@ config.set('content.media.audio_capture', True, 'https://meet.google.com')
 #   - true
 #   - false
 #   - ask
-config.set('content.media.audio_video_capture', True, 'https://meet.google.com')
+config.set('content.media.audio_video_capture',
+           True, 'https://meet.google.com')
 
 # Allow websites to record video.
 # Type: BoolAsk
@@ -216,7 +221,8 @@ config.set('content.media.audio_video_capture', True, 'https://meet.google.com')
 #   - true
 #   - false
 #   - ask
-config.set('content.media.video_capture', True, 'https://assessment.testgorilla.com')
+config.set('content.media.video_capture', True,
+           'https://assessment.testgorilla.com')
 
 # Allow websites to record video.
 # Type: BoolAsk
@@ -240,7 +246,8 @@ config.set('content.notifications.enabled', True, 'https://meet.google.com')
 #   - true
 #   - false
 #   - ask
-config.set('content.notifications.enabled', True, 'https://calendar.google.com')
+config.set('content.notifications.enabled',
+           True, 'https://calendar.google.com')
 
 # Allow websites to show notifications.
 # Type: BoolAsk
@@ -248,7 +255,8 @@ config.set('content.notifications.enabled', True, 'https://calendar.google.com')
 #   - true
 #   - false
 #   - ask
-config.set('content.notifications.enabled', True, 'https://messages.google.com')
+config.set('content.notifications.enabled',
+           True, 'https://messages.google.com')
 
 # Allow websites to register protocol handlers via
 # `navigator.registerProtocolHandler`.
@@ -257,7 +265,8 @@ config.set('content.notifications.enabled', True, 'https://messages.google.com')
 #   - true
 #   - false
 #   - ask
-config.set('content.register_protocol_handler', True, 'https://calendar.google.com?cid=%25s')
+config.set('content.register_protocol_handler', True,
+           'https://calendar.google.com?cid=%25s')
 
 # Allow websites to register protocol handlers via
 # `navigator.registerProtocolHandler`.
@@ -266,7 +275,8 @@ config.set('content.register_protocol_handler', True, 'https://calendar.google.c
 #   - true
 #   - false
 #   - ask
-config.set('content.register_protocol_handler', True, 'https://mail.google.com?extsrc=mailto&url=%25s')
+config.set('content.register_protocol_handler', True,
+           'https://mail.google.com?extsrc=mailto&url=%25s')
 
 # Move on to the next part when there's only one possible completion
 # left.
@@ -280,7 +290,8 @@ c.completion.quick = True
 # `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 # Same as `{column}`, but starting from index 0.
 # Type: ShellCommand
-c.editor.command = ['qterminal', '-e', 'nvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
+c.editor.command = ['qterminal', '-e', 'nvim', '-f',
+                    '{file}', '-c', 'normal {line}G{column0}l']
 
 # Command (and arguments) to use for selecting a single file in forms.
 # The command should write the selected file path to the specified file
@@ -288,7 +299,8 @@ c.editor.command = ['qterminal', '-e', 'nvim', '-f', '{file}', '-c', 'normal {li
 # the file to be written to. If not contained in any argument, the
 # standard output of the command is read instead.
 # Type: ShellCommand
-c.fileselect.single_file.command = ['qterminal', '-e', 'vifm', '--choosefile={}']
+c.fileselect.single_file.command = [
+    'qterminal', '-e', 'vifm', '--choosefile={}']
 
 # Command (and arguments) to use for selecting multiple files in forms.
 # The command should write the selected file paths to the specified file
@@ -297,7 +309,8 @@ c.fileselect.single_file.command = ['qterminal', '-e', 'vifm', '--choosefile={}'
 # contained in any argument, the   standard output of the command is
 # read instead.
 # Type: ShellCommand
-c.fileselect.multiple_files.command = ['qterminal', '-e', 'vifm', '--choosefiles={}']
+c.fileselect.multiple_files.command = [
+    'qterminal', '-e', 'vifm', '--choosefiles={}']
 
 # Characters used for hint strings.
 # Type: UniqueCharString
@@ -344,7 +357,8 @@ c.tabs.show = 'always'
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://google.com/search?q={}', 'am': 'https://www.amazon.com/s?k={}', 'arch': 'https://wiki.archlinux.org/?search={}', 're': 'https://www.reddit.com/r/{}', 'wiki': 'https://en.wikipedia.org/wiki/{}', 'yt': 'https://www.youtube.com/results?search_query={}'}
+c.url.searchengines = {'DEFAULT': 'https://google.com/search?q={}', 'am': 'https://www.amazon.com/s?k={}', 'arch': 'https://wiki.archlinux.org/?search={}',
+                       're': 'https://www.reddit.com/r/{}', 'wiki': 'https://en.wikipedia.org/wiki/{}', 'yt': 'https://www.youtube.com/results?search_query={}', 'man': 'https://man.archlinux.org/man/{}'}
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
@@ -355,7 +369,8 @@ config.bind('C', 'hint links spawn -d google-chrome-stable {hint-url}')
 config.bind('gC', 'spawn -d google-chrome-stable {url}')
 config.bind('xb', 'config-cycle statusbar.show always never')
 config.bind('xt', 'config-cycle tabs.show always never')
-config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
+config.bind(
+    'xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
 config.bind('n', 'scroll down')
 config.bind('e', 'scroll up')
 config.bind('i', 'scroll right')
