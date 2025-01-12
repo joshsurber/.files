@@ -10,9 +10,9 @@
 # -p is needed as we use prompts, alternative programs have to handle prompts well.
 
 # DMENU="dmenu -i -l 20 -fn CascadiaMono-10 -p"
-DMENU="dmenu -i -fn CascadiaMono-10 -p"
+# DMENU="dmenu -i -fn CaskaydiaCove-10 -p"
 FMENU="fzf --border=rounded --margin=5% --color=dark --height 100% --reverse --header=$(basename "$0") --info=hidden --header-first --prompt"
-RMENU="rofi -dmenu -p"
+DMENU="rofi -dmenu -p"
 
 PDF_VIEWER="zathura"
 
@@ -25,7 +25,7 @@ DMEDITOR="${DMTERM} nvim"
 
 # TODO: Rename this variable to something more traditional
 # logout_locker='xscreensaver-command -lock'
-logout_locker='slock'
+# logout_locker='slock'
 # logout_locker='dm-tool lock'
 logout_locker='i3lock -c 000000 --nofork'
 
