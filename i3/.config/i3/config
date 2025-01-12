@@ -2,7 +2,7 @@
 # i3 config file (v4)
 
 # Variables{{{
-font pango:CaskaydiaCove NF 10
+font pango:CaskaydiaCove NF 8
 set $term kitty
 set $browser chromium
 set $fileman pcmanfm
