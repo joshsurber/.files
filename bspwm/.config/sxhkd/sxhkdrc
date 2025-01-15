@@ -9,7 +9,8 @@ super + ctrl + {a,r,s,t}
 
 # program launcher
 super + space
-    rofi -show drun
+    rofi -show combi
+    # rofi -show drun
 
 {_,super + }Print
     { maim --select | xclip -selection clipboard -target image/png, dm-maim -r}
