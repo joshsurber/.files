@@ -1,4 +1,3 @@
-
 #
 # NOTE: config.py is intended for advanced users who are comfortable
 # with manually migrating the config file on qutebrowser upgrades. If
@@ -369,8 +368,7 @@ config.bind('C', 'hint links spawn -d google-chrome-stable {hint-url}')
 config.bind('gC', 'spawn -d google-chrome-stable {url}')
 config.bind('xb', 'config-cycle statusbar.show always never')
 config.bind('xt', 'config-cycle tabs.show always never')
-config.bind(
-    'xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
+config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
 config.bind('n', 'scroll down')
 config.bind('e', 'scroll up')
 config.bind('i', 'scroll right')
