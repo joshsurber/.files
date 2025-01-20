@@ -12,9 +12,13 @@ set $altbrowser qutebrowser
 set $altfileman pcmanfm
 set $altemail thunderbird
 
+set $launcher "rofi -modi drun,run -show drun"
+set $altlauncher "rofi -show combi"
+# set $launcher i3-dmenu-desktop
+# set $altlauncher dmenu_run
 set $locker i3lock -c 000000
 
-set $apppath /home/josh/.local/bin
+# set $apppath /home/josh/.local/bin
 
 set $mod Mod4
 set $modalt Mod4+Control
@@ -26,18 +30,13 @@ set $right i
 # System controls{{{
 bindsym Print exec maim --select | xclip -selection clipboard -target image/png
 bindsym $mod+Print exec dm-maim
-bindsym $mod+p exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
-bindsym $modalt+space exec --no-startup-id dmenu_run
-# bindsym $mod+p exec "rofi -modi drun,run -show drun"
-bindsym $modalt+p exec --no-startup-id dmenu_run
+bindsym $mod+space exec --no-startup-id $launcher
+bindsym $modalt+space exec --no-startup-id $altlauncher
 bindsym $mod+v exec clipmenu
-bindsym $mod+b exec $apppath/dm-lights
+bindsym $mod+b exec dm-lights -r
 bindsym $mod+l exec $locker
-# bindsym $mod+x exec $apppath/dm-logout
 bindsym $mod+x mode $Logout
 bindsym $mod+q kill
-# bindsym $modalt+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $modalt+q exec i3-msg exit
 bindsym $mod+z reload
 bindsym $modalt+z restart
