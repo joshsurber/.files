@@ -20,11 +20,12 @@ bspc config focus_follows_pointer true
 # bspc rule -a Screenkey manage=off
 
 dunst &
-polybar-msg cmd quit &
-polybar -r &
+# polybar-msg cmd quit &
+# polybar -r &
 nitrogen --restore &
 clipmenud &
 picom &
+~/.config/polybar/launch.sh &
 
 # xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 xss-lock --transfer-sleep-lock -- slock &

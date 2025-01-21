@@ -207,8 +207,10 @@ mode "$Logout" {
 # }}}
 # bar{{{
 
-exec_always --no-startup-id polybar-msg cmd quit
-exec_always --no-startup-id polybar -r
+# exec_always --no-startup-id polybar-msg cmd quit
+# exec_always --no-startup-id polybar -r laptop
+# exec_always --no-startup-id polybar -r desktop
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # r flag causes bar to reload when config changes
 
