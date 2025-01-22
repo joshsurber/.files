@@ -365,7 +365,7 @@ c.url.start_pages = 'https://wiki.archlinux.org'
 
 # Bindings for normal mode
 config.bind('C', 'hint links spawn -d google-chrome-stable {hint-url}')
-config.bind('gC', 'spawn -d google-chrome-stable {url}')
+config.bind('gC', 'spawn -d chromium {url}')
 config.bind('xb', 'config-cycle statusbar.show always never')
 config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
