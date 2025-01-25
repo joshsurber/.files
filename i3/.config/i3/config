@@ -12,50 +12,67 @@ set $altbrowser qutebrowser
 set $altfileman pcmanfm
 set $altemail thunderbird
 
-set $launcher "rofi -modi drun,run -show drun"
+set $launcher "rofi -show drun"
 set $altlauncher "rofi -show combi"
 # set $launcher i3-dmenu-desktop
 # set $altlauncher dmenu_run
 set $locker i3lock -c 000000
 
-# set $apppath /home/josh/.local/bin
-
 set $mod Mod4
-set $modalt Mod4+Control
+set $mod2 Mod4+Control
+set $altmod Mod1
 set $left h
 set $down n
 set $up e
 set $right i
 # }}}
-# System controls{{{
+
+# Key bindings{{{
+
+# System control{{{
 bindsym Print exec maim --select | xclip -selection clipboard -target image/png
 bindsym $mod+Print exec dm-maim
 bindsym $mod+space exec --no-startup-id $launcher
-bindsym $modalt+space exec --no-startup-id $altlauncher
+bindsym $altmod+space exec --no-startup-id $launcher
+bindsym $mod2+space exec --no-startup-id $altlauncher
 bindsym $mod+v exec clipmenu
 bindsym $mod+b exec dm-lights -r
 bindsym $mod+l exec $locker
 bindsym $mod+x mode $Logout
 bindsym $mod+q kill
-bindsym $modalt+q exec i3-msg exit
+bindsym $mod2+q exec i3-msg exit
 bindsym $mod+z reload
-bindsym $modalt+z restart
+bindsym $mod2+z restart
 # }}}
+
+# System contol buttons{{{
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
+# }}}
+
 # App shortcuts{{{
 bindsym $mod+Return exec $term
+bindsym $altmod+Return exec $term
 bindsym $mod+apostrophe exec $browser
+bindsym $altmod+apostrophe exec $browser
 bindsym $mod+backslash exec $fileman
-bindsym $modalt+Return exec $altterm
-bindsym $modalt+apostrophe exec $altbrowser
+bindsym $mod2+Return exec $altterm
+bindsym $mod2+apostrophe exec $altbrowser
 bindsym $mod+a exec $email
 bindsym $mod+r exec $fileman
 bindsym $mod+s exec $browser
 bindsym $mod+t exec $term
-bindsym $modalt+a exec $altemail
-bindsym $modalt+r exec $altfileman
-bindsym $modalt+s exec $altbrowser
-bindsym $modalt+t exec $altterm
+bindsym $mod2+a exec $altemail
+bindsym $mod2+r exec $altfileman
+bindsym $mod2+s exec $altbrowser
+bindsym $mod2+t exec $altterm
 # }}}
+
 # Window management{{{
 bindsym $mod+g split h
 bindsym $mod+j split v
@@ -65,12 +82,12 @@ bindsym $mod+u layout tabbed
 bindsym $mod+y layout toggle split
 bindsym $mod+o mode "resize"
 bindsym $mod+shift+space focus mode_toggle
-bindsym $modalt+shift+space floating toggle
+bindsym $mod2+shift+space floating toggle
 
 bindsym $mod+d focus parent
-bindsym $modalt+d focus child
+bindsym $mod2+d focus child
 
-bindsym $modalt+minus move scratchpad
+bindsym $mod2+minus move scratchpad
 bindsym $mod+minus scratchpad show
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -79,6 +96,35 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 # }}}
+
+# Window moving{{{
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod2+$left move left
+bindsym $mod2+$down move down
+bindsym $mod2+$up move up
+bindsym $mod2+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod2+Left move left
+bindsym $mod2+Down move down
+bindsym $mod2+Up move up
+bindsym $mod2+Right move right
+# }}}
+
+# }}}
+
 # Startup programs{{{
 # # Start XDG autostart .desktop files using dex. See also
 # # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -97,40 +143,7 @@ exec --no-startup-id dunst
 exec_always --no-startup-id xset dpms 600 1200 0
 # exec_always --no-startup-id autotiling
 # }}}
-# System contol buttons{{{
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86MonBrightnessDown exec light -U 5
-bindsym XF86MonBrightnessUp exec light -A 5
-# }}}
-# Window moving{{{
-# change focus
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $modalt+$left move left
-bindsym $modalt+$down move down
-bindsym $modalt+$up move up
-bindsym $modalt+$right move right
-
-# alternatively, you can use the cursor keys:
-bindsym $modalt+Left move left
-bindsym $modalt+Down move down
-bindsym $modalt+Up move up
-bindsym $modalt+Right move right
-# }}}
 # Workspaces{{{
 # Worpspace names{{{
     set $ws1 "1"
@@ -157,18 +170,19 @@ bindsym $modalt+Right move right
         bindsym $mod+0 workspace number $ws10
 # }}}
 # move focused container to workspace{{{
-    bindsym $modalt+1 move container to workspace number $ws1
-        bindsym $modalt+2 move container to workspace number $ws2
-        bindsym $modalt+3 move container to workspace number $ws3
-        bindsym $modalt+4 move container to workspace number $ws4
-        bindsym $modalt+5 move container to workspace number $ws5
-        bindsym $modalt+6 move container to workspace number $ws6
-        bindsym $modalt+7 move container to workspace number $ws7
-        bindsym $modalt+8 move container to workspace number $ws8
-        bindsym $modalt+9 move container to workspace number $ws9
-        bindsym $modalt+0 move container to workspace number $ws10
+    bindsym $mod2+1 move container to workspace number $ws1
+        bindsym $mod2+2 move container to workspace number $ws2
+        bindsym $mod2+3 move container to workspace number $ws3
+        bindsym $mod2+4 move container to workspace number $ws4
+        bindsym $mod2+5 move container to workspace number $ws5
+        bindsym $mod2+6 move container to workspace number $ws6
+        bindsym $mod2+7 move container to workspace number $ws7
+        bindsym $mod2+8 move container to workspace number $ws8
+        bindsym $mod2+9 move container to workspace number $ws9
+        bindsym $mod2+0 move container to workspace number $ws10
 # }}}
 # }}}
+
 # resize window (you can also use the mouse for that){{{
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -193,6 +207,7 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+d mode "default"
 }# }}}
+
 # Logout menu {{{
 set $Logout  Esc | (L)ock | (X)Logout | (R)eboot | Sh(U)t down | (S)leep
 mode "$Logout" {
@@ -205,28 +220,29 @@ mode "$Logout" {
         bindsym Escape mode "default"
 }
 # }}}
-# bar{{{
+
+# Bar {{{
 
 # exec_always --no-startup-id polybar-msg cmd quit
-# exec_always --no-startup-id polybar -r laptop
-# exec_always --no-startup-id polybar -r desktop
+# exec_always --no-startup-id polybar -r
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-# r flag causes bar to reload when config changes
-
+# # i3status, using polybar instead
 # bar {
 #         status_command i3status
 #         position top
 # }
 
 # }}}
+
 # Window appearance{{{
 for_window [all] title_window_icon yes
-gaps inner 2
+gaps inner 4
 gaps outer 0
 # gaps top 2
 # gaps bottom 2
 smart_gaps on
+
 for_window [window_role="About"] floating enable
 for_window [window_role="Organizer"] floating enable
 for_window [window_role="Preferences"] floating enable
@@ -238,20 +254,21 @@ for_window [window_role="toolbox"] floating enable
 for_window [window_role="webconsole"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
-
 for_window [title="Picture-in-picture"] floating enable
 # }}}
+
 # Color scheme{{{
 
-# Tokyo Night            border  bg      text    indicator child-border
-client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
-client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
-client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
+#TokyoNight             border  bg      text    indicator child-border
+client.focused          #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
+client.focused_inactive #16161d #16161d #c0caf5 #16161d   #16161d
+client.unfocused        #16161d #16161d #c0caf5 #16161d   #16161d
 
-# # Gruvbox               border  backgr  text     indicator child_border
-# client.focused          #bdae93 #bdae93 ##282828 #b16286   #1d2021
+# #Gruvbox                border  backgr  text     indicator child_border
+# client.focused          #bdae93 #bdae93 #282828  #b16286   #1d2021
 # client.focused_inactive #1d2021 #1d2021 #bdae93  #b16286   #1d2021
 # client.unfocused        #1d2021 #1d2021 #bdae93  #b16286   #1d2021
 # client.urgent           #cc241d #cc241d #ffffff  #cc241d   #cc241d
+
 
 # }}}
