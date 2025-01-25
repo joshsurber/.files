@@ -2,9 +2,9 @@ configuration {
 
   application-fallback-icon: 'defaultapp';
   combi-modes: "window,run,drun,ssh";
-  display-drun: " ";
-  display-run: " ";
-  display-window: " ";
+  // display-drun: " ";
+  // display-run: " ";
+  // display-window: " ";
   drun-display-format: "{icon} {name}";
   font: "CaskaydiaCove 12";
   icon-theme: "adwaita-icon-theme";
@@ -31,4 +31,11 @@ configuration {
 
 // vim: set ft=scss :
 
-@theme "/home/josh/.local/share/rofi/themes/simple-tokyonight.rasi"
+//@theme "/home/josh/.local/share/rofi/themes/simple-tokyonight.rasi"
+
+//@theme "/home/josh/.local/share/rofi/themes/josh.rasi"
+
+//@theme "/home/josh/.local/share/rofi/themes/simple-tokyonight.rasi"
+
+@theme "/home/josh/.local/share/rofi/themes/josh.rasi"
+// vim: ft=scss
