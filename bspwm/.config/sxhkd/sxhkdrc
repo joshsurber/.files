@@ -1,6 +1,6 @@
 # Notes: alt resizes windows, shift preselects, ctrl is gp mod
 # terminal emulator
-super + Return
+{super,alt} + Return
 	kitty
 super + {a,r,s,t}
     {thunderbird,pcmanfm,chromium,kitty}
@@ -8,9 +8,10 @@ super + ctrl + {a,r,s,t}
     {thunderbird,pcmanfm,qutebrowser,neovide}
 
 # program launcher
-super + space
-    rofi -show combi
-    # rofi -show drun
+super + {_,ctrl + }space
+    rofi -show {drun,combi}
+alt + space
+    rofi -show drun
 
 {_,super + }Print
     { maim --select | xclip -selection clipboard -target image/png, dm-maim -r}
