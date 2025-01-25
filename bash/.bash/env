@@ -1,6 +1,5 @@
 #!/bin/bash
-# This contains environment variables and shell options
-
+# This sets up my bash environment
 
 # BASH OPTIONS
 export HISTIGNORE="&:[ \t]*:ls:[bf]g:exit"
@@ -13,8 +12,3 @@ shopt -s dotglob    # include dotfiles in globbing
 shopt -s histappend # don't overwrite history
 shopt -s extglob
 PROMPT_COMMAND='history -a'
-
-# For clipmenu
-export CM_SELECTIONS=clipboard
-
-[[ -x "$(command -v setxkbmap)" ]] && setxkbmap -option caps:escape 2> /dev/null

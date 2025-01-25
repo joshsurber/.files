@@ -72,6 +72,7 @@ cb() {
 }
 alias cb_ssh="cb ~/.ssh/id*.pub"
 
+# Easily extract compressed files
 ex() {
     if [ -f "$1" ]; then
         case $1 in
@@ -96,6 +97,7 @@ ex() {
     fi
 }
 
+# Move up $ARGS directories (default 1)
 up() {
     local d=""
     local limit="$1"
