@@ -1,7 +1,7 @@
 # Notes: alt resizes windows, shift preselects, ctrl is gp mod
 # terminal emulator
 {super,alt} + Return
-	kitty
+    kitty
 super + {a,r,s,t}
     {thunderbird,pcmanfm,chromium,kitty}
 super + ctrl + {a,r,s,t}
