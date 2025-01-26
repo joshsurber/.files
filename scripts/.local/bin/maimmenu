@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+# This is stolen from DT's dmscripts/dm-maim but modified to be self-contained
+set -euo pipefail
+MENU="rofi -dmenu -p"
+# MENU="dmenu -i -fn CaskaydiaCove-10 -p"
+
+maim_dir="${HOME}/Screenshots"
+maim_file_prefix="maim"
+_maim_args=""
+_file_type=""
+mkdir -p "${maim_dir}"
+
+declare -a modes=(
+    "Fullscreen"
+    "Active window"
+    "Selected region"
+)
+
+_displays=$(xrandr --listactivemonitors | awk '/+/ {print $4, $3}' | awk -F'[x/+* ]' '{print $1,$2"x"$4"+"$6"+"$7}')
+IFS=$'\n'
+declare -A _display_mode
+for i in ${_displays}; do
+    modes[${#modes[@]}]="${i%% *}"
+    _display_mode[${i%% *}]="${i##* }"
+done
+unset IFS
+
+target=$(printf '%s\n' "${modes[@]}" | ${MENU} 'Take screenshot of:') || exit 1
+case "$target" in
+'Fullscreen')
+    _file_type="full"
+    ;;
+'Active window')
+    active_window=$(xdotool getactivewindow)
+    _maim_args="-i ${active_window}"
+    _file_type="window"
+    ;;
+'Selected region')
+    _maim_args="-s"
+    _file_type="region"
+    ;;
+*)
+    _maim_args="-g ${_display_mode[${target}]}"
+    _file_type="${target}"
+    ;;
+esac
+
+
+
+delay=$(printf '%s\n' "$(seq 0 5)" | ${MENU} 'Delay (in seconds):') || exit 1
+if [ ! "${delay}" -eq "0" ]; then
+    _maim_args="${_maim_args} --delay=${delay}"
+else
+    _maim_args="${_maim_args} --delay=0.5"
+fi
+
+
+
+get_timestamp() {
+    date '+%Y%m%d-%H%M%S'
+}
+
+_maim_args="${_maim_args} -q"
+destination=("File" "Clipboard" "Both")
+dest=$(printf '%s\n' "${destination[@]}" | ${MENU} 'Destination:') || exit 1
+case "$dest" in
+'File')
+    # shellcheck disable=SC2086,SC2154
+    maim ${_maim_args} "${maim_dir}/${maim_file_prefix}-${_file_type}-$(get_timestamp).png"
+    notify-send "Saved Screenshot" "${maim_dir}/${maim_file_prefix}-${_file_type}-$(get_timestamp).png"
+    ;;
+'Clipboard')
+    # shellcheck disable=SC2086
+    maim ${_maim_args} | xclip -selection clipboard -t image/png
+    # 'wayland') wl-copy -t image/png ;;
+    notify-send "Saved Screenshot" "Clipboard"
+    ;;
+'Both')
+    # shellcheck disable=SC2086
+    maim ${_maim_args} | tee "${maim_dir}/${maim_file_prefix}-${_file_type}-$(get_timestamp).png" | cp2cb-maim
+    notify-send "Saved Screenshot" "${maim_dir}/${maim_file_prefix}-${_file_type}-$(get_timestamp).png And Clipboard"
+    ;;
+*)
+    exit 1
+    ;;
+esac

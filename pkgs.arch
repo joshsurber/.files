@@ -1,3 +1,4 @@
+acpilight
 arandr
 autorandr
 autotiling
@@ -37,6 +38,7 @@ neovim
 nitrogen
 noto-fonts-emoji
 npm
+pamixer
 pcmanfm
 picom
 pkgfile
@@ -55,16 +57,17 @@ shfmt
 slock
 starship
 stow
+stylua
 sxhkd
 tidy
 tk
 tldr
+tmux
 ttf-cascadia-code-nerd
 ttf-firacode-nerd
 ttf-roboto
-unzip
 vifm
 volumeicon
 xarchiver
 xclip
-xscreensaver
+zip
