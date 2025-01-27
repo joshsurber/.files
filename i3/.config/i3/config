@@ -32,6 +32,7 @@ set $right i
 bindsym Print exec maim --select | xclip -selection clipboard -target image/png
 bindsym $mod+Print exec maimmenu
 bindsym $mod+space exec --no-startup-id $launcher
+bindsym mod1+space exec --no-startup-id $launcher
 bindsym $mod2+space exec --no-startup-id $launcher2
 bindsym $mod+v exec clipmenu
 bindsym $mod+period exec rofi -show emoji
@@ -48,8 +49,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id volume up
 bindsym XF86AudioLowerVolume exec --no-startup-id volume down
 bindsym XF86AudioMute exec --no-startup-id volume mute
 bindsym XF86AudioMicMute exec --no-startup-id volume mute
-bindsym XF86MonBrightnessDown exec backlight down
 bindsym XF86MonBrightnessUp exec backlight up
+bindsym XF86MonBrightnessDown exec backlight down
 # }}}
 
 # App shortcuts{{{
@@ -69,21 +70,21 @@ bindsym $mod2+t exec $term2
 # }}}
 
 # Window management{{{
-bindsym $mod+g split h
-bindsym $mod+j split v
+# bindsym $mod+g split h
+# bindsym $mod+j split v
 bindsym $mod+f fullscreen toggle
+bindsym $mod+u layout toggle split
+bindsym $mod+y layout tabbed
 bindsym $mod+semicolon layout stacking
-bindsym $mod+u layout tabbed
-bindsym $mod+y layout toggle split
 bindsym $mod+o mode "resize"
-bindsym $mod+shift+space focus mode_toggle
-bindsym $mod2+shift+space floating toggle
+# bindsym $mod+shift+space focus mode_toggle
+bindsym $mod2+f floating toggle
 
 bindsym $mod+d focus parent
 bindsym $mod2+d focus child
 
-bindsym $mod2+minus move scratchpad
-bindsym $mod+minus scratchpad show
+bindsym $mod2+comma move scratchpad
+bindsym $mod+comma scratchpad show
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -92,7 +93,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 # }}}
 
-# Window moving{{{
+# Window nav and moving {{{
 # change focus
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -139,6 +140,7 @@ exec_always --no-startup-id xset dpms 600 1200 0
 # }}}
 
 # Workspaces{{{
+
 # Worpspace names{{{
     set $ws1 "1"
         set $ws2 "2"
@@ -151,6 +153,7 @@ exec_always --no-startup-id xset dpms 600 1200 0
         set $ws9 "9"
         set $ws10 "10"
 # }}}
+
 # switch to workspace{{{
     bindsym $mod+1 workspace number $ws1
         bindsym $mod+2 workspace number $ws2
@@ -163,6 +166,7 @@ exec_always --no-startup-id xset dpms 600 1200 0
         bindsym $mod+9 workspace number $ws9
         bindsym $mod+0 workspace number $ws10
 # }}}
+
 # move focused container to workspace{{{
     bindsym $mod2+1 move container to workspace number $ws1
         bindsym $mod2+2 move container to workspace number $ws2
@@ -175,6 +179,7 @@ exec_always --no-startup-id xset dpms 600 1200 0
         bindsym $mod2+9 move container to workspace number $ws9
         bindsym $mod2+0 move container to workspace number $ws10
 # }}}
+
 # }}}
 
 # resize window (you can also use the mouse for that){{{
@@ -199,7 +204,6 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+d mode "default"
 }# }}}
 
 # Logout menu {{{
@@ -236,6 +240,10 @@ gaps outer 0
 # gaps top 2
 # gaps bottom 2
 smart_gaps on
+
+for_window [class="^.*"] border pixel 0
+default_border pixel 1
+default_floating_border pixel 1
 
 for_window [window_role="About"] floating enable
 for_window [window_role="Organizer"] floating enable
