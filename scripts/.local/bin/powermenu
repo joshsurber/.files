@@ -5,7 +5,7 @@ chosen=$(printf "  Power Off\n  Restart\n  Suspend\n  Hibernate\n�
 case "$chosen" in
 	"  Power Off") systemctl poweroff ;;
 	"  Restart") systemctl reboot ;;
-	"  Suspend") systemctl suspend-then-hibernate ;;
+	"  Suspend") systemctl suspend ;;
 	"  Hibernate") systemctl hibernate ;;
 	"󰿅  Log Out") loginctl kill-user "$UID" ;;
 	"  Lock") i3lock -c 000000 ;;
