@@ -136,7 +136,7 @@ exec --no-startup-id picom
 exec --no-startup-id clipmenud
 exec --no-startup-id dunst
 exec_always --no-startup-id xset dpms 600 1200 0
-# exec_always --no-startup-id autotiling
+exec_always --no-startup-id autotiling
 # }}}
 
 # Workspaces{{{
