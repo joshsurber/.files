@@ -55,6 +55,7 @@ bindsym XF86MonBrightnessDown exec backlight down
 
 # App shortcuts{{{
 bindsym $mod+Return exec $term
+bindsym mod1+Return exec $term
 bindsym $mod+apostrophe exec $browser
 bindsym $mod+backslash exec $fileman
 bindsym $mod2+Return exec $term2
