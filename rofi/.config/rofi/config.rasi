@@ -13,7 +13,7 @@ configuration {
   kb-row-right: "Alt+i";
   kb-row-up: "Up,Alt+e";
   matching: "fuzzy";
-  modes: "window,drun,run,ssh,filebrowser,emoji";
+  modes: "window,drun,run,ssh,filebrowser,emoji,calc";
   show-icons: true;
   sidebar-mode: true;
   ssh-client: "kitten ssh";
