@@ -18,8 +18,10 @@ set $launcher2 "rofi -show combi"
 # set $launcher2 dmenu_run
 set $locker i3lock -c 000000
 
-set $mod Mod4
-set $mod2 Mod4+Control
+# set $mod Mod4
+set $mod Mod1
+set $mod2 Mod1+Control
+set $altmod Mod4
 set $left h
 set $down n
 set $up e
@@ -32,7 +34,7 @@ set $right i
 bindsym Print exec maim --select | xclip -selection clipboard -target image/png
 bindsym $mod+Print exec maimmenu
 bindsym $mod+space exec --no-startup-id $launcher
-bindsym mod1+space exec --no-startup-id $launcher
+bindsym $altmod+space exec --no-startup-id $launcher
 bindsym $mod2+space exec --no-startup-id $launcher2
 bindsym $mod+v exec clipmenu
 bindsym $mod+period exec rofi -show emoji
@@ -55,7 +57,7 @@ bindsym XF86MonBrightnessDown exec backlight down
 
 # App shortcuts{{{
 bindsym $mod+Return exec $term
-bindsym mod1+Return exec $term
+bindsym $altmod+Return exec $term
 bindsym $mod+apostrophe exec $browser
 bindsym $mod+backslash exec $fileman
 bindsym $mod2+Return exec $term2
