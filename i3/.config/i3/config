@@ -37,7 +37,7 @@ bindsym $mod+space exec --no-startup-id $launcher
 bindsym $altmod+space exec --no-startup-id $launcher
 bindsym $mod2+space exec --no-startup-id $launcher2
 bindsym $mod+v exec clipmenu
-bindsym $mod+period exec rofi -show emoji
+bindsym $mod+period exec rofi -show emoji -matching normal
 bindsym $mod+l exec $locker
 bindsym $mod+x exec powermenu
 bindsym $mod+q kill
