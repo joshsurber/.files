@@ -238,7 +238,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Window appearance{{{
 for_window [all] title_window_icon yes
-gaps inner 4
+gaps inner 8
 gaps outer 0
 # gaps top 2
 # gaps bottom 2
