@@ -42,7 +42,7 @@ bindsym $mod+l exec $locker
 bindsym $mod+x exec powermenu
 bindsym $mod+q kill
 bindsym $mod2+q exec i3-msg exit
-bindsym $mod+z reload
+bindsym $mod+z reload  exec dunstify "i3 config reloaded"
 bindsym $mod2+z restart
 # }}}
 
