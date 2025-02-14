@@ -69,6 +69,8 @@ alias cisrv="php spark serve"
 
 alias drive='rclone mount drive: ~/Google --daemon'
 alias rbash='source ~/.bashrc'
+alias keyd='sudoedit /etc/keyd/default.conf && sudo keyd reload'
+
 
 # QUICKFIX COMMON MISTAKES
 alias fuck='sudo $(history -p \!\!)'   # As in "fuck, I forgot to sudo that command!"
