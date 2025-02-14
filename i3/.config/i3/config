@@ -19,9 +19,9 @@ set $launcher2 "rofi -show combi"
 set $locker i3lock -c 000000
 
 # set $mod Mod4
-set $mod Mod1
-set $mod2 Mod1+Control
-set $altmod Mod4
+set $mod Mod4
+set $mod2 Mod4+Control
+set $altmod Mod1
 set $left h
 set $down n
 set $up e
