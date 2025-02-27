@@ -6,6 +6,7 @@ awesome
 base-devel
 bash-completion
 bat
+bat-extras
 blueman
 bluez
 bluez-utils

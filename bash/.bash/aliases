@@ -1,10 +1,8 @@
 #!/bin/bash
 # TYPING SAVERS
-alias bv='back&&vi'
 alias f='find'
 alias o='open'
 alias v='vi'
-alias v.='v .'
 
 alias vi=$EDITOR
 alias more='less' # less is more
@@ -16,12 +14,14 @@ alias mutt='neomutt'
 
 [[ -x "$(command -v bat)" ]]    && alias cat='bat'
 [[ -x "$(command -v batcat)" ]] && alias cat='batcat'
+[[ -x "$(command -v batman)" ]] && alias man='batman'
 
 [[ -x "$(command -v rg)" ]]     && alias grep='rg'
 [[ -x "$(command -v exa)" ]]    && alias ls='exa'
 
 [[ -x "$(command -v apt)" ]]    && alias i='sudo apt install'
 [[ -x "$(command -v pacman)" ]] && alias i='sudo pacman -S'
+
 
 [[ $TERM == 'xterm-kitty' ]]    && alias theme='kitty +kitten themes'
 [[ $TERM == 'xterm-kitty' ]]    && alias ssh='kitty +kitten ssh'
@@ -42,7 +42,6 @@ alias lg='lazygit'
 
 # MOVE AROUND
 alias back='cd -'
-alias cdvi='cd ~/.config/nvim/'
 alias ..='cd ..'
 alias ...='cd ../..'
 
