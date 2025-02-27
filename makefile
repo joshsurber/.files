@@ -13,6 +13,7 @@ arch: archinstall dirs all link yay
 
 archinstall:
 	sudo pacman -S --needed -< ./pkgs.arch
+	bat cache --build
 
 yay:
 	 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
@@ -30,6 +31,7 @@ debinstall:
 	xargs sudo apt-get install < pkgs.deb
 	# Install starship
 	curl -sS https://starship.rs/install.sh | sh
+	batcat cache --build
 
 neovim:
 	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
