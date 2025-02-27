@@ -16,6 +16,6 @@ source ~/.bash/functions
 [ -x "$(command -v starship)" ] && eval "$(starship init bash)"
 [ -x "$(command -v starship)" ] && eval "$(starship completions bash)"
 [ -x "$(command -v pandoc)" ]   && eval "$(pandoc --bash-completion)"
-[ -x "$(command -v zoxide)" ]   && eval "$(zoxide init bash)"
+[ -x "$(command -v zoxide)" ]   && eval "$(zoxide init --cmd cd bash)"
 
 # neofetch
