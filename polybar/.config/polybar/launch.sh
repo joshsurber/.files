@@ -15,6 +15,10 @@ if [[ $(xrandr -q |grep 'HDMI-1 connected') ]]; then
     polybar -r desktop 2>&1 | tee -a /tmp/polybar.log & disown
 fi
 
+if [[ $(xrandr -q |grep 'DP-1 connected') ]]; then
+    polybar -r only 2>&1 | tee -a /tmp/polybar.log & disown
+fi
+
 # if [[ $(xrandr -q |grep 'DP-1 connected') ]]; then
 #     polybar -r desktop 2>&1 | tee -a /tmp/polybar.log & disown
 # fi
