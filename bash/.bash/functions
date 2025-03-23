@@ -9,7 +9,7 @@ mkcd() {
 # Clone a git repo. Will ssh my personal, and https other repos
 clone() {
     if [[ $* == */* ]]; then
-        git clone https://github.com/$*.git;
+        git clone git@github.com:$*.git;
     else
         git clone git@github.com:joshsurber/$*.git;
     fi

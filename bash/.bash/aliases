@@ -17,7 +17,7 @@ alias mutt='neomutt'
 [[ -x "$(command -v batman)" ]] && alias man='batman'
 
 [[ -x "$(command -v rg)" ]]     && alias grep='rg'
-[[ -x "$(command -v exa)" ]]    && alias ls='exa'
+[[ -x "$(command -v eza)" ]]    && alias ls='eza'
 
 [[ -x "$(command -v apt)" ]]    && alias i='sudo apt install'
 [[ -x "$(command -v pacman)" ]] && alias i='sudo pacman -S'
@@ -54,7 +54,7 @@ alias mkdir='mkdir -p'
 
 # LS ALIASES
 alias cls="clear;ls"
-alias exa='exa --icons --color=always --group-directories-first'
+alias eza='eza --icons --color=always --group-directories-first'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
