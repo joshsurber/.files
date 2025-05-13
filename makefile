@@ -28,7 +28,7 @@ deb: debinstall dirs neovim all link
 debinstall:
 	# Install packages
 	# for i in $$(cat pkgs); do sudo apt-get install $i; done
-	xargs sudo apt-get install < pkgs.deb
+	xargs sudo apt-get install -y < pkgs.deb
 	# Install starship
 	curl -sS https://starship.rs/install.sh | sh
 	batcat cache --build
