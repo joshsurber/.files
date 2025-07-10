@@ -66,6 +66,56 @@ Plug 'vim-scripts/CSSMinister'          " Convert color formats
 
 call plug#end()
 "}}}
+" COLEMAK {{{
+nnoremap j e
+nnoremap k nzzzv
+nnoremap l i
+
+nnoremap K Nzzzv
+nnoremap L I
+nnoremap E K
+
+nnoremap n gj
+vnoremap n j
+nnoremap e gk
+vnoremap e k
+nnoremap i l
+nnoremap i l
+vnoremap i l
+vnoremap o l
+
+noremap <C-w>l <C-w>i
+noremap <C-w>n <C-w>j
+noremap <C-w>e <C-w>k
+noremap <C-w>i <C-w>l
+noremap <C-w>N <C-w>J
+noremap <C-w>E <C-w>K
+noremap <C-w>I <C-w>L
+
+map <C-h> <C-w>h
+map <C-n> <C-w>j
+map <C-e> <C-w>k
+map <C-i> <C-w>l
+
+cmap <M-h> Left
+cmap <M-i> Right
+
+imap <M-h> Left
+imap <M-n> Down
+imap <M-e> Up
+imap <M-i> Right
+
+tmap <M-h> <C-\><C-n><C-w>h
+tmap <M-h> Left
+tmap <M-n> Down
+tmap <M-e> Up
+tmap <M-i> Right
+
+nmap <S-h> :bprev<cr>
+nmap <S-i> :bnext<cr>
+"}}}
+"
+
 " SETUP AND APPEARANCE {{{
 "
 set lazyredraw  " Don't redraw screen while executing macros
