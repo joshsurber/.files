@@ -9,7 +9,7 @@ export DMENU=rofi
 export FIND=fd
 
 # PATHS
-export PATH=~/.local/bin:~/.cargo/bin:$PATH:/opt/nvim-linux64/bin
+export PATH=~/.local/bin:~/.cargo/bin:$PATH
 export CDPATH=.:~
 
 # FZF

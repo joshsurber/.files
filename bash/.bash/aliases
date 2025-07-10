@@ -70,7 +70,6 @@ alias drive='rclone mount drive: ~/Google --daemon'
 alias rbash='source ~/.bashrc'
 alias keyd='sudoedit /etc/keyd/default.conf && sudo keyd reload'
 
-
 # QUICKFIX COMMON MISTAKES
 alias fuck='sudo $(history -p \!\!)'   # As in "fuck, I forgot to sudo that command!"
 alias moar='$(history -p \!\!) | less' # Run the last command through more (actually less)
@@ -78,9 +77,3 @@ alias moar='$(history -p \!\!) | less' # Run the last command through more (actu
 # PACMAN UTILS
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
-
-# # These switch keyboard layouts
-# # I've disabled as I created scripts for this that can be called from dmenu etc
-# alias asdf="echo 'Using Colemak';setxkbmap us -variant colemak;setxkbmap -option caps:escape"
-# alias arst="echo 'Using QWERTY';setxkbmap us;setxkbmap -option caps:escape"
-# alias aprg="echo 'Using QWERTY';setxkbmap us;setxkbmap -option caps:escape"
