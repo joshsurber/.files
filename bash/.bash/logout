@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # Destroy the SSH agent on logout
-eval `ssh-agent -k`
+eval $(ssh-agent -k)

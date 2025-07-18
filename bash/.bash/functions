@@ -2,17 +2,17 @@
 
 # CREATE A DIRECTORY AND CD INTO IT
 mkcd() {
-    mkdir -p "$*"
-    cd "$*"
+  mkdir -p "$*"
+  cd "$*"
 }
 
 # Clone a git repo. Will ssh my personal, and https other repos
 clone() {
-    if [[ $* == */* ]]; then
-        git clone git@github.com:$*.git;
-    else
-        git clone git@github.com:joshsurber/$*.git;
-    fi
+  if [[ $* == */* ]]; then
+    git clone git@github.com:$*.git
+  else
+    git clone git@github.com:joshsurber/$*.git
+  fi
 }
 
 # Load static pws in yubibey call ykey [slot] [password]
@@ -20,101 +20,101 @@ ykey() { echo ykman otp static --keyboard-layout=us $*; }
 
 # CASE-INSENSITIVE FILTERED HISTORY COMMAND.
 hist() {
-    # "hist" ==> "history"
-    # "hist foo" ==> "history | grep -i foo"
-    # "hist foo bar" ==> "history | grep -i foo | grep -i bar"
-    # etc.
-    # Note that quotes are ignored, e.g.
-    #   <<<hist "foo bar">>> is equivalent to <<<hist foo bar>>>
-    HISTORYCMD="history $@"             # "foo bar" ==> "history foo bar"
-    HISTORYCMD="${HISTORYCMD% }"        # "history " ==> "history" (no trailing space)
-    eval "${HISTORYCMD// / | grep -i }" # "history foo bar" ==>
-    #   "history | grep -i foo | grep -i bar"
+  # "hist" ==> "history"
+  # "hist foo" ==> "history | grep -i foo"
+  # "hist foo bar" ==> "history | grep -i foo | grep -i bar"
+  # etc.
+  # Note that quotes are ignored, e.g.
+  #   <<<hist "foo bar">>> is equivalent to <<<hist foo bar>>>
+  HISTORYCMD="history $@"             # "foo bar" ==> "history foo bar"
+  HISTORYCMD="${HISTORYCMD% }"        # "history " ==> "history" (no trailing space)
+  eval "${HISTORYCMD// / | grep -i }" # "history foo bar" ==>
+  #   "history | grep -i foo | grep -i bar"
 }
 
 cb() {
-    # - Accepts input from either stdin (pipe), or params.
-    # - If the input is a filename that exists, then it
-    #   uses the contents of that file.
-    # ------------------------------------------------
-    local _scs_col="\e[0;32m"
-    local _wrn_col='\e[1;31m'
-    local _trn_col='\e[0;33m'
-    # Check that xclip is installed.
-    if ! type xclip >/dev/null 2>&1; then
-        echo -e "$_wrn_col""You must have the 'xclip' program installed.\e[0m"
-        # Check user is not root (root doesn't have access to user xorg server)
-    elif [[ "$USER" == "root" ]]; then
-        echo -e "$_wrn_col""Must be regular user (not root) to copy a file to the clipboard.\e[0m"
+  # - Accepts input from either stdin (pipe), or params.
+  # - If the input is a filename that exists, then it
+  #   uses the contents of that file.
+  # ------------------------------------------------
+  local _scs_col="\e[0;32m"
+  local _wrn_col='\e[1;31m'
+  local _trn_col='\e[0;33m'
+  # Check that xclip is installed.
+  if ! type xclip > /dev/null 2>&1; then
+    echo -e "$_wrn_col""You must have the 'xclip' program installed.\e[0m"
+    # Check user is not root (root doesn't have access to user xorg server)
+  elif [[ "$USER" == "root" ]]; then
+    echo -e "$_wrn_col""Must be regular user (not root) to copy a file to the clipboard.\e[0m"
+  else
+    # If no tty, data should be available on stdin
+    if ! [[ "$(tty)" == /dev/* ]]; then
+      input="$(< /dev/stdin)"
+      # Else, fetch input from params
     else
-        # If no tty, data should be available on stdin
-        if ! [[ "$(tty)" == /dev/* ]]; then
-            input="$(</dev/stdin)"
-            # Else, fetch input from params
-        else
-            input="$*"
-        fi
-        if [ -z "$input" ]; then # If no input, print usage message.
-            echo "Copies a string or the contents of a file to the clipboard."
-            echo "Usage: cb <string or file>"
-            echo "       echo <string or file> | cb"
-        else
-            # If the input is a filename that exists, then use the contents of that file.
-            if [ -e "$input" ]; then input="$(cat $input)"; fi
-            # Copy input to clipboard
-            echo -n "$input" | xclip -selection c
-            # Truncate text for status
-            if [ ${#input} -gt 80 ]; then input="$(echo $input | cut -c1-80)$_trn_col...\e[0m"; fi
-            # Print status.
-            echo -e "$_scs_col""Copied to clipboard:\e[0m $input"
-        fi
+      input="$*"
     fi
+    if [ -z "$input" ]; then # If no input, print usage message.
+      echo "Copies a string or the contents of a file to the clipboard."
+      echo "Usage: cb <string or file>"
+      echo "       echo <string or file> | cb"
+    else
+      # If the input is a filename that exists, then use the contents of that file.
+      if [ -e "$input" ]; then input="$(cat $input)"; fi
+      # Copy input to clipboard
+      echo -n "$input" | xclip -selection c
+      # Truncate text for status
+      if [ ${#input} -gt 80 ]; then input="$(echo $input | cut -c1-80)$_trn_col...\e[0m"; fi
+      # Print status.
+      echo -e "$_scs_col""Copied to clipboard:\e[0m $input"
+    fi
+  fi
 }
 alias cb_ssh="cb ~/.ssh/id*.pub"
 
 # Easily extract compressed files
 ex() {
-    if [ -f "$1" ]; then
-        case $1 in
-        *.tar.bz2) tar xjf $1 ;;
-        *.tar.gz) tar xzf $1 ;;
-        *.bz2) bunzip2 $1 ;;
-        *.rar) unrar x $1 ;;
-        *.gz) gunzip $1 ;;
-        *.tar) tar xf $1 ;;
-        *.tbz2) tar xjf $1 ;;
-        *.tgz) tar xzf $1 ;;
-        *.zip) unzip $1 ;;
-        *.Z) uncompress $1 ;;
-        *.7z) 7z x $1 ;;
-        *.deb) ar x $1 ;;
-        *.tar.xz) tar xf $1 ;;
-        *.tar.zst) unzstd $1 ;;
-        *) echo "'$1' cannot be extracted via ex()" ;;
-        esac
-    else
-        echo "'$1' is not a valid file"
-    fi
+  if [ -f "$1" ]; then
+    case $1 in
+      *.tar.bz2) tar xjf $1 ;;
+      *.tar.gz) tar xzf $1 ;;
+      *.bz2) bunzip2 $1 ;;
+      *.rar) unrar x $1 ;;
+      *.gz) gunzip $1 ;;
+      *.tar) tar xf $1 ;;
+      *.tbz2) tar xjf $1 ;;
+      *.tgz) tar xzf $1 ;;
+      *.zip) unzip $1 ;;
+      *.Z) uncompress $1 ;;
+      *.7z) 7z x $1 ;;
+      *.deb) ar x $1 ;;
+      *.tar.xz) tar xf $1 ;;
+      *.tar.zst) unzstd $1 ;;
+      *) echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
 }
 
 # Move up $ARGS directories (default 1)
 up() {
-    local d=""
-    local limit="$1"
+  local d=""
+  local limit="$1"
 
-    # Default to limit of 1
-    if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
-        limit=1
-    fi
+  # Default to limit of 1
+  if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
+    limit=1
+  fi
 
-    for ((i = 1; i <= limit; i++)); do
-        d="../$d"
-    done
+  for ((i = 1; i <= limit; i++)); do
+    d="../$d"
+  done
 
-    # perform cd. Show error if cd fails
-    if ! cd "$d"; then
-        echo "Couldn't go up $limit dirs."
-    fi
+  # perform cd. Show error if cd fails
+  if ! cd "$d"; then
+    echo "Couldn't go up $limit dirs."
+  fi
 }
 
 # vim: set fdm=indent
