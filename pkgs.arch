@@ -1,8 +1,6 @@
-acpilight
 arandr
 autorandr
 autotiling
-awesome
 base-devel
 bash-completion
 bat
@@ -10,6 +8,7 @@ bat-extras
 blueman
 bluez
 bluez-utils
+brightnessctl
 bspwm
 cbatticon
 chromium
@@ -33,7 +32,6 @@ maim
 make
 man-db
 moreutils
-neofetch
 neovide
 neovim
 nitrogen
