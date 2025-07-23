@@ -1,5 +1,4 @@
 sudo pacman -S --needed - < ./pkgs.arch
-git clone git@github.com:joshsurber/nvim.git ~/.config/nvim
 bat cache --build
 
 mkdir -p ~/Desktop ~/Documents ~/Downloads ~/Google ~/Music ~/Pictures ~/Projects ~/Public ~/Templates ~/Videos ~/.config/rclone

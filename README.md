@@ -26,7 +26,7 @@ Debian etc
 
 ```bash
 sudo apt install git make
-git clone git@github.com:joshsurber/.files
+git clone --recursive git@github.com:joshsurber/.files
 cd .files
 ```
 
