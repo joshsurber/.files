@@ -49,14 +49,17 @@ disk "/" {
 
 load {
         format = "CPU %1min"
+        format_above_threshold = "WARNING: %1min %5min %15min"
 }
 
 memory {
-        format = "Mem %used/%available"
+        format = "Mem %used/%total (%percentage_used)"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
+        threshold_degraded = 20%
+        threshold_critical = 10%
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%d%b %H.%M.%S"
 }
