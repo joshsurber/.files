@@ -1,7 +1,7 @@
 // mmmmm   mmmm  mmmmmm mmmmm
-// #   "# m"  "m #        #  
-// #mmmm" #    # #mmmmm   #  
-// #   "m #    # #        #  
+// #   "# m"  "m #        #
+// #mmmm" #    # #mmmmm   #
+// #   "m #    # #        #
 // #    "  #mm#  #      mm#mm
 
 configuration {
@@ -11,7 +11,7 @@ configuration {
   // display-run: " ";
   // display-window: " ";
   drun-display-format: "{icon} {name}";
-  font: "CaskaydiaCove 12";
+  font: "CaskaydiaCove 10";
   icon-theme: "adwaita-icon-theme";
   kb-row-down: "Down,Alt+n";
   kb-row-left: "Alt+h";
@@ -35,13 +35,5 @@ configuration {
   }
 }
 
-// vim: set ft=scss :
-
-//@theme "/home/josh/.local/share/rofi/themes/simple-tokyonight.rasi"
-
-//@theme "/home/josh/.local/share/rofi/themes/josh.rasi"
-
-//@theme "/home/josh/.local/share/rofi/themes/simple-tokyonight.rasi"
 
 @theme "/home/josh/.local/share/rofi/themes/josh.rasi"
-// vim: ft=scss
