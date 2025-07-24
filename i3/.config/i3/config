@@ -34,88 +34,88 @@
 # Key bindings{{{
 
 # System control{{{
-    bindsym Print exec maim --select | xclip -selection clipboard -target image/png
-        bindsym $mod+Print exec maimmenu
-        bindsym $mod+space exec --no-startup-id $launcher
-        bindsym $altmod+space exec --no-startup-id $launcher
-        bindsym $mod2+space exec --no-startup-id $launcher2
-        bindsym $mod+v exec clipmenu
-        bindsym $mod+period exec rofi -show emoji -matching normal
-        bindsym $mod+l exec $locker
-        bindsym $mod+x exec powermenu
-        bindsym $mod+q kill
-        bindsym $mod2+q exec i3-msg exit
-        bindsym $mod+z reload  exec dunstify "i3 config reloaded"
-        bindsym $mod2+z restart
+bindsym Print exec maim --select | xclip -selection clipboard -target image/png
+bindsym $mod+Print exec maimmenu
+bindsym $mod+space exec --no-startup-id $launcher
+bindsym $altmod+space exec --no-startup-id $launcher
+bindsym $mod2+space exec --no-startup-id $launcher2
+bindsym $mod+v exec clipmenu
+bindsym $mod+period exec rofi -show emoji -matching normal
+bindsym $mod+l exec $locker
+bindsym $mod+x exec powermenu
+bindsym $mod+q kill
+bindsym $mod2+q exec i3-msg exit
+bindsym $mod+z reload  exec dunstify "i3 config reloaded"
+bindsym $mod2+z restart
 # }}}
 
 # System contol buttons{{{
-    bindsym XF86AudioRaiseVolume exec --no-startup-id volume up
-        bindsym XF86AudioLowerVolume exec --no-startup-id volume down
-        bindsym XF86AudioMute exec --no-startup-id volume mute
-        bindsym XF86AudioMicMute exec --no-startup-id volume mute
-        bindsym XF86MonBrightnessUp exec backlight up
-        bindsym XF86MonBrightnessDown exec backlight down
+bindsym XF86AudioRaiseVolume exec --no-startup-id volume up
+bindsym XF86AudioLowerVolume exec --no-startup-id volume down
+bindsym XF86AudioMute exec --no-startup-id volume mute
+bindsym XF86AudioMicMute exec --no-startup-id volume mute
+bindsym XF86MonBrightnessUp exec backlight up
+bindsym XF86MonBrightnessDown exec backlight down
 # }}}
 
 # App shortcuts{{{
-    bindsym $mod+Return exec $term
-        bindsym $altmod+Return exec $term
-        bindsym $mod+apostrophe exec $browser
-        bindsym $mod+backslash exec $fileman
-        bindsym $mod+a exec $email
-        bindsym $mod+r exec $fileman
-        bindsym $mod+s exec $browser
-        bindsym $mod+t exec $term
+bindsym $mod+Return exec $term
+bindsym $altmod+Return exec $term
+bindsym $mod+apostrophe exec $browser
+bindsym $mod+backslash exec $fileman
+bindsym $mod+a exec $email
+bindsym $mod+r exec $fileman
+bindsym $mod+s exec $browser
+bindsym $mod+t exec $term
 # }}}
 
 # Window management{{{
 # bindsym $mod+g split h
 # bindsym $mod+j split v
-    bindsym $mod+f fullscreen toggle
-        bindsym $mod+u layout toggle split
-        bindsym $mod+y layout tabbed
-        bindsym $mod+semicolon layout stacking
-        bindsym $mod+o mode "resize"
-        bindsym $mod2+f floating toggle
+bindsym $mod+f fullscreen toggle
+bindsym $mod+u layout toggle split
+bindsym $mod+y layout tabbed
+bindsym $mod+semicolon layout stacking
+bindsym $mod+o mode "resize"
+bindsym $mod2+f floating toggle
 
-        bindsym $mod+d focus parent
-        bindsym $mod2+d focus child
+bindsym $mod+d focus parent
+bindsym $mod2+d focus child
 
-        bindsym $mod2+comma move scratchpad
-        bindsym $mod+comma scratchpad show
+bindsym $mod2+comma move scratchpad
+bindsym $mod+comma scratchpad show
 # use Mouse+$mod to drag floating windows to their wanted position
-        floating_modifier $mod
+floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-        tiling_drag modifier titlebar
+tiling_drag modifier titlebar
 # }}}
 
 # Window nav and moving {{{
 # change focus
-    bindsym $mod+$left focus left
-        bindsym $mod+$down focus down
-        bindsym $mod+$up focus up
-        bindsym $mod+$right focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # alternatively, you can use the cursor keys:
-        bindsym $mod+Left focus left
-        bindsym $mod+Down focus down
-        bindsym $mod+Up focus up
-        bindsym $mod+Right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # move focused window
-        bindsym $mod2+$left move left
-        bindsym $mod2+$down move down
-        bindsym $mod2+$up move up
-        bindsym $mod2+$right move right
+bindsym $mod2+$left move left
+bindsym $mod2+$down move down
+bindsym $mod2+$up move up
+bindsym $mod2+$right move right
 
 # alternatively, you can use the cursor keys:
-        bindsym $mod2+Left move left
-        bindsym $mod2+Down move down
-        bindsym $mod2+Up move up
-        bindsym $mod2+Right move right
+bindsym $mod2+Left move left
+bindsym $mod2+Down move down
+bindsym $mod2+Up move up
+bindsym $mod2+Right move right
 # }}}
 
 # }}}
