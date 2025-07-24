@@ -1,4 +1,8 @@
-# TokyoNight colors for dunst
+ #     #                         m
+ #  mmm#  m   m  m mm    mmm   mm#mm
+ # #" "#  #   #  #"  #  #   "    #
+ # #   #  #   #  #   #   """m    #
+ # "#m##  "mm"#  #   #  "mmm"    "mm
 # For more configuration options see https://github.com/dunst-project/dunst/blob/master/dunstrc
 
 [urgency_low]

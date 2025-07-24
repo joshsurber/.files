@@ -1,5 +1,11 @@
 # vim:fileencoding=utf-8:foldmethod=marker
-# i3 config file (v4)
+#   "     mmmm                                m""    "
+# mmm    "   "#         mmm    mmm   m mm   mm#mm  mmm     mmmm
+#   #      mmm"        #"  "  #" "#  #"  #    #      #    #" "#
+#   #        "#        #      #   #  #   #    #      #    #   #
+# mm#mm  "mmm#"        "#mm"  "#m#"  #   #    #    mm#mm  "#m"#
+#                                                          m  #
+#                                                           ""
 
 # Variables{{{
     set $font "pango:CaskaydiaCove NF 10"

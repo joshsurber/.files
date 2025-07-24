@@ -1,5 +1,10 @@
-configuration {
+// mmmmm   mmmm  mmmmmm mmmmm
+// #   "# m"  "m #        #  
+// #mmmm" #    # #mmmmm   #  
+// #   "m #    # #        #  
+// #    "  #mm#  #      mm#mm
 
+configuration {
   application-fallback-icon: 'defaultapp';
   combi-modes: "window,run,drun,ssh";
   // display-drun: " ";
@@ -21,11 +26,12 @@ configuration {
 
   timeout {
     action: "kb-cancel";
-    delay:  0;
+    delay: 0;
   }
+
   filebrowser {
     directories-first: true;
-    sorting-method:    "name";
+    sorting-method: "name";
   }
 }
 
