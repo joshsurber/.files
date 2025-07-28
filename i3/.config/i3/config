@@ -1,4 +1,3 @@
-# vim:fileencoding=utf-8:foldmethod=marker
 #   "     mmmm                                m""    "
 # mmm    "   "#         mmm    mmm   m mm   mm#mm  mmm     mmmm
 #   #      mmm"        #"  "  #" "#  #"  #    #      #    #" "#
@@ -8,7 +7,7 @@
 #                                                           ""
 
 # Variables{{{
-    set $font "pango:CaskaydiaCove NF 10"
+    set $font "pango:CaskaydiaCove NF 9"
         font $font
         set $term kitty
         set $browser chromium
@@ -180,8 +179,8 @@ bindsym $mod2+7 move container to workspace number $ws7
 bindsym $mod2+8 move container to workspace number $ws8
 bindsym $mod2+9 move container to workspace number $ws9
 bindsym $mod2+0 move container to workspace number $ws10
-assign [class="kitty"] $ws1
-assign [class="Chromium"] $ws2
+# assign [class="kitty"] $ws1
+# assign [class="Chromium"] $ws2
 # }}}
 
 # }}}
@@ -229,19 +228,20 @@ mode "$Logout" {
 # exec_always --no-startup-id polybar -r
     # exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-# i3status, using polybar instead
 bar {
     i3bar_command i3bar --transparency
     status_command i3status
     position top
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
     font $font
+    separator_symbol "  "
     colors {
         # background #28344a
         background #CC1a1b26
         background #28344add
         statusline #7aa2f7
         separator #545c7e
+        separator #7aa2f7
 
         focused_workspace  #9aa5ce #364A82 #c0caf5
         active_workspace   #16161d #16161d #c0caf5
@@ -292,3 +292,4 @@ client.unfocused        #16161d #16161d #c0caf5 #16161d   #16161d
 
 
 # }}}
+# vim:fileencoding=utf-8:foldmethod=marker
