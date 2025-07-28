@@ -3,6 +3,7 @@
  # #" "#  #   #  #"  #  #   "    #
  # #   #  #   #  #   #   """m    #
  # "#m##  "mm"#  #   #  "mmm"    "mm
+
 # For more configuration options see https://github.com/dunst-project/dunst/blob/master/dunstrc
 
 [urgency_low]
@@ -19,3 +20,4 @@
     background = "#292e42"
     foreground = "#db4b4b"
     frame_color = "#db4b4b"
+# vim: ft=ini
