@@ -1,9 +1,9 @@
-#
 #   "     mmmm                  m             m
 # mmm    "   "#         mmm   mm#mm   mmm   mm#mm  m   m   mmm
 #   #      mmm"        #   "    #    "   #    #    #   #  #   "
 #   #        "#         """m    #    m"""#    #    #   #   """m
 # mm#mm  "mmm#"        "mmm"    "mm  "mm"#    "mm  "mm"#  "mmm"
+
 # It is important that this file is edited as UTF-8.
 # The following line should contain a sharp s:
 # ß
@@ -17,7 +17,7 @@ general {
 # order += "ipv6"
 # order += "wireless _first_"
 # order += "ethernet _first_"
-# order += "battery all"
+order += "battery all"
 order += "disk /"
 order += "load"
 order += "memory"
