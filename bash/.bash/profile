@@ -3,7 +3,7 @@
 export EDITOR=nvim
 export VISUAL=$EDITOR
 export PAGER=less
-export BROWSER=qutebrowser
+export BROWSER=chromium
 export TERMINAL=kitty
 export DMENU=rofi
 export FIND=fd
