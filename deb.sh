@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-sudo apt-get install bash-completion bat command-not-found exa fd-find fzf kitty make npm ripgrep shfmt software-properties-common stow tidy tldr xclip
+sudo apt-get install bash-completion bat command-not-found exa fd-find fish fzf kitty make npm ripgrep shfmt software-properties-common stow tidy tldr xclip
 
 curl -sS https://starship.rs/install.sh | sh
 batcat cache --build
