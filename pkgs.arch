@@ -9,7 +9,6 @@ blueman
 bluez
 bluez-utils
 brightnessctl
-bspwm
 cbatticon
 chromium
 clipmenu
@@ -72,3 +71,12 @@ xarchiver
 xclip
 zip
 zoxide
+
+waybar
+hyprlnd
+hyprlock
+hypridle
+hyprpaper
+hyprpicker
+wl-clipboard
+cliphist

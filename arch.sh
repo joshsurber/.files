@@ -1,3 +1,4 @@
+#! /bin/bash
 sudo pacman -S --needed - < ./pkgs.arch
 bat cache --build
 
