@@ -13,7 +13,6 @@ window#waybar {
   box-shadow: none;
   text-shadow: none;
   transition-duration: 0s;
-  color: rgba(217, 216, 216, 1);
   color: rgba(122, 162, 247, 1);
   background: #1a1b26;
 }

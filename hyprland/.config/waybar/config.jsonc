@@ -37,6 +37,8 @@
     "all-outputs": true,
     "warp-on-scroll": false,
     "format": "{name}: {icon}",
+    "show-special": true,
+    "special-visible-only": true,
     "format-icons": {
       // "1": "",
       // "2": "",
