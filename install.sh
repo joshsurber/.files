@@ -5,7 +5,7 @@ system="base-devel blueman xclip zip bluez bluez-utils cups fuse2 fuse3 git gvfs
 
 XorgWM="arandr autorandr autotiling clipmenu dunst i3 maim picom polybar polybar rofi rofi-calc rofi-emoji rofimoji"
 
-hypr="cliphist hypridle hyprlnd hyprlock hyprpaper hyprpicker hyprshot swaync waybar wl-clipboard"
+hypr="cliphist hypridle hyprland hyprlock hyprpaper hyprpicker hyprshot swaync waybar wl-clipboard"
 
 apps="brightnessctl chromium eza fish fzf kitty lazygit neovide neovim nitrogen noto-fonts-emoji pcmanfm qutebrowser rclone ripgrep starship stow tldr tmux ttf-cascadia-code-nerd ttf-firacode-nerd ttf-roboto vifm xarchiver zoxide"
 
@@ -18,7 +18,7 @@ if ! sudo -v; then
 fi
 
 if has pacman; then
-    install="sudo pacman -S -needed"
+    install="sudo pacman -S --needed"
     distro="fd bat bat-extras"
 elif has apt; then
     install="sudo apt install"
@@ -26,10 +26,10 @@ elif has apt; then
     curl -sS https://starship.rs/install.sh | sh
 fi
 
-git clone git@github.com/joshsurber/.files
+$install $system $hypr $apps $distro
+git clone --recursive git@github.com:joshsurber/.files
 cd .files
 
-$install $system $hypr $apps $distro
 if has bat; then
     bat cache --build
 elif has batcat; then
@@ -38,7 +38,7 @@ fi
 
 mkdir -p ~/Desktop ~/Documents ~/Downloads ~/Google ~/Music ~/Pictures ~/Projects ~/Public ~/Templates ~/Videos ~/.config/rclone
 cat rclone.txt >~/.config/rclone/rclone.conf
-rclone config reconnect drive:
+# rclone config reconnect drive:
 
 make
 
