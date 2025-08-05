@@ -27,7 +27,7 @@ elif has apt; then
 fi
 
 $install $system $hypr $apps $distro
-git clone git@github.com:joshsurber/.files
+git clone --recursive git@github.com:joshsurber/.files
 cd .files
 
 if has bat; then
