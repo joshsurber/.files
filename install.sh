@@ -46,7 +46,7 @@ echo 'source ~/.bash/source' >>~/.bashrc
 echo 'source ~/.bash/profile' >>~/.profile
 echo 'source ~/.bash/logout' >>~/.bash_logout
 
-if has pacman; then
+if has pacman && ! has yay; then
     sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
     yay -Y --gendb
     yay -Syu --devel
