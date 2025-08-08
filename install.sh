@@ -7,7 +7,7 @@ XorgWM="arandr autorandr autotiling clipmenu dunst i3 maim picom polybar polybar
 
 hypr="cliphist hypridle hyprland hyprlock hyprpaper hyprpicker hyprshot swaync waybar wl-clipboard"
 
-apps="brightnessctl chromium eza fish fzf kitty lazygit neovide neovim nitrogen noto-fonts-emoji pcmanfm qutebrowser rclone ripgrep starship stow tldr tmux ttf-cascadia-code-nerd ttf-firacode-nerd ttf-roboto vifm xarchiver zoxide"
+apps="brightnessctl chromium eza fish fzf kitty lazygit neovide neovim nitrogen noto-fonts-emoji pcmanfm qutebrowser rclone ripgrep starship stow tldr tmux ttf-cascadia-code-nerd ttf-firacode-nerd ttf-roboto vifm xarchiver xdg-user-dirs zoxide"
 
 has() {
     command -v "$1" 1>/dev/null 2>&1
@@ -36,8 +36,9 @@ elif has batcat; then
     bat cache --build
 fi
 
-mkdir -p ~/Desktop ~/Documents ~/Downloads ~/Google ~/Music ~/Pictures ~/Projects ~/Public ~/Templates ~/Videos ~/.config/rclone
+mkdir -p ~/Google ~/Projects ~/.config/rclone
 cat rclone.txt >~/.config/rclone/rclone.conf
+xdg-user-dirs-update
 # rclone config reconnect drive:
 
 make
