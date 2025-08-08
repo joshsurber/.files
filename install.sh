@@ -17,31 +17,31 @@ if ! sudo -v; then
     exit 1
 fi
 
-if has pacman; then
-    install="sudo pacman -S --needed"
-    distro="fd bat bat-extras"
-elif has apt; then
-    install="sudo apt install"
-    disto="fdfind batcat"
-    curl -sS https://starship.rs/install.sh | sh
-fi
+gpg ssh.tar.gpg &&
+    tar xf ssh.tar &&
+    if has pacman; then
+        install="sudo pacman -S --needed"
+        distro="fd bat bat-extras"
+    elif has apt; then
+        install="sudo apt install"
+        disto="fdfind batcat"
+        curl -sS https://starship.rs/install.sh | sh
+    fi
 
-$install $system $hypr $apps $distro
-git clone --recursive git@github.com:joshsurber/.files
-cd .files
+$install $system $hypr $apps $distro &&
+    git clone --recursive git@github.com:joshsurber/.files &&
+    cd .files &&
+    if has bat; then
+        bat cache --build
+    elif has batcat; then
+        bat cache --build
+    fi
 
-if has bat; then
-    bat cache --build
-elif has batcat; then
-    bat cache --build
-fi
-
-mkdir -p ~/Google ~/Projects ~/.config/rclone
-cat rclone.txt >~/.config/rclone/rclone.conf
-xdg-user-dirs-update
-# rclone config reconnect drive:
-
-make
+mkdir -p ~/Google ~/Projects ~/.config/rclone &&
+    cat rclone.txt >~/.config/rclone/rclone.conf &&
+    xdg-user-dirs-update &&
+    rclone config reconnect drive: &&
+    make
 
 echo 'source ~/.bash/source' >>~/.bashrc
 echo 'source ~/.bash/profile' >>~/.profile
