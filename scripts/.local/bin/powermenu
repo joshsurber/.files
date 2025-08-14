@@ -1,13 +1,13 @@
 #! /bin/sh
 
-chosen=$(printf "  Power Off\n  Restart\n  Suspend\n  Hibernate\n󰿅  Log Out\n  Lock" | rofi -dmenu -i)
+chosen=$(printf "  Power Off\n  Restart\n  Suspend\n  Hibernate\n󰿅  Log Out\n  Lock" | wofi -d -i)
 
 case "$chosen" in
-	"  Power Off") systemctl poweroff ;;
-	"  Restart") systemctl reboot ;;
-	"  Suspend") systemctl suspend ;;
-	"  Hibernate") systemctl hibernate ;;
-	"󰿅  Log Out") loginctl kill-user "$UID" ;;
-	"  Lock") i3lock -c 000000 ;;
-	*) exit 1 ;;
+"  Power Off") systemctl poweroff ;;
+"  Restart") systemctl reboot ;;
+"  Suspend") systemctl suspend ;;
+"  Hibernate") systemctl hibernate ;;
+"󰿅  Log Out") loginctl kill-user "$UID" ;;
+"  Lock") i3lock -c 000000 ;;
+*) exit 1 ;;
 esac
