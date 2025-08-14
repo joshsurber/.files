@@ -1,7 +1,7 @@
 #! /bin/bash
 # vim: ft=bash fdm=indent wrap
 
-system="base-devel blueman xclip zip bluez bluez-utils cups fuse2 fuse3 git gvfs gvfs-smb make man-db moreutils npm pamixer pkgfile"
+system="base-devel blueman xclip zip bluez bluez-utils cups fuse2 fuse3 git gvfs gvfs-smb keyd make man-db moreutils npm pamixer pkgfile unzip"
 
 XorgWM="arandr autorandr autotiling clipmenu dunst i3 maim picom polybar polybar rofi rofi-calc rofi-emoji rofimoji"
 
@@ -43,14 +43,20 @@ mkdir -p ~/Google ~/Projects ~/.config/rclone
 cat rclone.txt >~/.config/rclone/rclone.conf
 xdg-user-dirs-update
 rclone config reconnect drive:
+rm -rf ~/.config/hypr
 make
+sudo mkdir /etc/keyd
+sudo ln keyd.conf /etc/keyd/default.conf
 
 echo 'source ~/.bash/source' >>~/.bashrc
 echo 'source ~/.bash/profile' >>~/.profile
 echo 'source ~/.bash/logout' >>~/.bash_logout
 
 if has pacman && ! has yay; then
-    sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+    sudo pacman -S --needed git base-devel
+    git clone https://aur.archlinux.org/yay-bin.git
+    cd yay-bin
+    makepkg -si
     yay -Y --gendb
     yay -Syu --devel
     yay -Y --devel --save
