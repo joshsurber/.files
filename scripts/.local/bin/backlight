@@ -1,26 +1,25 @@
 #!/bin/sh
 
 send_notification() {
-  brightness=$(brightnessctl -m | awk -F ',' '{print $4}')
-  dunstify -a "changebrightness" -u low -r 9991 -h int:value:"$brightness" -i "brightness" "$brightness" -t 2000
+    brightness=$(brightnessctl -m | awk -F ',' '{print $4}')
+    notify-send -a "changebrightness" -u low -r 9991 -h int:value:"$brightness" -i "brightness" "$brightness" -t 2000
 }
 
 case $1 in
-  up)
+up)
     # brillo -A 5 -q
     brightnessctl set 5%+
     send_notification "$1"
     ;;
-  down)
-    # brillo -U 5 -q
+down)
     brightnessctl set 5%-
     send_notification "$1"
     ;;
-  set)
+set)
     brightnessctl set $2
     send_notification "$1 $2"
     ;;
-  *)
+*)
     send_notification
     ;;
 esac
