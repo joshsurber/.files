@@ -1,7 +1,7 @@
 #! /bin/bash
 # vim: ft=bash fdm=indent wrap
 
-system="base-devel xclip zip cups fuse2 fuse3 git gvfs gvfs-smb keyd make man-db moreutils npm pamixer pkgfile unzip xdg-user-dirs "
+system="base-devel xclip zip cups fuse2 fuse3 ghostty git gvfs gvfs-smb keyd make man-db moreutils npm pamixer pkgfile unzip xdg-user-dirs "
 
 XorgWM="arandr autorandr autotiling clipmenu dunst i3 nitrogen maim picom polybar polybar rofi rofi-calc rofi-emoji rofimoji"
 
