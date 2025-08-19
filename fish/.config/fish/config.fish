@@ -5,4 +5,5 @@ if status is-interactive
     zoxide init fish --cmd cd | source
     # zoxide init fish | source
     starship init fish | source
+    fzf --fish | source
 end
