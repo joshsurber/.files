@@ -1,13 +1,13 @@
 #! /bin/bash
 # vim: ft=bash fdm=indent wrap
 
-system="base-devel blueman xclip zip bluez bluez-utils cups fuse2 fuse3 git gvfs gvfs-smb keyd make man-db moreutils npm pamixer pkgfile unzip"
+system="base-devel xclip zip cups fuse2 fuse3 git gvfs gvfs-smb keyd make man-db moreutils npm pamixer pkgfile unzip xdg-user-dirs "
 
-XorgWM="arandr autorandr autotiling clipmenu dunst i3 maim picom polybar polybar rofi rofi-calc rofi-emoji rofimoji"
+XorgWM="arandr autorandr autotiling clipmenu dunst i3 nitrogen maim picom polybar polybar rofi rofi-calc rofi-emoji rofimoji"
 
 hypr="cliphist hypridle hyprland hyprlock hyprpaper hyprpicker hyprshot swaync waybar wl-clipboard"
 
-apps="brightnessctl chromium eza fish fzf kitty lazygit neovide neovim nitrogen noto-fonts-emoji pcmanfm qutebrowser rclone ripgrep starship stow tldr tmux ttf-cascadia-code-nerd ttf-firacode-nerd ttf-roboto vifm xarchiver xdg-user-dirs zoxide"
+apps="brightnessctl chromium eza fish fzf kitty lazygit neovide neovim noto-fonts-emoji rclone ripgrep starship stow thunar tldr tmux ttf-cascadia-code-nerd ttf-firacode-nerd ttf-roboto vifm xarchiver zoxide"
 
 has() {
     command -v "$1" 1>/dev/null 2>&1
