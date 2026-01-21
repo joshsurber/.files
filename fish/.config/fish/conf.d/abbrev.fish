@@ -5,13 +5,15 @@ abbr grep rg
 abbr ls eza
 abbr o xdg-open
 abbr v nvim
-abbr i sudo pacman -S
+abbr i sudo apt install
+abbr b brew install
 abbr ll 'ls -l'
 abbr la 'ls -a'
 abbr lla 'ls -la'
+abbr yay "sudo apt update && sudo apt upgrade && brew update && brew upgrade"
 abbr serve live-server
 abbr lamp sudo /opt/lampp/lampp
-abbr drive 'rclone mount drive: ~/Google --daemon'
+# abbr drive 'rclone mount drive: ~/Google --daemon'
 abbr keyedit 'sudoedit /etc/keyd/default.conf && sudo keyd reload'
 abbr ducks 'du -cks *|sort -rn|head -11'
 function multicd
