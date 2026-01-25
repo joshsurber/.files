@@ -4,7 +4,7 @@ set -e
 
 # Configuration
 BASE_URL="https://raw.githubusercontent.com/joshsurber/.files/main"
-REPO_URL="https://github.com/joshsurber/.files.git"
+REPO_URL="git@github.com:joshsurber/.files.git"
 
 # Package Definitions (unchanged)
 arch_only="base-devel zip cups fuse2 fuse3 ghostty gvfs gvfs-smb man-db moreutils npm pamixer pkgfile unzip xdg-user-dirs noto-fonts-emoji ttf-cascadia-code-nerd ttf-firacode-nerd ttf-roboto"
