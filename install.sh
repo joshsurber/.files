@@ -8,7 +8,7 @@ REPO_URL="git@github.com:joshsurber/.files.git"
 
 # Package Definitions (unchanged)
 arch_only="base-devel zip cups fuse2 fuse3 ghostty gvfs gvfs-smb man-db moreutils npm pamixer pkgfile unzip xdg-user-dirs noto-fonts-emoji ttf-cascadia-code-nerd ttf-firacode-nerd ttf-roboto"
-system_core=" fish git make stow tmux xclip "
+system_core=" fish git make stow tmux xclip wl-clipboard "
 utils=" bat bat-extras eza fd fzf lazygit moreutils neovim npm ripgrep starship tldr vifm zoxide "
 xutils="xclip arandr autorandr brightnessctl autotiling clipmenu dunst nitrogen maim picom polybar rofi rofi-calc rofi-emoji rofimoji"
 wutils="cliphist hypridle hyprland hyprlock hyprpaper hyprshot swaync waybar wl-clipboard"
