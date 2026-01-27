@@ -28,9 +28,9 @@ gui:
 
 keybinding:
   universal:
-    prevItem-alt: 'u'
-    nextItem-alt: 'e'
-    prevBlock-alt: 'n'
+    prevItem-alt: 'e'
+    nextItem-alt: 'n'
+    prevBlock-alt: 'h'
     nextBlock-alt: 'i'
     nextMatch: '='
     prevMatch: '-'
