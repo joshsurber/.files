@@ -12,4 +12,6 @@ if status is-interactive
     # zoxide init fish | source
     starship init fish | source
     fzf --fish | source
+
+    bind \t complete
 end
