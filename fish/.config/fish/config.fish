@@ -1,17 +1,16 @@
-# set EDITOR nvim
-# set BROWSER chromium
+set -gx EDITOR nvim
+set -gx BROWSER chromium
+
 if status is-interactive
-
-    function fish_user_key_bindings
-        # Maps 'tn' in insert mode to switch to normal mode
-        # bind -M insert tn 'set fish_bind_mode default; commandline -f backward-char repaint-mode'
-    end
-
     # Commands to run in interactive sessions can go here
+    set -g fish_greeting ""
+
+    # Tools initialization
     zoxide init fish --cmd cd | source
-    # zoxide init fish | source
     starship init fish | source
     fzf --fish | source
 
+    # Key bindings
+    # Tab completion is usually standard, but keeping this for explicit control
     bind \t complete
 end
