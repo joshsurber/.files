@@ -1,0 +1,83 @@
+# ~/.config/yazi/keymap.toml
+
+# --- Manager ---
+[mgr]
+keymap = [
+  # --- Core Navigation (Colemak Home Row: M N E I) ---
+  { on = "n", run = "arrow 1", desc = "Move cursor down" },
+  { on = "e", run = "arrow -1", desc = "Move cursor up" },
+  { on = "i", run = "enter", desc = "Enter the child directory" },
+  { on = "m", run = "leave", desc = "Go back to parent" },
+  { on = "h", run = "leave", desc = "Go back to parent (H-fallback)" },
+
+  # --- Swapped Keys (j, k, l from n, e, i) ---
+  { on = "j", run = 'shell "$EDITOR \"$@\"" --block', desc = "Edit file" },
+  { on = "k", run = "find_next", desc = "Next search match" },
+  { on = "K", run = "find_prev", desc = "Previous search match" },
+  { on = "l", run = "filter --smart", desc = "Filter files (Insert mode)" },
+
+  # --- Neovim Scrolling (Half-page) ---
+  { on = "<C-e>", run = "arrow -50%", desc = "Half-page up (Vim C-u)" },
+  { on = "<C-n>", run = "arrow 50%", desc = "Half-page down (Vim C-d)" },
+
+  # --- Tab Management (Neovim gt/gT) ---
+  { on = ["g", "t"], run = "tab_switch 1 --relative", desc = "Next tab" },
+  { on = ["g", "T"], run = "tab_switch -1 --relative", desc = "Prev tab" },
+  { on = ["t"], run = "tab_create --current", desc = "New tab" },
+  { on = ["w"], run = "close", desc = "Close tab" },
+
+  # --- Navigation Extremes (gg/G) ---
+  { on = ["g", "g"], run = "arrow -99999999", desc = "Top of list" },
+  { on = "G", run = "arrow 99999999", desc = "Bottom of list" },
+
+  # --- History (Physical H and I) ---
+  { on = "H", run = "back", desc = "History: Back" },
+  { on = "I", run = "forward", desc = "History: Forward" },
+
+  # --- Shifted Home Row (Fast jumps) ---
+  { on = "N", run = "arrow 5", desc = "Fast jump down 5 lines" },
+  { on = "E", run = "arrow -5", desc = "Fast jump up 5 lines" },
+
+  # --- Essential Manager Defaults ---
+  { on = "q", run = "quit", desc = "Quit Yazi" },
+  { on = "<Esc>", run = ["escape", "filter"], desc = "Clear selection/filter" },
+  { on = "v", run = "visual_mode", desc = "Visual Mode (Vim v)" },
+  { on = "<Space>", run = "select --state=none", desc = "Select file" },
+
+  # File Operations
+  { on = "o", run = "create", desc = "Create a file or directory" },
+  { on = "y", run = "copy", desc = "Copy (Vim y)" },
+  { on = "p", run = "paste", desc = "Paste (Vim p)" },
+  { on = "d", run = "remove", desc = "Delete (Vim d)" },
+  { on = "x", run = "cut", desc = "Cut (Vim x)" },
+  { on = "r", run = "rename", desc = "Rename (Vim r)" },
+  { on = ".", run = "hidden", desc = "Toggle hidden files" },
+
+  # --- Power Plugins ---
+  { on = "?", run = "help", desc = "Open help menu" },
+  { on = "z", run = "plugin zoxide", desc = "Zoxide jump (Vim-Z)" },
+  { on = "f", run = "plugin jump-to-char", desc = "F-jump to char (Vim f)" },
+  { on = "F", run = "plugin smart-filter", desc = "Smart filter (Telescope)" },
+
+  # --- Shell Command ---
+  { on = ":", run = "shell --block --confirm", desc = "Interactive shell" },
+]
+
+# --- Input Layer ---
+[input]
+prepend_keymap = [
+  { on = "n", run = "arrow 1" },
+  { on = "e", run = "arrow -1" },
+  { on = "i", run = "move 1" },
+  { on = "m", run = "move -1" },
+  { on = "l", run = "insert" },
+  { on = "L", run = "insert --at-bol" },
+  { on = "j", run = "move --at-eol" },
+]
+
+# --- Help & Completion ---
+[help]
+prepend_keymap = [{ on = "n", run = "arrow 1" }, { on = "e", run = "arrow -1" }]
+
+[completion]
+prepend_keymap = [{ on = "n", run = "arrow 1" }, { on = "e", run = "arrow -1" }]
