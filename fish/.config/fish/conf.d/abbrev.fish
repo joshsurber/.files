@@ -12,6 +12,7 @@ abbr find fd
 abbr grep rg
 abbr o xdg-open
 abbr v nvim
+abbr y yazi
 abbr serve live-server
 abbr lamp 'sudo /opt/lampp/lampp'
 abbr keyedit 'sudoedit /etc/keyd/default.conf && sudo keyd reload'
