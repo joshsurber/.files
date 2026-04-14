@@ -14,3 +14,11 @@ if status is-interactive
     # Tab completion is usually standard, but keeping this for explicit control
     bind \t complete
 end
+
+# Type 't' to jump into a project session
+function t
+    set -l session (sesh list -i | fzf)
+    if test -n "$session"
+        sesh connect $session
+    end
+end
