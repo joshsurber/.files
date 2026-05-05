@@ -222,34 +222,34 @@ mode "$Logout" {
 }
 # }}}
 
-# Bar {{{
-
-# exec_always --no-startup-id polybar-msg cmd quit
-# exec_always --no-startup-id polybar -r
-    # exec_always --no-startup-id ~/.config/polybar/launch.sh
-
-bar {
-    i3bar_command i3bar --transparency
-    status_command i3status
-    position top
-    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    font $font
-    separator_symbol "  "
-    colors {
-        # background #28344a
-        background #CC1a1b26
-        background #28344add
-        statusline #7aa2f7
-        separator #545c7e
-        separator #7aa2f7
-
-        focused_workspace  #9aa5ce #364A82 #c0caf5
-        active_workspace   #16161d #16161d #c0caf5
-        inactive_workspace #16161d #16161d #c0caf5
-    }
-}
-
-# }}}
+# # Bar {{{
+#
+exec_always --no-startup-id polybar-msg cmd quit
+exec_always --no-startup-id polybar -r
+    exec_always --no-startup-id ~/.config/polybar/launch.sh
+#
+# bar {
+#     i3bar_command i3bar --transparency
+#     status_command i3status
+#     position top
+#     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#     font $font
+#     separator_symbol "  "
+#     colors {
+#         # background #28344a
+#         background #CC1a1b26
+#         background #28344add
+#         statusline #7aa2f7
+#         separator #545c7e
+#         separator #7aa2f7
+#
+#         focused_workspace  #9aa5ce #364A82 #c0caf5
+#         active_workspace   #16161d #16161d #c0caf5
+#         inactive_workspace #16161d #16161d #c0caf5
+#     }
+# }
+#
+# # }}}
 
 # Window appearance{{{
 for_window [all] title_window_icon yes

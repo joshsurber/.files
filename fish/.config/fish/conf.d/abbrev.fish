@@ -17,6 +17,7 @@ abbr serve live-server
 abbr lamp 'sudo /opt/lampp/lampp'
 abbr keyedit 'sudoedit /etc/keyd/default.conf && sudo keyd reload'
 abbr ducks 'du -cks * | sort -rn | head -11'
+abbr sys sudo systemctl
 
 # File listing (using eza if available)
 if type -q eza

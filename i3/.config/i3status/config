@@ -17,7 +17,7 @@ general {
 # order += "ipv6"
 # order += "wireless _first_"
 # order += "ethernet _first_"
-order += "battery all"
+# order += "battery all"
 order += "disk /"
 order += "load"
 order += "memory"
@@ -41,7 +41,7 @@ battery all {
         status_bat = "🔋"
         status_unk = "? UNK "
         status_full = "☻ FULL "
-        status_idle = "☻ IDLE "
+        # status_idle = "☻ IDLE "
         low_threshold = 10
 }
 

@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR BROWSER:chromium
+SETUVAR --export EDITOR:/home/linuxbrew/\x2elinuxbrew/bin/nvim
 SETUVAR --export WAYLAND_DISPLAY:
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:969896

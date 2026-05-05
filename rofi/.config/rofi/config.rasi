@@ -5,7 +5,7 @@
 // #    "  #mm#  #      mm#mm
 
 configuration {
-  application-fallback-icon: 'defaultapp';
+  // application-fallback-icon: 'defaultapp';
   combi-modes: "window,run,drun,ssh";
   // display-drun: " ";
   // display-run: " ";
