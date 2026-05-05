@@ -13,7 +13,7 @@ $php\
 [](fg:#212736 bg:#1d2230)\
 $time\
 [](fg:#1d2230)\
-\n$character"""
+\n$hostname $character"""
 
 [directory]
 style = "fg:black bg:#769ff0"
@@ -27,6 +27,11 @@ format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
 
 [git_status]
 format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+
+[hostname]
+ssh_only = false
+trim_at = ' '
+format = '[$ssh_symbol$hostname]($style) '
 
 [nodejs]
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
